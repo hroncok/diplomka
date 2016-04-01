@@ -116,7 +116,7 @@ filter_vlna() {
 
 # Remove weird dash defunctor
 filter_dash() {
-	$SED -Ei -e "s/ -\{\}- / -- /g" \
+	$SED -i 's| -\\/- | -- |g' \
 		"$1" || echo "dash replacing failed" >&2
 }
 
