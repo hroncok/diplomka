@@ -1,0 +1,56 @@
+% options:
+% thesis=B bachelor's thesis
+% thesis=M master's thesis
+% czech thesis in Czech language
+% english thesis in English language
+% hidelinks remove colour boxes around hyperlinks
+
+% arara: xelatex: { shell: yes }
+% arara: makeglossaries
+% arara: biber
+% arara: xelatex: { shell: yes }
+% arara: xelatex: { shell: yes }
+\documentclass[thesis=M,czech,hidelinks]{template/FITthesisXE}
+
+\usepackage{ graphicx }		% graphics files inclusion
+\usepackage{ dirtree } 		% directory tree visualisation
+\usepackage{ longtable } 	% tables which Pandoc use
+
+\bibliography{library.bib}
+
+% make list of acronyms
+\makeglossaries
+\input{acronyms.tex}
+\glsaddall	% add even unused acronyms
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+\acknowledgements{\input{podekovani.tex}}
+\abstractCS{\input{abstrakt_cs.tex}}
+\abstractEN{\input{abstrakt_en.tex}}
+\input{meta.tex}
+
+\begin{document}
+
+\begin{introduction}
+\label{introduction}
+\input{Uvod.tex}
+\end{introduction}
+
+%\input{xyz.tex}
+
+\begin{conclusion}
+\label{conclusion}
+\input{Zaver.tex}
+\end{conclusion}
+
+\printbibliography[title={Zdroje}]
+
+\appendix
+
+\chapter{Seznam použitých zkratek}
+\printglossary[type=\acronymtype,style=acronyms]
+
+\input{medium.tex}
+
+\end{document}
