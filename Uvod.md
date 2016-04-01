@@ -3,7 +3,7 @@ V případě webových RESTful API to ale v Pythonu neplatí, existuje celá řa
 které umožňují RESTful API vytvářet. Některé fungují pouze společně s frameworky na tvorbu
 webových aplikací, jako například s Flaskem nebo Djangem, jiné fungují samostatně.
 
-V této diplomové práci se budu zabývat více než desítkou těchto frameworků. V kapitole TODO je zhodnotím z hlediska
+V této diplomové práci se budu zabývat více než desítkou těchto frameworků. V kapitole *\nameref{frameworky}* je zhodnotím z hlediska
 použitelnosti, množství nabízených funkcí, podpory standardů, množství závislostí, ale i z hlediska stavu a oblíbenosti projektu.
 
 Abych mohl frameworky zkoumat více do hloubky a porovnat je i z hlediska rychlosti, navrhnu ukázkovou službu poskytující RESTful API
