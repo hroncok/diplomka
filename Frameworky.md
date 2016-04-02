@@ -80,5 +80,19 @@ Přístupová práva
 Stav projektu
 -------------
 
+Pokud se rozhodujeme, jestli využít nějaký framework, mohly by nás zajímat i informace o projektu, jako například:
+
+ * Kdo projekt tvoří, jsou to jednotlivci, firma?
+ * Je projekt aktivně vyvíjen?
+ * Vycházejí nové verze?
+ * Reaguje se na hlášení chyb?
+ * jsou přijímány úpravy od lidí mimo projekt?
+ * Jak dlouho již projekt existuje?
+ * Jak často vycházejí nové verze?
+ * Má projekt dokumentaci? Je aktuální?
+ * Používá projekt testy?
+
+Tyto informace se velice těžce dají srovnávat pomocí škály, proto se pokusím na tyto otázky odpovědět alespoň v textu.
+
 Oblíbenost
 ----------
