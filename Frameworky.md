@@ -113,3 +113,21 @@ Většina zkoumaných frameworků má svůj kód zveřejněn na GitHubu (TODO v�
 Počet těchto hvězd pak může mít částečnou vypovídající schopnost.
 
 Frameworky jdou zároveň stáhnout z *Python Package Indexu*, kde lze vidět počet stažení za poslední den, týden a měsíc [@pypi]. Tyto informace jsou však často zkreslené kvůli různým automatickým nástrojům, které stahují všechny balíčky [@pypibad].
+
+\input{frameworky/Cornice}
+\input{frameworky/Django-REST-framework}
+\input{frameworky/Eve}
+\input{frameworky/Falcon}
+\input{frameworky/hug}
+\input{frameworky/Flask-API}
+\input{frameworky/Flask-RESTful}
+\input{frameworky/Morepath}
+\input{frameworky/Piston}
+\input{frameworky/Pycnic}
+\input{frameworky/Python-REST-API-framework}
+\input{frameworky/Ramses}
+\input{frameworky/RESTArt}
+\input{frameworky/restless}
+\input{frameworky/ripozo}
+\input{frameworky/sandman}
+\input{frameworky/Tastypie}
