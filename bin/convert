@@ -148,8 +148,6 @@ else
 	SED="sed"
 fi
 
-mkdir .backup 2>/dev/null
-
 for file in $FILES; do
 	[[ "$SKIP_FILES" = *$file* ]] && continue
 
@@ -158,6 +156,7 @@ for file in $FILES; do
 	texfile="${file%.*}.tex"
 
 	# backup TeX file!
+	mkdir $(dirname ".backup/$texfile") 2>/dev/null
 	[[ -f "$texfile" ]] && mv "$texfile" ".backup/$texfile"
 	cp "$file" "$tmpfile"
 

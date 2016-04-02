@@ -1,4 +1,4 @@
-mds = $(shell for F in *.md; do echo $${F%.md}; done | grep -v README)
+mds = $(shell for F in *.md */*.md; do echo $${F%.md}; done | grep -v README)
 ymls = $(shell for F in *.yml; do echo $${F%.yml}; done)
 pngs = $(shell for F in images/*.png; do echo $${F%.png}; done)
 
