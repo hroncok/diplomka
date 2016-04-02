@@ -96,3 +96,11 @@ Tyto informace se velice těžce dají srovnávat pomocí škály, proto se poku
 
 Oblíbenost
 ----------
+
+Čím více lidí a projektů daný framework využívá, tím je větší šance, že v případě problému narazíme
+na hotové řešení. Oblíbenost je subjektivní pojem a tak se špatně měří, využiji ale dva prvky, které o oblíbenosti mohou něco prozradit.
+
+Většina zkoumaných frameworků má svůj kód zveřejněn na GitHubu (TODO všechny?), kde uživatelé mohou jednotlivé projekty zařadit mezi své oblíbené tím, že jím dají hvězdu (*star*) [@ghstars].
+Počet těchto hvězd pak může mít částečnou vypovídající schopnost.
+
+Frameworky jdou zároveň stáhnout z *Python Package Indexu*, kde lze vidět počet stažení za poslední den, týden a měsíc [@pypi]. Tyto informace jsou však často zkreslené kvůli různým automatickým nástrojům, které stahují všechny balíčky [@pypibad].
