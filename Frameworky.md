@@ -61,6 +61,8 @@ striktně určují, jak bude webová aplikace vnitřně navržena. Škálu jsem 
 Podpora HATEOAS
 ---------------
 
+TODO
+
 Podpora Pythonu 3
 -----------------
 
@@ -76,6 +78,13 @@ jestli framework podporuje Python 2, například kvůli tomu, že nějaké dalš
 
 Přístupová práva
 ----------------
+
+TODO
+
+Použitelnost
+------------
+
+TODO
 
 Stav projektu
 -------------
