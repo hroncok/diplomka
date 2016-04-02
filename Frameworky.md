@@ -11,6 +11,8 @@ Než se pustím do zkoumání a hodnocení jednotlivých frameworků, je třeba 
 která mi umožní frameworky objektivně porovnávat a vybrat kandidáty pro kapitolu TODO.
 Pokud to bude alespoň trochu možné, tak pro kritérium stanovím stupnici, na základě které půjde frameworky mezi sebou porovnat.
 
+TODO reorganizovat kritéria nějak „podle důležitosti“.
+
 Licence
 -------
 
@@ -26,3 +28,13 @@ Licence tedy rozdělím do skupin podle typu, pořadí typu určuje stupnici od 
  4. **Copyleft** licence jsou takové, které vyžadují, aby výsledné dílo v případě využití knihovny nebo frameworku převzalo jejich licenci [@copyleft]. Jako nejznámější exemplář jmenuji GNU General Public License [@GPLv3].
  5. **AGPL** je kategorie, která obsahuje GNU Affero General Public License [@AGPLv3] a případné další podobné licence, které navíc oproti předchozímu typu považují poskytování webové služby za distribuci díla a vyžadují tedy poskytnutí zdrojového kódu všem uživatelům služby.
 
+Velikost kódu včetně závislostí
+-------------------------------
+
+Přestože dnes diskový prostor není tolik kritický, jako dříve, čím víc kódu framework a jeho
+závislosti obsahují, tím více věcí se může zkomplikovat. Některé frameworky se označují za „lightweight“
+a právě velikost kódové základny je jedním z faktorů, který vnímaní frameworku jako „lightweight“ může ovlivnit [@lightweight].
+
+Měření budu provádět tak, že daný framework nainstaluji do prázdného virtualenvu[^virtualenv] a pak se podívám na celkovou jeho velikost -- ta bude určovat pořadí na stupnici.
+
+[^virtualenv]: Virtualenv je virtuální prostředí pro jazyk Python umožňující instalovat závislosti různých projektů do oddělených míst. [@virtualenv]
