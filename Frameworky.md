@@ -4,7 +4,7 @@ V této kapitole představím sedmnáct (TODO spočítat) open-source framework�
 které zhodnotím na základě mnou stanovených hodnotících kritérií.
 
 
-Hodnotící kritéria
+Hodnotící kritéria {#kriteria}
 ==================
 
 Než se pustím do zkoumání a hodnocení jednotlivých frameworků, je třeba si stanovit hodnotící kritéria,
@@ -131,3 +131,30 @@ Frameworky jdou zároveň stáhnout z *Python Package Indexu*, kde lze vidět po
 \input{frameworky/ripozo}
 \input{frameworky/sandman}
 \input{frameworky/Tastypie}
+
+Srovnání
+========
+
+[V tabulece](#tab:srovnani@) najdete srovnání měřitelných kritérií. Jednotlivé sloupce mají zjednodušené názvy, ale jejich funkce odpovídá popisu [v části](#kriteria@).
+
+| Framework             | licence   | velikost  | závislosti    | webový fr.    | Python 3  | oblíbenost    |
+|-----------------------+-----------+-----------+---------------+---------------+-----------|---------------|
+| Cornice               |           |           |               |               |           |               |
+| Django REST fr.       |           |           |               |               |           |               |
+| Eve                   |           |           |               |               |           |               |
+| Falcon                |           |           |               |               |           |               |
+| hug                   |           |           |               |               |           |               |
+| Flask API             |           |           |               |               |           |               |
+| Flask-RESTful         |           |           |               |               |           |               |
+| Morepath              |           |           |               |               |           |               |
+| Piston                |           |           | TODO          |               |           |               |
+| Pycnic                |           |           |               |               |           |               |
+| Python REST API fr.   |           |           |               |               |           |               |
+| Ramses                |           |           |               |               |           |               |
+| RESTArt               |           |           |               |               |           |               |
+| restless              |           |           |               |               |           |               |
+| ripozo                |           |           |               |               |           |               |
+| sandman               |           |           |               |               |           |               |
+| Tastypie              |           |           |               |               |           |               |
+
+Table: Srovnání měřitelných kritérií {#tab:srovnani}

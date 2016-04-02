@@ -4,8 +4,8 @@
 #
 
 PANDOC_OPTS="-f markdown -t latex --no-wrap --listings --no-tex-ligatures --biblatex --bibliography=library.bib"
-FILTERS_PRE=( 'title' 'header_label' )
-FILTERS_POST=( 'listings' 'hyperrefs' 'hyperrefs_page' 'itemizes' 'vlna' 'subsubsection' 'hotfix_1' 'hotfix_2' 'dash' )
+FILTERS_PRE=( 'title' 'header_label' 'hotfix_2' )
+FILTERS_POST=( 'listings' 'hyperrefs' 'hyperrefs_page' 'itemizes' 'vlna' 'subsubsection' 'hotfix_1' 'dash' )
 FILES="${@:-*.md *.yml}"
 SKIP_FILES="README.md"
 
@@ -86,12 +86,13 @@ filter_itemizes() {
 		"$1" || echo "itemizes filter failed" >&2
 }
 
-# Ugly hotfix for table in chapter Realizace
+# Ugly hotfix for table in chapter Frameworky
 filter_hotfix_1() {
-	if [[ "$1" = Realizace* ]]; then
+	if [[ "$1" = Frameworky* ]]; then
 		$SED -Ei \
-			-e "/^\\\begin\{longtable\}/,/\\\label\{tab:operatory\}/ {\
-				s/^(\\\begin\{longtable\}.*$)/\1\n\\\pagebreak/; }" \
+			-e "/^\\\begin\{longtable\}/,/\\\label\{tab:srovnani\}/ {\
+				s/^(\\\begin\{longtable\}.*$)/\\\begin\{landscape\}\n\1\n\\\pagebreak/; }" \
+			-e 's/\\end\{longtable\}/\\end\{longtable\}\n\\end\{landscape\}/g' \
 			"$1" || echo "filter hotfix_realizace failed" >&2
 	fi
 }

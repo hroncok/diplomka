@@ -135,7 +135,7 @@
 
 % declare conditional list of tables that prints list only if there's some
 % table in the document
-\AtEndEnvironment {table} {%
+\AtEndEnvironment {longtable} {%
 	\gdef \there@is@a@table{}
 }
 \AtEndDocument {%
