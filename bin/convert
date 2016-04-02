@@ -132,6 +132,12 @@ convert_acronyms() {
 		"$1" || echo "acronyms conversion failed" >&2
 }
 
+# Convert hyphenation.yml to LaTeX
+convert_hyphenation() {
+	$SED -E 's/^- ((\w|-)+)$/\\hyphenation{\1}/' \
+		"$1" || echo "acronyms conversion failed" >&2
+}
+
 
 ##########  M a i n  ##########
 
@@ -168,6 +174,8 @@ for file in $FILES; do
 			convert_meta "$tmpfile" > "$texfile";;
 		acronyms.yml)
 			convert_acronyms "$tmpfile" > "$texfile";;
+		hyphenation.yml)
+			convert_hyphenation "$tmpfile" > "$texfile";;
 		*)
 			echo "Unsupported file: $file";;
 	esac

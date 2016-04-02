@@ -11,6 +11,9 @@ meta.tex: meta.yml bin/convert
 acronyms.tex: acronyms.yml bin/convert
 	./bin/convert acronyms.yml
 
+hyphenation.tex: hyphenation.yml bin/convert
+	./bin/convert hyphenation.yml
+
 %.tex: %.md bin/convert
 	./bin/convert "$<"
 	vlna "$@" 2>/dev/null || :
