@@ -44,3 +44,21 @@ Počet závislostí
 
 Kromě samotné velikosti je třeba zkoumat, i kolik závislostí (přímých i nepřímých) daný framework má. Každá závislost představuje riziko i zranitelnost [@dependencies].
 Jelikož čtenáře může zajímat počet přímých i počet nepřímých závislostí, budu uvádět vždy obě čísla.
+
+Závislost na frameworku
+-----------------------
+
+Podpora HATEOAS
+---------------
+
+Podpora Pythonu 3
+-----------------
+
+Přístupová práva
+----------------
+
+Stav projektu
+-------------
+
+Oblíbenost
+----------
