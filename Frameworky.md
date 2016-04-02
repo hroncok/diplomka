@@ -52,8 +52,8 @@ Některé frameworky fungují samostatně, jiné vyžadují nějaký Python fram
 Některé webové frameworky slouží čistě jako vrstva pro poskytovaní obsahu přes protokol HTTP, jiné
 striktně určují, jak bude webová aplikace vnitřně navržena. Škálu jsem tedy nastavil takto:
 
- 1. **standalone** je kategorie pro frameworky, které lze pro RESful API použít samostatně.
- 2. **lightweight** je kategorie pro frameworky, které vyžadují webový microframework, který slouží pouze jako vrstva mezi Pythonem a HTTP. Takovými microframeworky jsou třeba Werkzeug, Flask, Pyramid nebo Morepath.
+ 1. **Standalone** je kategorie pro frameworky, které lze pro RESful API použít samostatně.
+ 2. **Lightweight** je kategorie pro frameworky, které vyžadují webový microframework, který slouží pouze jako vrstva mezi Pythonem a HTTP. Takovými microframeworky jsou třeba Werkzeug, Flask, Pyramid nebo Morepath.
  3. **MVC** je kategorie pro frameworky typu *Model-view-controller*, především Django[^django].
 
 [^django]: Django samo sebe označuje jako MTV (*Model-template-view*) framework, prakticky se však jedná o MVC princip [@djangobook].
