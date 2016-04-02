@@ -38,3 +38,9 @@ a právě velikost kódové základny je jedním z faktorů, který vnímaní fr
 Měření budu provádět tak, že daný framework nainstaluji do prázdného virtualenvu[^virtualenv] a pak se podívám na celkovou jeho velikost -- ta bude určovat pořadí na stupnici.
 
 [^virtualenv]: Virtualenv je virtuální prostředí pro jazyk Python umožňující instalovat závislosti různých projektů do oddělených míst. [@virtualenv]
+
+Počet závislostí
+----------------
+
+Kromě samotné velikosti je třeba zkoumat, i kolik závislostí (přímých i nepřímých) daný framework má. Každá závislost představuje riziko i zranitelnost [@dependencies].
+Jelikož čtenáře může zajímat počet přímých i počet nepřímých závislostí, budu uvádět vždy obě čísla.
