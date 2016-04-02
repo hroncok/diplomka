@@ -64,6 +64,16 @@ Podpora HATEOAS
 Podpora Pythonu 3
 -----------------
 
+Přestože Python 3 vyšel již v roce 2008 [@py3year], některé knihovny třetích stran jej stále ještě nepodporují [@py3ready].
+Je tedy třeba se bohužel zabývat i tím, jestli framework Python 3 podporuje. Stejně tak může být pro někoho důležité,
+jestli framework podporuje Python 2, například kvůli tomu, že nějaké další knihovny, které používá, Python 3 nepodporují.
+
+Škálu jsme tedy stanovil takto:
+
+ 1. podpora obou verzí Pythonu,
+ 2. podpora pouze pro Python 3,
+ 3. podpora pouze pro Python 2.
+
 Přístupová práva
 ----------------
 
