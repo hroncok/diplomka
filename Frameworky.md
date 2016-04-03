@@ -24,7 +24,7 @@ Licence tedy rozdělím do skupin podle typu, pořadí typu určuje stupnici od 
 
  1. **Public domain** obsahuje licence, které efektivně říkají, že si s frameworkem můžeme dělat prakticky, co chceme. Mezi takové řadím například Creative Commons CC0 [@CC0] nebo WTFPL [@WTFPL].
  2. **Permisivní** licence jsou takové, které vyžadují například uvedení textu licence a jméno autora, ale neovlivňují licenci výsledného díla. Příkladem jsou licence MIT [@MIT], BSD [@BSD2][@BSD3], ale i licence Pythonu [@python-license].
- 3. **LGPL** je kategorie, která obsahuje GNU Lesser General Public License [@LGPL] a případné další podobné licence, které v případě vhodného použití knihovny neovlivňují licenci díla. Pro potřeby použití frameworku se příliš neliší od předchozí skupiny, ale je třeba si dát pozor, jak framework použijeme, pokud bychom například kód frameworku zkopírovali přímo do kódu našeho díla, mohli bychom výslednou licenci ovlivnit.
+ 3. **LGPL** je kategorie, která obsahuje GNU Lesser General Public License [@LGPL] a případné další podobné licence (například Mozilla Public License [@mpl2]), které v případě vhodného použití knihovny neovlivňují licenci díla. Pro potřeby použití frameworku se příliš neliší od předchozí skupiny, ale je třeba si dát pozor, jak framework použijeme, pokud bychom například kód frameworku zkopírovali přímo do kódu našeho díla, mohli bychom výslednou licenci ovlivnit.
  4. **Copyleft** licence jsou takové, které vyžadují, aby výsledné dílo v případě využití knihovny nebo frameworku převzalo jejich licenci [@copyleft]. Jako nejznámější exemplář jmenuji GNU General Public License [@GPLv3].
  5. **AGPL** je kategorie, která obsahuje GNU Affero General Public License [@AGPLv3] a případné další podobné licence, které navíc oproti předchozímu typu považují poskytování webové služby za distribuci díla a vyžadují tedy poskytnutí zdrojového kódu všem uživatelům služby.
 
@@ -125,7 +125,7 @@ na hotové řešení. Oblíbenost je subjektivní pojem a tak se špatně měř�
 Většina zkoumaných frameworků má svůj kód zveřejněn na GitHubu (TODO všechny?), kde uživatelé mohou jednotlivé projekty zařadit mezi své oblíbené tím, že jím dají hvězdu (*star*) [@ghstars].
 Počet těchto hvězd pak může mít částečnou vypovídající schopnost.
 
-Frameworky jdou zároveň stáhnout z *Python Package Indexu*, kde lze vidět počet stažení za poslední den, týden a měsíc [@pypi]. Tyto informace jsou však často zkreslené kvůli různým automatickým nástrojům, které stahují všechny balíčky [@pypibad].
+Frameworky jdou zároveň stáhnout z *Python Package Indexu*, kde lze vidět počet stažení za poslední den, týden a měsíc [@pypi]. Tyto informace jsou však často zkreslené kvůli různým automatickým nástrojům, které stahují všechny balíčky [@pypibad]. Budu uvádět jen hodnotu stažení za poslední měsíc, v době psaní tohoto textu.
 
 \input{frameworky/Cornice}
 \input{frameworky/Django-REST-framework}
@@ -148,26 +148,26 @@ Frameworky jdou zároveň stáhnout z *Python Package Indexu*, kde lze vidět po
 Srovnání
 ========
 
-[V tabulece](#tab:srovnani@) najdete srovnání měřitelných kritérií. Jednotlivé sloupce mají zjednodušené názvy, ale jejich funkce odpovídá popisu [v části](#kriteria@). TODO pospat sloupce s více hodnotami (pokud budou).
+[V tabulce](#tab:srovnani@) najdete srovnání měřitelných kritérií. Jednotlivé sloupce mají zjednodušené názvy, ale jejich funkce odpovídá popisu [v části](#kriteria@). TODO pospat sloupce s více hodnotami (pokud budou).
 
-| Framework             | licence   | velikost  | závislosti    | webový fr.    | Python 3  | oblíbenost    |
-|-----------------------+-----------+-----------+---------------+---------------+-----------|---------------|
-| Cornice               |           |           |               |               |           |               |
-| Django REST fr.       |           |           |               |               |           |               |
-| Eve                   |           |           |               |               |           |               |
-| Falcon                |           |           |               |               |           |               |
-| hug                   |           |           |               |               |           |               |
-| Flask API             |           |           |               |               |           |               |
-| Flask-RESTful         |           |           |               |               |           |               |
-| Morepath              |           |           |               |               |           |               |
-| Piston                |           |           | TODO          |               |           |               |
-| Pycnic                |           |           |               |               |           |               |
-| Python REST API fr.   |           |           |               |               |           |               |
-| Ramses                |           |           |               |               |           |               |
-| RESTArt               |           |           |               |               |           |               |
-| restless              |           |           |               |               |           |               |
-| ripozo                |           |           |               |               |           |               |
-| sandman               |           |           |               |               |           |               |
-| Tastypie              |           |           |               |               |           |               |
+| Framework             | druh licence  | velikost  | závislosti    | webový fr.    | Python    | GitHub    | PyPI      |
+|-----------------------+---------------+-----------+---------------+---------------+-----------+-----------+-----------|
+| Cornice               | LGPL          | 20 MB     | 2/9           | lightweight   | 3+2       | 270       | 10 903    |
+| Django REST fr.       |               |           |               |               |           |           |           |
+| Eve                   |               |           |               |               |           |           |           |
+| Falcon                |               |           |               |               |           |           |           |
+| hug                   |               |           |               |               |           |           |           |
+| Flask API             |               |           |               |               |           |           |           |
+| Flask-RESTful         |               |           |               |               |           |           |           |
+| Morepath              |               |           |               |               |           |           |           |
+| Piston                |               |           | TODO          |               |           |           |           |
+| Pycnic                |               |           |               |               |           |           |           |
+| Python REST API fr.   |               |           |               |               |           |           |           |
+| Ramses                |               |           |               |               |           |           |           |
+| RESTArt               |               |           |               |               |           |           |           |
+| restless              |               |           |               |               |           |           |           |
+| ripozo                |               |           |               |               |           |           |           |
+| sandman               |               |           |               |               |           |           |           |
+| Tastypie              |               |           |               |               |           |           |           |
 
 Table: Srovnání měřitelných kritérií {#tab:srovnani}
