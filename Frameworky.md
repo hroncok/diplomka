@@ -135,7 +135,7 @@ Frameworky jdou zároveň stáhnout z *Python Package Indexu*, kde lze vidět po
 Srovnání
 ========
 
-[V tabulece](#tab:srovnani@) najdete srovnání měřitelných kritérií. Jednotlivé sloupce mají zjednodušené názvy, ale jejich funkce odpovídá popisu [v části](#kriteria@).
+[V tabulece](#tab:srovnani@) najdete srovnání měřitelných kritérií. Jednotlivé sloupce mají zjednodušené názvy, ale jejich funkce odpovídá popisu [v části](#kriteria@). TODO pospat sloupce s více hodnotami (pokud budou).
 
 | Framework             | licence   | velikost  | závislosti    | webový fr.    | Python 3  | oblíbenost    |
 |-----------------------+-----------+-----------+---------------+---------------+-----------|---------------|
