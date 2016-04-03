@@ -148,12 +148,12 @@ Frameworky jdou zároveň stáhnout z *Python Package Indexu*, kde lze vidět po
 Srovnání
 ========
 
-[V tabulce](#tab:srovnani@) najdete srovnání měřitelných kritérií. Jednotlivé sloupce mají zjednodušené názvy, ale jejich funkce odpovídá popisu [v části](#kriteria@). TODO pospat sloupce s více hodnotami (pokud budou).
+[V tabulce](#tab:srovnani@) najdete srovnání měřitelných kritérií. Jednotlivé sloupce mají zjednodušené názvy, ale jejich funkce odpovídá popisu [v části](#kriteria@). TODO pospat sloupce s více hodnotami (pokud budou), zarovnat číselné hodnoty doprava.
 
 | Framework             | druh licence  | velikost  | závislosti    | webový fr.    | Python    | GitHub    | PyPI      |
 |-----------------------+---------------+-----------+---------------+---------------+-----------+-----------+-----------|
 | Cornice               | LGPL          | 20 MB     | 2/9           | lightweight   | 3+2       | 270       | 10 903    |
-| Django REST fr.       |               |           |               |               |           |           |           |
+| Django REST fr.       | permisivní    | 51 MB     | 1/1           | MVC           | 3+2       | 1 895     | 316 772   |
 | Eve                   |               |           |               |               |           |           |           |
 | Falcon                |               |           |               |               |           |           |           |
 | hug                   |               |           |               |               |           |           |           |
