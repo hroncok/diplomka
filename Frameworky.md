@@ -61,7 +61,20 @@ striktně určují, jak bude webová aplikace vnitřně navržena. Škálu jsem 
 Podpora HATEOAS
 ---------------
 
-TODO
+HATEOAS, tedy *Hypermedia as the Engine of Application State*[^hateoas], je jedním ze základních stavebních kamenů REST architektury [@rest].
+Díky principu HATEOAS nemusí REST klient o poskytovaném API vědět příliš mnoho informací předem, prostě se dotáže serverové REST aplikace skrze URL a všechny následující proveditelné akce jsou obsaženy v odpovědi vrácené serverem.
+
+[^hateoas]: Hypermedia jako základ aplikačního stavu (TODO konzultovat překlad)
+
+HATEOAS je ale pouze princip, konkrétních implementací je několik. Mezi ty nejznámější patří:
+
+ * HAL [@hal],
+ * JSON-LD [@jsonld],
+ * Hydra [@hydra] (rozšíření JSON-LD),
+ * JSON Schema [@jsonschema],
+ * Collection+JSON [@collectionjson].
+
+TODO Uvidím, co budou podporovat jednotlivé frameworky, a podle toho zkusím stanovit nějaká kritéria. IMHO by šlo počítat, kolik toho podporují, ale pochybuji, že budou podporovat více než jedno.
 
 Podpora Pythonu 3
 -----------------
