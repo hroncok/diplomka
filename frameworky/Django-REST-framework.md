@@ -79,6 +79,7 @@ urlpatterns = [
 První verze vyšla již v roce 2011 a od té doby jich vyšlo celkem osmdesát, poslední vyšla cca tři týdny před psaním tohoto textu.
 Vývoj je velmi aktivní a dokumentace velmi obsáhlá. Instalace závisí pouze na Djangu,
 které nemá žádné další závislosti, a společně s ním zabírá 51 MB. Podporovány jsou obě verze Pythonu.
+Na GitHubu má více než pět a půl tisíce hvězd a za poslední měsíc byl více než třistatisíckrát stažen z PyPI.
 
 ### HATEOAS
 
@@ -96,4 +97,14 @@ Hodnotím kladně, že se o principu HATEOAS v dokumentaci alespoň hovoří, na
 
 ### Přístupová práva
 
-TODO
+Django REST framework umožňuje jak různé způsoby autentizace [@djangorestauth] tak autorizace [@djangorestperm]. Pro autentizaci má zabudovány tři možnosti:
+
+ * uživatelským jménem a heslem,
+ * tokenem,
+ * pomocí session.
+
+Zároveň je možné vytvořit si způsob vlastní. Existují další Python moduly, které tuto možnost využívají a přidávají tak do Django REST frameworku další možnosti autentizace, mezi ty nejdůležitější patří moduly pro OAuth 1 i OAuth 2. Například Django REST framework OAuth je modul, který byl dříve součástí Django REST frameworku, ale nyní je spravován samostatně.
+
+Přístupová práva jdou řešit na úrovni objektů, modelů či konkrétních *views*, tedy vlastně na základě URL, pro první dvě kategorie se používají zabudované mechanismy přímo z Djanga. Jsou rozlišeny práva pro čtení a pro zápis. Stejně jako u autentizace i zde je možné napsat si vlastní způsob rozhodování přístupových práv a i zde vzniklo několik modulů třetích stran.
+
+Celkově Django REST framework působí jako obsáhlý nástroj poskytující mnoho možností a funkcí. Jeho jedinou zjevnou slabinou je vázanost na Django.
