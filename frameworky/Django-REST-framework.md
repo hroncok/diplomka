@@ -14,7 +14,7 @@ Django REST framework je nadstavbou k webovému frameworku Django. Na svém webu
 
 [^orm]: Object-relational mapping neboli Objektově relační zobrazení [@ormbook]
 
-![Webově procházetelné API [@djangorest]{#pic:djangorestbrowsable}](images/django-rest-framework-browsable)
+![Django REST framework: Webově procházetelné API [@djangorest]{#pic:djangorestbrowsable}](images/django-rest-framework-browsable)
 
 Za vývojem Django REST frameworku nestojí žádná firma, ale jednotlivec, Tom Christie.
 Kromě něj ale do projektu přispělo více než pět set přispěvatelů [@djangorestcontributors].
