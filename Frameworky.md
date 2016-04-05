@@ -148,29 +148,31 @@ Frameworky jdou zároveň stáhnout z *Python Package Indexu*, kde lze vidět po
 Srovnání
 ========
 
-[V tabulce](#tab:srovnani@) najdete srovnání měřitelných kritérií. Jednotlivé sloupce mají zjednodušené názvy, ale jejich funkce odpovídá popisu [v části](#kriteria@). TODO pospat sloupce s více hodnotami (pokud budou), zarovnat číselné hodnoty doprava.
+[V tabulce](#tab:srovnani@) najdete srovnání měřitelných kritérií. Jednotlivé sloupce mají zjednodušené názvy, ale jejich funkce odpovídá popisu [v části](#kriteria@).
+Tučně jsou označeny hodnoty, které dominují v daném sloupci.
+TODO pospat sloupce s více hodnotami (pokud budou), zarovnat číselné hodnoty doprava.
 
 [V tabulce](#tab:informace@) pak najdete informační přehled o zkoumaných frameworcích: webový framework, URL domovské stránky a číslo zkoumané verze.
 
-| Framework             | druh licence  | velikost  | závislosti    | webový fr.    | Python    | GitHub    | PyPI      |
-|-----------------------+---------------+-----------+---------------+---------------+-----------+-----------+-----------|
-| Cornice               | LGPL          | 20 MB     | 2/9           | lightweight   | 3+2       |       270 |    10 903 |
-| Django REST fr.       | permisivní    | 51 MB     | 1/1           | MVC           | 3+2       |     5 606 |   316 772 |
-| Eve                   |               |           |               |               |           |           |           |
-| Falcon                |               |           |               |               |           |           |           |
-| hug                   |               |           |               |               |           |           |           |
-| Flask API             |               |           |               |               |           |           |           |
-| Flask-RESTful         |               |           |               |               |           |           |           |
-| Morepath              |               |           |               |               |           |           |           |
-| Piston                |               |           | TODO          |               |           |           |           |
-| Pycnic                |               |           |               |               |           |           |           |
-| Python REST API fr.   |               |           |               |               |           |           |           |
-| Ramses                |               |           |               |               |           |           |           |
-| RESTArt               |               |           |               |               |           |           |           |
-| restless              |               |           |               |               |           |           |           |
-| ripozo                |               |           |               |               |           |           |           |
-| sandman               |               |           |               |               |           |           |           |
-| Tastypie              |               |           |               |               |           |           |           |
+| Framework             | druh licence  | velikost  | závislosti    | webový fr.    | Python    | GitHub    | PyPI          |
+|-----------------------+---------------+-----------+---------------+---------------+-----------+-----------+---------------|
+| Cornice               | LGPL          | 20 MB     | 2/9           | lightweight   | 3+2       |       270 |        10 903 |
+| Django REST fr.       | permisivní    | 51 MB     | **1/1**       | MVC           | 3+2       | **5 606** |   **316 772** |
+| Eve                   | permisivní    | **18 MB** | 10/10         | lightweight   | 3+2       |     3 116 |         7 230 |
+| Falcon                |               |           |               |               |           |           |               |
+| hug                   |               |           |               |               |           |           |               |
+| Flask API             |               |           |               |               |           |           |               |
+| Flask-RESTful         |               |           |               |               |           |           |               |
+| Morepath              |               |           |               |               |           |           |               |
+| Piston                |               |           | TODO          |               |           |           |               |
+| Pycnic                |               |           |               |               |           |           |               |
+| Python REST API fr.   |               |           |               |               |           |           |               |
+| Ramses                |               |           |               |               |           |           |               |
+| RESTArt               |               |           |               |               |           |           |               |
+| restless              |               |           |               |               |           |           |               |
+| ripozo                |               |           |               |               |           |           |               |
+| sandman               |               |           |               |               |           |           |               |
+| Tastypie              |               |           |               |               |           |           |               |
 
 Table: Srovnání měřitelných kritérií {#tab:srovnani}
 
@@ -178,7 +180,7 @@ Table: Srovnání měřitelných kritérií {#tab:srovnani}
 |-----------------------+---------------+-----------------------------------------------+-------------------|
 | Cornice               | Pyramid       | \url{https://cornice.readthedocs.org/}        | 1.2.1             |
 | Django REST fr.       | Django        | \url{http://www.django-rest-framework.org/}   | 3.3.3             |
-| Eve                   |               |                                               |                   |
+| Eve                   | Flask         | \url{http://python-eve.org/}                  | 0.6.3             |
 | Falcon                |               |                                               |                   |
 | hug                   |               |                                               |                   |
 | Flask API             |               |                                               |                   |
