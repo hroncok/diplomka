@@ -150,6 +150,8 @@ Srovnání
 
 [V tabulce](#tab:srovnani@) najdete srovnání měřitelných kritérií. Jednotlivé sloupce mají zjednodušené názvy, ale jejich funkce odpovídá popisu [v části](#kriteria@). TODO pospat sloupce s více hodnotami (pokud budou), zarovnat číselné hodnoty doprava.
 
+[V tabulce](#tab:informace@) pak najdete informační přehled o zkoumaných frameworcích: webový framework, URL domovské stránky a číslo zkoumané verze.
+
 | Framework             | druh licence  | velikost  | závislosti    | webový fr.    | Python    | GitHub    | PyPI      |
 |-----------------------+---------------+-----------+---------------+---------------+-----------+-----------+-----------|
 | Cornice               | LGPL          | 20 MB     | 2/9           | lightweight   | 3+2       |       270 |    10 903 |
@@ -171,3 +173,25 @@ Srovnání
 | Tastypie              |               |           |               |               |           |           |           |
 
 Table: Srovnání měřitelných kritérií {#tab:srovnani}
+
+| Framework             | webový fr.    | webová stránka                                | zkoumaná verze    |
+|-----------------------+---------------+-----------------------------------------------+-------------------|
+| Cornice               | Pyramid       | \url{https://cornice.readthedocs.org/}        | 1.2.1             |
+| Django REST fr.       | Django        | \url{http://www.django-rest-framework.org/}   | 3.3.3             |
+| Eve                   |               |                                               |                   |
+| Falcon                |               |                                               |                   |
+| hug                   |               |                                               |                   |
+| Flask API             |               |                                               |                   |
+| Flask-RESTful         |               |                                               |                   |
+| Morepath              |               |                                               |                   |
+| Piston                |               |   TODO                                        |                   |
+| Pycnic                |               |                                               |                   |
+| Python REST API fr.   |               |                                               |                   |
+| Ramses                |               |                                               |                   |
+| RESTArt               |               |                                               |                   |
+| restless              |               |                                               |                   |
+| ripozo                |               |                                               |                   |
+| sandman               |               |                                               |                   |
+| Tastypie              |               |                                               |                   |
+
+Table: Informace o frameworcích {#tab:informace}
