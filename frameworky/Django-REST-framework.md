@@ -3,6 +3,26 @@ Django REST framework
 
 ![Logo Django REST frameworku [@djangorest]{#pic:djangorest}](images/django-rest-framework)
 
+Django REST framework je nadstavbou k webovému frameworku Django. Na svém webu [@djangorest] uvádí tyto předností:
+
+ * webově procházetelné API (můžete jej vidět [na obrázku](#pic:djangorestbrowsable)),
+ * autentizační pravidla včetně možnosti použití OAuth 1 či OAuth 2,
+ * serializace pro ORM[^orm] i jiná data,
+ * upravitelné na míru,
+ * rozsáhlá dokumentace a výborná komunitní podpora,
+ * je použit důvěryhodnými a velkými společnostmi jako Mozilla a Eventbrite.
+
+[^orm]: Object-relational mapping neboli Objektově relační zobrazení [@ormbook]
+
+![Webově procházetelné API [@djangorest]{#pic:djangorestbrowsable}](images/django-rest-framework-browsable)
+
+Za vývojem Django REST frameworku nestojí žádná firma, ale jednotlivec, Tom Christie.
+Kromě něj ale do projektu přispělo více než pět set přispěvatelů [@djangorestcontributors].
+Projekt navíc absolvoval crowdfundingovou kampaň a podpořilo jej mnoho firem i jednotlivců [@djangorestkickstarter].
+Zveřejněn je podobně jako Django pod BSD licencí [@BSD2].
+
+Příklad použití z dokumentace, mírně upravený, aby se vešel na stránku, najdete [v ukázce](#code:djangorest@).
+
 ```{caption="{#code:djangorest}Příklad použití z dokumentace Django REST frameworku \autocite{djangorestdoc}" .python}
 # Serializers
 from django.contrib.auth.models import User, Group
@@ -55,3 +75,25 @@ urlpatterns = [
                                namespace='rest_framework'))
 ]
 ```
+
+První verze vyšla již v roce 2011 a od té doby jich vyšlo celkem osmdesát, poslední vyšla cca tři týdny před psaním tohoto textu.
+Vývoj je velmi aktivní a dokumentace velmi obsáhlá. Instalace závisí pouze na Djangu,
+které nemá žádné další závislosti, a společně s ním zabírá 51 MB. Podporovány jsou obě verze Pythonu.
+
+### HATEOAS
+
+Dokumentace obsahuje kapitolu o HATEOAS [@djangoresthateoas], která uvádí:
+
+> Je zřejmé, že (Django) REST framework umožňuje vytvářet Hypermedia API.
+> Procházetelné API, které nabízí, je postaveno na HTML -- jazyku hypermédií webu.
+>
+> (Django) REST framework také obsahuje serializační, parsovací a renderovací komponenty usnadňující vytváření patřičných mediálních typů, hyperlinkovaných vazeb pro konstrukci vysoce propojených systémů, a dobrou podporu pro vyjednávání obsahu.
+>
+> Co ale (Django) REST framework neumí, je vytváření strojově čitelných formátů hypermédií jako HAL, Collection+JSON, JSON API či HTML mikroformátů ve výchozí konfiguraci, či automagické generování plně HATEOAS API s hypermediálním popisem formulářů a sémanticky označeným hyperlinky.
+> To by vyžadovalo provedení takových rozhodnutí o designu API, které by ve skutečnosti měly zůstat vně pole působnosti tohoto frameworku.
+
+Hodnotím kladně, že se o principu HATEOAS v dokumentaci alespoň hovoří, naplnění konkrétních implementací však zůstává v režii architekta či programátora.
+
+### Přístupová práva
+
+TODO

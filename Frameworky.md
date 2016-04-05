@@ -155,7 +155,7 @@ Srovnání
 | Framework             | druh licence  | velikost  | závislosti    | webový fr.    | Python    | GitHub    | PyPI      |
 |-----------------------+---------------+-----------+---------------+---------------+-----------+-----------+-----------|
 | Cornice               | LGPL          | 20 MB     | 2/9           | lightweight   | 3+2       |       270 |    10 903 |
-| Django REST fr.       | permisivní    | 51 MB     | 1/1           | MVC           | 3+2       |     1 895 |   316 772 |
+| Django REST fr.       | permisivní    | 51 MB     | 1/1           | MVC           | 3+2       |     5 606 |   316 772 |
 | Eve                   |               |           |               |               |           |           |           |
 | Falcon                |               |           |               |               |           |           |           |
 | hug                   |               |           |               |               |           |           |           |
