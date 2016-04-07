@@ -11,7 +11,7 @@ Než se pustím do zkoumání a hodnocení jednotlivých frameworků, je třeba 
 která mi umožní frameworky objektivně porovnávat a vybrat kandidáty pro kapitolu TODO.
 Pokud to bude alespoň trochu možné, tak pro kritérium stanovím stupnici, na základě které půjde frameworky mezi sebou porovnat.
 
-TODO reorganizovat kritéria nějak „podle důležitosti“.
+TODO reorganizovat kritéria nějak „podle důležitosti“, možná podle pořadí v tabulce.
 
 Licence
 -------
@@ -35,9 +35,15 @@ Přestože dnes diskový prostor není tolik kritický, jako dříve, čím víc
 závislosti obsahují, tím více věcí se může zkomplikovat. Některé frameworky se označují za „lightweight“
 a právě velikost kódové základny je jedním z faktorů, který vnímaní frameworku jako „lightweight“ může ovlivnit [@lightweight].
 
-Měření budu provádět tak, že daný framework nainstaluji do prázdného virtualenvu[^virtualenv] a pak se podívám na celkovou jeho velikost -- ta bude určovat pořadí na stupnici.
+Měření budu provádět tak, že daný framework nainstaluji do prázdného virtualenvu[^virtualenv] a pak se podívám na celkovou jeho velikost -- ta bude určovat pořadí na stupnici. (Od velikosti odečtu velikost „prázdného“ virtualenvu.)
 
 [^virtualenv]: Virtualenv je virtuální prostředí pro jazyk Python umožňující instalovat závislosti různých projektů do oddělených míst. [@virtualenv]
+
+Počet řádků kódu
+----------------
+
+Možná ještě důležitější než samotná velikost v MB je počet řádek kódu. K měření použiji nástroj cloc [@cloc], budu počítat pouze řádky v jazyce Python.
+Před měřením odstraním z modulů testy. Ve srovnávací tabulce budu uvádět jak počet řádků samotného frameworku, tak celého závislostního aparátu.
 
 Počet závislostí
 ----------------
@@ -150,50 +156,51 @@ Srovnání
 
 [V tabulce](#tab:srovnani@) najdete srovnání měřitelných kritérií. Jednotlivé sloupce mají zjednodušené názvy, ale jejich funkce odpovídá popisu [v části](#kriteria@).
 Tučně jsou označeny hodnoty, které dominují v daném sloupci.
-TODO pospat sloupce s více hodnotami (pokud budou), zarovnat číselné hodnoty doprava.
+
+TODO pospat sloupce s více hodnotami
 
 [V tabulce](#tab:informace@) pak najdete informační přehled o zkoumaných frameworcích: webový framework, URL domovské stránky a číslo zkoumané verze.
 
-| Framework             | druh licence  | velikost  | závislosti    | webový fr.    | Python    | GitHub    | PyPI          |
-|-----------------------+---------------+-----------+---------------+---------------+-----------+-----------+---------------|
-| Cornice               | LGPL          | 12 MB     | 2/9           | lightweight   | 3+2       |       270 |        10 903 |
-| Django REST fr.       | permisivní    | 43 MB     | **1/1**       | MVC           | 3+2       | **5 606** |   **316 772** |
-| Eve                   | permisivní    | **10 MB** | 10/10         | lightweight   | 3+2       |     3 121 |         7 480 |
-| Falcon                |               |           |               |               |           |           |               |
-| hug                   |               |           |               |               |           |           |               |
-| Flask API             |               |           |               |               |           |           |               |
-| Flask-RESTful         |               |           |               |               |           |           |               |
-| Morepath              |               |           |               |               |           |           |               |
-| Piston                |               |           | TODO          |               |           |           |               |
-| Pycnic                |               |           |               |               |           |           |               |
-| Python REST API fr.   |               |           |               |               |           |           |               |
-| Ramses                |               |           |               |               |           |           |               |
-| RESTArt               |               |           |               |               |           |           |               |
-| restless              |               |           |               |               |           |           |               |
-| ripozo                |               |           |               |               |           |           |               |
-| sandman               |               |           |               |               |           |           |               |
-| Tastypie              |               |           |               |               |           |           |               |
+| Framework             | druh licence  | webový fr.    |        MB |     řádky |     ř. včetně |   závisl. |   Py  |    GitHub |          PyPI |
+|-----------------------+---------------+---------------+-----------+-----------+---------------+-----------+-------+-----------+---------------|
+| Cornice               | LGPL          | lightweight   |        12 | **1 198** |    **24 625** |       2/9 |   3+2 |       270 |        10 903 |
+| Django REST fr.       | permisivní    | MVC           |        43 |     7 057 |        79 854 |   **1/1** |   3+2 | **5 606** |   **316 772** |
+| Eve                   | permisivní    | lightweight   |    **10** |     3 440 |        35 009 |     10/10 |   3+2 |     3 121 |         7 480 |
+| Falcon                |               |               |           |           |               |           |       |           |               |
+| hug                   |               |               |           |           |               |           |       |           |               |
+| Flask API             |               |               |           |           |               |           |       |           |               |
+| Flask-RESTful         |               |               |           |           |               |           |       |           |               |
+| Morepath              |               |               |           |           |               |           |       |           |               |
+| Piston                |               |               |           |      TODO |               |           |       |           |               |
+| Pycnic                |               |               |           |           |               |           |       |           |               |
+| Python REST API fr.   |               |               |           |           |               |           |       |           |               |
+| Ramses                |               |               |           |           |               |           |       |           |               |
+| RESTArt               |               |               |           |           |               |           |       |           |               |
+| restless              |               |               |           |           |               |           |       |           |               |
+| ripozo                |               |               |           |           |               |           |       |           |               |
+| sandman               |               |               |           |           |               |           |       |           |               |
+| Tastypie              |               |               |           |           |               |           |       |           |               |
 
 Table: Srovnání měřitelných kritérií {#tab:srovnani}
 
-| Framework             | webový fr.    | webová stránka                                | zkoumaná verze    |
-|-----------------------+---------------+-----------------------------------------------+-------------------|
-| Cornice               | Pyramid       | \url{https://cornice.readthedocs.org/}        | 1.2.1             |
-| Django REST fr.       | Django        | \url{http://www.django-rest-framework.org/}   | 3.3.3             |
-| Eve                   | Flask         | \url{http://python-eve.org/}                  | 0.6.3             |
-| Falcon                |               |                                               |                   |
-| hug                   |               |                                               |                   |
-| Flask API             |               |                                               |                   |
-| Flask-RESTful         |               |                                               |                   |
-| Morepath              |               |                                               |                   |
-| Piston                |               |   TODO                                        |                   |
-| Pycnic                |               |                                               |                   |
-| Python REST API fr.   |               |                                               |                   |
-| Ramses                |               |                                               |                   |
-| RESTArt               |               |                                               |                   |
-| restless              |               |                                               |                   |
-| ripozo                |               |                                               |                   |
-| sandman               |               |                                               |                   |
-| Tastypie              |               |                                               |                   |
+| Framework             | webový fr.    | webová stránka                                | zk. verze |
+|-----------------------+---------------+-----------------------------------------------+-----------|
+| Cornice               | Pyramid       | \url{https://cornice.readthedocs.org/}        | 1.2.1     |
+| Django REST fr.       | Django        | \url{http://www.django-rest-framework.org/}   | 3.3.3     |
+| Eve                   | Flask         | \url{http://python-eve.org/}                  | 0.6.3     |
+| Falcon                |               |                                               |           |
+| hug                   |               |                                               |           |
+| Flask API             |               |                                               |           |
+| Flask-RESTful         |               |                                               |           |
+| Morepath              |               |                                               |           |
+| Piston                |               |   TODO                                        |           |
+| Pycnic                |               |                                               |           |
+| Python REST API fr.   |               |                                               |           |
+| Ramses                |               |                                               |           |
+| RESTArt               |               |                                               |           |
+| restless              |               |                                               |           |
+| ripozo                |               |                                               |           |
+| sandman               |               |                                               |           |
+| Tastypie              |               |                                               |           |
 
 Table: Informace o frameworcích {#tab:informace}

@@ -93,6 +93,8 @@ filter_hotfix_1() {
 			-e "/^\\\begin\{longtable\}/,/\\\label\{tab:srovnani\}/ {\
 				s/^(\\\begin\{longtable\}.*$)/\\\begin\{landscape\}\n\1\n\\\pagebreak/; }" \
 			-e 's/\\end\{longtable\}/\\end\{longtable\}\n\\end\{landscape\}/g' \
+			-e 's/@\{\}llllllllll@\{\}/@\{\}lllrrrrrrr@\{\}/' \
+			-e 's/@\{\}llll@\{\}/@\{\}lllr@\{\}/' \
 			"$1" || echo "filter hotfix_realizace failed" >&2
 	fi
 }
