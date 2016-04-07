@@ -93,7 +93,8 @@ Dokumentace obsahuje kapitolu o HATEOAS [@djangoresthateoas], která uvádí:
 > Co ale (Django) REST framework neumí, je vytváření strojově čitelných formátů hypermédií jako HAL, Collection+JSON, JSON API či HTML mikroformátů ve výchozí konfiguraci, či automagické generování plně HATEOAS API s hypermediálním popisem formulářů a sémanticky označeným hyperlinky.
 > To by vyžadovalo provedení takových rozhodnutí o designu API, které by ve skutečnosti měly zůstat vně pole působnosti tohoto frameworku.
 
-Hodnotím kladně, že se o principu HATEOAS v dokumentaci alespoň hovoří, naplnění konkrétních implementací však zůstává v režii architekta či programátora.
+Hodnotím kladně, že se o principu HATEOAS v dokumentaci alespoň hovoří, naplnění konkrétních implementací však zůstává v režii architekta či programátora;
+Django REST framework k tomu poskytuje dostatečné možnosti.
 
 ### Přístupová práva
 
