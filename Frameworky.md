@@ -163,10 +163,10 @@ TODO pospat sloupce s více hodnotami
 
 | Framework             | druh licence  | webový fr.    |        MB |     řádky |     ř. včetně |   závisl. |   Py  |    GitHub |          PyPI |
 |-----------------------+---------------+---------------+-----------+-----------+---------------+-----------+-------+-----------+---------------|
-| Cornice               | LGPL          | lightweight   |        12 | **1 198** |    **24 625** |       2/9 |   3+2 |       270 |        10 903 |
+| Cornice               | LGPL          | lightweight   |        12 | **1 198** |        24 625 |       2/9 |   3+2 |       270 |        10 903 |
 | Django REST fr.       | permisivní    | MVC           |        43 |     7 057 |        79 854 |   **1/1** |   3+2 | **5 606** |   **316 772** |
-| Eve                   | permisivní    | lightweight   |    **10** |     3 440 |        35 009 |     10/10 |   3+2 |     3 121 |         7 480 |
-| Falcon                |               |               |           |           |               |           |       |           |               |
+| Eve                   | permisivní    | lightweight   |        10 |     3 440 |        35 009 |     10/10 |   3+2 |     3 121 |         7 480 |
+| Falcon                | permisivní    | standalone    |   **0,9** |     2 352 |     **3 034** |       2/2 |   3+2 |     2 756 |        51 071 |
 | hug                   |               |               |           |           |               |           |       |           |               |
 | Flask API             |               |               |           |           |               |           |       |           |               |
 | Flask-RESTful         |               |               |           |           |               |           |       |           |               |
@@ -188,7 +188,7 @@ Table: Srovnání měřitelných kritérií {#tab:srovnani}
 | Cornice               | Pyramid       | \url{https://cornice.readthedocs.org/}        | 1.2.1     |
 | Django REST fr.       | Django        | \url{http://www.django-rest-framework.org/}   | 3.3.3     |
 | Eve                   | Flask         | \url{http://python-eve.org/}                  | 0.6.3     |
-| Falcon                |               |                                               |           |
+| Falcon                | --            | \url{http://falconframework.org/}             | 0.3.0     |
 | hug                   |               |                                               |           |
 | Flask API             |               |                                               |           |
 | Flask-RESTful         |               |                                               |           |
