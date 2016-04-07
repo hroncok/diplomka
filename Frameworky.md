@@ -156,9 +156,9 @@ TODO pospat sloupce s více hodnotami (pokud budou), zarovnat číselné hodnoty
 
 | Framework             | druh licence  | velikost  | závislosti    | webový fr.    | Python    | GitHub    | PyPI          |
 |-----------------------+---------------+-----------+---------------+---------------+-----------+-----------+---------------|
-| Cornice               | LGPL          | 20 MB     | 2/9           | lightweight   | 3+2       |       270 |        10 903 |
-| Django REST fr.       | permisivní    | 51 MB     | **1/1**       | MVC           | 3+2       | **5 606** |   **316 772** |
-| Eve                   | permisivní    | **18 MB** | 10/10         | lightweight   | 3+2       |     3 121 |         7 480 |
+| Cornice               | LGPL          | 12 MB     | 2/9           | lightweight   | 3+2       |       270 |        10 903 |
+| Django REST fr.       | permisivní    | 43 MB     | **1/1**       | MVC           | 3+2       | **5 606** |   **316 772** |
+| Eve                   | permisivní    | **10 MB** | 10/10         | lightweight   | 3+2       |     3 121 |         7 480 |
 | Falcon                |               |           |               |               |           |           |               |
 | hug                   |               |           |               |               |           |           |               |
 | Flask API             |               |           |               |               |           |           |               |
