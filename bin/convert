@@ -5,7 +5,7 @@
 
 PANDOC_OPTS="-f markdown -t latex --no-wrap --listings --no-tex-ligatures --biblatex --bibliography=library.bib"
 FILTERS_PRE=( 'title' 'header_label' 'hotfix_2' )
-FILTERS_POST=( 'listings' 'hyperrefs' 'hyperrefs_page' 'itemizes' 'vlna' 'subsubsection' 'hotfix_1' 'dash' )
+FILTERS_POST=( 'listings' 'hyperrefs' 'hyperrefs_page' 'itemizes' 'vlna' 'subsubsection' 'hotfix_1' 'dash' 'tilda' )
 FILES="${@:-*.md *.yml}"
 SKIP_FILES="README.md"
 
@@ -121,6 +121,12 @@ filter_vlna() {
 filter_dash() {
 	$SED -i 's| -\\/- | -- |g' \
 		"$1" || echo "dash replacing failed" >&2
+}
+
+# Put tildas back
+filter_tilda() {
+	$SED -i 's|\\textasciitilde{}|~|g' \
+		"$1" || echo "tilda replacing failed" >&2
 }
 
 # Convert meta.yml to LaTeX
