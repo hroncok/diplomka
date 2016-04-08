@@ -167,7 +167,7 @@ TODO pospat sloupce s více hodnotami
 | Django REST fr.       | permisivní    | MVC           |        43 |     7 057 |        79 854 |   **1/1** |   3+2 | **5 606** |   **316 772** |
 | Eve                   | permisivní    | lightweight   |        10 |     3 440 |        35 009 |     10/10 |   3+2 |     3 121 |         7 480 |
 | Falcon                | permisivní    | standalone    |   **0,9** |     2 352 |     **3 034** |       2/2 |   3+2 |     2 756 |        51 071 |
-| hug                   |               |               |           |           |               |           |       |           |               |
+| hug                   | permisivní    | lightweight   |         4 |     2 367 |        16 545 |       2/4 |     3 |     3 020 |         7 674 |
 | Flask API             |               |               |           |           |               |           |       |           |               |
 | Flask-RESTful         |               |               |           |           |               |           |       |           |               |
 | Morepath              |               |               |           |           |               |           |       |           |               |
@@ -189,7 +189,7 @@ Table: Srovnání měřitelných kritérií {#tab:srovnani}
 | Django REST fr.       | Django        | \url{http://www.django-rest-framework.org/}   | 3.3.3     |
 | Eve                   | Flask         | \url{http://python-eve.org/}                  | 0.6.3     |
 | Falcon                | --            | \url{http://falconframework.org/}             | 0.3.0     |
-| hug                   |               |                                               |           |
+| hug                   | Falcon        | \url{http://www.hug.rest/}                    | 2.0.6     |
 | Flask API             |               |                                               |           |
 | Flask-RESTful         |               |                                               |           |
 | Morepath              |               |                                               |           |
