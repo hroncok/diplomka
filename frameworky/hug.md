@@ -32,6 +32,28 @@ def happy_birthday(name: hug.types.text, age: hug.types.number,
     """Says happy birthday to a user"""
     return {'message': 'Happy {0} Birthday {1}!'.format(age, name),
             'took': float(hug_timer)}
+
+
+# GET /happy_birthday?name=Timothy&age=26
+{
+    "took": 0,
+    "message": "Happy 26 Birthday Timothy"
+}
+
+# GET /happy_birthday?name=Timothy
+{
+    "errors": {
+        "age": "Required parameter not supplied"
+    }
+}
+
+# GET /happy_birthday?name=Timothy&age=twentysix
+{
+    "errors": {
+        "age": "Invalid whole number provided"
+    }
+}
+
 ```
 
 Hug je mladý projekt, vznikl teprve v červenci roku 2015.
