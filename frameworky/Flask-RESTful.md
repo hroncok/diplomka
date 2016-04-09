@@ -3,6 +3,20 @@ Flask-RESTful
 
 ![Logo Flask-RESTful [@flaskresfulpic]{#pic:flaskresful}](images/flask-restful)
 
+Flask-RESTful je rozšíření Flasku, které přidává podporu pro rychlé vyváření RESTových API.
+Jedná se o tenkou vrstvu abstrakce, která by měla fungovat s existujícím ORM a dalšími knihovnami.
+Flask-RESTful je navržen tak, aby ho uživatelé obeznámení s Flaskem co nejrychleji pochopili. [@flaskresful]
+
+Za vývojem Flask-RESTful stojí firma Twilio, ale přispělo do něj více než sto jednotlivců.
+Je zveřejněn pod BSD licencí [@BSD3].
+Závisí na Flasku a dalších třech modulech, celkově tak nepřímo závisí na modulech devíti a zabírá 9~MB prostoru.
+Na GitHubu má necelé dva tisíce hvězdiček a za poslední měsíc byl stažen z PyPI více než stosedmdesáttisíckrát.
+Podporuje obě verze Pythonu.
+Projekt vznikl v roce 2012, od té doby vyšlo 27 verzí, poslední v prosinci roku 2015.
+
+Příklad použití můžete vidět [v ukázce](#code:flaskresful@)[^zhusteno].
+
+[^zhusteno]: Příklad byl mírně zhuštěn za účelem lepší prezentace na straně A4.
 
 ```{caption="{#code:flaskresful}Příklad použití z dokumentace Flask-RESTful \autocite{flaskrestfuldoc}" .python}
 from flask import Flask
@@ -56,3 +70,7 @@ api.add_resource(Todo, '/todos/<todo_id>')
 if __name__ == '__main__':
     app.run(debug=True)
 ```
+
+Flask-RESTful je nízkoúrovňový framework, který zjednodušuje tvorbu REST API oproti použití čistého Flasku,
+ale nepřináší žádné pokročilé funkce jako podporu autentizace a autorizace, či prolinkování a HATEOAS.
+Ze zajímavých funkcí Flask-RESTful mohu jmenovat vyjednávání o obsahu či podporu *blueprintů* (koncept z Flasku [@blueprint]).
