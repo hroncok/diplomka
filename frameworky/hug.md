@@ -58,7 +58,7 @@ Z pohledu do kódu [@hugauth] je patrné, že je možné se autentizovat pomocí
  * pomocí API klíče v HTTP hlavičce
  * pomocí tokenu v HTTP hlavičce
 
-O autorizaci jsme však bohužel v kódu nic nenašel.
+O autorizaci jsem však bohužel v kódu nic nenašel.
 
 Hug je moderní framework pro vytváření různých API v Pythonu.
 Jeho filozofie je rozhodně zajímavá, ale v současnosti jej hodnotím jako příliš mladý a zatím stále se rozvíjející projekt.
