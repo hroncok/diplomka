@@ -70,7 +70,7 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
-Projekt v současnosti přímo závisí jen na frameworku Flask a tím má nepřímo pět závislostí a zabírá s nimi 6~MB místa.
+Projekt v současnosti přímo závisí jen na frameworku Flask a tím má nepřímo pět závislostí a zabírá s nimi 6~MiB místa.
 Je distribuován pod BSD licencí [@BSD2] a podporuje obě verze Pythonu.
 
 Do budoucna je plánováno [@flaskapi][@flaskapigh]:

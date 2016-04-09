@@ -5,7 +5,7 @@ Cornice je RESTový framework pro Pyramid [@cornice].
 Je vyvíjen lidmi z Mozilla Services a vydán pod Mozilla Public License 2.0 [@mpl2],
 čímž se řadí do kategorie **LGPL**.
 Závisí na dvou dalších modulech (`pyramid` a `simplejson`),
-čímž nepřímo závisí na celkem devíti modulech a zabírá s nimi 12 MB.
+čímž nepřímo závisí na celkem devíti modulech a zabírá s nimi 12~MiB.
 Podporuje obě verze Pythonu. Na GitHubu má 270 hvězd a za poslední měsíc byl stažen 10903krát.
 
 Projekt vznikl v roce 2011 a od té doby vyšla již více než dvacítka verzí.

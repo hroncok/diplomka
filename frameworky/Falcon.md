@@ -13,7 +13,7 @@ Mezi hlavní přednosti podle webové stránky [@falcon] patří:
  * svoboda volby detailů
  * spolehlivost
 
-Falcon je bezesporu minimalistický, společně s závislostmi zabírá pouze 0,9~MB místa.
+Falcon je bezesporu minimalistický, společně s závislostmi zabírá pouze 0,9~MiB místa.
 Je šířen pod permisivní Apache licencí [@apache] a nevyžaduje žádný webový framework.
 
 Příklad použití můžete vidět [v ukázce](#code:falcon).

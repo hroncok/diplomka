@@ -42,7 +42,7 @@ Měření budu provádět tak, že daný framework nainstaluji do prázdného vi
 Počet řádků kódu
 ----------------
 
-Možná ještě důležitější než samotná velikost v MB je počet řádek kódu. K měření použiji nástroj cloc [@cloc], budu počítat pouze řádky v jazyce Python.
+Možná ještě důležitější než samotná velikost v MiB je počet řádek kódu. K měření použiji nástroj cloc [@cloc], budu počítat pouze řádky v jazyce Python.
 Před měřením odstraním z modulů testy. Ve srovnávací tabulce budu uvádět jak počet řádků samotného frameworku, tak celého závislostního aparátu.
 
 Počet závislostí
@@ -161,7 +161,7 @@ TODO pospat sloupce s více hodnotami
 
 [V tabulce](#tab:informace@) pak najdete informační přehled o zkoumaných frameworcích: webový framework, URL domovské stránky a číslo zkoumané verze.
 
-| Framework             | druh licence  | webový fr.        |        MB |     řádky |     ř. včetně |   závisl. |   Py  |    GitHub |          PyPI |
+| Framework             | druh licence  | webový fr.        |       MiB |     řádky |     ř. včetně |   závisl. |   Py  |    GitHub |          PyPI |
 |-----------------------+---------------+-------------------+-----------+-----------+---------------+-----------+-------+-----------+---------------|
 | Cornice               | LGPL          | lightweight       |        12 |     1 198 |        24 625 |       2/9 |   3+2 |       270 |        10 903 |
 | Django REST fr.       | permisivní    | MVC               |        43 |     7 057 |        79 854 |   **1/1** |   3+2 | **5 606** |   **316 772** |
