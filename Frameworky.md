@@ -89,7 +89,7 @@ Přestože Python 3 vyšel již v roce 2008 [@py3year], některé knihovny třet
 Je tedy třeba se bohužel zabývat i tím, jestli framework Python 3 podporuje. Stejně tak může být pro někoho důležité,
 jestli framework podporuje Python 2, například kvůli tomu, že nějaké další knihovny, které používá, Python 3 nepodporují.
 
-Škálu jsme tedy stanovil takto:
+Škálu jsem tedy stanovil takto:
 
  1. podpora obou verzí Pythonu,
  2. podpora pouze pro Python 3,
