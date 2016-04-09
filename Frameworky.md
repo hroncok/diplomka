@@ -191,7 +191,7 @@ Table: Srovnání měřitelných kritérií {#tab:srovnani}
 | Falcon                | --            | \url{http://falconframework.org/}             | 0.3.0     |
 | hug                   | Falcon        | \url{http://www.hug.rest/}                    | 2.0.6     |
 | Flask API             | Flask         | \url{http://www.flaskapi.org/}                | 0.6.5     |
-| Flask-RESTful         | Flask         | \url{https://flask-restful.readthedocs.org}   | 0.3.5     |
+| Flask-RESTful         | Flask         | \url{https://flask-restful.readthedocs.org/}  | 0.3.5     |
 | Morepath              |               |                                               |           |
 | Piston                |               |   TODO                                        |           |
 | Pycnic                |               |                                               |           |
