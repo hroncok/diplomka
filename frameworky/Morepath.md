@@ -18,6 +18,9 @@ obsahuje však mnoho zajímavých funkcí [@morepathsp].
 
 V případě RESTu jde hlavně o jednoduché prolinkování v duchu HATEOAS, které můžete vidět [v ukázce](#code:morepath).
 Komplexnější příklad bohužel dokumentace neobsahuje.
+Za účelem vytvoření webové služby je potřeba použít modely;
+ty mohou být v Morepathu reprezentovány objekty v paměti, abstrakcí databázové tabulky pomocí ORM, či uloženy v NoSQL databázi.
+
 
 ```{caption="{#code:morepath}Příklad použití z dokumentace Morepathu \autocite{morepathrest}" .python}
 @App.json(model=DocumentCollection)
@@ -34,4 +37,4 @@ Přístupová práva umí Morepath nastavovat na úrovni modelů či *views* a a
 O žádných speciálních metodách autentizace v případě API se dokumentace nezmiňuje.
 
 Hodnotím Morepath jako zajímavý webový mikroframewrok, pokud uživatel touží po modelech, ale nechce použít „velký“ MVC framework jako Django.
-Za účelem vytvoření čistě RESTové služby nad již vytvořenou datovou strukturou mi však nepřijde vhodný, dokumentace neuvádí jiné možnosti pro tvorbu API než ty založené na modelech.
+Poskytnutím mechanismů pro tvorbu RESTful API přímo v základu frameworku se řadí mezi ojedinělé Python webové frameworky.
