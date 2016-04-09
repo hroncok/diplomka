@@ -170,11 +170,11 @@ TODO pospat sloupce s více hodnotami
 | hug                   | permisivní    | lightweight       |         4 |     2 367 |        16 545 |       2/4 |     3 |     3 020 |         7 674 |
 | Flask API             | permisivní    | lightweight       |         6 |     1 198 |        25 511 |       1/5 |   3+2 |       688 |         7 594 |
 | Flask-RESTful         | permisivní    | lightweight       |         9 |   **967** |        31 713 |       4/9 |   3+2 |     1 920 |       172 775 |
-| Morepath              |               |                   |           |           |               |           |       |           |               |
-| Piston                |               |                   |           |      TODO |               |           |       |           |               |
+| Morepath              | permisivní    | **standalone**    |         4 |     8 631 |        19 960 |       4/5 |   3+2 |       226 |         1 594 |
+| Piston                |               |                   |           |           |               |           |       |           |               |
 | Pycnic                |               |                   |           |           |               |           |       |           |               |
 | Python REST API fr.   |               |                   |           |           |               |           |       |           |               |
-| Ramses                |               |                   |           |           |               |           |       |           |               |
+| Ramses                |               |                   |           |      TODO |               |           |       |           |               |
 | RESTArt               |               |                   |           |           |               |           |       |           |               |
 | restless              |               |                   |           |           |               |           |       |           |               |
 | ripozo                |               |                   |           |           |               |           |       |           |               |
@@ -192,11 +192,11 @@ Table: Srovnání měřitelných kritérií {#tab:srovnani}
 | hug                   | Falcon        | \url{http://www.hug.rest/}                    | 2.0.6     |
 | Flask API             | Flask         | \url{http://www.flaskapi.org/}                | 0.6.5     |
 | Flask-RESTful         | Flask         | \url{https://flask-restful.readthedocs.org/}  | 0.3.5     |
-| Morepath              |               |                                               |           |
-| Piston                |               |   TODO                                        |           |
+| Morepath              | --            | \url{https://morepath.readthedocs.org/}       | 0.13      |
+| Piston                |               |                                               |           |
 | Pycnic                |               |                                               |           |
 | Python REST API fr.   |               |                                               |           |
-| Ramses                |               |                                               |           |
+| Ramses                |               | TODO                                          |           |
 | RESTArt               |               |                                               |           |
 | restless              |               |                                               |           |
 | ripozo                |               |                                               |           |
