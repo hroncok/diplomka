@@ -128,7 +128,7 @@ Oblíbenost
 Čím více lidí a projektů daný framework využívá, tím je větší šance, že v případě problému narazíme
 na hotové řešení. Oblíbenost je subjektivní pojem a tak se špatně měří, využiji ale dva prvky, které o oblíbenosti mohou něco prozradit.
 
-Většina zkoumaných frameworků má svůj kód zveřejněn na GitHubu (TODO všechny?), kde uživatelé mohou jednotlivé projekty zařadit mezi své oblíbené tím, že jím dají hvězdu (*star*) [@ghstars].
+Většina zkoumaných frameworků má svůj kód zveřejněn na GitHubu, kde uživatelé mohou jednotlivé projekty zařadit mezi své oblíbené tím, že jím dají hvězdu (*star*) [@ghstars].
 Počet těchto hvězd pak může mít částečnou vypovídající schopnost.
 
 Frameworky jdou zároveň stáhnout z *Python Package Indexu*, kde lze vidět počet stažení za poslední den, týden a měsíc [@pypi]. Tyto informace jsou však často zkreslené kvůli různým automatickým nástrojům, které stahují všechny balíčky [@pypibad]. Budu uvádět jen hodnotu stažení za poslední měsíc, v době psaní tohoto textu.
@@ -171,7 +171,7 @@ TODO pospat sloupce s více hodnotami
 | Flask API             | permisivní    | lightweight       |         6 |     1 198 |        25 511 |       1/5 |   3+2 |       688 |         7 594 |
 | Flask-RESTful         | permisivní    | lightweight       |         9 |   **967** |        31 713 |       4/9 |   3+2 |     1 920 |       172 775 |
 | Morepath              | permisivní    | **standalone**    |         4 |     8 631 |        19 960 |       4/5 |   3+2 |       226 |         1 594 |
-| Piston                |               |                   |           |           |               |           |       |           |               |
+| Piston                | permisivní    | MVC               |        49 |     2 050 |        78 362 |   **1/1** |     2 |        -- |         2 419 |
 | Pycnic                |               |                   |           |           |               |           |       |           |               |
 | Python REST API fr.   |               |                   |           |           |               |           |       |           |               |
 | Ramses                |               |                   |           |      TODO |               |           |       |           |               |
@@ -183,24 +183,24 @@ TODO pospat sloupce s více hodnotami
 
 Table: Srovnání měřitelných kritérií {#tab:srovnani}
 
-| Framework             | webový fr.    | webová stránka                                | zk. verze |
-|-----------------------+---------------+-----------------------------------------------+-----------|
-| Cornice               | Pyramid       | \url{https://cornice.readthedocs.org/}        | 1.2.1     |
-| Django REST fr.       | Django        | \url{http://www.django-rest-framework.org/}   | 3.3.3     |
-| Eve                   | Flask         | \url{http://python-eve.org/}                  | 0.6.3     |
-| Falcon                | --            | \url{http://falconframework.org/}             | 0.3.0     |
-| hug                   | Falcon        | \url{http://www.hug.rest/}                    | 2.0.6     |
-| Flask API             | Flask         | \url{http://www.flaskapi.org/}                | 0.6.5     |
-| Flask-RESTful         | Flask         | \url{https://flask-restful.readthedocs.org/}  | 0.3.5     |
-| Morepath              | --            | \url{https://morepath.readthedocs.org/}       | 0.13      |
-| Piston                |               |                                               |           |
-| Pycnic                |               |                                               |           |
-| Python REST API fr.   |               |                                               |           |
-| Ramses                |               | TODO                                          |           |
-| RESTArt               |               |                                               |           |
-| restless              |               |                                               |           |
-| ripozo                |               |                                               |           |
-| sandman               |               |                                               |           |
-| Tastypie              |               |                                               |           |
+| Framework             | webový fr.    | webová stránka                                        | zk. verze |
+|-----------------------+---------------+-------------------------------------------------------+-----------|
+| Cornice               | Pyramid       | \url{https://cornice.readthedocs.org/}                | 1.2.1     |
+| Django REST fr.       | Django        | \url{http://www.django-rest-framework.org/}           | 3.3.3     |
+| Eve                   | Flask         | \url{http://python-eve.org/}                          | 0.6.3     |
+| Falcon                | --            | \url{http://falconframework.org/}                     | 0.3.0     |
+| hug                   | Falcon        | \url{http://www.hug.rest/}                            | 2.0.6     |
+| Flask API             | Flask         | \url{http://www.flaskapi.org/}                        | 0.6.5     |
+| Flask-RESTful         | Flask         | \url{https://flask-restful.readthedocs.org/}          | 0.3.5     |
+| Morepath              | --            | \url{https://morepath.readthedocs.org/}               | 0.13      |
+| Piston                | Django        | \url{https://bitbucket.org/jespern/django-piston/}    | 0.2.3     |
+| Pycnic                |               |                                                       |           |
+| Python REST API fr.   |               |                                                       |           |
+| Ramses                |               | TODO                                                  |           |
+| RESTArt               |               |                                                       |           |
+| restless              |               |                                                       |           |
+| ripozo                |               |                                                       |           |
+| sandman               |               |                                                       |           |
+| Tastypie              |               |                                                       |           |
 
 Table: Informace o frameworcích {#tab:informace}
