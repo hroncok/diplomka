@@ -21,7 +21,7 @@ Kromě něj ale do projektu přispělo více než pět set přispěvatelů [@dja
 Projekt navíc absolvoval crowdfundingovou kampaň a podpořilo jej mnoho firem i jednotlivců [@djangorestkickstarter].
 Zveřejněn je podobně jako Django pod BSD licencí [@BSD2].
 
-Příklad použití z dokumentace, mírně upravený, aby se vešel na stránku, najdete [v ukázce](#code:djangorest@).
+Příklad použití z dokumentace, mírně upravený, aby se vešel na stránku, najdete [v ukázce](#code:djangorest).
 
 ```{caption="{#code:djangorest}Příklad použití z dokumentace Django REST frameworku \autocite{djangorestdoc}" .python}
 # Serializers

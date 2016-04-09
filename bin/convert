@@ -53,7 +53,7 @@ filter_listings() {
 			s/caption=([^]]+).*$/\n\\\caption{\1}/; \
 			s/label=([^], ]+)(.*)$/\2\n\\\label{\1}/; \
 			s/language=([^], ]+)(.*)$/\2\n\\\begin{minted}[$opts]{\L\1}/; \
-			s/^[^\n]*/\\\begin{listing}/; }" \
+			s/^[^\n]*/\\\begin{listing}[htbp]/; }" \
 		-e 's/\\end\{lstlisting\}/\\end{minted}\n\\end{listing}/' \
 		-e 's/\\lstinline!([^!]*)!/\\verb!\1!/g' \
 		-e 's/\\lstinline"([^"]*)"/\\verb"\1"/g' \

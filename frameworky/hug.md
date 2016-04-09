@@ -18,7 +18,7 @@ Mezi hlavní cíle hugu patří:
 Kvůli poslednímu bodu je hug kompatibilní pouze s Pythonem 3
 a pro webová API staví na frameworku Falcon, o kterém jsem psal [v části](#falcon). [@huggithub]
 
-Příklad použití s využitím typové anotace dostupné od Pythonu 3.5 můžete vidět [v ukázce](#code:hug@).
+Příklad použití s využitím typové anotace dostupné od Pythonu 3.5 můžete vidět [v ukázce](#code:hug).
 
 ```{caption="{#code:hug}Příklad použití z dokumentace hugu \autocite{hugdoc}" .python}
 """First hug API (local and HTTP access)"""

@@ -12,7 +12,7 @@ Tom Christie se od roku 2014 (kdy projekt i vznikl) na projektu aktivně nepodí
 kteří projekt udržují a rozvíjí.
 
 Pomocí Flask API je nyní možné webově procházet API, jak můžete vidět [na obrázku](#pic:flaskapibrowsable),
-ale tvorba API zatím není příliš automatizovaná, [vizte příklad](#code:flaskapi@)[^zhusteno].
+ale tvorba API zatím není příliš automatizovaná, [vizte příklad](#code:flaskapi)[^zhusteno].
 
 [^zhusteno]: Příklad byl mírně zhuštěn za účelem lepší prezentace na straně A4.
 

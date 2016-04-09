@@ -29,7 +29,7 @@ pokud možno co nejvíce automaticky. Prakticky bez práce nabízí mj. tyto fun
  * verzování API,
  * generovanou dokumentaci.
 
-Je tedy vidět, že možností je opravdu mnoho. Příklad použití si můžete prohlédnout [v ukázce kódu](#code:eve@).
+Je tedy vidět, že možností je opravdu mnoho. Příklad použití si můžete prohlédnout [v ukázce kódu](#code:eve).
 
 ```{caption="{#code:eve}Příklad použití z dokumentace Eve \autocite{evedoc}" .python}
 # run.py
@@ -86,7 +86,7 @@ Eve závisí celkem na desíti modulech (včetně Flasku a Werkzeugu), tyto modu
 
 ### HATEOAS
 
-Eve automaticky prolinkovává jednotlivé zdroje a drží se konceptu HATEOAS [@evehateoas]. Tuto funkci není potřeba speciálně nastavovat ani implementovat, je zapnutá sama od sebe. Každá odpověď na metodu GET obsahuje položku `_links` s odkazy na rodiče, subsekce, předchozí a další stránky apod. Příklad můžete vidět [v ukázce](#code:evehateoas@). Autoři pracují na přímé podpoře pro JSON-LD/HAL/Siren [@eveslides].
+Eve automaticky prolinkovává jednotlivé zdroje a drží se konceptu HATEOAS [@evehateoas]. Tuto funkci není potřeba speciálně nastavovat ani implementovat, je zapnutá sama od sebe. Každá odpověď na metodu GET obsahuje položku `_links` s odkazy na rodiče, subsekce, předchozí a další stránky apod. Příklad můžete vidět [v ukázce](#code:evehateoas). Autoři pracují na přímé podpoře pro JSON-LD/HAL/Siren [@eveslides].
 
 ```{caption="{#code:evehateoas}Příklad HATEOAS principu z Eve \autocite{evehateoas}" .python}
 {

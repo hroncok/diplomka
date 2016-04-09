@@ -14,7 +14,7 @@ Na GitHubu má necelé dva tisíce hvězdiček a za poslední měsíc byl staže
 Podporuje obě verze Pythonu.
 Projekt vznikl v roce 2012, od té doby vyšlo 27 verzí, poslední v prosinci roku 2015.
 
-Příklad použití můžete vidět [v ukázce](#code:flaskresful@)[^zhusteno].
+Příklad použití můžete vidět [v ukázce](#code:flaskresful)[^zhusteno].
 
 [^zhusteno]: Příklad byl mírně zhuštěn za účelem lepší prezentace na straně A4.
 
