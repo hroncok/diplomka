@@ -163,13 +163,13 @@ TODO pospat sloupce s více hodnotami
 
 | Framework             | druh licence  | webový fr.        |        MB |     řádky |     ř. včetně |   závisl. |   Py  |    GitHub |          PyPI |
 |-----------------------+---------------+-------------------+-----------+-----------+---------------+-----------+-------+-----------+---------------|
-| Cornice               | LGPL          | lightweight       |        12 | **1 198** |        24 625 |       2/9 |   3+2 |       270 |        10 903 |
+| Cornice               | LGPL          | lightweight       |        12 |     1 198 |        24 625 |       2/9 |   3+2 |       270 |        10 903 |
 | Django REST fr.       | permisivní    | MVC               |        43 |     7 057 |        79 854 |   **1/1** |   3+2 | **5 606** |   **316 772** |
 | Eve                   | permisivní    | lightweight       |        10 |     3 440 |        35 009 |     10/10 |   3+2 |     3 121 |         7 480 |
 | Falcon                | permisivní    | **standalone**    |   **0,9** |     2 352 |     **3 034** |       2/2 |   3+2 |     2 756 |        51 071 |
 | hug                   | permisivní    | lightweight       |         4 |     2 367 |        16 545 |       2/4 |     3 |     3 020 |         7 674 |
-| Flask API             | permisivní    | lightweight       |         6 | **1 198** |        25 511 |       1/5 |   3+2 |       688 |         7 594 |
-| Flask-RESTful         |               |                   |           |           |               |           |       |           |               |
+| Flask API             | permisivní    | lightweight       |         6 |     1 198 |        25 511 |       1/5 |   3+2 |       688 |         7 594 |
+| Flask-RESTful         | permisivní    | lightweight       |         9 |   **967** |        31 713 |       4/9 |   3+2 |     1 920 |       172 775 |
 | Morepath              |               |                   |           |           |               |           |       |           |               |
 | Piston                |               |                   |           |      TODO |               |           |       |           |               |
 | Pycnic                |               |                   |           |           |               |           |       |           |               |
@@ -191,7 +191,7 @@ Table: Srovnání měřitelných kritérií {#tab:srovnani}
 | Falcon                | --            | \url{http://falconframework.org/}             | 0.3.0     |
 | hug                   | Falcon        | \url{http://www.hug.rest/}                    | 2.0.6     |
 | Flask API             | Flask         | \url{http://www.flaskapi.org/}                | 0.6.5     |
-| Flask-RESTful         |               |                                               |           |
+| Flask-RESTful         | Flask         | \url{https://flask-restful.readthedocs.org}   | 0.3.5     |
 | Morepath              |               |                                               |           |
 | Piston                |               |   TODO                                        |           |
 | Pycnic                |               |                                               |           |
