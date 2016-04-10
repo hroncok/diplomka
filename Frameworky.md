@@ -9,7 +9,7 @@ Hodnotící kritéria {#kriteria}
 
 Než se pustím do zkoumání a hodnocení jednotlivých frameworků, je třeba si stanovit hodnotící kritéria,
 která mi umožní frameworky objektivně porovnávat a vybrat kandidáty pro kapitolu TODO.
-Pokud to bude alespoň trochu možné, tak pro kritérium stanovím stupnici, na základě které půjde frameworky mezi sebou porovnat.
+Pokud to bude alespoň trochu možné, tak pro kritérium stanovím stupnici, na základě které bude možné frameworky mezi sebou porovnat.
 
 TODO reorganizovat kritéria nějak „podle důležitosti“, možná podle pořadí v tabulce.
 
@@ -58,7 +58,7 @@ Některé frameworky fungují samostatně, jiné vyžadují nějaký Python fram
 Některé webové frameworky slouží čistě jako vrstva pro poskytovaní obsahu přes protokol HTTP, jiné
 striktně určují, jak bude webová aplikace vnitřně navržena. Škálu jsem tedy nastavil takto:
 
- 1. **Standalone** je kategorie pro frameworky, které lze pro RESful API použít samostatně.
+ 1. **Standalone** je kategorie pro frameworky, které lze pro RESTful API použít samostatně.
  2. **Lightweight** je kategorie pro frameworky, které vyžadují webový microframework, který slouží pouze jako vrstva mezi Pythonem a HTTP. Takovými microframeworky jsou třeba Werkzeug, Flask, Pyramid nebo Morepath.
  3. **MVC** je kategorie pro frameworky typu *Model-view-controller*, především Django[^django].
 
