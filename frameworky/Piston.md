@@ -5,19 +5,19 @@ Piston
 
 Piston je, respektive spíše byl, mini-framework pro Django určený pro vytváření RESTful API [@piston].
 
-Pisotn nabízí následující funkce [@piston]:
+Pisotn podle své dokumentace nabízí následující funkce [@piston]:
 
  * Piston je interně svázán s Djangem;
  * podporuje OAuth bez nutnosti použití další knihovny;
  * nevyžaduje vazbu na modely, umožňuje vytvářet nezávislé zdroje;
- * komunikuje pomocí JSONu, YAMLu, Python picklu a XML (a taky pomocí HATEOAS);
- * jde o Python knihovnu, kterou lze snadno oužít;
- * respektuje a nabádá ke správnému využití HTTP (návratové kódy apod.);
+ * komunikuje pomocí JSONu, YAMLu, Python picklu a XML (a také pomocí HATEOAS);
+ * jde o Python knihovnu, kterou lze snadno použít;
+ * respektuje a nabádá ke správnému využití HTTP protokolu (návratové kódy apod.);
  * má zabudovanou (volitelnou) validaci vstupů (pomocí Djanga), zaškrcování přístupu apod.;
  * podporuje streamování s malým využitím paměti;
  * neplete se do cesty.
 
-Projekt vnikl již v roce 2008, tedy tři roky po zveřejnění Djanga samotného.
+Projekt vnikl již v roce 2008, tedy tři roky po zveřejnění Djanga samotného, pod záštitou Bitbucketu.
 V roce 2010 jej však původní autor Jesper Nøhr přestal vyvíjet.
 Vývoje se následující rok ujal Joshua Ginsberg,
 který ale vydal jen dvě nové verze a vývoj v na začátku roku 2012 taktéž opustil.
@@ -102,3 +102,20 @@ class ArbitraryDataHandler(BaseHandler):
 
         return { 'user': user, 'data_length': len(data) }
 ```
+
+### HATEOAS
+
+Přestože o sobě Piston říká, že komunikuje pomocí HATEOAS principu [@piston],
+v celé dokumentaci není nikde zmínka o tom, jak z jednoho zdroje linkovat zdroj jiný.
+Veškeré příklady místo linkování zobrazují další zdroj vnořeně, poměrně komplikovaným způsobem lze uvést alespoň ID [@pistonid].
+I když by bylo možné si pro každý druh odkazu nadefinovat vlastní metodu, považuji to za zbytečně komplikované.
+Myslím, že použití zkraty HATEOAS je tedy v popisu tohoto frameworku poměrně neoprávněné.
+
+### Přístupová práva
+
+Piston nabízí dva druhy autentizace: základní HTTP autentizaci jménem a heslem a OAuth 1, Další způsoby je možné doimplementovat [@pistonauth].
+Pro autorizaci lze použít zabudovaný mechanismus, který umožňuje část API otevřít anonymním uživatelům a část pouze přihlášeným [@pistonanon].
+Pro komplikovanější použití je nutné manuálně kontrolovat, který uživatel je přihlášen, a podle toho nějakou akci provést či neprovést.
+
+Piston je v dnešní době již nepoužitelný framework, jehož vývoj je úplně zastaven, vzhledem k tomu jej nemohu doporučit.
+Příliš komplikovaný způsob linkování mezi zdroji (je-li vůbec nějaký) se k tvorbě RESTful API také příliš nehodí.

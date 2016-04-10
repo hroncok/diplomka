@@ -157,7 +157,7 @@ Srovnání
 [V tabulce](#tab:srovnani@) najdete srovnání měřitelných kritérií. Jednotlivé sloupce mají zjednodušené názvy, ale jejich funkce odpovídá popisu [v části](#kriteria@).
 Tučně jsou označeny hodnoty, které dominují v daném sloupci.
 
-TODO pospat sloupce s více hodnotami
+TODO pospat sloupce s více hodnotami; napsat co znamená, když GitHub chybí
 
 [V tabulce](#tab:informace@) pak najdete informační přehled o zkoumaných frameworcích: webový framework, URL domovské stránky a číslo zkoumané verze.
 
