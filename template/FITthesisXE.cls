@@ -293,6 +293,12 @@
 	\@departmentdefinedtrue
 }
 
+\newif \if@websitedefined
+\DeclareRobustCommand {\website}[1] {
+	\def\thewebsite{#1}
+	\@websitedefinedtrue
+}
+
 \newif \if@acknowledgementsdefined
 \DeclareRobustCommand {\acknowledgements}[1] {
 	\def\theacknowledgements{#1}
@@ -356,10 +362,10 @@
 \DeclareRobustCommand {\thesistype} {%
 	\if@thesistypedefined
 		\if\@thesistype B%
-			\if@langczech {Bakalářská práce} \else {Bachelor's thesis} \fi
+			\if@langczech {Bakalářská práce}\else {Bachelor's thesis}\fi
 		\else
 			\if\@thesistype M%
-				\if@langczech {Diplomová práce} \else {Master's thesis} \fi
+				\if@langczech {Diplomová práce}\else {Master's thesis}\fi
 			\else
 				\ClassError {FITthesis} {Thesis type not specified} {Add option thesis=B for bachelor's thesis or option thesis=M for master's thesis.}
 			\fi
@@ -563,7 +569,7 @@ of works or by adapting the Work (including translation), and at the same time m
 		\noindent \textit{This thesis is a school work as defined by Copyright Act of the Czech Republic. It has been submitted at Czech Technical University in Prague, Faculty of Information Technology. The thesis is protected by the Copyright Act and its usage without author's permission is prohibited (with exceptions defined by the Copyright Act).}
 	}\fi
 	
-	\if@langczech{\subsection*{Odkaz na tuto práci} \theauthorFN{}, \theauthorGN{}. \textit{\thetitle{}}. \thesistype{}. Praha: České vysoké učení technické v~Praze, Fakulta informačních technologií, \the\year.}\else{\subsection*{Citation of this thesis} \theauthorFN{}, \theauthorGN{}. \textit{\thetitle{}}. \thesistype{}. Czech Technical University in Prague, Faculty of Information Technology, \the\year.}\fi
+	\if@langczech{\subsection*{Odkaz na tuto práci} \MakeUppercase{\theauthorFN{}}, \theauthorGN{}. \textit{\thetitle{}}. \thesistype{}. Praha: České vysoké učení technické v~Praze, Fakulta informačních technologií, \the\year.\if@websitedefined{ Dostupný také z~WWW: $\langle$\url{\thewebsite}$\rangle$.}\fi}\else{\subsection*{Citation of this thesis} \MakeUppercase{\theauthorFN{}}, \theauthorGN{}. \textit{\thetitle{}}. \thesistype{}. Czech Technical University in Prague, Faculty of Information Technology, \the\year.\if@websitedefined{ Available also from WWW: $\langle$\url{\thewebsite}$\rangle$.}\fi}\fi
 }
 
 \DeclareRobustCommand{\abstractpage}{%
