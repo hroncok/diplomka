@@ -1,4 +1,4 @@
-hug (rozšíření pro Falcon)
+hug (rozšíření pro Falcon) {#hug}
 ==========================
 
 Cílem hugu je, aby vytváření API v Pythonu bylo co nejjednodušší.

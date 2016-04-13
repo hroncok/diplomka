@@ -164,15 +164,15 @@ TODO pospat sloupce s více hodnotami; napsat co znamená, když GitHub chybí
 | Framework             | druh licence  | webový fr.        |       MiB |     řádky |     ř. včetně |   závisl. |   Py  |    GitHub |          PyPI |
 |-----------------------+---------------+-------------------+-----------+-----------+---------------+-----------+-------+-----------+---------------|
 | Cornice               | LGPL          | lightweight       |        12 |     1 198 |        24 625 |       2/9 |   3+2 |       270 |        10 903 |
-| Django REST fr.       | permisivní    | MVC               |        43 |     7 057 |        79 854 |   **1/1** |   3+2 | **5 606** |   **316 772** |
+| Django REST fr.       | permisivní    | MVC               |        43 |     7 057 |        79 854 |       1/1 |   3+2 | **5 606** |   **316 772** |
 | Eve                   | permisivní    | lightweight       |        10 |     3 440 |        35 009 |     10/10 |   3+2 |     3 121 |         7 480 |
 | Falcon                | permisivní    | **standalone**    |       0,9 |     2 352 |         3 034 |       2/2 |   3+2 |     2 756 |        51 071 |
 | hug                   | permisivní    | lightweight       |         4 |     2 367 |        16 545 |       2/4 |     3 |     3 020 |         7 674 |
 | Flask API             | permisivní    | lightweight       |         6 |       620 |        20 938 |       1/5 |   3+2 |       688 |         7 594 |
 | Flask-RESTful         | permisivní    | lightweight       |         9 |       967 |        27 718 |       4/9 |   3+2 |     1 920 |       172 775 |
 | Morepath              | permisivní    | **standalone**    |         4 |     1 940 |         9 156 |       4/5 |   3+2 |       226 |         1 594 |
-| Piston                | permisivní    | MVC               |        49 |     1 935 |        75 311 |   **1/1** |     2 |        -- |         2 419 |
-| Pycnic                | permisivní    | **standalone**    |   **0,1** |   **226** |       **226** |   **1/1** |   3+2 |        33 |           304 |
+| Piston                | permisivní    | MVC               |        49 |     1 935 |        75 311 |       1/1 |     2 |        -- |         2 419 |
+| Pycnic                | permisivní    | **standalone**    |  **0,08** |   **226** |       **226** |   **0/0** |   3+2 |        33 |           304 |
 | Python REST API fr.   |               |                   |           |           |               |           |       |           |               |
 | Ramses                |               |                   |           |      TODO |               |           |       |           |               |
 | RESTArt               |               |                   |           |           |               |           |       |           |               |
