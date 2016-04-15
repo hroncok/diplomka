@@ -53,4 +53,4 @@ Přestože se tato diplomová práce nezbývá webovými frameworky obecně, roz
 Ve výsledcích je kromě Pycnicu i Falcon a hug, které jsem zkoumal [v části](#falcon), [respektive](#hug).
 Výsledky můžete vidět v grafu [na obrázku](#pic:pycnicbench).
 
-![Výsledky benchmarku{#pic:pycnicbench}](pdfs/pycnic-chart)
+![Pycnic: Výsledky benchmarku{#pic:pycnicbench}](pdfs/pycnic-chart)
