@@ -173,11 +173,11 @@ TODO pospat sloupce s více hodnotami; napsat co znamená, když GitHub chybí
 | Morepath              | permisivní    | **standalone**    |         4 |     1 940 |         9 156 |       4/5 |   3+2 |       226 |         1 594 |
 | Piston                | permisivní    | MVC               |        49 |     1 935 |        75 311 |       1/1 |     2 |        -- |         2 419 |
 | Pycnic                | permisivní    | **standalone**    |  **0,08** |   **226** |       **226** |   **0/0** |   3+2 |        33 |           304 |
-| Python REST API fr.   |               |                   |           |           |               |           |       |           |               |
-| Ramses                |               |                   |           |      TODO |               |           |       |           |               |
+| Python REST API fr.   | permisivní    | lightweight       |         3 |       954 |        15 988 |       2/3 |     2 |         4 |           248 |
+| Ramses                |               |                   |           |           |               |           |       |           |               |
 | RESTArt               |               |                   |           |           |               |           |       |           |               |
 | restless              |               |                   |           |           |               |           |       |           |               |
-| ripozo                |               |                   |           |           |               |           |       |           |               |
+| ripozo                |               |                   |           |      TODO |               |           |       |           |               |
 | sandman               |               |                   |           |           |               |           |       |           |               |
 | Tastypie              |               |                   |           |           |               |           |       |           |               |
 
@@ -195,11 +195,11 @@ Table: Srovnání měřitelných kritérií {#tab:srovnani}
 | Morepath              | --            | \url{https://morepath.readthedocs.org/}               | 0.13      |
 | Piston                | Django        | \url{https://bitbucket.org/jespern/django-piston/}    | 0.2.3     |
 | Pycnic                | --            | \url{http://pycnic.nullism.com/}                      | 0.0.5     |
-| Python REST API fr.   |               |                                                       |           |
-| Ramses                |               | TODO                                                  |           |
+| Python REST API fr.   | Werkzeug      | \url{https://python-rest-framework.readthedocs.org/}  | 1.3       |
+| Ramses                |               |                                                       |           |
 | RESTArt               |               |                                                       |           |
 | restless              |               |                                                       |           |
-| ripozo                |               |                                                       |           |
+| ripozo                |               | TODO                                                  |           |
 | sandman               |               |                                                       |           |
 | Tastypie              |               |                                                       |           |
 
