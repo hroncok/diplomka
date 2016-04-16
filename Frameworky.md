@@ -1,6 +1,6 @@
 % Frameworky pro RESTful API {#frameworky}
 
-V této kapitole představím sedmnáct (TODO spočítat) open-source frameworků pro tvorbu webových RESTful API v jazyce Python,
+V této kapitole představím osmnáct (TODO spočítat) open-source frameworků pro tvorbu webových RESTful API v jazyce Python,
 které zhodnotím na základě mnou stanovených hodnotících kritérií.
 
 
@@ -141,10 +141,11 @@ Frameworky jdou zároveň stáhnout z *Python Package Indexu*, kde lze vidět po
 \input{frameworky/Flask-API}
 \input{frameworky/Flask-RESTful}
 \input{frameworky/Morepath}
+\input{frameworky/Nefertari}
+\input{frameworky/Ramses}
 \input{frameworky/Piston}
 \input{frameworky/Pycnic}
 \input{frameworky/Python-REST-API-framework}
-\input{frameworky/Ramses}
 \input{frameworky/RESTArt}
 \input{frameworky/restless}
 \input{frameworky/ripozo}
@@ -171,10 +172,11 @@ TODO pospat sloupce s více hodnotami; napsat co znamená, když GitHub chybí
 | Flask API             | permisivní    | lightweight       |         6 |       620 |        20 938 |       1/5 |   3+2 |       688 |         7 594 |
 | Flask-RESTful         | permisivní    | lightweight       |         9 |       967 |        27 718 |       4/9 |   3+2 |     1 920 |       172 775 |
 | Morepath              | permisivní    | **standalone**    |         4 |     1 940 |         9 156 |       4/5 |   3+2 |       226 |         1 594 |
+| Nefertari             | permisivní    | lightweight       |        16 |     2 905 |        54 339 |      9/18 |   3+2 |        37 |           812 |
+| Ramses                | permisivní    | lightweight       |        19 |     1 067 |        68 594 |      7/29 |   3+2 |       216 |           661 |
 | Piston                | permisivní    | MVC               |        49 |     1 935 |        75 311 |       1/1 |     2 |        -- |         2 419 |
 | Pycnic                | permisivní    | **standalone**    |  **0,08** |   **226** |       **226** |   **0/0** |   3+2 |        33 |           304 |
 | Python REST API fr.   | permisivní    | lightweight       |         3 |       954 |        15 988 |       2/3 |     2 |         4 |           248 |
-| Ramses                |               |                   |           |           |               |           |       |           |               |
 | RESTArt               |               |                   |           |           |               |           |       |           |               |
 | restless              |               |                   |           |           |               |           |       |           |               |
 | ripozo                |               |                   |           |      TODO |               |           |       |           |               |
@@ -193,10 +195,11 @@ Table: Srovnání měřitelných kritérií {#tab:srovnani}
 | Flask API             | Flask         | \url{http://www.flaskapi.org/}                        | 0.6.5     |
 | Flask-RESTful         | Flask         | \url{https://flask-restful.readthedocs.org/}          | 0.3.5     |
 | Morepath              | --            | \url{https://morepath.readthedocs.org/}               | 0.13      |
+| Nefertari             | Pyramid       | \url{https://nefertari.readthedocs.org/}              | 0.6.1     |
+| Ramses                | Pyramid       | \url{http://ramses.tech/}                             | 0.5.1     |
 | Piston                | Django        | \url{https://bitbucket.org/jespern/django-piston/}    | 0.2.3     |
 | Pycnic                | --            | \url{http://pycnic.nullism.com/}                      | 0.0.5     |
 | Python REST API fr.   | Werkzeug      | \url{https://python-rest-framework.readthedocs.org/}  | 1.3       |
-| Ramses                |               |                                                       |           |
 | RESTArt               |               |                                                       |           |
 | restless              |               |                                                       |           |
 | ripozo                |               | TODO                                                  |           |
