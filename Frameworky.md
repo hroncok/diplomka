@@ -178,10 +178,10 @@ TODO pospat sloupce s více hodnotami; napsat co znamená, když GitHub chybí
 | Pycnic                | permisivní    | **standalone**    |  **0,08** |   **226** |       **226** |   **0/0** |   3+2 |        33 |           304 |
 | Python REST API fr.   | permisivní    | lightweight       |         3 |       954 |        15 988 |       2/3 |     2 |         4 |           248 |
 | RESTArt               | permisivní    | lightweight       |         3 |       798 |        20 105 |       4/5 |   3+2 |        10 |           829 |
-| restless              |               |                   |           |           |               |           |       |           |               |
-| ripozo                |               |                   |           |      TODO |               |           |       |           |               |
+| restless              | permisivní    | lightw./MVC   |      0,25 |       528 |         1 140 |       1/1 |   3+2 |       520 |         7 909 |
+| ripozo                |               |                   |           |           |               |           |       |           |               |
 | sandman               |               |                   |           |           |               |           |       |           |               |
-| Tastypie              |               |                   |           |           |               |           |       |           |               |
+| Tastypie              |               |                   |           |      TODO |               |           |       |           |               |
 
 Table: Srovnání měřitelných kritérií {#tab:srovnani}
 
@@ -201,9 +201,9 @@ Table: Srovnání měřitelných kritérií {#tab:srovnani}
 | Pycnic                | --            | \url{http://pycnic.nullism.com/}                      | 0.0.5     |
 | Python REST API fr.   | Werkzeug      | \url{https://python-rest-framework.readthedocs.org/}  | 1.3       |
 | RESTArt               | Werkzeug      | \url{https://restart.readthedocs.org/}                | 0.1.3     |
-| restless              |               |                                                       |           |
-| ripozo                |               | TODO                                                  |           |
+| restless              | *volitelný*   | \url{https://restless.readthedocs.org/}               | 2.0.1     |
+| ripozo                |               |                                                       |           |
 | sandman               |               |                                                       |           |
-| Tastypie              |               |                                                       |           |
+| Tastypie              |               | TODO                                                  |           |
 
 Table: Informace o frameworcích {#tab:informace}
