@@ -178,7 +178,7 @@ TODO pospat sloupce s více hodnotami; napsat co znamená, když GitHub chybí
 | Pycnic                | permisivní    | **standalone**    |  **0,08** |   **226** |       **226** |   **0/0** |   3+2 |        33 |           304 |
 | Python REST API fr.   | permisivní    | lightweight       |         3 |       954 |        15 988 |       2/3 |     2 |         4 |           248 |
 | RESTArt               | permisivní    | lightweight       |         3 |       798 |        20 105 |       4/5 |   3+2 |        10 |           829 |
-| restless              | permisivní    | lightw./MVC   |      0,25 |       528 |         1 140 |       1/1 |   3+2 |       520 |         7 909 |
+| restless              | permisivní    | lightw./MVC       |      0,25 |       528 |         1 140 |       1/1 |   3+2 |       520 |         7 909 |
 | ripozo                |               |                   |           |           |               |           |       |           |               |
 | sandman               |               |                   |           |           |               |           |       |           |               |
 | Tastypie              |               |                   |           |      TODO |               |           |       |           |               |
