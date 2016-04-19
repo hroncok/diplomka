@@ -137,7 +137,7 @@ convert_meta() {
 
 # Convert acronyms.yml to LaTeX (glossary)
 convert_acronyms() {
-	$SED -E 's/^(\w+):\s+(.*)$/\\newacronym{\1}{\1}{\2}/' \
+	$SED -E 's/^((\w|\+)+):\s+(.*)$/\\newacronym{\1}{\1}{\3}/' \
 		"$1" || echo "acronyms conversion failed" >&2
 }
 

@@ -162,26 +162,26 @@ TODO pospat sloupce s více hodnotami; napsat co znamená, když GitHub chybí
 
 [V tabulce](#tab:informace@) pak najdete informační přehled o zkoumaných frameworcích: webový framework, URL domovské stránky a číslo zkoumané verze.
 
-| Framework             | druh licence  | webový fr.        |       MiB |     řádky |     ř. včetně |   závisl. |   Py  |    GitHub |          PyPI |
-|-----------------------+---------------+-------------------+-----------+-----------+---------------+-----------+-------+-----------+---------------|
-| Cornice               | LGPL          | lightweight       |        12 |     1 198 |        24 625 |       2/9 |   3+2 |       270 |        10 903 |
-| Django REST fr.       | permisivní    | MVC               |        43 |     7 057 |        79 854 |       1/1 |   3+2 | **5 606** |   **316 772** |
-| Eve                   | permisivní    | lightweight       |        10 |     3 440 |        35 009 |     10/10 |   3+2 |     3 121 |         7 480 |
-| Falcon                | permisivní    | **standalone**    |       0,9 |     2 352 |         3 034 |       2/2 |   3+2 |     2 756 |        51 071 |
-| hug                   | permisivní    | lightweight       |         4 |     2 367 |        16 545 |       2/4 |     3 |     3 020 |         7 674 |
-| Flask API             | permisivní    | lightweight       |         6 |       620 |        20 938 |       1/5 |   3+2 |       688 |         7 594 |
-| Flask-RESTful         | permisivní    | lightweight       |         9 |       967 |        27 718 |       4/9 |   3+2 |     1 920 |       172 775 |
-| Morepath              | permisivní    | **standalone**    |         4 |     1 940 |         9 156 |       4/5 |   3+2 |       226 |         1 594 |
-| Nefertari             | permisivní    | lightweight       |        16 |     2 905 |        54 339 |      9/18 |   3+2 |        37 |           812 |
-| Ramses                | permisivní    | lightweight       |        19 |     1 067 |        68 594 |      7/29 |   3+2 |       216 |           661 |
-| Piston                | permisivní    | MVC               |        49 |     1 935 |        75 311 |       1/1 |     2 |        -- |         2 419 |
-| Pycnic                | permisivní    | **standalone**    |  **0,08** |   **226** |       **226** |   **0/0** |   3+2 |        33 |           304 |
-| Python REST API fr.   | permisivní    | lightweight       |         3 |       954 |        15 988 |       2/3 |     2 |         4 |           248 |
-| RESTArt               | permisivní    | lightweight       |         3 |       798 |        20 105 |       4/5 |   3+2 |        10 |           829 |
-| restless              | permisivní    | lightw./MVC       |      0,25 |       528 |         1 140 |       1/1 |   3+2 |       520 |         7 909 |
-| ripozo                |               |                   |           |           |               |           |       |           |               |
-| sandman               |               |                   |           |           |               |           |       |           |               |
-| Tastypie              |               |                   |           |      TODO |               |           |       |           |               |
+| Framework             | druh licence  | webový fr.        |           MiB |     řádky |     ř. včetně |   závisl.     |   Py  |    GitHub |          PyPI |
+|-----------------------+---------------+-------------------+---------------+-----------+---------------+---------------+-------+-----------+---------------|
+| Cornice               | LGPL          | lightweight       |            12 |     1 198 |        24 625 |           2/9 |   3+2 |       270 |        10 903 |
+| Django REST fr.       | permisivní    | MVC               |            43 |     7 057 |        79 854 |           1/1 |   3+2 | **5 606** |   **316 772** |
+| Eve                   | permisivní    | lightweight       |            10 |     3 440 |        35 009 |         10/10 |   3+2 |     3 121 |         7 480 |
+| Falcon                | permisivní    | **standalone**    |           0,9 |     2 352 |         3 034 |           2/2 |   3+2 |     2 756 |        51 071 |
+| hug                   | permisivní    | lightweight       |             4 |     2 367 |        16 545 |           2/4 |     3 |     3 020 |         7 674 |
+| Flask API             | permisivní    | lightweight       |             6 |       620 |        20 938 |           1/5 |   3+2 |       688 |         7 594 |
+| Flask-RESTful         | permisivní    | lightweight       |             9 |       967 |        27 718 |           4/9 |   3+2 |     1 920 |       172 775 |
+| Morepath              | permisivní    | **standalone**    |             4 |     1 940 |         9 156 |           4/5 |   3+2 |       226 |         1 594 |
+| Nefertari             | permisivní    | lightweight       |            16 |     2 905 |        54 339 |          9/18 |   3+2 |        37 |           812 |
+| Ramses                | permisivní    | lightweight       |            19 |     1 067 |        68 594 |          7/29 |   3+2 |       216 |           661 |
+| Piston                | permisivní    | MVC               |            49 |     1 935 |        75 311 |           1/1 |     2 |        -- |         2 419 |
+| Pycnic                | permisivní    | **standalone**    |      **0,08** |   **226** |       **226** |       **0/0** |   3+2 |        33 |           304 |
+| Python REST API fr.   | permisivní    | lightweight       |             3 |       954 |        15 988 |           2/3 |     2 |         4 |           248 |
+| RESTArt               | permisivní    | lightweight       |             3 |       798 |        20 105 |           4/5 |   3+2 |        10 |           829 |
+| restless              | permisivní    | lightw./MVC       |   $\geq$ 0,25 |       528 |  $\geq$ 1 140 |    $\geq$ 1/1 |   3+2 |       520 |         7 909 |
+| ripozo                | copyleft      | lightw./MVC       |    $\geq$ 0,5 |     1 518 |  $\geq$ 2 130 |    $\geq$ 1/1 |   3+2 |       151 |         2 411 |
+| sandman               |               |                   |               |           |               |               |       |           |               |
+| Tastypie              |               |                   |               |      TODO |               |               |       |           |               |
 
 Table: Srovnání měřitelných kritérií {#tab:srovnani}
 
@@ -202,7 +202,7 @@ Table: Srovnání měřitelných kritérií {#tab:srovnani}
 | Python REST API fr.   | Werkzeug      | \url{https://python-rest-framework.readthedocs.org/}  | 1.3       |
 | RESTArt               | Werkzeug      | \url{https://restart.readthedocs.org/}                | 0.1.3     |
 | restless              | *volitelný*   | \url{https://restless.readthedocs.org/}               | 2.0.1     |
-| ripozo                |               |                                                       |           |
+| ripozo                | *volitelný*   | \url{https://ripozo.readthedocs.org/}                 | 1.3.0     |
 | sandman               |               |                                                       |           |
 | Tastypie              |               | TODO                                                  |           |
 
