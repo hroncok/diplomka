@@ -68,6 +68,7 @@
 \RequirePackage {minted}		% source code highlighting via Pygments
 \RequirePackage {etoolbox}
 \RequirePackage {nameref}
+\RequirePackage {pdfpages}		% \includepdf 
 
 % microtype currently supports only protrusion with XeLaTeX :(
 \RequirePackage [protrusion=true] {microtype}
@@ -297,6 +298,12 @@
 \DeclareRobustCommand {\website}[1] {
 	\def\thewebsite{#1}
 	\@websitedefinedtrue
+}
+
+\newif \if@assignmentdefined
+\DeclareRobustCommand {\assignment}[1] {
+	\def\theassignment{#1}
+	\@assignmentdefinedtrue
 }
 
 \newif \if@acknowledgementsdefined
@@ -610,7 +617,8 @@ of works or by adapting the Work (including translation), and at the same time m
 \renewcommand*{\l@listing}{\@dottedtocline{1}{0em}{2.3em}}
 
 \AtBeginDocument{
-	%\pagestyle{plain}
+	\if@assignmentdefined{\includepdf[pages={1}]{\theassignment}}
+
 	\cleardoublepage
 	\titlepage
 	
