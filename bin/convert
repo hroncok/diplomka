@@ -5,7 +5,7 @@
 
 PANDOC_OPTS="-f markdown -t latex --no-wrap --listings --no-tex-ligatures --biblatex --bibliography=library.bib"
 FILTERS_PRE=( 'title' 'header_label' 'hotfix_2' )
-FILTERS_POST=( 'listings' 'hyperrefs' 'hyperrefs_page' 'itemizes' 'vlna' 'subsubsection' 'hotfix_1' 'dash' 'tilda' )
+FILTERS_POST=( 'listings' 'hyperrefs' 'hyperrefs_page' 'itemizes' 'vlna' 'subsubsection' 'hotfix_1' 'hotfix_yaml' 'dash' 'tilda' )
 FILES="${@:-*.md *.yml}"
 SKIP_FILES="README.md"
 
@@ -96,6 +96,14 @@ filter_hotfix_1() {
 			-e 's/@\{\}llllllllll@\{\}/@\{\}lllrrrrrrr@\{\}/' \
 			-e 's/@\{\}llll@\{\}/@\{\}lllr@\{\}/' \
 			"$1" || echo "filter hotfix_realizace failed" >&2
+	fi
+}
+
+# Ugly hotfix for YAML in Ramses
+filter_hotfix_yaml() {
+	if [[ "$1" = frameworky/Ramses* ]]; then
+		$SED -i 's/{text}/{yaml}/' \
+			"$1" || echo "filter hotfix_yaml failed" >&2
 	fi
 }
 
