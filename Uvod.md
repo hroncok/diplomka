@@ -7,7 +7,7 @@ V této diplomové práci se budu zabývat více než desítkou těchto framewor
 použitelnosti, množství nabízených funkcí, podpory standardů, množství závislostí, ale i z hlediska stavu a oblíbenosti projektu.
 
 Abych mohl frameworky zkoumat více do hloubky a porovnat je i z hlediska rychlosti, navrhnu ukázkovou službu poskytující RESTful API
-pro přístup k rozvrhovým datům Ústavu tělesné výchovy a sportu, ČVUT v Praze. Návrhem se budu zabývat v kapitole TODO.
+pro přístup k rozvrhovým datům Ústavu tělesné výchovy a sportu, ČVUT v Praze. Návrhem se budu zabývat v kapitole *\nameref{navrh}*.
 
 Tuto službu pak implementuji ve třech vybraných frameworcích na základě předchozího zkoumání a hodnocení.
 Více o implementaci prozradí kapitola TODO. Hotová řešení pak podrobím dalšímu testování a zhodnotím v kapitole TODO.
