@@ -106,6 +106,8 @@ Struktura je znázorněna [v tabulce](#tab:subjects).
 
 Všimněte si, že některé číselné údaje jsou uloženy textově. TODO ověřit
 
+TODO vyzkoumat jak se to váže na destination, pokud to je kurz a jaké je pak datum kurzu apod.
+
 Table: Struktura pohledu v_subjects {#tab:subjects}
 
 | Název sloupce		| Datový typ	| Popis 								|
