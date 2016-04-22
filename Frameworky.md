@@ -180,7 +180,7 @@ TODO pospat sloupce s více hodnotami; napsat co znamená, když GitHub chybí
 | RESTArt               | permisivní    | lightweight       |             3 |       798 |        20 105 |           4/5 |   3+2 |        10 |           829 |
 | restless              | permisivní    | lightw./MVC       |   $\geq$ 0,25 |       528 |  $\geq$ 1 140 |    $\geq$ 1/1 |   3+2 |       520 |         7 909 |
 | ripozo                | copyleft      | lightw./MVC       |    $\geq$ 0,5 |     1 518 |  $\geq$ 2 130 |    $\geq$ 1/1 |   3+2 |       151 |         2 411 |
-| sandman               |               |                   |               |      TODO |               |               |       |           |               |
+| sandman2              | permisivní    | lightweight       |            23 |       446 |        82 207 |          4/12 |   3+2 |       128 |           625 |
 | Tastypie              | permisivní    | MVC               |            41 |     3 292 |        80 139 |           3/4 |   3+2 |     2 940 |        28 966 |
 
 Table: Srovnání měřitelných kritérií {#tab:srovnani}
@@ -203,7 +203,7 @@ Table: Srovnání měřitelných kritérií {#tab:srovnani}
 | RESTArt               | Werkzeug      | \url{https://restart.readthedocs.org/}                | 0.1.3     |
 | restless              | *volitelný*   | \url{https://restless.readthedocs.org/}               | 2.0.1     |
 | ripozo                | *volitelný*   | \url{https://ripozo.readthedocs.org/}                 | 1.3.0     |
-| sandman               |               | TODO                                                  |           |
+| sandman2              | Flask         | \url{http://pythonhosted.org/sandman2/}               | 0.0.7     |
 | Tastypie              | Django        | \url{http://tastypieapi.org/}                         | 0.13.3    |
 
 Table: Informace o frameworcích {#tab:informace}

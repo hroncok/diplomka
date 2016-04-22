@@ -12,7 +12,7 @@ Ramses přináší stejné funkce jako Nefertari, o kterém jsme psal [v části
 Místo kódu v Pythonu se však používá deskriptivní jazyk RAML.
 
 Ramses přímo závisí na sedmi modulech, nepřímo pak na téměř třiceti, instalace zabírá 19~MiB.
-V počtu závislostí je tak v negativním slova smyslu vítězem, ve velikosti jej předčí pouze frameworky pro Django.
+V počtu závislostí je tak v negativním slova smyslu vítězem.
 
 Projekt vytváří stejní autoři, jako Nefertari a všechny informace o aktivitě jsou prakticky stejné,
 projekt vnikl na přelomu února března 2015, poslední z dvanácti verzí vyšla v listopadu téhož roku.
