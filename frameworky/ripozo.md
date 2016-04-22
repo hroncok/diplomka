@@ -61,7 +61,8 @@ Instalace závisí jen na knihovně six, kvůli kompatibilitě s oběma verzemi 
 Vzhledem k tomu, že instalace samotného ripoza je nepoužitelná, jelikož je potřeba použít nějaký webový framework, je tato informace zavádějící.
 Například po instalaci modulů na spolupráci s Flaskem a SQLAlchemy je již závislostí sedm (nepočítaje tři vlastní moduly `ripozo`, `flask-ripozo` a `ripozo-sqlalchemy`) a instalace zabírá 14 MiB.
 
-### HATEOAS
+HATEOAS
+-------
 
 Již v úvodu jsem zmínil, že ripozo umožňuje jednoduše vytvářet linky mezi zdroji ve stylu HATEOAS,
 a také že ripozo podporuje Siren [@siren] a HAL [@hal]. Představu o vytváření odkazů získáte nejlépe [z ukázky](#code:ripozolink).
@@ -80,7 +81,8 @@ class RelatedResource(restmixins.CRUDL)
     pks = ('id',)
 ```
 
-### Přístupová práva
+Přístupová práva
+----------------
 
 Ripozo nenabízí přímo žádnou funkcionalitu pro autentizaci či autorizaci.
 Obsahuje však možnost předpracovávat požadavky pomocí funkcí.

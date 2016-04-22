@@ -87,7 +87,8 @@ Zabírá necelé 3 MiB. Na GitHubu má projekt pouze čtyři hvězdy a z PyPI by
 Projekt neobsahuje informaci o tom, jestli podporuje Python 3, ale obsahuje minimálně jeden řádek kódu napsaný v nekompatibilní syntaxi,
 z čehož soudím, že Python 3 nepodporuje.
 
-### HATEOAS
+HATEOAS
+-------
 
 Dokumentace v tutoriálu uvádí postup, jak prolinkovat jednotlivé zdroje mezi sebou [@praflink1][@praflink2].
 Framework sám tuto funkci neobsahuje, ale ukazuje příklad formátovače, který je znovupoužitelný v celém projektu
@@ -106,7 +107,8 @@ def format_foreign_key(response, obj):
 ```
 
 
-### Přístupová práva
+Přístupová práva
+----------------
 
 Tutoriál opět uvádí postup [@prafauth], jak implementovat autentizaci, v tomto konkrétním případě API klíčem předaným pomocí GET parametru zakódovaným v URL.
 Pokud chcete, můžete si samozřejmě implementovat způsob vlastní. V případě autorizace nabízí PRAF pouze možnost zpřístupnit daný zdroj všem autentizovaným požadavkům [@prafauth], implementace komplexnějších přístupových práv je opět možná.

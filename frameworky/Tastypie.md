@@ -24,7 +24,8 @@ přispělo celkem více než 150 přispěvatelů. Projekt je distribuován pod p
 Pokud si vystačíte s JSON serializací, závisí Tastypie přímo na třech, nepřímo na čtyřech modulech a zabírá 41~MiB.
 Pro použití XML, YAML nebo bplistu je potřeba nainstalovat další moduly. Tastypie funguje na Pythonu 2 i 3 a podporuje poslední verze Djanga.
 
-### HATEOAS
+HATEOAS
+-------
 
 Příklad použití můžete vidět [v ukázkách](#code:tastypie) [a](#code:tastypie2).
 Přímo v tomto příkladu vznikne prolinkování mezi zdroji pomocí URL.
@@ -66,7 +67,8 @@ urlpatterns = [
 ]
 ```
 
-### Přístupová práva
+Přístupová práva
+----------------
 
 Tastypie umožňuje autentizaci přes HTTP jméno a heslo, pomocí API klíče, session a OAuth 1; lze si také dopsat vlastní způsob [@tastypieauth].
 Existují moduly třetích stran přidávající podporu OAuth 2 [@tastypieoath].

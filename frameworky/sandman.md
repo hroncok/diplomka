@@ -58,12 +58,14 @@ poslední v lednu 2016.
 Za sandmenem stojí jednotlivec Jeff Knupp, do projektu přispělo několik jednotek dalších přispěvatelů.
 Na GitHubu má sandman2 128 hvězd, ale sandman jich má přes dva tisíce.
 
-### HATEOAS
+HATEOAS
+-------
 
 Sandman automaticky prezentuje SQL sloupce typu cizí klíč jako odkazy [@sandman1gh].
 Předpokládám, že sandman2 to dělá stejně, ale tuto informaci jsme nikde nenašel potvrzenou.
 
-### Přístupová práva
+Přístupová práva
+----------------
 
 Dokumentace k původnímu sandmanu uvádí, že je možné použít HTTP autentizaci jménem a heslem
 a na základě ní zpřístupnit celé API pouze přihlášeným uživatelům [@sandmanauth].

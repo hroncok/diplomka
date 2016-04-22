@@ -81,7 +81,8 @@ Vývoj je velmi aktivní a dokumentace velmi obsáhlá. Instalace závisí pouze
 které nemá žádné další závislosti, a společně s ním zabírá 43~MiB. Podporovány jsou obě verze Pythonu.
 Na GitHubu má více než pět a půl tisíce hvězd a za poslední měsíc byl více než třistatisíckrát stažen z PyPI.
 
-### HATEOAS
+HATEOAS
+-------
 
 Dokumentace obsahuje kapitolu o HATEOAS [@djangoresthateoas], která uvádí:
 
@@ -96,7 +97,8 @@ Dokumentace obsahuje kapitolu o HATEOAS [@djangoresthateoas], která uvádí:
 Hodnotím kladně, že se o principu HATEOAS v dokumentaci alespoň hovoří, naplnění konkrétních implementací však zůstává v režii architekta či programátora;
 Django REST framework k tomu poskytuje dostatečné možnosti.
 
-### Přístupová práva
+Přístupová práva
+----------------
 
 Django REST framework umožňuje jak různé způsoby autentizace [@djangorestauth] tak autorizace [@djangorestperm]. Pro autentizaci má zabudovány tři možnosti:
 

@@ -45,7 +45,8 @@ class app(WSGI):
     routes = [ ("/user", UserHandler()) ]
 ```
 
-### Benchmark
+Benchmark
+---------
 
 Součástí repozitáře na GitHubu i jednoduchý benchamrak, který měří, kolik požadavků za sekundu jednotlivé webové frameworky zvládnou.
 Je měřená jednoduchá aplikace, která vrací na adrese `/json` zprávu zakódovanou v JSONu [@pycnicbench].

@@ -66,12 +66,14 @@ Za projektem stojí jednotlivec Timothy Edmund Crosley, ale přispěla již tři
 
 Hug je zveřejněn pod MIT licencí [@MIT], přímo závisí na Falconu a knihovně Requests, nepřímo tak má 4 závislosti a zabírá 4~MiB.
 
-### HATEOAS
+HATEOAS
+-------
 
 Hug bohužel zatím nepodporuje žádné automatické způsoby pro prolinkování jednotlivých zdrojů.
 Existuje již ale snaha o použití součásti JSON-Schema [@hugbug].
 
-### Přístupová práva
+Přístupová práva
+----------------
 
 Jak již bylo zmíněno výše, o přístupových právech dokumentace bohužel mlčí.
 Z pohledu do kódu [@hugauth] je patrné, že je možné se autentizovat pomocí:

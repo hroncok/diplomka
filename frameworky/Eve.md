@@ -84,7 +84,8 @@ Eve je vydáno pod BSD licencí [@BSD3].
 
 Eve závisí celkem na desíti modulech (včetně Flasku a Werkzeugu), tyto moduly již nemají žádné další závislosti. Celkem se závislostmi zabírá 10~MiB. Závislost na Python modulech pro MongoDB není bohužel volitelná.
 
-### HATEOAS
+HATEOAS
+-------
 
 Eve automaticky prolinkovává jednotlivé zdroje a drží se konceptu HATEOAS [@evehateoas]. Tuto funkci není potřeba speciálně nastavovat ani implementovat, je zapnutá sama od sebe. Každá odpověď na metodu GET obsahuje položku `_links` s odkazy na rodiče, subsekce, předchozí a další stránky apod. Příklad můžete vidět [v ukázce](#code:evehateoas). Autoři pracují na přímé podpoře pro JSON-LD/HAL/Siren [@eveslides].
 
@@ -111,7 +112,8 @@ Eve automaticky prolinkovává jednotlivé zdroje a drží se konceptu HATEOAS [
 }
 ```
 
-### Přístupová práva
+Přístupová práva
+----------------
 
 Eve umožňuje několik způsobů autentizace, například pomocí tokenu nebo HMAC[^hmac] [@eveauth].
 Pomocí externích knihoven je snadné použít OAuth 2 [@eveoauth].

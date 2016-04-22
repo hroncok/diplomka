@@ -83,7 +83,8 @@ Od té doby vyšlo téměř patnáct verzí, poslední v listopadu 2015. Za proj
 
 [^brandicted]: Hlavní služba startupu Brandicted.com je v době psaní tohoto textu nedostupná. Je otázkou, zda-li jde o náhodu, nebo má Nefertari nejistou budoucnost. Repozitář na GitHubu (který má 37 hvězd) se přesunul do organizace *ramses-tech*, která ale obsahuje stejné vývojáře jako původní organizace *brandicted*, troufám si tvrdit, že se jedná o další startup, po tom, co Brandicted selhal, ale je to pouze má domněnka.
 
-### HATEOAS
+HATEOAS
+-------
 
 Dokumentace Nefertari se nezmiňuje o způsobu, jak jednotlivé zdroje prolinkovat.
 V části *Vize* [@nefertarivision] dokonce přímo říká:
@@ -93,7 +94,8 @@ V části *Vize* [@nefertarivision] dokonce přímo říká:
 
 [^crud]: *Create*, *Retrieve*, *Update*, *Delete*
 
-### Přístupová práva
+Přístupová práva
+----------------
 
 Nefertari používá model autentizace z frameworku Pyramid, pomocí cookies [@nefertariauth], což u REST API nepovažuji za ideální. Přístupová práva jdou oproti tomu nastavit velice variabilně na úrovni jednotlivých operací a zdrojů [@nefertariauth].
 

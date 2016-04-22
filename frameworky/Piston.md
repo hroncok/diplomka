@@ -103,7 +103,8 @@ class ArbitraryDataHandler(BaseHandler):
         return { 'user': user, 'data_length': len(data) }
 ```
 
-### HATEOAS
+HATEOAS
+-------
 
 Přestože o sobě Piston říká, že komunikuje pomocí HATEOAS principu [@piston],
 v celé dokumentaci není nikde zmínka o tom, jak z jednoho zdroje linkovat zdroj jiný.
@@ -111,7 +112,8 @@ Veškeré příklady místo linkování zobrazují další zdroj vnořeně, pom�
 I když by bylo možné si pro každý druh odkazu nadefinovat vlastní metodu, považuji to za zbytečně komplikované.
 Myslím, že použití zkraty HATEOAS je tedy v popisu tohoto frameworku poměrně neoprávněné.
 
-### Přístupová práva
+Přístupová práva
+----------------
 
 Piston nabízí dva druhy autentizace: základní HTTP autentizaci jménem a heslem a OAuth 1, Další způsoby je možné doimplementovat [@pistonauth].
 Pro autorizaci lze použít zabudovaný mechanismus, který umožňuje část API otevřít anonymním uživatelům a část pouze přihlášeným [@pistonanon].
