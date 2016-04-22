@@ -14,7 +14,7 @@ Hlavní myšlenkou restlessu je udělat věci jednoduše a příliš je nekompli
  * podpora Pythonu 3.3+ (i staršího 2.6+),
  * flexibilita.
 
-Restless v dokumentaci rovnou udáví, že nebude podporovat automatickou integraci ORM, XML, autorizaci ani HATEOAS [@restless][@restlessp].
+Restless v dokumentaci rovnou uvádí, že nebude podporovat automatickou integraci ORM, XML, autorizaci ani HATEOAS [@restless][@restlessp].
 
 Za projektem stojí jednotlivec Daniel Lindsley, který je mj. autorem frameworku Tastypie, o kterém budu mluvit [v části](#tastypie@).
 Dokumentace restlessu projekt Tastypie často zmiňuje a zdůrazňuje, že restless vznikl poučením se z chyb při tvorbě Tastypie.
