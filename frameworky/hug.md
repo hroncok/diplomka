@@ -78,9 +78,9 @@ Přístupová práva
 Jak již bylo zmíněno výše, o přístupových právech dokumentace bohužel mlčí.
 Z pohledu do kódu [@hugauth] je patrné, že je možné se autentizovat pomocí:
 
- * pomocí HTTP autentizace (jménem a heslem)
- * pomocí API klíče v HTTP hlavičce
- * pomocí tokenu v HTTP hlavičce
+ * HTTP autentizace (jménem a heslem),
+ * API klíče v HTTP hlavičce,
+ * tokenu v HTTP hlavičce.
 
 O autorizaci jsem však bohužel v kódu nic nenašel.
 
