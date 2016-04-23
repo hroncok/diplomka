@@ -187,8 +187,8 @@ V odpovědi budou zahrnuta všechna data [z tabulky](#tab:students).
 
 ### Přístupová práva
 
- * Autentizovaným uživatelům budou zpřístupněna data o jejich osobě (personální číslo musí odpovídat personálnímu číslu přihlášeného uživatele).
- * Autentizovaným lektorům budou zpřístupněna data o jejich kurzech (personální číslo vyučujícího daného kurzu musí odpovídat personálnímu číslu přihlášeného uživatele).
+ * Autentizovaným uživatelům budou zpřístupněna data o jejich osobě (osobní číslo musí odpovídat osobnímu číslu přihlášeného uživatele).
+ * Autentizovaným lektorům budou zpřístupněna data o jejich kurzech (osobní číslo vyučujícího daného kurzu musí odpovídat osobnímu číslu přihlášeného uživatele).
  * Speciálním autentizovaným uživatelům budou zpřístupněna všechna data, kvůli přístupu ze služeb jako Sirius.
 
 /subjects
