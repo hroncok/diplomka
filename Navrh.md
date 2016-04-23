@@ -204,3 +204,10 @@ V odpovědi budou zahrnuta všechna data [z tabulky](#tab:subjects).
  * TODO paritu semestru jinak?
 
 Data budou přístupná pro všechny autentizované klienty.
+
+Diagram
+-------
+
+![Diagram API zdrojů{#pic:diagram2}](pdfs/diagram2)
+
+[Na obrázku](#pic:diagram2) můžete vidět upravený diagram vztahů.
