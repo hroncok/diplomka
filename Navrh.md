@@ -123,3 +123,73 @@ Table: Struktura pohledu v_subjects {#tab:subjects}
 | notice			| text			| poznámka (v HTML)						|
 | semester			| tinyint(4)	| parita semestru, ve kterém se vypisuje|
 | 					| 				| (1 -- zimní, 2 -- letní)				|
+
+API endpointy
+=============
+
+V této části navrhnu jednotlivé API endpointy a režim přístupu k nim.
+Nebudu se snažit o striktní návrh, kde bych definoval přesnou podobu odpovědí; to mi umožní nechat přesnou podobu na použitém frameworku.
+Jednotlivé zdroje budou odpovídat poskytnutým databázovým pohledům.
+
+/destinations
+-------------
+
+Poskytne přístup k datům z pohledu `v_destination`. Jednotlivě pomocí primárního klíče (`/destinations/<id_destination>`) nebo hromadně.
+V odpovědi budou zahrnuta všechna data [z tabulky](#tab:destination).
+
+Data budou přístupná všem autentizovaným uživatelům.
+
+/halls
+------
+
+Poskytne přístup k datům z pohledu `v_hall`. Jednotlivě pomocí primárního klíče (`/halls/<id_hall>`) nebo hromadně.
+V odpovědi budou zahrnuta všechna data [z tabulky](#tab:hall).
+
+Data budou přístupná všem autentizovaným uživatelům.
+
+/lectors
+--------
+
+Poskytne přístup k datům z pohledu `v_lectors`. Jednotlivě pomocí primárního klíče (`/lectors/<id_lector>`) nebo hromadně.
+V odpovědi budou zahrnuta všechna data [z tabulky](#tab:lectors).
+
+ * Položka `pers_number` bude přejmenována na `personal_number`.
+
+Data budou přístupná všem autentizovaným uživatelům.
+
+/sports
+-------
+
+Poskytne přístup k datům z pohledu `v_sports`. Jednotlivě pomocí primárního klíče (`/sports/<id_sport>`) nebo hromadně.
+V odpovědi budou zahrnuta všechna data [z tabulky](#tab:sports).
+
+Data budou přístupná všem autentizovaným uživatelům.
+
+/enrolments
+-----------
+
+Poskytne přístup k datům z pohledu `v_students`. Jednotlivě pomocí primárního klíče (`/enrolments/<id_student>`) nebo hromadně.
+V odpovědi budou zahrnuta všechna data [z tabulky](#tab:students).
+
+ * Položka `id_student` bude přejmenována na `id_enrolment`.
+ * Položka `utvs` bude přejmenována na `subject` a bude obsahovat odkaz na daný zdroj.
+ * Položka `tour` bude reprezentována jako boolean.
+ * TODO neznámé položky
+
+### Přístupová práva
+
+ * Autentizovaným uživatelům budou zpřístupněna data o jejich osobě (personální číslo musí odpovídat personálnímu číslu přihlášeného uživatele).
+ * Autentizovaným lektorům budou zpřístupněna data o jejich kurzech (personální číslo vyučujícího daného kurzu musí odpovídat personálnímu číslu přihlášeného uživatele).
+ * Speciálním autentizovaným uživatelům budou zpřístupněna všechna data, kvůli přístupu ze služeb jako Sirius.
+
+/subjects
+---------
+
+Poskytne přístup k datům z pohledu `v_subjects`. Jednotlivě pomocí primárního klíče (`/subjects/<id_subjects>`) nebo hromadně.
+V odpovědi budou zahrnuta všechna data [z tabulky](#tab:subjects).
+
+ * Položka `id_subjects` bude přejmenována na `id_subject`.
+ * Cizí klíče budou reprezentovány odkazem na daný zdroj.
+ * TODO paritu semestru jinak?
+
+Data budou přístupná všem autentizovaným uživatelům.
