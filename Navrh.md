@@ -131,10 +131,10 @@ Diagram
 
 [Na obrázku](#pic:diagram) můžete vidět diagram vztahů.
 
-API endpointy
-=============
+API zdroje
+==========
 
-V této části navrhnu jednotlivé API endpointy a režim přístupu k nim.
+V této části navrhnu jednotlivé API zdroje (*resources*) a režim přístupu k nim.
 Nebudu se snažit o striktní návrh, kde bych definoval přesnou podobu odpovědí; to mi umožní nechat přesnou podobu na použitém frameworku.
 Jednotlivé zdroje budou odpovídat poskytnutým databázovým pohledům.
 

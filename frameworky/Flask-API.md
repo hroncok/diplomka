@@ -78,7 +78,7 @@ Do budoucna je plánováno [@flaskapi][@flaskapigh]:
  * autentizace, mj. pomocí session, tokenu i jménem a heslem;
  * přístupová práva;
  * zaškrcování přístupu;
- * API endpointy pomocí tříd;
+ * API zdroje pomocí tříd;
  * vylepšení procházetelných API, například přidání drobečkové navigace;
  * možnost vlastního zpracování výjimek;
  * CSRF ochrana;
