@@ -181,7 +181,7 @@ Poskytne přístup k datům z pohledu `v_students`. Jednotlivě pomocí primárn
 V odpovědi budou zahrnuta všechna data [z tabulky](#tab:students).
 
  * Položka `id_student` bude přejmenována na `id_enrolment`.
- * Položka `utvs` bude přejmenována na `subject` a bude obsahovat odkaz na daný zdroj.
+ * Položka `utvs` bude přejmenována na `course` a bude obsahovat odkaz na daný zdroj.
  * Položka `tour` bude reprezentována jako boolean.
  * TODO neznámé položky
 
@@ -191,13 +191,14 @@ V odpovědi budou zahrnuta všechna data [z tabulky](#tab:students).
  * Autentizovaným lektorům budou zpřístupněna data o jejich kurzech (osobní číslo vyučujícího daného kurzu musí odpovídat osobnímu číslu přihlášeného uživatele).
  * Speciálním autentizovaným uživatelům budou zpřístupněna všechna data, kvůli přístupu ze služeb jako Sirius.
 
-/subjects
----------
+/courses
+--------
 
-Poskytne přístup k datům z pohledu `v_subjects`. Jednotlivě pomocí primárního klíče (`/subjects/<id_subjects>`) nebo hromadně.
+Poskytne přístup k datům z pohledu `v_subjects`. Jednotlivě pomocí primárního klíče (`/courses/<id_subjects>`) nebo hromadně.
+K přejmenování dochází kvůli sjednocení s KOSapi, Siriem a dalšími službami.
 V odpovědi budou zahrnuta všechna data [z tabulky](#tab:subjects).
 
- * Položka `id_subjects` bude přejmenována na `id_subject`.
+ * Položka `id_subjects` bude přejmenována na `id_course`.
  * Položka `lector` bude přejmenována na `teacher`.
  * Cizí klíče budou reprezentovány odkazem na daný zdroj.
  * TODO paritu semestru jinak?
