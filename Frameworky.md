@@ -54,6 +54,8 @@ Jelikož čtenáře může zajímat počet přímých i počet nepřímých záv
 Závislost na webovém frameworku
 -------------------------------
 
+TODO vysvětlit jednotlivé frameworky v poznámkách pod čarou
+
 Některé frameworky fungují samostatně, jiné vyžadují nějaký Python framework na tvorbu webových aplikací.
 Některé webové frameworky slouží čistě jako vrstva pro poskytovaní obsahu přes protokol HTTP, jiné
 striktně určují, jak bude webová aplikace vnitřně navržena. Škálu jsem tedy nastavil takto:
