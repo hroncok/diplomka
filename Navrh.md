@@ -124,6 +124,13 @@ Table: Struktura pohledu v_subjects {#tab:subjects}
 | semester			| tinyint(4)	| parita semestru, ve kterém se vypisuje|
 | 					| 				| (1 -- zimní, 2 -- letní)				|
 
+Diagram
+-------
+
+![Diagram poskytnutých databázových pohledů [@rozvojwiki]{#pic:diagram}](pdfs/diagram)
+
+[Na obrázku](#pic:diagram) můžete vidět diagram vztahů.
+
 API endpointy
 =============
 
