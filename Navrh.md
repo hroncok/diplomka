@@ -154,12 +154,14 @@ V odpovědi budou zahrnuta všechna data [z tabulky](#tab:hall).
 
 Data budou přístupná všem autentizovaným uživatelům.
 
-/lectors
---------
+/teachers
+---------
 
-Poskytne přístup k datům z pohledu `v_lectors`. Jednotlivě pomocí primárního klíče (`/lectors/<id_lector>`) nebo hromadně.
+Poskytne přístup k datům z pohledu `v_lectors`. Jednotlivě pomocí primárního klíče (`/teachers/<id_lector>`) nebo hromadně.
+K přejmenování dochází kvůli sjednocení s KOSapi, Siriem a dalšími službami.
 V odpovědi budou zahrnuta všechna data [z tabulky](#tab:lectors).
 
+ * Položka `id_lector` bude přejmenována na `id_teacher`.
  * Položka `pers_number` bude přejmenována na `personal_number`.
 
 Data budou přístupná všem autentizovaným uživatelům.
@@ -196,6 +198,7 @@ Poskytne přístup k datům z pohledu `v_subjects`. Jednotlivě pomocí primárn
 V odpovědi budou zahrnuta všechna data [z tabulky](#tab:subjects).
 
  * Položka `id_subjects` bude přejmenována na `id_subject`.
+ * Položka `lector` bude přejmenována na `teacher`.
  * Cizí klíče budou reprezentovány odkazem na daný zdroj.
  * TODO paritu semestru jinak?
 
