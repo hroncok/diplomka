@@ -122,4 +122,4 @@ Pomocí externích knihoven je snadné použít OAuth 2 [@eveoauth].
 
 Eve umožňuje nastavovat přístupová práva podle rolí pro celé API, nebo jen pro některé zdroje, stejně tak pro konkrétní HTTP metody [@eveauth].
 
-Celkově se Eve jeví jako framework s velkým množstvím funkcí, který dokáže ušetřit velké množství práce. Vytknul bych snad je přílišnou vázanost na MongoDB, která je často cítit především z dokumentace.
+Celkově se Eve jeví jako framework s velkým množstvím funkcí, který dokáže ušetřit velké množství práce. Vytknul bych snad jen přílišnou vázanost na MongoDB, která je často cítit především z dokumentace.
