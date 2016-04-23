@@ -144,7 +144,7 @@ Jednotlivé zdroje budou odpovídat poskytnutým databázovým pohledům.
 Poskytne přístup k datům z pohledu `v_destination`. Jednotlivě pomocí primárního klíče (`/destinations/<id_destination>`) nebo hromadně.
 V odpovědi budou zahrnuta všechna data [z tabulky](#tab:destination).
 
-Data budou přístupná všem autentizovaným uživatelům.
+Data budou přístupná pro všechny autentizované klienty.
 
 /halls
 ------
@@ -152,7 +152,7 @@ Data budou přístupná všem autentizovaným uživatelům.
 Poskytne přístup k datům z pohledu `v_hall`. Jednotlivě pomocí primárního klíče (`/halls/<id_hall>`) nebo hromadně.
 V odpovědi budou zahrnuta všechna data [z tabulky](#tab:hall).
 
-Data budou přístupná všem autentizovaným uživatelům.
+Data budou přístupná pro všechny autentizované klienty.
 
 /teachers
 ---------
@@ -164,7 +164,7 @@ V odpovědi budou zahrnuta všechna data [z tabulky](#tab:lectors).
  * Položka `id_lector` bude přejmenována na `id_teacher`.
  * Položka `pers_number` bude přejmenována na `personal_number`.
 
-Data budou přístupná všem autentizovaným uživatelům.
+Data budou přístupná pro všechny autentizované klienty.
 
 /sports
 -------
@@ -172,7 +172,7 @@ Data budou přístupná všem autentizovaným uživatelům.
 Poskytne přístup k datům z pohledu `v_sports`. Jednotlivě pomocí primárního klíče (`/sports/<id_sport>`) nebo hromadně.
 V odpovědi budou zahrnuta všechna data [z tabulky](#tab:sports).
 
-Data budou přístupná všem autentizovaným uživatelům.
+Data budou přístupná pro všechny autentizované klienty.
 
 /enrolments
 -----------
@@ -187,9 +187,9 @@ V odpovědi budou zahrnuta všechna data [z tabulky](#tab:students).
 
 ### Přístupová práva
 
- * Autentizovaným uživatelům budou zpřístupněna data o jejich osobě (osobní číslo musí odpovídat osobnímu číslu přihlášeného uživatele).
- * Autentizovaným lektorům budou zpřístupněna data o jejich kurzech (osobní číslo vyučujícího daného kurzu musí odpovídat osobnímu číslu přihlášeného uživatele).
- * Speciálním autentizovaným uživatelům budou zpřístupněna všechna data, kvůli přístupu ze služeb jako Sirius.
+ * Autentizovaným uživatelům/studentům budou zpřístupněna data o jejich osobě (osobní číslo musí odpovídat osobnímu číslu přihlášeného uživatele).
+ * Autentizovaným uživatelům/učitelům budou zpřístupněna data o jejich kurzech (osobní číslo vyučujícího daného kurzu musí odpovídat osobnímu číslu přihlášeného uživatele).
+ * Speciálním autentizovaným klientům budou zpřístupněna všechna data, kvůli přístupu ze služeb jako Sirius.
 
 /courses
 --------
@@ -203,4 +203,4 @@ V odpovědi budou zahrnuta všechna data [z tabulky](#tab:subjects).
  * Cizí klíče budou reprezentovány odkazem na daný zdroj.
  * TODO paritu semestru jinak?
 
-Data budou přístupná všem autentizovaným uživatelům.
+Data budou přístupná pro všechny autentizované klienty.
