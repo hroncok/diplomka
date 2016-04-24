@@ -174,13 +174,13 @@ V odpovědi budou zahrnuta všechna data [z tabulky](#tab:sports).
 
 Data budou přístupná pro všechny autentizované klienty.
 
-/enrolments
+/enrollments
 -----------
 
-Poskytne přístup k datům z pohledu `v_students`. Jednotlivě pomocí primárního klíče (`/enrolments/<id_student>`) nebo hromadně.
+Poskytne přístup k datům z pohledu `v_students`. Jednotlivě pomocí primárního klíče (`/enrollments/<id_student>`) nebo hromadně.
 V odpovědi budou zahrnuta všechna data [z tabulky](#tab:students).
 
- * Položka `id_student` bude přejmenována na `id_enrolment`.
+ * Položka `id_student` bude přejmenována na `id_enrollment`.
  * Položka `utvs` bude přejmenována na `course` a bude obsahovat odkaz na daný zdroj.
  * Položka `tour` bude reprezentována jako boolean.
  * TODO neznámé položky
