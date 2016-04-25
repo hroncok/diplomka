@@ -129,90 +129,65 @@ Při použití vlastního modelu již je možné data číst ze zdroje `/destina
 ------
 
 Některé názvy atributů je třeba přejmenovat.
-Sandman2 k tomu nedává žádnou jinou možnost, než předefinovat u modelu metodu `to_dict`,
-která bude použita před serializací dat do JSONu.
-Vytvořil jsem tedy mixin, který upraví prezentovaná data podle slovníku `__renames__` v modelu ([ukázka](#code:sandman2:py4)).
+To je v sandmanu možné pomocí konstrukce z SQLAlchemy (spodní část [ukázky](#code:sandman2:py45)).
+Bohužel sandman2 s tím nepočítá a je potřeba předefinovat metodu `primary_key()`,
+která vrací v sandmanu název sloupce v tabulce a ne nový název.
+Dle mého názoru se jedná o chybu a její opravu jsem navrhl autorovi na GitHubu, zatím bez odezvy.
+Vytvořil jsem tedy mixin, který použitým modelům tuto metodu předefinuje (vrchní část [ukázky](#code:sandman2:py45)).
 
-```{caption="{#code:sandman2:py4}Sandman2: Přejmenování atributů" .python}
+```{caption="{#code:sandman2:py45}Sandman2: Přejmenování sloupců" .python}
 class CustomizingMixin(Model):
-    '''Mixin that adds customization for the output'''
-    def _rename(self, column):
-        '''Return a new name for a column'''
-        try:
-            return self.__renames__[column]
-        except (AttributeError, KeyError):
-            return column
-
-    def to_dict(self):
-        '''Return the resource as a dictionary'''
-        result_dict = {}
-        for column in self.__table__.columns:
-            name = self._rename(column.key)
-            value = result_dict[name] = getattr(self, column.key, None)
-        return result_dict
+    '''Mixin that fixes primary_key method'''
+    def primary_key(self):
+        '''Return the key of the model's primary key field'''
+        return list(self.__table__.primary_key.columns)[0].key
 
 
 class Courses(CustomizingMixin, db.Model):
     __tablename__ = 'v_subjects'
-    __renames__ = {
-        'id_subjects': 'id_course',
-        'lector': 'teacher',
-    }
 
-    id_subjects = db.Column(db.Integer, primary_key=True)
-    sport = db.Column(db.Integer, db.ForeignKey('v_sports.id_sport'))
-    shortcut = db.Column(db.String)
-    day = db.Column(db.Integer)
-    begin = db.Column(db.String)
-    end = db.Column(db.String)
-    hall = db.Column(db.Integer, db.ForeignKey('v_hall.id_hall'))
-    lector = db.Column(db.Integer,
-                       db.ForeignKey('v_lectors.id_lector'))
-    notice = db.Column(db.String)
-    semester = db.Column(db.Integer)
-```
-
-Je třeba zdůraznit, že toto řešení (úprava na prezentační vrstvě) funguje pouze pro čtení dat,
-v případě, že by k přejmenování mělo dojít i při zápisu,
-muselo by dojít k dalším úpravám.
-
-Existuje i přímočařejší způsob, který můžete vidět [v ukázce](#code:sandman2:py45),
-ten ale rozbije konstrukci URI pro jednotlivé zdroje i procházení atributů v metodě `to_dict`,
-protože sandman2 hledá sloupce podle názvů v SQL, ale vidí data na úrovni názvu atributů.
-Celkově se zdá, že je to použití, které autor sandmanu nezamýšlel, lepší by samozřejmě bylo mít takto sloupce pojmenované už v databázi.
-
-```{caption="{#code:sandman2:py45}Sandman2: Jiný způsob přejmenování" .python}
-class Courses(CustomizingMixin, db.Model):
-    __tablename__ = 'v_subjects'
-
-    id_course = db.Column('id_subjects', db.Integer, primary_key=True)
+    id_course = db.Column('id_subjects', db.Integer, primary_key=True
+                          key='id_course')
     teacher = db.Column('lector', db.Integer,
-                        db.ForeignKey('v_lectors.id_lector'))
+                        db.ForeignKey('v_lectors.id_lector')
+                        key='teacher')
     # ...
 ```
 
 Navzdory očekávání sandman2 nevytvořil odkazy podle cizích klíčů.
 Zároveň některá číslená data zobrazoval jako stringy, protože tak byla uložena v databázi.
-Toto šlo také upravit v metodě `to_dict` ([ukázka](#code:sandman2:py5)).
+Toto jde upravit v metodě `to_dict`, která je
+použita před serializací dat do JSONu.
+Přidal jsem tedy upravenou variantu této metody do již vytvořeného mixinu ([ukázka](#code:sandman2:py5)).
 Výsledek můžete vidět [v ukázce](#code:sandman2:get4).
 
 ```{caption="{#code:sandman2:py5}Sandman2: Přidání prolinkování a další úpravy" .python}
-if column.foreign_keys:
-    # Foreign key, turn it to a link, HATEOAS, yay!
-    # We always have only one f. key in one column
-    fk = list(column.foreign_keys)[0]
-    model = modelstore.reverse_lookup(fk.column.table)
-    instance = model.query.get(int(value))
-    if instance:
-        result_dict[name] = instance.resource_uri()
-elif isinstance(column.type, db.Integer):
-    # Return the value as int, otherwise it might
-    # get returned as str due to bad SQL type
-    result_dict[name] = int(value)
-elif isinstance(value, datetime.datetime):
-    # Display datetimes in ISO format
-    result_dict[name] = value.isoformat()
-result_dict['self'] = self.resource_uri()
+def to_dict(self):
+    '''Return the resource as a dictionary'''
+    result_dict = {}
+    for column in self.__table__.columns:
+        name = column.key
+        value = result_dict[name] = getattr(self, name, None)
+        try:
+            if column.foreign_keys:
+                # Foreign key, turn it to a link, HATEOAS, yay!
+                # We always have only one f. key in one column
+                fk = list(column.foreign_keys)[0]
+                model = modelstore.reverse_lookup(fk.column.table)
+                instance = model.query.get(int(value))
+                if instance:
+                    result_dict[name] = instance.resource_uri()
+            elif isinstance(column.type, db.Integer):
+                # Return the value as int, otherwise it might
+                # get returned as str due to bad SQL type
+                result_dict[name] = int(value)
+            elif isinstance(value, datetime.datetime):
+                # Display datetimes in ISO format
+                result_dict[name] = value.isoformat()
+        except (TypeError, ValueError):
+            pass  # data header won't pass
+        result_dict['self'] = self.resource_uri()
+    return result_dict
 ```
 
 ```{caption="{#code:sandman2:get4}Sandman2: Výsledek s odkazy"}
