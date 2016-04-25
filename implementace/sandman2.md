@@ -214,4 +214,15 @@ ale tento způsob se mi příliš nelíbí, sendman2 bohužel žádný vlastní 
 OAuth
 -----
 
-TODO
+TODO (možná?)
+
+Závěr
+-----
+
+Pokud máte kontrolu nad databází, nabízí sandman2 jednoduchý automatický způsob, jak vytvořit API alespoň částečně ve stylu REST.
+Pokud však potřebujete data prezentovat trochu jiným způsobem, začne sandman2 házet pomyslné klacky pod nohy a základní výhoda
+-- tedy automatické vytvoření API --
+přestane hrát velkou roli.
+
+Kompletní implementaci pro rozvrhová data ÚTVS ČVUT najdete na přiloženém médiu a na adrese
+\url{https://github.com/hroncok/utvsapi-sandman}.
