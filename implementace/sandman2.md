@@ -146,11 +146,12 @@ class CustomizingMixin(Model):
 class Courses(CustomizingMixin, db.Model):
     __tablename__ = 'v_subjects'
 
-    id_course = db.Column('id_subjects', db.Integer, primary_key=True
-                          key='id_course')
+    id = db.Column('id_subjects', db.Integer,
+                   primary_key=True, key='id')
+    starts_at = db.Column('begin', db.String, key='starts_at')
+    ends_at = db.Column('end', db.String, key='ends_at')
     teacher = db.Column('lector', db.Integer,
-                        db.ForeignKey('v_lectors.id_lector')
-                        key='teacher')
+                        db.ForeignKey('v_lectors.id'), key='teacher')
     # ...
 ```
 
@@ -193,16 +194,16 @@ def to_dict(self):
 ```{caption="{#code:sandman2:get4}Sandman2: Výsledek s odkazy"}
 $ curl http://127.0.0.1:5000/courses/2
 {
-  "begin": "08:00",
   "day": 1,
-  "end": "09:30",
+  "ends_at": "09:30",
   "hall": "/halls/31",
-  "id_course": 2,
-  "notice": "NULL",
+  "id": 2,
+  "notice": null,
   "self": "/courses/2",
   "semester": 1,
   "shortcut": "LEZ01",
   "sport": "/sports/17",
+  "starts_at": "08:00",
   "teacher": "/teachers/3"
 }
 ```
@@ -210,6 +211,42 @@ $ curl http://127.0.0.1:5000/courses/2
 Narazil jsem na problém, že z cizího klíče sice poznám tabulku, ale ne model.
 Vyřešil jsem to tak, že před přidáním modelů do aplikace je registruji do reverzního seznamu podle tabulek,
 ale tento způsob se mi příliš nelíbí, sendman2 bohužel žádný vlastní způsob nenabízí.
+
+Také jsem musel upravit zobrazení dat u zdroje `/enrollments`, což je naznačeno [v ukázce](#code:sandman2:py6).
+Výsledek můžete vidět [v ukázce](#code:sandman2:get5).
+
+```{caption="{#code:sandman2:py6}Sandman2: Vlastní logika při zobrazování dat" .python}
+def to_dict(self):
+    # ...
+    if not result_dict['_kos_code']:
+        result_dict['kos_course_code'] = None
+    del result_dict['_kos_code']
+```
+
+```{caption="{#code:sandman2:get5}Sandman2: Výsledek s upravenou položkou"}
+$ curl http://127.0.0.1:5000/enrollments/5350
+{
+  "course": "/courses/116",
+  "id": 5350,
+  "kos_course_code": null,
+  "personal_number": ██████,
+  "registration_date": "2010-11-08T23:26:48",
+  "self": "/enrollments/5350",
+  "semester": "2010/11_1",
+  "tour": true
+}
+$ curl http://127.0.0.1:5000/enrollments/28477
+{
+  "course": "/courses/568",
+  "id": 28477,
+  "kos_course_code": "BI-TV4",
+  "personal_number": ██████,
+  "registration_date": "2012-02-01T10:23:04",
+  "self": "/enrollments/28477",
+  "semester": "2011/12_2",
+  "tour": false
+}
+```
 
 OAuth
 -----
