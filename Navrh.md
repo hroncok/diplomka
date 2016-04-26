@@ -116,8 +116,8 @@ Table: Struktura pohledu v_subjects {#tab:subjects}
 | sport 			| varchar(10)	| ID sportu (v_sports.id_sport)			|
 | shortcut			| varchar(50)	| kód ÚTVS předmětu (např. TUR01)		|
 | day				| varchar(10)	| den v týdnu (1–7)						|
-| begin				| varchar(10)	| čas začátku výuky	TODO formát			|
-| end				| varchar(10)	| čas konce výuky	TODO formát			|
+| begin				| varchar(10)	| čas začátku výuky (HH:MM)				|
+| end				| varchar(10)	| čas konce výuky (HH:MM)				|
 | hall 				| varchar(50)	| ID haly (v_hall.id_hall)				|
 | lector 			| varchar(50)	| ID vyučujícího (v_lectors.id_lector)	|
 | notice			| text			| poznámka (v HTML)						|
