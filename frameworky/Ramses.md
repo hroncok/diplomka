@@ -1,7 +1,7 @@
 Ramses (rozšíření pro Nefertari)
 ================================
 
-![Logo Ramsesu [@ramses]{#pic:ramses}](images/ramses)
+![Logo Ramsesu [@ramses]{#pic:ramses}](pdfs/ramses)
 
 Ramses je framework, který generuje RESTful API pomocí RAMLu [^raml].
 Používá Pyramid a Nefertari [@ramsesdoc].
