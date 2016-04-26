@@ -91,10 +91,11 @@ Table: Struktura pohledu v_students {#tab:students}
 | utvs				| int(11)		| ID zapsaného předmětu ÚTVS		|
 | 					| 				| (v_subjects.id_subjects)			|
 | semester			| varchar(10)	| semestr zápisu					|
-| registration_date	| timestamp		| ?	TODO							|
+| registration_date	| timestamp		| datum a čas zápisu				|
 | tour				| int(0)		| příznak udávající, zda je zapsaný	|
 | 					| 				| předmět kurz						|
-| kos_code			| int(0)		| ?	TODO							|
+| kos_code			| int(0)		| příznak udávající, zda je kos_kod	|
+| 					| 				| opravdový							|
 
 
 Předměty ÚTVS
@@ -141,49 +142,62 @@ Jednotlivé zdroje budou odpovídat poskytnutým databázovým pohledům.
 /destinations
 -------------
 
-Poskytne přístup k datům z pohledu `v_destination`. Jednotlivě pomocí primárního klíče (`/destinations/<id_destination>`) nebo hromadně.
+Poskytne přístup k datům z pohledu `v_destination`. Jednotlivě pomocí primárního klíče (`/destinations/{id}`) nebo hromadně.
 V odpovědi budou zahrnuta všechna data [z tabulky](#tab:destination).
+
+ * Položka `id_destination` bude přejmenována na `id`.
 
 Data budou přístupná pro všechny autentizované klienty.
 
 /halls
 ------
 
-Poskytne přístup k datům z pohledu `v_hall`. Jednotlivě pomocí primárního klíče (`/halls/<id_hall>`) nebo hromadně.
+Poskytne přístup k datům z pohledu `v_hall`. Jednotlivě pomocí primárního klíče (`/halls/{id}`) nebo hromadně.
 V odpovědi budou zahrnuta všechna data [z tabulky](#tab:hall).
+
+ * Položka `id_hall` bude přejmenována na `id`.
 
 Data budou přístupná pro všechny autentizované klienty.
 
 /teachers
 ---------
 
-Poskytne přístup k datům z pohledu `v_lectors`. Jednotlivě pomocí primárního klíče (`/teachers/<id_lector>`) nebo hromadně.
+Poskytne přístup k datům z pohledu `v_lectors`. Jednotlivě pomocí primárního klíče (`/teachers/{id}`) nebo hromadně.
 K přejmenování dochází kvůli sjednocení s KOSapi, Siriem a dalšími službami.
 V odpovědi budou zahrnuta všechna data [z tabulky](#tab:lectors).
 
- * Položka `id_lector` bude přejmenována na `id_teacher`.
+ * Položka `id_lector` bude přejmenována na `id`.
  * Položka `pers_number` bude přejmenována na `personal_number`.
+ * Položka `title_before` bude přejmenována na `degrees_before`.
+ * Položka `title_behind` bude přejmenována na `degrees_after`.
+ * Položka `name` bude přejmenována na `first_name`.
+ * Položka `surname` bude přejmenována na `last_name`.
 
 Data budou přístupná pro všechny autentizované klienty.
 
 /sports
 -------
 
-Poskytne přístup k datům z pohledu `v_sports`. Jednotlivě pomocí primárního klíče (`/sports/<id_sport>`) nebo hromadně.
+Poskytne přístup k datům z pohledu `v_sports`. Jednotlivě pomocí primárního klíče (`/sports/{id}`) nebo hromadně.
 V odpovědi budou zahrnuta všechna data [z tabulky](#tab:sports).
+
+ * Položka `id_sport` bude přejmenována na `id`.
+ * Položka `sport` bude přejmenována na `name`.
+ * Položka `short` bude přejmenována na `shortcut`.
 
 Data budou přístupná pro všechny autentizované klienty.
 
 /enrollments
 -----------
 
-Poskytne přístup k datům z pohledu `v_students`. Jednotlivě pomocí primárního klíče (`/enrollments/<id_student>`) nebo hromadně.
+Poskytne přístup k datům z pohledu `v_students`. Jednotlivě pomocí primárního klíče (`/enrollments/{id}`) nebo hromadně.
 V odpovědi budou zahrnuta všechna data [z tabulky](#tab:students).
 
- * Položka `id_student` bude přejmenována na `id_enrollment`.
+ * Položka `id_student` bude přejmenována na `id`.
+ * Položka `kos_kod` bude přejmenována na `kos_course_code` a bude nastavena na *null*, pokud je `kos_code` 0.
+ * Položka `kos_code` nebude prezentována.
  * Položka `utvs` bude přejmenována na `course` a bude obsahovat odkaz na daný zdroj.
  * Položka `tour` bude reprezentována jako boolean.
- * TODO neznámé položky
 
 ### Přístupová práva
 
@@ -194,14 +208,15 @@ V odpovědi budou zahrnuta všechna data [z tabulky](#tab:students).
 /courses
 --------
 
-Poskytne přístup k datům z pohledu `v_subjects`. Jednotlivě pomocí primárního klíče (`/courses/<id_subjects>`) nebo hromadně.
+Poskytne přístup k datům z pohledu `v_subjects`. Jednotlivě pomocí primárního klíče (`/courses/{id}`) nebo hromadně.
 K přejmenování dochází kvůli sjednocení s KOSapi, Siriem a dalšími službami.
 V odpovědi budou zahrnuta všechna data [z tabulky](#tab:subjects).
 
- * Položka `id_subjects` bude přejmenována na `id_course`.
+ * Položka `id_subjects` bude přejmenována na `id`.
  * Položka `lector` bude přejmenována na `teacher`.
+ * Položka `begin` bude přejmenována na `starts_at`.
+ * Položka `end` bude přejmenována na `ends_at`.
  * Cizí klíče budou reprezentovány odkazem na daný zdroj.
- * TODO paritu semestru jinak?
 
 Data budou přístupná pro všechny autentizované klienty.
 

@@ -13,9 +13,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   height="220.11307pt"
-   viewBox="0 0 396.12778 220.11307"
-   width="396.12778pt"
+   height="225.81682pt"
+   viewBox="0 0 396.57248 225.81682"
+   width="396.57248pt"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -45,17 +45,17 @@
      inkscape:window-height="1056"
      id="namedview3233"
      showgrid="false"
-     inkscape:zoom="1.2643137"
-     inkscape:cx="63.916602"
-     inkscape:cy="164.14382"
-     inkscape:window-x="72"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="node6"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     inkscape:zoom="1.2305344"
+     inkscape:cx="397.14837"
+     inkscape:cy="131.5525"
+     inkscape:window-x="72"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="graph0" />
   <defs
      id="defs4">
     <filter
@@ -8983,642 +8983,635 @@
     </linearGradient>
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#lightgrey"
-       id="linearGradient5219"
-       x1="252.77139"
-       y1="-146.18347"
-       x2="357.12656"
-       y2="-41.828308"
-       gradientTransform="scale(0.86243936,1.1595018)"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#none"
-       id="linearGradient5221"
-       x1="23.160954"
-       y1="-1457.55"
-       x2="32.594936"
-       y2="-1448.1161"
-       gradientTransform="scale(9.4339811,0.10599979)"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#lightgrey"
-       id="linearGradient5223"
-       x1="426.71231"
-       y1="-259.43417"
-       x2="539.42877"
-       y2="-146.7177"
-       gradientTransform="scale(0.93154098,1.0734901)"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#none"
-       id="linearGradient5225"
-       x1="39.027111"
-       y1="-2687.1833"
-       x2="49.225151"
-       y2="-2676.9851"
-       gradientTransform="scale(10.198039,0.09805807)"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
        xlink:href="#black"
-       id="linearGradient5227"
-       x1="359.87299"
-       y1="-202.57632"
-       x2="370.34396"
-       y2="-192.10535"
-       gradientTransform="scale(1.0751946,0.93006423)"
+       id="linearGradient6563"
+       x1="348.88126"
+       y1="-214.01352"
+       x2="359.31146"
+       y2="-203.58328"
+       gradientTransform="scale(1.0813897,0.92473598)"
        gradientUnits="userSpaceOnUse" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#lightgrey"
-       id="linearGradient5229"
-       x1="397.41342"
-       y1="-146.19977"
-       x2="461.34305"
-       y2="-82.270119"
-       gradientTransform="scale(1.048027,0.95417386)"
+       id="linearGradient6670"
+       x1="265.83334"
+       y1="-150.95454"
+       x2="364.83334"
+       y2="-51.954544"
+       gradientTransform="scale(0.81818182,1.2222222)"
        gradientUnits="userSpaceOnUse" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#none"
-       id="linearGradient5231"
-       x1="51.329151"
-       y1="-1011.4428"
-       x2="59.45319"
-       y2="-1003.3187"
-       gradientTransform="scale(8.1240384,0.12309149)"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#black"
-       id="linearGradient5233"
-       x1="394.13733"
-       y1="-117.5091"
-       x2="404.35831"
-       y2="-107.28813"
-       gradientTransform="scale(1.03118,0.96976282)"
+       id="linearGradient6672"
+       x1="24.37314"
+       y1="-1516.0541"
+       x2="33.317413"
+       y2="-1507.1097"
+       gradientTransform="scale(8.9442719,0.1118034)"
        gradientUnits="userSpaceOnUse" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#lightgrey"
-       id="linearGradient5235"
-       x1="326.78867"
-       y1="-74.70195"
-       x2="402.10797"
-       y2="0.6173715"
-       gradientTransform="scale(1.234743,0.80988516)"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#none"
-       id="linearGradient5237"
-       x1="42.119911"
-       y1="-436.42068"
-       x2="51.711575"
-       y2="-426.82901"
-       gradientTransform="scale(9.591663,0.10425721)"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#black"
-       id="linearGradient5239"
-       x1="338.56845"
-       y1="-66.907158"
-       x2="349.14255"
-       y2="-56.333038"
-       gradientTransform="scale(1.1599969,0.86207125)"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#lightgrey"
-       id="linearGradient5241"
-       x1="0"
-       y1="-174.33395"
-       x2="124.45079"
-       y2="-49.883167"
+       id="linearGradient6674"
+       x1="377.24146"
+       y1="-301.8703"
+       x2="501.69226"
+       y2="-177.41953"
        gradientTransform="scale(1.028519,0.97227182)"
        gradientUnits="userSpaceOnUse" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#none"
-       id="linearGradient5243"
-       x1="0.044367824"
-       y1="-1741.1266"
-       x2="11.313795"
-       y2="-1729.8571"
+       id="linearGradient6676"
+       x1="34.473801"
+       y1="-3138.5356"
+       x2="45.743229"
+       y2="-3127.2661"
        gradientTransform="scale(11.269428,0.08873565)"
        gradientUnits="userSpaceOnUse" />
     <linearGradient
        inkscape:collect="always"
+       xlink:href="#lightgrey"
+       id="linearGradient6678"
+       x1="413.77158"
+       y1="-157.01236"
+       x2="475.76349"
+       y2="-95.020424"
+       gradientTransform="scale(1.0162612,0.98399897)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#none"
+       id="linearGradient6680"
+       x1="53.467052"
+       y1="-1098.4241"
+       x2="61.341061"
+       y2="-1090.55"
+       gradientTransform="scale(7.8740079,0.12700013)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
        xlink:href="#black"
-       id="linearGradient5245"
-       x1="201.65395"
-       y1="-117.5091"
-       x2="211.87492"
-       y2="-107.28813"
+       id="linearGradient6682"
+       x1="398.11432"
+       y1="-132.97681"
+       x2="408.3353"
+       y2="-122.75583"
        gradientTransform="scale(1.03118,0.96976282)"
        gradientUnits="userSpaceOnUse" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#lightgrey"
-       id="linearGradient5247"
-       x1="8.3445835"
-       y1="-327.57776"
-       x2="88.756027"
-       y2="-247.16632"
-       gradientTransform="scale(1.3182204,0.75859851)"
+       id="linearGradient6684"
+       x1="366.56937"
+       y1="-84.071396"
+       x2="450.64078"
+       y2="0"
+       gradientTransform="scale(1.1062026,0.90399353)"
        gradientUnits="userSpaceOnUse" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#none"
-       id="linearGradient5249"
-       x1="1.1222851"
-       y1="-2392.6631"
-       x2="11.369236"
-       y2="-2382.416"
-       gradientTransform="scale(10.246951,0.09759001)"
+       id="linearGradient6686"
+       x1="42.328426"
+       y1="-585.09143"
+       x2="51.92009"
+       y2="-575.49976"
+       gradientTransform="scale(9.591663,0.10425721)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#black"
+       id="linearGradient6688"
+       x1="339.28348"
+       y1="-77.717537"
+       x2="349.80295"
+       y2="-67.198059"
+       gradientTransform="scale(1.1628939,0.8599237)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lightgrey"
+       id="linearGradient6690"
+       x1="0"
+       y1="-194.50256"
+       x2="116.48176"
+       y2="-78.020798"
+       gradientTransform="scale(1.0988845,0.91001374)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#none"
+       id="linearGradient6692"
+       x1="0.044367824"
+       y1="-1825.6473"
+       x2="11.313795"
+       y2="-1814.3779"
+       gradientTransform="scale(11.269428,0.08873565)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#black"
+       id="linearGradient6694"
+       x1="201.3669"
+       y1="-132.97681"
+       x2="211.58788"
+       y2="-122.75583"
+       gradientTransform="scale(1.03118,0.96976282)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lightgrey"
+       id="linearGradient6696"
+       x1="13.694618"
+       y1="-317.1684"
+       x2="89.417801"
+       y2="-241.44522"
+       gradientTransform="scale(1.2413636,0.80556575)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#none"
+       id="linearGradient6698"
+       x1="1.8146656"
+       y1="-2319.2981"
+       x2="11.458316"
+       y2="-2309.6543"
+       gradientTransform="scale(9.6436508,0.10369517)"
        gradientUnits="userSpaceOnUse" />
   </defs>
   <g
      class="graph"
      id="graph0"
-     transform="translate(-1.2207032e-5,278.5)">
+     transform="translate(0,293.5)">
     <title
        id="title3041">G</title>
     <g
-       class="node"
-       id="node6">
-      <title
-         id="title3215">yuml_v_destination</title>
+       id="g6570"
+       transform="matrix(0.73317149,0,0,0.73317149,0,-78.314168)">
       <g
-         class="node"
          id="node1"
-         transform="matrix(0.75770428,0,0,0.75770428,0,-67.479356)">
+         class="node">
         <title
-           id="title3044">yuml_v_subjects</title>
+           id="title3044">yuml_courses</title>
         <polygon
-           points="218.5,-49 218.5,-169 307.5,-169 307.5,-49 218.5,-49 "
+           id="polygon3046"
            style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
-           id="polygon3046" />
+           points="218,-64 218,-64 218,-184 298,-184 298,-64 " />
         <polygon
-           points="218.5,-49 218.5,-169 307.5,-169 307.5,-49 218.5,-49 "
-           style="fill:url(#linearGradient5219);stroke:#000000"
-           id="polygon3048" />
+           id="polygon3048"
+           style="fill:url(#linearGradient6670);stroke:#000000"
+           points="218,-64 218,-64 218,-184 298,-184 298,-64 " />
         <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
+           id="text3050"
+           y="-172.8"
+           x="258"
            transform="translate(0,-2)"
-           x="263"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">/courses</text>
+        <polyline
+           id="polyline3052"
+           style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
+           points="218,-169 298,-169 " />
+        <polyline
+           id="polyline3054"
+           style="fill:url(#linearGradient6672);stroke:#000000"
+           points="218,-169 298,-169 " />
+        <text
+           id="text3056"
            y="-157.8"
-           id="text3050">/courses</text>
-        <polyline
-           points="218.5,-154 307.5,-154 "
-           style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
-           id="polyline3052" />
-        <polyline
-           points="218.5,-154 307.5,-154 "
-           style="fill:url(#linearGradient5221);stroke:#000000"
-           id="polyline3054" />
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
+           x="258"
            transform="translate(0,-2)"
-           x="263"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">id</text>
+        <text
+           id="text3058"
            y="-142.8"
-           id="text3056">id_course</text>
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
+           x="258"
            transform="translate(0,-2)"
-           x="263"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">shortcut</text>
+        <text
+           id="text3060"
            y="-127.8"
-           id="text3058">shortcut</text>
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
+           x="258"
            transform="translate(0,-2)"
-           x="263"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">day</text>
+        <text
+           id="text3062"
            y="-112.8"
-           id="text3060">day</text>
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
+           x="258"
            transform="translate(0,-2)"
-           x="263"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">stars_at</text>
+        <text
+           id="text3064"
            y="-97.800003"
-           id="text3062">begin</text>
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
+           x="258"
            transform="translate(0,-2)"
-           x="263"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">ends_at</text>
+        <text
+           id="text3066"
            y="-82.800003"
-           id="text3064">end</text>
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
+           x="258"
            transform="translate(0,-2)"
-           x="263"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">notice</text>
+        <text
+           id="text3068"
            y="-67.800003"
-           id="text3066">notice</text>
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
+           x="258"
            transform="translate(0,-2)"
-           x="263"
-           y="-52.799999"
-           id="text3068">semester</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">semester</text>
       </g>
       <g
-         class="node"
          id="node2"
-         transform="matrix(0.75770428,0,0,0.75770428,0,-67.479356)">
+         class="node">
         <title
-           id="title3071">yuml_v_lectors</title>
+           id="title3071">yuml_teachers</title>
         <polygon
-           points="398,-158 398,-278 502,-278 502,-158 398,-158 "
+           id="polygon3073"
            style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
-           id="polygon3073" />
+           points="388.5,-173 388.5,-173 388.5,-293 515.5,-293 515.5,-173 " />
         <polygon
-           points="398,-158 398,-278 502,-278 502,-158 398,-158 "
-           style="fill:url(#linearGradient5223);stroke:#000000"
-           id="polygon3075" />
+           id="polygon3075"
+           style="fill:url(#linearGradient6674);stroke:#000000"
+           points="388.5,-173 388.5,-173 388.5,-293 515.5,-293 515.5,-173 " />
         <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
+           id="text3077"
+           y="-281.79999"
+           x="452"
            transform="translate(0,-2)"
-           x="450"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">/teachers</text>
+        <polyline
+           id="polyline3079"
+           style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
+           points="388.5,-278 515.5,-278 " />
+        <polyline
+           id="polyline3081"
+           style="fill:url(#linearGradient6676);stroke:#000000"
+           points="388.5,-278 515.5,-278 " />
+        <text
+           id="text3083"
            y="-266.79999"
-           id="text3077">/teachers</text>
-        <polyline
-           points="398,-263 502,-263 "
-           style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
-           id="polyline3079" />
-        <polyline
-           points="398,-263 502,-263 "
-           style="fill:url(#linearGradient5225);stroke:#000000"
-           id="polyline3081" />
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
+           x="452"
            transform="translate(0,-2)"
-           x="450"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">id</text>
+        <text
+           id="text3085"
            y="-251.8"
-           id="text3083">id_teacher</text>
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
+           x="452"
            transform="translate(0,-2)"
-           x="450"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">degrees_before</text>
+        <text
+           id="text3087"
            y="-236.8"
-           id="text3085">title_before</text>
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
+           x="452"
            transform="translate(0,-2)"
-           x="450"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">first_name</text>
+        <text
+           id="text3089"
            y="-221.8"
-           id="text3087">name</text>
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
+           x="452"
            transform="translate(0,-2)"
-           x="450"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">last_name</text>
+        <text
+           id="text3091"
            y="-206.8"
-           id="text3089">surname</text>
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
+           x="452"
            transform="translate(0,-2)"
-           x="450"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">degrees_after</text>
+        <text
+           id="text3093"
            y="-191.8"
-           id="text3091">title_behind</text>
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
+           x="452"
            transform="translate(0,-2)"
-           x="450"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">personal_number</text>
+        <text
+           id="text3095"
            y="-176.8"
-           id="text3093">personal_number</text>
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
+           x="452"
            transform="translate(0,-2)"
-           x="450"
-           y="-161.8"
-           id="text3095">url</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">url</text>
       </g>
       <path
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:#000000;stroke-width:0.75770426"
+         d="m 298.317,-146.321 c 23.364,-13.263 53.705,-30.489 81.179,-46.085"
          id="path3100"
-         d="m 233.2532,-169.64138 c 18.40312,-10.84275 41.54644,-24.47915 61.59378,-36.29025" />
-      <path
          inkscape:connector-curvature="0"
-         id="path3102"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 298.317,-146.321 c 23.364,-13.263 53.705,-30.489 81.179,-46.085"
          style="fill:none;stroke:#000000;filter:url(#shadow)"
-         d="m 307.842,-134.831 c 24.288,-14.31 54.832,-32.307 81.29,-47.895"
-         transform="matrix(0.75770428,0,0,0.75770428,0,-67.479356)" />
+         id="path3102"
+         inkscape:connector-curvature="0" />
       <polygon
-         id="polygon3104"
+         points="383.954,-194.937 381.828,-188.556 388.302,-197.406 388.302,-197.406 388.302,-197.406 377.384,-196.382 383.954,-194.937 379.606,-192.469 379.606,-192.469 379.606,-192.469 "
          style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
-         points="391.602,-178.959 397.933,-187.912 397.933,-187.912 397.933,-187.912 387.033,-186.713 393.625,-185.374 389.318,-182.836 389.318,-182.836 389.318,-182.836 393.625,-185.374 "
-         transform="matrix(0.75770428,0,0,0.75770428,0,-67.479356)" />
+         id="polygon3104" />
       <polygon
-         id="polygon3106"
-         style="fill:url(#linearGradient5227);stroke:#000000"
-         points="391.602,-178.959 397.933,-187.912 397.933,-187.912 397.933,-187.912 387.033,-186.713 393.625,-185.374 389.318,-182.836 389.318,-182.836 389.318,-182.836 393.625,-185.374 "
-         transform="matrix(0.75770428,0,0,0.75770428,0,-67.479356)" />
+         points="383.954,-194.937 381.828,-188.556 388.302,-197.406 388.302,-197.406 388.302,-197.406 377.384,-196.382 383.954,-194.937 379.606,-192.469 379.606,-192.469 379.606,-192.469 "
+         style="fill:url(#linearGradient6563);stroke:#000000"
+         id="polygon3106" />
       <text
-         id="text3108"
-         y="-208.0016"
-         x="282.63541"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.33474731px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">teacher</text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
+         x="359.91449"
+         y="-193.50748"
+         id="text3108">teacher</text>
       <g
-         class="node"
          id="node3"
-         transform="matrix(0.75770428,0,0,0.75770428,0,-67.479356)">
+         class="node">
         <title
-           id="title3111">yuml_v_hall</title>
+           id="title3111">yuml_halls</title>
         <polygon
-           points="417,-79 417,-139 483,-139 483,-79 417,-79 "
+           id="polygon3113"
            style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
-           id="polygon3113" />
+           points="421,-94 421,-94 421,-154 483,-154 483,-94 " />
         <polygon
-           points="417,-79 417,-139 483,-139 483,-79 417,-79 "
-           style="fill:url(#linearGradient5229);stroke:#000000"
-           id="polygon3115" />
+           id="polygon3115"
+           style="fill:url(#linearGradient6678);stroke:#000000"
+           points="421,-94 421,-94 421,-154 483,-154 483,-94 " />
         <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
-           transform="translate(0,-2)"
-           x="450"
-           y="-127.8"
-           id="text3117">/halls</text>
-        <polyline
-           points="417,-124 483,-124 "
-           style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
-           id="polyline3119" />
-        <polyline
-           points="417,-124 483,-124 "
-           style="fill:url(#linearGradient5231);stroke:#000000"
-           id="polyline3121" />
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
-           transform="translate(0,-2)"
-           x="450"
-           y="-112.8"
-           id="text3123">id_hall</text>
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
-           transform="translate(0,-2)"
-           x="450"
-           y="-97.800003"
-           id="text3125">name</text>
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
-           transform="translate(0,-2)"
-           x="450"
-           y="-82.800003"
-           id="text3127">url</text>
-      </g>
-      <g
-         class="edge"
-         id="edge2"
-         transform="matrix(0.75770428,0,0,0.75770428,0,-67.479356)">
-        <title
-           id="title3130">yuml_v_subjects-&gt;yuml_v_hall</title>
-        <path
-           d="m 307.842,-109 c 29.917,0 69.327,0 98.9,0"
-           id="path3132"
-           style="fill:none;stroke:#000000"
-           inkscape:connector-curvature="0" />
-        <path
-           d="m 307.842,-109 c 29.917,0 69.327,0 98.9,0"
-           style="fill:none;stroke:#000000;filter:url(#shadow)"
-           id="path3134"
-           inkscape:connector-curvature="0" />
-        <polygon
-           points="406.761,-109 411.761,-109 406.761,-104.5 416.761,-109 416.761,-109 416.761,-109 406.761,-113.5 411.761,-109 406.761,-109 406.761,-109 "
-           style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
-           id="polygon3136" />
-        <polygon
-           points="406.761,-109 411.761,-109 406.761,-104.5 416.761,-109 416.761,-109 416.761,-109 406.761,-113.5 411.761,-109 406.761,-109 406.761,-109 "
-           style="fill:url(#linearGradient5233);stroke:#000000"
-           id="polygon3138" />
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
-           transform="translate(0,-4)"
-           x="398.634"
-           y="-113.752"
-           id="text3140">hall</text>
-      </g>
-      <g
-         class="node"
-         id="node4"
-         transform="matrix(0.75770428,0,0,0.75770428,0,-67.479356)">
-        <title
-           id="title3143">yuml_v_sports</title>
-        <polygon
-           points="404,0 404,-60 496,-60 496,0 404,0 "
-           style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
-           id="polygon3145" />
-        <polygon
-           points="404,0 404,-60 496,-60 496,0 404,0 "
-           style="fill:url(#linearGradient5235);stroke:#000000"
-           id="polygon3147" />
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
-           transform="translate(0,-2)"
-           x="450"
-           y="-48.799999"
-           id="text3149">/sports</text>
-        <polyline
-           points="404,-45 496,-45 "
-           style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
-           id="polyline3151" />
-        <polyline
-           points="404,-45 496,-45 "
-           style="fill:url(#linearGradient5237);stroke:#000000"
-           id="polyline3153" />
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
-           transform="translate(0,-2)"
-           x="450"
-           y="-33.799999"
-           id="text3155">id_sport</text>
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
-           transform="translate(0,-2)"
-           x="450"
-           y="-18.799999"
-           id="text3157">sport</text>
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
-           transform="translate(0,-2)"
-           x="450"
-           y="-3.8"
-           id="text3159">description</text>
-      </g>
-      <g
-         class="edge"
-         id="edge3"
-         transform="matrix(0.75770428,0,0,0.75770428,0,-67.479356)">
-        <title
-           id="title3162">yuml_v_subjects-&gt;yuml_v_sports</title>
-        <path
-           d="m 307.842,-90.2781 c 25.903,11.061 58.921,25.1607 86.51,36.9421"
-           id="path3164"
-           style="fill:none;stroke:#000000"
-           inkscape:connector-curvature="0" />
-        <path
-           d="m 307.842,-90.2781 c 25.903,11.061 58.921,25.1607 86.51,36.9421"
-           style="fill:none;stroke:#000000;filter:url(#shadow)"
-           id="path3166"
-           inkscape:connector-curvature="0" />
-        <polygon
-           points="394.667,-53.2015 399.266,-51.2379 392.9,-49.063 403.864,-49.2743 403.864,-49.2743 403.864,-49.2743 396.435,-57.34 399.266,-51.2379 394.667,-53.2015 394.667,-53.2015 "
-           style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
-           id="polygon3168" />
-        <polygon
-           points="394.667,-53.2015 399.266,-51.2379 392.9,-49.063 403.864,-49.2743 403.864,-49.2743 403.864,-49.2743 396.435,-57.34 399.266,-51.2379 394.667,-53.2015 394.667,-53.2015 "
-           style="fill:url(#linearGradient5239);stroke:#000000"
-           id="polygon3170" />
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
-           transform="translate(0,-4)"
-           x="390.51401"
-           y="-60.466"
-           id="text3172">sport</text>
-      </g>
-      <g
-         class="node"
-         id="node5"
-         transform="matrix(0.75770428,0,0,0.75770428,0,-67.479356)">
-        <title
-           id="title3175">yuml_v_students</title>
-        <polygon
-           points="0.5,-49 0.5,-169 127.5,-169 127.5,-49 0.5,-49 "
-           style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
-           id="polygon3177" />
-        <polygon
-           points="0.5,-49 0.5,-169 127.5,-169 127.5,-49 0.5,-49 "
-           style="fill:url(#linearGradient5241);stroke:#000000"
-           id="polygon3179" />
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
-           transform="translate(0,-2)"
-           x="64"
-           y="-157.8"
-           id="text3181">/enrolments</text>
-        <polyline
-           points="0.5,-154 127.5,-154 "
-           style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
-           id="polyline3183" />
-        <polyline
-           points="0.5,-154 127.5,-154 "
-           style="fill:url(#linearGradient5243);stroke:#000000"
-           id="polyline3185" />
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
-           transform="translate(0,-2)"
-           x="64"
+           id="text3117"
            y="-142.8"
-           id="text3187">id_enrolment</text>
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
+           x="452"
            transform="translate(0,-2)"
-           x="64"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">/halls</text>
+        <polyline
+           id="polyline3119"
+           style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
+           points="421,-139 483,-139 " />
+        <polyline
+           id="polyline3121"
+           style="fill:url(#linearGradient6680);stroke:#000000"
+           points="421,-139 483,-139 " />
+        <text
+           id="text3123"
            y="-127.8"
-           id="text3189">personal_number</text>
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
+           x="452"
            transform="translate(0,-2)"
-           x="64"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">id</text>
+        <text
+           id="text3125"
            y="-112.8"
-           id="text3191">kos_kod</text>
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
+           x="452"
            transform="translate(0,-2)"
-           x="64"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">name</text>
+        <text
+           id="text3127"
            y="-97.800003"
-           id="text3193">semester</text>
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
+           x="452"
            transform="translate(0,-2)"
-           x="64"
-           y="-82.800003"
-           id="text3195">registration_date</text>
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
-           transform="translate(0,-2)"
-           x="64"
-           y="-67.800003"
-           id="text3197">tour</text>
-        <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
-           transform="translate(0,-2)"
-           x="64"
-           y="-52.799999"
-           id="text3199">kos_code</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">url</text>
       </g>
       <g
-         class="edge"
-         id="edge4"
-         transform="matrix(0.75770428,0,0,0.75770428,0,-67.479356)">
+         id="edge2"
+         class="edge">
         <title
-           id="title3202">yuml_v_students-&gt;yuml_v_subjects</title>
+           id="title3130">yuml_courses-&gt;yuml_halls</title>
         <path
-           d="m 127.603,-109 c 25.943,0 55.736,0 80.668,0"
-           id="path3204"
-           style="fill:none;stroke:#000000"
-           inkscape:connector-curvature="0" />
+           id="path3132"
+           d="m 298.317,-124 c 32.768,0 79.264,0 112.32,0"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
         <path
-           d="m 127.603,-109 c 25.943,0 55.736,0 80.668,0"
+           id="path3134"
            style="fill:none;stroke:#000000;filter:url(#shadow)"
-           id="path3206"
+           d="m 298.317,-124 c 32.768,0 79.264,0 112.32,0"
            inkscape:connector-curvature="0" />
         <polygon
-           points="208.276,-109 213.276,-109 208.276,-104.5 218.276,-109 218.276,-109 218.276,-109 208.276,-113.5 213.276,-109 208.276,-109 208.276,-109 "
+           id="polygon3136"
            style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
-           id="polygon3208" />
+           points="410.862,-124 410.862,-124 415.862,-124 410.862,-119.5 420.862,-124 420.862,-124 420.862,-124 410.862,-128.5 415.862,-124 410.862,-124 " />
         <polygon
-           points="208.276,-109 213.276,-109 208.276,-104.5 218.276,-109 218.276,-109 218.276,-109 208.276,-113.5 213.276,-109 208.276,-109 208.276,-109 "
-           style="fill:url(#linearGradient5245);stroke:#000000"
-           id="polygon3210" />
+           id="polygon3138"
+           style="fill:url(#linearGradient6682);stroke:#000000"
+           points="410.862,-124 410.862,-124 415.862,-124 410.862,-119.5 420.862,-124 420.862,-124 420.862,-124 410.862,-128.5 415.862,-124 410.862,-124 " />
         <text
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
+           id="text3140"
+           y="-128.752"
+           x="402.73599"
            transform="translate(0,-4)"
-           x="200.14999"
-           y="-113.752"
-           id="text3212">course</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">hall</text>
       </g>
-      <polygon
-         points="11.5,-188 11.5,-248 116.5,-248 116.5,-188 11.5,-188 "
-         style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
-         id="polygon3217"
-         transform="matrix(0.75770428,0,0,0.75770428,0,-67.479356)" />
-      <polygon
-         points="11.5,-188 11.5,-248 116.5,-248 116.5,-188 11.5,-188 "
-         style="fill:url(#linearGradient5247);stroke:#000000"
-         id="polygon3219"
-         transform="matrix(0.75770428,0,0,0.75770428,0,-67.479356)" />
-      <text
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.33474731px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
-         x="48.493073"
-         y="-248.41914"
-         id="text3221">/destinations</text>
-      <polyline
-         points="11.5,-233 116.5,-233 "
-         style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
-         id="polyline3223"
-         transform="matrix(0.75770428,0,0,0.75770428,0,-67.479356)" />
-      <polyline
-         points="11.5,-233 116.5,-233 "
-         style="fill:url(#linearGradient5249);stroke:#000000"
-         id="polyline3225"
-         transform="matrix(0.75770428,0,0,0.75770428,0,-67.479356)" />
-      <text
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.33474731px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
-         x="48.493073"
-         y="-237.05357"
-         id="text3227">id_destination</text>
-      <text
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.33474731px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
-         x="48.493073"
-         y="-225.68802"
-         id="text3229">name</text>
-      <text
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.33474731px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle"
-         x="48.493073"
-         y="-214.32245"
-         id="text3231">url</text>
+      <g
+         id="node4"
+         class="node">
+        <title
+           id="title3143">yuml_sports</title>
+        <polygon
+           id="polygon3145"
+           style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
+           points="406,-0.5 406,-0.5 406,-75.5 498,-75.5 498,-0.5 " />
+        <polygon
+           id="polygon3147"
+           style="fill:url(#linearGradient6684);stroke:#000000"
+           points="406,-0.5 406,-0.5 406,-75.5 498,-75.5 498,-0.5 " />
+        <text
+           id="text3149"
+           y="-64.300003"
+           x="452"
+           transform="translate(0,-2)"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">/sports</text>
+        <polyline
+           id="polyline3151"
+           style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
+           points="406,-60.5 498,-60.5 " />
+        <polyline
+           id="polyline3153"
+           style="fill:url(#linearGradient6686);stroke:#000000"
+           points="406,-60.5 498,-60.5 " />
+        <text
+           id="text3155"
+           y="-49.299999"
+           x="452"
+           transform="translate(0,-2)"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">id</text>
+        <text
+           id="text3157"
+           y="-34.299999"
+           x="452"
+           transform="translate(0,-2)"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">shortcut</text>
+        <text
+           id="text3159"
+           y="-19.299999"
+           x="452"
+           transform="translate(0,-2)"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">sport</text>
+        <text
+           id="text3161"
+           y="-4.3000002"
+           x="452"
+           transform="translate(0,-2)"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">description</text>
+      </g>
+      <g
+         id="edge3"
+         class="edge">
+        <title
+           id="title3164">yuml_courses-&gt;yuml_sports</title>
+        <path
+           id="path3166"
+           d="m 298.317,-106.389 c 28.237,12.6477 66.667,29.8612 97.908,43.8542"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <path
+           id="path3168"
+           style="fill:none;stroke:#000000;filter:url(#shadow)"
+           d="m 298.317,-106.389 c 28.237,12.6477 66.667,29.8612 97.908,43.8542"
+           inkscape:connector-curvature="0" />
+        <polygon
+           id="polygon3170"
+           style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
+           points="396.543,-62.3921 396.543,-62.3921 401.107,-60.3482 394.704,-58.2852 405.67,-58.3042 405.67,-58.3042 405.67,-58.3042 398.383,-66.4989 401.107,-60.3482 396.543,-62.3921 " />
+        <polygon
+           id="polygon3172"
+           style="fill:url(#linearGradient6688);stroke:#000000"
+           points="396.543,-62.3921 396.543,-62.3921 401.107,-60.3482 394.704,-58.2852 405.67,-58.3042 405.67,-58.3042 405.67,-58.3042 398.383,-66.4989 401.107,-60.3482 396.543,-62.3921 " />
+        <text
+           id="text3174"
+           y="-69.727798"
+           x="392.582"
+           transform="translate(0,-4)"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">sport</text>
+      </g>
+      <g
+         id="node5"
+         class="node">
+        <title
+           id="title3177">yuml_enrollments</title>
+        <polygon
+           id="polygon3179"
+           style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
+           points="0.5,-71.5 0.5,-71.5 0.5,-176.5 127.5,-176.5 127.5,-71.5 " />
+        <polygon
+           id="polygon3181"
+           style="fill:url(#linearGradient6690);stroke:#000000"
+           points="0.5,-71.5 0.5,-71.5 0.5,-176.5 127.5,-176.5 127.5,-71.5 " />
+        <text
+           id="text3183"
+           y="-165.3"
+           x="64"
+           transform="translate(0,-2)"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">/enrollments</text>
+        <polyline
+           id="polyline3185"
+           style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
+           points="0.5,-161.5 127.5,-161.5 " />
+        <polyline
+           id="polyline3187"
+           style="fill:url(#linearGradient6692);stroke:#000000"
+           points="0.5,-161.5 127.5,-161.5 " />
+        <text
+           id="text3189"
+           y="-150.3"
+           x="64"
+           transform="translate(0,-2)"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">id</text>
+        <text
+           id="text3191"
+           y="-135.3"
+           x="64"
+           transform="translate(0,-2)"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">personal_number</text>
+        <text
+           id="text3193"
+           y="-120.3"
+           x="64"
+           transform="translate(0,-2)"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">kos_course_code</text>
+        <text
+           id="text3195"
+           y="-105.3"
+           x="64"
+           transform="translate(0,-2)"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">semester</text>
+        <text
+           id="text3197"
+           y="-90.300003"
+           x="64"
+           transform="translate(0,-2)"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">registration_date</text>
+        <text
+           id="text3199"
+           y="-75.300003"
+           x="64"
+           transform="translate(0,-2)"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">tour</text>
+      </g>
+      <g
+         id="edge4"
+         class="edge">
+        <title
+           id="title3202">yuml_enrollments-&gt;yuml_courses</title>
+        <path
+           id="path3204"
+           d="m 127.602,-124 c 26.045,0 55.837,0 80.264,0"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <path
+           id="path3206"
+           style="fill:none;stroke:#000000;filter:url(#shadow)"
+           d="m 127.602,-124 c 26.045,0 55.837,0 80.264,0"
+           inkscape:connector-curvature="0" />
+        <polygon
+           id="polygon3208"
+           style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
+           points="207.98,-124 207.98,-124 212.98,-124 207.98,-119.5 217.98,-124 217.98,-124 217.98,-124 207.98,-128.5 212.98,-124 207.98,-124 " />
+        <polygon
+           id="polygon3210"
+           style="fill:url(#linearGradient6694);stroke:#000000"
+           points="207.98,-124 207.98,-124 212.98,-124 207.98,-119.5 217.98,-124 217.98,-124 217.98,-124 207.98,-128.5 212.98,-124 207.98,-124 " />
+        <text
+           id="text3212"
+           y="-128.752"
+           x="199.853"
+           transform="translate(0,-4)"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">course</text>
+      </g>
+      <g
+         id="node6"
+         class="node">
+        <title
+           id="title3215">yuml_destinations</title>
+        <polygon
+           id="polygon3217"
+           style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
+           points="17.5,-195 17.5,-195 17.5,-255 110.5,-255 110.5,-195 " />
+        <polygon
+           id="polygon3219"
+           style="fill:url(#linearGradient6696);stroke:#000000"
+           points="17.5,-195 17.5,-195 17.5,-255 110.5,-255 110.5,-195 " />
+        <text
+           id="text3221"
+           y="-243.8"
+           x="64"
+           transform="translate(0,-2)"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">/destinations</text>
+        <polyline
+           id="polyline3223"
+           style="fill:#000000;fill-opacity:0.2;stroke:none;filter:url(#shadow)"
+           points="17.5,-240 110.5,-240 " />
+        <polyline
+           id="polyline3225"
+           style="fill:url(#linearGradient6698);stroke:#000000"
+           points="17.5,-240 110.5,-240 " />
+        <text
+           id="text3227"
+           y="-228.8"
+           x="64"
+           transform="translate(0,-2)"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">id</text>
+        <text
+           id="text3229"
+           y="-213.8"
+           x="64"
+           transform="translate(0,-2)"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">name</text>
+        <text
+           id="text3231"
+           y="-198.8"
+           x="64"
+           transform="translate(0,-2)"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-anchor:middle">url</text>
+      </g>
     </g>
   </g>
 </svg>
