@@ -3,7 +3,7 @@ Nefertari
 
 Nefertari je REST API framework pro Pyramid, který používá Elasticsearch pro čtení a MongoDB nebo PostgreSQL pro zápis [@nefertari].
 
-V Nefertari je nejprve potřeba připravit model, což je entita mapovaná na databázi, a k danému modelu vytvořit *view*, což je mapování dané entity na HTTP metody. Ukázkový model a *view* můžete vidět [v ukázkách](#code:nefertarimodel) [a](#code:nefertariview). Serializaci do JSONua mapování na URL za vás obstará framework.
+V Nefertari je nejprve potřeba připravit model, což je entita mapovaná na databázi, a k danému modelu vytvořit *view*, což je mapování dané entity na HTTP metody. Ukázkový model a *view* můžete vidět [v ukázkách](#code:nefertarimodel) [a](#code:nefertariview). Serializaci do JSONu a mapování na URL za vás obstará framework.
 
 ```{caption="{#code:nefertarimodel}Příklad použití z dokumentace Nefertari (model) \autocite{nefertarimodel}" .python}
 from datetime import datetime
