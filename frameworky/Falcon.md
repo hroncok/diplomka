@@ -6,12 +6,12 @@ Falcon
 Falcon je neuvěřitelně rychlý, minimalistický Python webový framework pro tvorbu cloudových API a aplikačních backendů [@falcon].
 Mezi hlavní přednosti podle webové stránky [@falcon] patří:
 
- * závislost pouze na modulech `six` a `mimeparse`
- * rychlejší zpracování požadavků než u jiných populárních frameworků
- * podpora WSGI, CPythonu 2.6, 2.7, 3.3 a 3.4 i PyPy
- * výkonnost
- * svoboda volby detailů
- * spolehlivost
+ * závislost pouze na modulech `six` a `mimeparse`,
+ * rychlejší zpracování požadavků než u jiných populárních frameworků,
+ * podpora WSGI, CPythonu 2.6, 2.7, 3.3 a 3.4 i PyPy,
+ * výkonnost,
+ * svoboda volby detailů,
+ * spolehlivost.
 
 Falcon je bezesporu minimalistický, společně s závislostmi zabírá pouze 0,9~MiB místa.
 Je šířen pod permisivní Apache licencí [@apache] a nevyžaduje žádný webový framework.
