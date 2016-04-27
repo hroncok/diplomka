@@ -62,7 +62,7 @@ DOMAIN = {'people': {}}
 }
 
 
-# GET /poeple
+# GET /people
 {
     "_items": [],
     "_links": {
