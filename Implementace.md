@@ -83,7 +83,7 @@ Mezi tyto funkce patří:
  * řazení,
  * vyjednávání o obsahu.
 
-Budu se zabývat tím, jestli dané funkce existují a jak je lze použít.
+Budu se zabývat tím, jestli dané funkce existují a jak ji lze použít.
 Pokud některá služba bude nabízet další funkce pro uživatele, zmíním je samozřejmě také.
 
 \input{implementace/sandman2}
