@@ -276,26 +276,48 @@ Sandman2 toto neumožňuje.
 Funkce služby
 -------------
 
+Dokumentace sandmanu o těchto možnostech mlčí.
+Existuje iniciativa za dokumentování těchto funkcí [@sandmanquery].
 
+Zde je také potřeba zmínit, že URI zdrojů fungují jen bez koncového lomítka.
 
 ### Stránkování
 
+Je možné pouze zvolit číslo stránky pomocí parametru `page`.
+Velikost stránky nelze ovlivnit (je to vždy 20).
+Bez použití parametru `page` se implicitně zobrazí celý seznam, což může trvat poměrně dlouho.
 
+`GET /courses?page=5`
+
+Je možné použít parametr `limit` ale ne v kombinaci s parametrem `page`.
+
+`GET /courses?limit=5`
 
 ### Filtrování
 
+Filtrovat výsledky se dá pouze velmi omezeným způsobem,
+například takto se dá zobrazit seznam kurzů probírajících v pátek:
 
+`GET /courses?day=5`
+
+Neleze ale filtrovat na základě cizích klíčů, ani nastavit podmínku (větší než apod.).
+Při špatně provedeném dotazu může výsledek skončit chybou sandmanu, což jsem nahlásil jako chybu.
 
 ### Řazení
 
+Je možné použít parametr `sort` pro zvolení položky, podle které se budou výsledky řadit.
+Není možné zvolit směr řazení.
+Řazení lze kombinovat se stránkováním, ale ne s parametrem `limit`.
 
+`GET /courses?page=1&sort=starts_at`
 
 ### Vyjednávání o obsahu
 
+Není v sandmanu podporováno.
 
 ### Rozcestník
 
-
+Není v sandmanu podporován.
 
 Další poznámky
 --------------
