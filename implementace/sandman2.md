@@ -292,6 +292,9 @@ Funkce služby
 ### Vyjednávání o obsahu
 
 
+### Rozcestník
+
+
 
 Další poznámky
 --------------

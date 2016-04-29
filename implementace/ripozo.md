@@ -462,6 +462,11 @@ Nepřišel jsem na způsob, jak seznam řadit jinak než implicitně.
 
 Posle hlavičky `Accept` volí ripozo vhodný *adaptér* (HAL, Siren atd.).
 
+### Rozcestník
+
+Rozcestník je automaticky vytvořen, odpovídá ale pouze na metodu *OPTIONS*.
+
+
 Další poznámky
 --------------
 

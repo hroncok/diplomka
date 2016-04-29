@@ -148,7 +148,10 @@ Mezi tyto funkce patří:
  * stránkování,
  * filtrování,
  * řazení,
- * vyjednávání o obsahu.
+ * vyjednávání o obsahu,
+ * rozcestník.
+
+Rozcestníkem je zde myšlen API zdroj v rootu, kde jsou odkazy na jednotlivé zdroje.
 
 Budu se zabývat tím, jestli dané funkce existují a jak ji lze použít.
 Pokud některá služba bude nabízet další funkce pro uživatele, zmíním je samozřejmě také.
