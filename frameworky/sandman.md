@@ -71,7 +71,7 @@ Dokumentace k původnímu sandmanu uvádí, že je možné použít HTTP autenti
 a na základě ní zpřístupnit celé API pouze přihlášeným uživatelům [@sandmanauth].
 Jiné zabudované možnosti podporovány zatím nejsou. Je ale možné napsat speciální funkci, která předzpracovává všechny požadavky a v této implementovat jiný způsob autentizace a autorizace.
 
-Sandman2 informace o přístupových právech v dokumentaci bohužel neobsahuje.
+Sandman2 informace o přístupových právech v dokumentaci bohužel neobsahuje, tato funkcionalita zde ještě není.
 
 Sandman2 je nástroj, který mapuje REST rozhraní k SQL databázi a dělá to dobře.
 Na škodu je přerod projektu sandman do projektu sandman2, za který zatím platí hlavně dokumentace, což se doufám časem zlepší.

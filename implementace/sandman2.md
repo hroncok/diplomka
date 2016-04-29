@@ -1,141 +1,52 @@
-
 Sandman2
 ========
 
-Základní použití s nástrojem sandman2ctl
-----------------------------------------
+
+Namapování dat z pohledů na zdroje
+----------------------------------
 
 Podle dokumentace sandmanu [@sandman] by mělo stačit spustit příkaz [z ukázky](#code:sandman2:command) a API by se mělo „samo vytvořit“.
 
 ```{caption="{#code:sandman2:command}Sandman2: Automatické vytvoření REST API"}
 $ sandman2ctl 'mysql://uzivatel:heslo@server/databaze'
-UserWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead 
-and will be disabled by default in the future.  Set it to True to supp
-ress this warning.
  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
 ```
 
-Kromě varování ohledně funkce z SQLAlchemy, která bude v budoucnosti vypnuta, se zdá, že všechno proběhlo,
-jak má, a API je připraveno k použití.
-Například na adrese `/v_destination` bychom tedy měli dostat seznam všech destinací.
-Bohužel, to se neděje, jak můžete vidět [v ukázce](#code:sandman2:get1).
+Pokud ale nechceme použít data z tabulek, ale z pohledů, a potřebujeme ovlivnit názvy zdrojů,
+nezbývá nám, než nadefinovat modely ručně pomocí SQLAlchemy modelů.
+Model pro `/destinations` můžete vidět [v ukázce](#code:sandman2:mapping).
 
-```{caption="{#code:sandman2:get1}Sandman2: Chyba 404"}
-$ curl http://127.0.0.1:5000/v_destination
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
-<title>404 Not Found</title>
-<h1>Not Found</h1>
-<p>The requested URL was not found on the server.  If you entered the 
-URL manually please check your spelling and try again.</p>
-```
 
-Přišel jsem na to, že sandman2 zobrazuje pouze všechny SQL tabulky, nezobrazí pohledy.
-Pokud tedy v databázi budou tabulky, sandman2 je zobrazí správně.
-[V příkladech](#code:sandman2:get2) [a](#code:sandman2:get3)  existuje v databázi tabulka `destination` se stejnou strukturou jako má pohled `v_destination`.
-
-```{caption="{#code:sandman2:get2}Sandman2: Seznam destinací"}
-$ curl http://127.0.0.1:5000/destination
-{
-  "resources": [
-    {
-      "id_destination": 0,
-      "name": "name",
-      "url": "url"
-    },
-    {
-      "id_destination": 4,
-      "name": "Benecko - Penzion Villa",
-      "url": "http://www.utvs.cvut.cz/zimni-kurzy/destinace/benecko-p
-enzion-villa.html"
-    },
-    {
-      "id_destination": 6,
-      "name": "\u0160pindler\u016fv Ml\u00fdn - Lovochemie",
-      "url": "http://www.utvs.cvut.cz/zimni-kurzy/destinace/spindleru
-v-mlyn-lovochemie.html"
-    },
-    ... vynecháno
-    {
-      "id_destination": 110,
-      "name": "Orl\u00edk - placht\u011bn\u00ed",
-      "url": ""
-    }
-  ]
-}
-```
-
-```{caption="{#code:sandman2:get3}Sandman2: Jedna destinace"}
-$ curl http://127.0.0.1:5000/destination/53
-{
-  "id_destination": 53,
-  "name": "Chorvatsko - Rab",
-  "url": "http://www.utvs.cvut.cz/letni-kurzy/destinace/chorvatsko-rab
-.html"
-}
-```
-
-Pokročilé použití z Pythonu
----------------------------
-
-Rozhodl jsem se tedy vyzkoušet nějaké možnosti úpravy chování a přesvědčit sandman2 k zobrazení dat z pohledů.
-Nejprve jsem vytvořil jednoduchý skript ([ukázka](#code:sandman2:py1)), který by se měl chovat podobně jako `sandman2ctl`;
-s jediným rozdílem -- rovnou jsem využil možnosti `read_only`, které zpřístupní pouze metody pro čtení.
-
-```{caption="{#code:sandman2:py1}Sandman2: Použití z Pythonu" .python}
-import sandman2
-from sqlalchemy.engine.url import URL
-
-# to use this, create mysql.cnf with content like this:
-# [client]
-# host = localhost
-# user = foo
-# database = bar
-# password = secret
-
-url = URL('mysql', query={'read_default_file': './mysql.cnf'})
-app = sandman2.get_app(url, read_only=True)
-
-app.run()
-```
-
-Ověřil jsem, že se skript chová stejně jako `sandman2ctl`.
-Poté jsem vytvořil vlastní model a pokusil se ho namapovat na pohled místo tabulky ([ukázka](#code:sandman2:py2)).
-
-```{caption="{#code:sandman2:py2}Sandman2: Pokus o vlastní model" .python}
+```{caption="{#code:sandman2:mapping}Sandman2: Namapování dat z pohledů na zdroje" .python}
 class Destinations(sandman2.model.db.Model):
     __tablename__ = 'v_destination'
 
-
-app = sandman2.get_app(url, user_models=[Destinations], read_only=True)
-```
-
-To bohužel selže s výjimkou, protože při použití vlastního modelu je nutné specifikovat jednotlivé sloupce z tabulky ([ukázka](#code:sandman2:py3)).
-Obrovská část automatiky tak bohužel ze sandmanu zmizí.
-
-```{caption="{#code:sandman2:py3}Sandman2: Vlastní model" .python}
-from sandman2.model import db
-
-
-class Destinations(db.Model):
-    __tablename__ = 'v_destination'
     id_destination = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
     url = db.Column(db.String)
+
+app = sandman2.get_app(url, user_models=[Destinations], read_only=True)
 ```
+Namapování dat z pohledů na zdroje v sandmanu je:
 
-Při použití vlastního modelu již je možné data číst ze zdroje `/destinations`.
+ * možné,
+ * systematické,
+ * jednoduché, ale ne plně automatické, jak by se z popisu sandmanu mohlo zdát.
 
-Úpravy
-------
+Přejmenování položek
+--------------------
 
-Některé názvy atributů je třeba přejmenovat.
-To je v sandmanu možné pomocí konstrukce z SQLAlchemy (spodní část [ukázky](#code:sandman2:py45)).
-Bohužel sandman2 s tím nepočítá a je potřeba předefinovat metodu `primary_key()`,
+Pro přejmenování položek stačí provést jednoduchou úpravu modelu.
+Jak můžete vidět [v ukázce](#code:sandman2:rename),
+stačí přejmenovat třídní atributy a poskytnout konstruktoru `Column` název slupce jako první argument
+a název atributu jako argument `key`.
+
+Bohužel sandman2 s tím nepočítá a je potřeba předefinovat metodu,
 která vrací v sandmanu název sloupce v tabulce a ne nový název.
 Dle mého názoru se jedná o chybu a její opravu jsem navrhl autorovi na GitHubu, zatím bez odezvy.
-Vytvořil jsem tedy mixin, který použitým modelům tuto metodu předefinuje (vrchní část [ukázky](#code:sandman2:py45)).
+Vytvořil jsem tedy mixin, který použitým modelům tuto metodu předefinuje (vrchní část [ukázky](#code:sandman2:rename)).
 
-```{caption="{#code:sandman2:py45}Sandman2: Přejmenování sloupců" .python}
+```{caption="{#code:sandman2:rename}Sandman2: Přejmenování položek" .python}
 class CustomizingMixin(Model):
     '''Mixin that fixes primary_key method'''
     def primary_key(self):
@@ -143,33 +54,52 @@ class CustomizingMixin(Model):
         return list(self.__table__.primary_key.columns)[0].key
 
 
-class Courses(CustomizingMixin, db.Model):
-    __tablename__ = 'v_subjects'
+class Teachers(CustomizingMixin, db.Model):
+    __tablename__ = 'v_lectors'
 
-    id = db.Column('id_subjects', db.Integer,
+    id = db.Column('id_lector', db.Integer,
                    primary_key=True, key='id')
-    starts_at = db.Column('begin', db.String, key='starts_at')
-    ends_at = db.Column('end', db.String, key='ends_at')
-    teacher = db.Column('lector', db.Integer,
-                        db.ForeignKey('v_lectors.id'), key='teacher')
-    # ...
+    degrees_before = db.Column('title_before', db.String,
+                               key='degrees_before')
+    first_name = db.Column('name', db.String, key='first_name')
+    last_name = db.Column('surname', db.String, key='last_name')
+    degrees_after = db.Column('title_behind', db.String,
+                              key='degrees_after')
+    personal_number = db.Column('pers_number', db.Integer,
+                                key='personal_number')
+    url = db.Column(db.String)
 ```
 
-Navzdory očekávání sandman2 nevytvořil odkazy podle cizích klíčů.
-Zároveň některá číslená data zobrazoval jako stringy, protože tak byla uložena v databázi.
-Toto jde upravit v metodě `to_dict`, která je
-použita před serializací dat do JSONu.
-Přidal jsem tedy upravenou variantu této metody do již vytvořeného mixinu ([ukázka](#code:sandman2:py5)).
-Výsledek můžete vidět [v ukázce](#code:sandman2:get4).
+Přejmenování položek v sandmanu je:
 
-```{caption="{#code:sandman2:py5}Sandman2: Přidání prolinkování a další úpravy" .python}
-def to_dict(self):
-    '''Return the resource as a dictionary'''
-    result_dict = {}
-    for column in self.__table__.columns:
-        name = column.key
-        value = result_dict[name] = getattr(self, name, None)
-        try:
+ * možné,
+ * do určité míry systematické[^key],
+ * triviální.
+
+[^key]: Má výhrada zde směřuje k nutnosti opakování názvu atributu. Nutnost předefinovat metodu je patrně nezamýšlená.
+
+Prolinkování zdrojů ve stylu HATEOAS
+------------------------------------
+
+Sanman2 odkazy nevytváří automaticky, je ale poměrně jednoduché je vytvořit ručně.
+Stačí na modelu předefinovat metodu `to_dict()` a zde linky sestrojit z cizích klíčů.
+Přidal jsem tedy upravenou variantu této metody do již vytvořeného mixinu ([ukázka](#code:sandman2:links)).
+
+Narazil jsem na problém, že z cizího klíče sice poznám tabulku, ale ne model.
+Vyřešil jsem to tak, že před přidáním modelů do aplikace je registruji do reverzního seznamu podle tabulek
+(pomocí dekorátoru),
+ale tento způsob se mi příliš nelíbí, sendman2 bohužel žádný vlastní způsob nenabízí.
+
+```{caption="{#code:sandman2:links}Sandman2: Prolinkování zdrojů ve stylu HATEOAS" .python}
+class CustomizingMixin(Model):
+    # ...
+
+    def to_dict(self):
+        '''Return the resource as a dictionary'''
+        result_dict = {}
+        for column in self.__table__.columns:
+            name = column.key
+            value = result_dict[name] = getattr(self, name, None)
             if column.foreign_keys:
                 # Foreign key, turn it to a link, HATEOAS, yay!
                 # We always have only one f. key in one column
@@ -178,88 +108,202 @@ def to_dict(self):
                 instance = model.query.get(int(value))
                 if instance:
                     result_dict[name] = instance.resource_uri()
+        result_dict['self'] = self.resource_uri()
+        return result_dict
+```
+
+Prolinkování zdrojů ve stylu HATEOAS v sandmanu je:
+
+ * možné,
+ * velmi nesystematické,
+ * poměrně jednoduché.
+
+Navigační odkazy se automaticky nevytvářejí a úprava tohoto chování není možná.
+
+Úprava zobrazených dat
+----------------------
+
+Úpravu zobrazených dat lze provést v metodě `to_dict()`.
+Bylo by možné používat různé varianty této metody pro různé modely, ale v našem případě si vystačíme s metodou jednou.
+Úpravu pro číselné typy a kód kurzu z KOSu můžete vidět [v ukázce](#code:sandman2:modify).
+
+```{caption="{#code:sandman2:modify}sandman2: Úprava zobrazených dat" .python}
+class CustomizingMixin(Model):
+    # ...
+
+    def to_dict(self):
+        '''Return the resource as a dictionary'''
+        result_dict = {}
+        for column in self.__table__.columns:
+            name = column.key
+            value = result_dict[name] = getattr(self, name, None)
+            if column.foreign_keys:
+                # ...
             elif isinstance(column.type, db.Integer):
                 # Return the value as int, otherwise it might
                 # get returned as str due to bad SQL type
                 result_dict[name] = int(value)
+            # ...
+        try:
+            if not result_dict['_kos_code']:
+                result_dict['kos_course_code'] = None
+            del result_dict['_kos_code']
+        except KeyError:
+            pass
+        return result_dict
+```
+
+Úprava zobrazených dat v sandmanu je:
+
+ * možná,
+ * nepříliš systematická,
+ * jednoduchá.
+
+Zobrazení dat ve standardizované podobě
+---------------------------------------
+
+Úprava způsobu zobrazení jedné entity je možná v metodě `to_dict()`.
+Úprava způsobu zobrazení seznamu entit není možná.
+
+[V ukázce](#sandman2:sandman2:standard) je vidět úprava ve stylu HAL.
+
+```{caption="{#code:sandman2:standard}sandman2: Zobrazení dat ve standardizované podobě" .python}
+class CustomizingMixin(Model):
+    # ...
+    def to_dict(self):
+        '''Return the resource as a dictionary'''
+        result_dict = {'_links': {}}
+        for column in self.__table__.columns:
+            name = column.key
+            value = result_dict[name] = getattr(self, name, None)
+            if column.foreign_keys:
+                fk = list(column.foreign_keys)[0]
+                model = modelstore.reverse_lookup(fk.column.table)
+                instance = model.query.get(int(value))
+                if instance:
+                    result_dict['_links'][name] = {'href': instance.resource_uri()}
+                    del result_dict[name]
+            # ... elifs
             elif isinstance(value, datetime.datetime):
                 # Display datetimes in ISO format
                 result_dict[name] = value.isoformat()
-        except (TypeError, ValueError):
-            pass  # data header won't pass
-        result_dict['self'] = self.resource_uri()
-    return result_dict
+        result_dict['_links']['self'] = {'href': self.resource_uri()}
+        # ...
+        return result_dict
 ```
 
-```{caption="{#code:sandman2:get4}Sandman2: Výsledek s odkazy"}
-$ curl http://127.0.0.1:5000/courses/2
+Příklad výstupu pro HAL můžete vidět [v ukázkce](#code:sandman2:hal).
+
+```{caption="{#sandman2:sandman2:hal}sandman2: Příklad výstupu pro HAL" .python}
 {
-  "day": 1,
-  "ends_at": "09:30",
-  "hall": "/halls/31",
-  "id": 2,
-  "notice": null,
-  "self": "/courses/2",
-  "semester": 1,
-  "shortcut": "LEZ01",
-  "sport": "/sports/17",
-  "starts_at": "08:00",
-  "teacher": "/teachers/3"
+    "_links": {
+        "hall": {
+            "href": "/halls/29"
+        },
+        "self": {
+            "href": "/courses/2158"
+        },
+        "sport": {
+            "href": "/sports/107"
+        },
+        "teacher": {
+            "href": "/teachers/42"
+        }
+    },
+    "day": 5,
+    "ends_at": "15:30",
+    "id": 2158,
+    "notice": "P\u0158KS /k\u00f3dy 17PBPTV2 a 17BPTV2/ - sebeobrana",
+    "semester": 2,
+    "shortcut": "FBM14",
+    "starts_at": "14:00"
 }
 ```
 
-Narazil jsem na problém, že z cizího klíče sice poznám tabulku, ale ne model.
-Vyřešil jsem to tak, že před přidáním modelů do aplikace je registruji do reverzního seznamu podle tabulek,
-ale tento způsob se mi příliš nelíbí, sendman2 bohužel žádný vlastní způsob nenabízí.
+Zobrazení dat ve standardizované podobě v sandmanu je:
 
-Také jsem musel upravit zobrazení dat u zdroje `/enrollments`, což je naznačeno [v ukázce](#code:sandman2:py6).
-Výsledek můžete vidět [v ukázce](#code:sandman2:get5).
+ * částečně možné,
+ * nepříliš systematické,
+ * jednoduché v závislosti na zvolené standardu.
 
-```{caption="{#code:sandman2:py6}Sandman2: Vlastní logika při zobrazování dat" .python}
-def to_dict(self):
+
+Použití přirozených identifikátorů
+----------------------------------
+
+Pro použití přirozeného identifikátoru lze v modelu nastavit jiný primární klíč,
+následně je v našem případě potřeba v metodě `to_dict()` změnit řádku kódu, která najde patřičný objekt u cizího klíče.
+Obojí můžete vidět [v ukázce](#code:sandman2:ids).
+
+```{caption="{#code:sandman2:ids}sandman2: Použití přirozených identifikátorů" .python}
+class CustomizingMixin(Model):
     # ...
-    if not result_dict['_kos_code']:
-        result_dict['kos_course_code'] = None
-    del result_dict['_kos_code']
+    def to_dict(self):
+        '''Return the resource as a dictionary'''
+        # ...
+            # WAS: instance = model.query.get(int(value))
+            instance = model.query.filter_by(id=int(value)).first()
+        # ...
+        return result_dict
+
+
+@modelstore.register
+class Sports(mixins.CustomizingMixin, db.Model):
+    __tablename__ = 'v_sports'
+
+    id = db.Column('id_sport', db.Integer, key='id')
+    shortcut = db.Column('short', db.String, primary_key=True,
+                         key='shortcut')
+    # ...
 ```
 
-```{caption="{#code:sandman2:get5}Sandman2: Výsledek s upravenou položkou"}
-$ curl http://127.0.0.1:5000/enrollments/5350
-{
-  "course": "/courses/116",
-  "id": 5350,
-  "kos_course_code": null,
-  "personal_number": ██████,
-  "registration_date": "2010-11-08T23:26:48",
-  "self": "/enrollments/5350",
-  "semester": "2010/11_1",
-  "tour": true
-}
-$ curl http://127.0.0.1:5000/enrollments/28477
-{
-  "course": "/courses/568",
-  "id": 28477,
-  "kos_course_code": "BI-TV4",
-  "personal_number": ██████,
-  "registration_date": "2012-02-01T10:23:04",
-  "self": "/enrollments/28477",
-  "semester": "2011/12_2",
-  "tour": false
-}
-```
+Použití přirozených identifikátorů v sandmanu je:
 
-OAuth
------
+ * možné,
+ * systematické,
+ * jednoduché.
 
-TODO (možná?)
+Přístupová práva
+----------------
 
-Závěr
------
+Implementace přístupových práv bez velkého zásahu do kódu sandmanu není možná.
+
+Generování dokumentace
+----------------------
+
+
+
+Funkce služby
+-------------
+
+
+
+### Stránkování
+
+
+
+### Filtrování
+
+
+
+### Řazení
+
+
+
+### Vyjednávání o obsahu
+
+
+
+Další poznámky
+--------------
 
 Pokud máte kontrolu nad databází, nabízí sandman2 jednoduchý automatický způsob, jak vytvořit API alespoň částečně ve stylu REST.
 Pokud však potřebujete data prezentovat trochu jiným způsobem, začne sandman2 házet pomyslné klacky pod nohy a základní výhoda
 -- tedy automatické vytvoření API --
 přestane hrát velkou roli.
 
-Kompletní implementaci pro rozvrhová data ÚTVS ČVUT najdete na přiloženém médiu a na adrese
+Kompletní implementace
+----------------------
+
+Kompletní implementaci REST API pro rozvrhová data ÚTVS ČVUT ve frameowkru sandman2
+najdete na přiloženém médiu a na adrese
 \url{https://github.com/hroncok/utvsapi-sandman}.
