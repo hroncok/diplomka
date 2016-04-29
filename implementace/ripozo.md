@@ -434,7 +434,33 @@ Ripozo tuto možnost neumožňuje.
 Funkce služby
 -------------
 
-TODO
+Dokumentace ripoza neuvádí nic o možnostech stránkování, filtrování apod.
+Prohlídkou kódu jsem zjistil, že tyto možnosti obstarává `ripozo-sqlalchemy`,
+který dokumentací spíše šetří, informace zde uvedené jsou tedy získány experimentálně.
+
+### Stránkování
+
+Stránkovat se dá standardně pomocí parametrů `count` a `page`.
+
+`GET /courses/?page=5&count=5`
+
+### Filtrování
+
+Filtrovat výsledky se dá pouze velmi omezeným způsobem,
+například takto se dá zobrazit seznam kurzů probírajících v pátek:
+
+`GET /courses/?day=5`
+
+Neleze ale filtrovat na základě cizích klíčů, ani nastavit podmínku (větší než apod.).
+Při špatně provedeném dotazu může výsledek skončit chybou ripoza, což jsme nahlásil jako chybu.
+
+### Řazení
+
+Nepřišel jsem na způsob, jak seznam řadit jinak než implicitně.
+
+### Vyjednávání o obsahu
+
+Posle hlavičky `Accept` volí ripozo vhodný *adaptér* (HAL, Siren atd.).
 
 Další poznámky
 --------------
@@ -445,6 +471,8 @@ ale v současné době je k dispozici pouze navázání na Flask a Django.
 Vzhledem k výsledkům benchmarku [v části](#benchmark@) by bylo z hlediska rychlosti zajímavé implementovat napojení na webový framework Falcon.
 Jelikož se tato práce ale obecně rozdíly mezi webovými frameworky nezabývá, nechávám tuto možnost otevřenou.
 
+Implementovaná služba zaostávala hlavně v možnostech řazení a filtrování, zde je třeba zdůraznit, že se jedná o nedostatky modulu `ripozo-sqlalchemy`.
+
 
 Kompletní implementace
 ----------------------
@@ -452,4 +480,3 @@ Kompletní implementace
 Kompletní implementaci REST API pro rozvrhová data ÚTVS ČVUT ve frameowkru ripozo
 najdete na přiloženém médiu a na adrese
 \url{https://github.com/hroncok/utvsapi-ripozo}.
-
