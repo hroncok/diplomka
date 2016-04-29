@@ -229,8 +229,8 @@ class Enrollment(db.Model):
 
 Úprava zobrazených dat v ripozu je:
 
- * možná
- * systematická
+ * možná,
+ * systematická,
  * jednoduchá.
 
 Zobrazení dat ve standardizované podobě
