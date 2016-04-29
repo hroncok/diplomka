@@ -181,7 +181,8 @@ class CustomizingMixin(Model):
                 model = modelstore.reverse_lookup(fk.column.table)
                 instance = model.query.get(int(value))
                 if instance:
-                    result_dict['_links'][name] = {'href': instance.resource_uri()}
+                    result_dict['_links'][name] = \
+                        {'href': instance.resource_uri()}
                     del result_dict[name]
             # ... elifs
             elif isinstance(value, datetime.datetime):
