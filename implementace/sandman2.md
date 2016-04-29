@@ -270,7 +270,7 @@ Implementace přístupových práv bez velkého zásahu do kódu sandmanu není 
 Generování dokumentace
 ----------------------
 
-
+Sandman2 toto neumožňuje.
 
 Funkce služby
 -------------

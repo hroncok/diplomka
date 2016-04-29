@@ -429,7 +429,7 @@ Přístupová práva v ripozu jsou:
 Generování dokumentace
 ----------------------
 
-Ripozo tuto možnost neumožňuje.
+Ripozo toto neumožňuje.
 
 Funkce služby
 -------------
