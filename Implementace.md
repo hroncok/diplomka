@@ -153,4 +153,5 @@ Mezi tyto funkce patří:
 Budu se zabývat tím, jestli dané funkce existují a jak ji lze použít.
 Pokud některá služba bude nabízet další funkce pro uživatele, zmíním je samozřejmě také.
 
+\input{implementace/ripozo}
 \input{implementace/sandman2}
