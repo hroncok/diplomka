@@ -315,7 +315,7 @@ podle dokumentace je na to vhodné použít pre- a postprocesory [@ripozoprepost
 
 Vytvořil jsme tedy hlavní preprocesor, který v dekorátoru `@register` vkládám ke všem zdrojům.
 Tento preprocesor ověří token pomocí modulu `utvsapitoken` a vyhodnotí, jestli má klient právo ke čtení.
-Preprocesor můžete vidět [v ukázce](#code:ripozo:auth). Použité výjimky jsme si musel vytvořit, ale kvůli trivialitě je zde neuvádím.
+Preprocesor můžete vidět [v ukázce](#code:ripozo:auth). Použité výjimky jsem si musel vytvořit, ale kvůli trivialitě je zde neuvádím.
 Ripozo zařídí, že se výjimky správně projeví v odpovědi serveru (stavovým kódem a zprávou o chybě).
 
 ```{caption="{#code:ripozo:auth}ripozo: Autorizační preprocesor" .python}
@@ -362,26 +362,11 @@ U zdroje `/enrollments` musíme zajistit, že data uvidí jen speciálně autori
 Pro výpis zápisů je třeba použít preprocesor, pro konkrétní zápis je třeba použít postprocesor,
 abychom mohli přistupovat ke zdroji a zjistit, jakému studentovi náleží apod.
 
-V [ukázce](#code:ripozo:auth2) můžete vidět velmi zjednodušenou variantu funkce,
+V [ukázce](#code:ripozo:auth2) můžete vidět zjednodušenou variantu funkce,
 která slouží zároveň jako preprocesor i jako postprocesor.
 Kompletní kód včetně vysvětlujících komentářů je součástí implementace služby.
 
 ```{caption="{#code:ripozo:auth2}ripozo: Autorizační pre-/postprocesor zdroje Enrollment" .python}
-@register
-class Teacher(db.Model):
-    # ...
-
-    @classmethod
-    def _is_teacher(cls, pnum):
-        '''Checks if the personal number is a teacher'''
-        request = RequestContainer(
-            url_params={'personal_number': pnum})
-        try:
-            resources[cls.__name__].retrieve(request)
-            return True
-        except exceptions.NotFoundException:
-            return False
-
 class Enrollment(db.Model):
     # ...
 
@@ -392,8 +377,11 @@ class Enrollment(db.Model):
         if 'cvut:utvs:enrollments:all' in scope:
             return
 
-        # it's a person
         if 'cvut:utvs:enrollments:by-role' in scope:
+            if 'B-00000-ZAMESTNANEC' in request.client_info['roles']:
+                return
+
+        if 'cvut:utvs:enrollments:personal' in scope:
             pnum = request.client_info['personal_number']
             if not pnum:
                 raise exceptions.ForbiddenException(
@@ -404,12 +392,7 @@ class Enrollment(db.Model):
                 # you are the student of this resource
                 if pnum == resource.properties['personal_number']:
                     return
-
-            if Teacher._is_teacher(pnum):
-                # you are a teacher
-                return
-
-            if not resource:
+            else:
                 # this is a list of resources
                 # you are a person, but not a teacher
                 # we'll filter all the enrollments by personal_number
@@ -424,7 +407,7 @@ Přístupová práva v ripozu jsou:
 
  * možná,
  * částečně systematická,
- * pro složitější logiku příliš komplikovaná.
+ * pro složitější logiku mohou být příliš komplikovaná.
 
 Generování dokumentace
 ----------------------

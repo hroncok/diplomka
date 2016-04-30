@@ -73,14 +73,6 @@ jeho nejpodstatnější součást můžete vidět [v ukázce](#code:utvsapitoken
 Součástí modulu je i jednoduchý server, který OAAS a Usermap API simuluje, pro účely testování.
 
 ```{caption="{#code:utvsapitoken}utvsapitoken: Zíkání informací o tokenu" .python}
-import json
-import time
-
-import requests
-
-from utvsapitoken.exceptions import *
-
-
 class TokenClient:
     '''Class for making requests for tokens'''
 
@@ -107,22 +99,31 @@ class TokenClient:
             raise TokenExpired('Token is expired')
 
         if 'user_name' in info:
-            pnum = self._pnum_from_username(info['user_name'], token)
-            if pnum:
+            pnum, roles = self._extra_from_username(
+                info['user_name'], token)
+            if pnum is not None:
                 info.update({'personal_number': pnum})
+            if roles is not None:
+                info.update({'roles': roles})
 
         return info
 
-    def _pnum_from_username(self, username, token):
+    def _extra_from_username(self, username, token):
         r = requests.get(
             self.uuri + '/' + username,
             headers={'Authorization': 'Bearer %s' % token})
         info = json.loads(r.text)
         self._raise_if_error(info, UsermapError)
         try:
-            return info['personalNumber']
+            pnum = info['personalNumber']
         except KeyError:
-            return None
+            pnum = None
+        try:
+            roles = info['roles']
+        except KeyError:
+            roles = None
+        return pnum, roles
+
 ```
 
 Kompletní implementaci tohoto modulu najdete na přiloženém médiu a na adrese
