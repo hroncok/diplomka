@@ -7,7 +7,7 @@ Je možné jej spustit jako samostatnou službu nebo jej integrovat do vlastní 
 Ve výchozí konfiguraci zpřístupní celou databázi, toto chování lze ale změnit a zpřístupnit jen část, případně u některých tabulek povolit jen některé operace.
 Příklad úpravy můžete vidět [v ukázce](#code:sandman).
 
-```{caption="{#code:sandman}Sandman: Příklad úpravy chování \autocite{sandman1gh}" .python}
+```{caption="{#code:sandman}sandman: Příklad úpravy chování \autocite{sandman1gh}" .python}
 class Style(Model):
     """Model mapped to the "Genre" table
 

@@ -1,4 +1,4 @@
-Sandman2
+sandman2
 ========
 
 
@@ -7,7 +7,7 @@ Namapování dat z pohledů na zdroje
 
 Podle dokumentace sandmanu [@sandman] by mělo stačit spustit příkaz [z ukázky](#code:sandman2:command) a API by se mělo „samo vytvořit“.
 
-```{caption="{#code:sandman2:command}Sandman2: Automatické vytvoření REST API"}
+```{caption="{#code:sandman2:command}sandman2: Automatické vytvoření REST API"}
 $ sandman2ctl 'mysql://uzivatel:heslo@server/databaze'
  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
 ```
@@ -17,7 +17,7 @@ nezbývá nám, než nadefinovat modely ručně pomocí SQLAlchemy modelů.
 Model pro `/destinations` můžete vidět [v ukázce](#code:sandman2:mapping).
 
 
-```{caption="{#code:sandman2:mapping}Sandman2: Namapování dat z pohledů na zdroje" .python}
+```{caption="{#code:sandman2:mapping}sandman2: Namapování dat z pohledů na zdroje" .python}
 class Destinations(sandman2.model.db.Model):
     __tablename__ = 'v_destination'
 
@@ -46,7 +46,7 @@ která vrací v sandmanu název sloupce v tabulce a ne nový název.
 Dle mého názoru se jedná o chybu a její opravu jsem navrhl autorovi na GitHubu, zatím bez odezvy.
 Vytvořil jsem tedy mixin, který použitým modelům tuto metodu předefinuje (vrchní část [ukázky](#code:sandman2:rename)).
 
-```{caption="{#code:sandman2:rename}Sandman2: Přejmenování položek" .python}
+```{caption="{#code:sandman2:rename}sandman2: Přejmenování položek" .python}
 class CustomizingMixin(Model):
     '''Mixin that fixes primary_key method'''
     def primary_key(self):
@@ -90,7 +90,7 @@ Vyřešil jsem to tak, že před přidáním modelů do aplikace je registruji d
 (pomocí dekorátoru),
 ale tento způsob se mi příliš nelíbí, sendman2 bohužel žádný vlastní způsob nenabízí.
 
-```{caption="{#code:sandman2:links}Sandman2: Prolinkování zdrojů ve stylu HATEOAS" .python}
+```{caption="{#code:sandman2:links}sandman2: Prolinkování zdrojů ve stylu HATEOAS" .python}
 class CustomizingMixin(Model):
     # ...
 
