@@ -6,8 +6,7 @@ Namapování dat z pohledů na zdroje
 
 Pro namapování SQL dat na zdroje je možné použít modul `ripozo-sqlalchemy`.
 Je třeba pro každou entitu vytvořit třídy pro model, správce a zdroj.
-Příklad pro zdroj `/enrollments` můžete vidět [v ukázce](#code:ripozo:mapping);
-implementační detaily, jako importy, jsou vynechány pro lepší čitelnost.
+Příklad pro zdroj `/enrollments` můžete vidět [v ukázce](#code:ripozo:mapping).
 
 ```{caption="{#code:ripozo:mapping}ripozo: Namapování dat z pohledů na zdroje" .python}
 

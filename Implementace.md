@@ -157,5 +157,6 @@ Rozcestníkem je zde myšlen API zdroj v rootu, kde jsou odkazy na jednotlivé z
 Budu se zabývat tím, jestli dané funkce existují a jak ji lze použít.
 Pokud některá služba bude nabízet další funkce pro uživatele, zmíním je samozřejmě také.
 
+\input{implementace/Eve}
 \input{implementace/ripozo}
 \input{implementace/sandman2}
