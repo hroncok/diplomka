@@ -132,8 +132,13 @@ což je možné jen díky jednoduchosti této konkrétní ukázkové služby.
 ```{caption="{#code:eve:links2}Eve: Vložení odkazů" .python}
 def make_links(response, *args):
     for arg in args:
+        if isinstance(response[arg], dict):
+            # embedded
+            id = response[arg]['id']
+        else:
+            id = response[arg]
         response[config.LINKS][arg] = {
-            'href': '{}s/{}'.format(arg, response[arg]),
+            'href': '{}s/{}'.format(arg, id),
             'title': arg.title()
         }
 
@@ -169,14 +174,12 @@ def register(cls):
     classes[plural] = cls
     return cls
 
-
 @register
 class Course(Base):
     # ...
     def __display_func__(response):
         make_ints(response, 'day', 'hall', 'sport', 'teacher')
         make_links(response, 'hall', 'sport', 'teacher')
-
 
 @register
 class Enrollment(Base):
@@ -187,13 +190,14 @@ class Enrollment(Base):
         del response['kos_code_flag']
         make_links(response, 'course')
 
-
 def make_links(response, *args):
     # ...
 
 def make_ints(response, *args):
     for arg in args:
-        response[arg] = int(response[arg])
+        if not isinstance(response[arg], dict):
+            # not embedded
+            response[arg] = int(response[arg])
 
 def remove_dates(response):
     del response[config.LAST_UPDATED]
@@ -431,29 +435,75 @@ Funkce služby
 
 ### Stránkování
 
+Stránkování se děje automaticky samo, zobrazenou stránku lze ovlivnit parametrem `page`
+a počet výsledků na stránce parametrem `max_results`.
 
+`GET /courses/?page=3&max_results=5`
 
 ### Filtrování
 
+Filtrovat se dá pomocí JSONu v parametru `where`. Například takto:
 
+`GET /courses/?where={"teacher": 2}`
+
+Nelze stanovit žádnou podmínku, například větší než apod.
+Nelze kombinovat více filtrů.
 
 ### Řazení
 
+Řadit se dá parametrem `sort` podle různých položek a to včetně určení směru řazení a použití více řadících podmínek.
+Následující příklad seřadí kurzy podle dnu v týdnu od největšího a následně v případě shody podle čísla haly.
 
+`GET /courses/?sort=-day,hall`
+
+Řazení, filtrování a stránkování se dá libovolně kombinovat.
 
 ### Vyjednávání o obsahu
 
+Na základě hlavičky *Accept* Eve serialuzje do JSONu (výchozí) nebo do XML ([ukázka](#code:eve:xml)).
 
+
+`GET /courses/1         Accept: application/xml`
+
+```{caption="{#code:eve:xml}Eve: Serializace do XML" .xml}
+<?xml version="1.0"?>
+<resource href="courses/1" title="Course">
+  <link rel="collection" href="courses" title="courses"/>
+  <link rel="hall" href="halls/1" title="Hall"/>
+  <link rel="parent" href="/" title="home"/>
+  <link rel="sport" href="sports/3" title="Sport"/>
+  <link rel="teacher" href="teachers/6" title="Teacher"/>
+  <_etag>f27aef6240aecc4ccaaad785dc1bfd89b7a6b889</_etag>
+  <day>1</day>
+  <ends_at>15:00</ends_at>
+  <hall>1</hall>
+  <id>1</id>
+  <notice/>
+  <semester>1</semester>
+  <shortcut>BAS01</shortcut>
+  <sport>3</sport>
+  <starts_at>13:30</starts_at>
+  <teacher>6</teacher>
+</resource>
+```
 
 ### Rozcestník
 
+Eve automaticky vytváří rozcestník.
 
+### Vnořené položky
+
+Eve umožňuje zobrazit odkazované položky vnořeně, pomocí JSON parametru `embedded`.
+Toto je potřeba povolit ve schématu ([ukázka](#code:eve:links1@)).
+
+`GET /enrollments/28477/?embedded={"course":true}`
 
 
 Další poznámky
 --------------
 
-
+Největším problém Eve je absence automaticky vytvořených odkazů a víceméně fixně daný formát výstupu,
+ten je ale poměrně dobře navržen.
 
 
 Kompletní implementace
