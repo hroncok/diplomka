@@ -434,7 +434,8 @@ například takto se dá zobrazit seznam kurzů probírajících v pátek:
 `GET /courses/?day=5`
 
 Neleze ale filtrovat na základě cizích klíčů, ani nastavit podmínku (větší než apod.).
-Při špatně provedeném dotazu může výsledek skončit chybou ripoza, což jsem nahlásil jako chybu.
+Při špatně provedeném dotazu může výsledek skončit chybou ripoza, což jsem nahlásil jako chybu,
+na jejíž opravě již autor `ripozo-sqlalchemy` pracuje.
 
 ### Řazení
 
