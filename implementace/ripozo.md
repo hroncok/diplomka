@@ -437,6 +437,9 @@ Neleze ale filtrovat na základě cizích klíčů, ani nastavit podmínku (vět
 Při špatně provedeném dotazu může výsledek skončit chybou ripoza, což jsem nahlásil jako chybu,
 na jejíž opravě již autor `ripozo-sqlalchemy` pracuje.
 
+Filtrování a stránkování se dá kombinovat, je možné použít více filtrů.
+Navigační odkazy na další stránky neobsahují použitý filtr, což jsem nahlásil jako chybu.
+
 ### Řazení
 
 Nepřišel jsem na způsob, jak seznam řadit jinak než implicitně.
