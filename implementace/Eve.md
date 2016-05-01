@@ -313,7 +313,7 @@ Současně lze jednoduše použít nějaký atribut objektu k ověření autoriz
 Vše je vidět [v ukázce](#code:eve:auth).
 
 
-```{caption="{#code:eve:auth}Eve: Autorizační třída" .python}
+```{caption="{#code:eve:auth}Eve: Autorizační třídy" .python}
 from flask import request
 
 
@@ -377,7 +377,53 @@ Přístupová práva v Eve jsou:
 Generování dokumentace
 ----------------------
 
-TODO eve-docs
+Samotné Eve generování dokumentace neumožňuje, ale existuje modul `eve-docs`,
+který tuto funkcionalitu přidává [@evedocs].
+
+Tento modul generuje HTML a JSON dokumentaci pouze na základě schématu,
+nepřidává možnost k jednotlivým zdrojům, metodám a položkám přidávat žádnou textovou informaci.
+Existuje však zatím nepřijatý návrh na úpravu, který umožňuje i toto [@evedocspr].
+
+Vzhledem ke stáří tohoto návrhu, nulové reakce od autora `eve-docs` a dalších faktorů lze usuzovat,
+že `eve-docs` je mrtvý projekt, stále je možné upravenou variantu použít, případně
+si dopsat úpravy vlastní, například možnost psát popisy v jazyce Markdown apod.
+
+Pro zapnutí generování dokumentace stačí modul naimportovat a registrovat,
+pro využití zmíněné úpravy je pak možné přidat do schématu další položky.
+Obojí je znázorněno [v ukázce](#code:eve:docs), výsledek můžete vidět [na obrázku](#pic:eve-docs).
+
+
+```{caption="{#code:eve:docs}Eve: Generování dokumentace" .python}
+def register(cls):
+    # ...
+    domain[plural]['description'] = {'general': cls.__name__ + 's'}
+    if cls.__doc__:
+        domain[plural]['description'].update(
+            {'methods': {'GET': cls.__doc__}})
+    # ...
+
+
+@register
+class Destination(Base):
+    '''This resource represents a destination etc.'''
+    # ...
+
+
+from eve_docs import eve_docs
+from flask.ext.bootstrap import Bootstrap
+
+app = Eve(...)
+Bootstrap(app)
+app.register_blueprint(eve_docs, url_prefix='/docs')
+```
+
+![Eve: Vygenerovaná HTML dokumentace {#pic:eve-docs}](images/eve-docs)
+
+Generování dokumentace v Eve je:
+
+ * možné s dalším modulem,
+ * systematické,
+ * triviální.
 
 Funkce služby
 -------------
