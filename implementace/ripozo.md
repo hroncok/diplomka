@@ -314,7 +314,7 @@ podle dokumentace je na to vhodné použít pre- a postprocesory [@ripozoprepost
 
 Vytvořil jsme tedy hlavní preprocesor, který v dekorátoru `@register` vkládám ke všem zdrojům.
 Tento preprocesor ověří token pomocí modulu `utvsapitoken` a vyhodnotí, jestli má klient právo ke čtení.
-Preprocesor můžete vidět [v ukázce](#code:ripozo:auth). Použité výjimky jsem si musel vytvořit, ale kvůli trivialitě je zde neuvádím.
+Preprocesor můžete vidět [v ukázce](#code:ripozo:auth). Použité třídy výjimek jsem si musel vytvořit, ale kvůli trivialitě je zde neuvádím.
 Ripozo zařídí, že se výjimky správně projeví v odpovědi serveru (stavovým kódem a zprávou o chybě).
 
 ```{caption="{#code:ripozo:auth}ripozo: Autorizační preprocesor" .python}
