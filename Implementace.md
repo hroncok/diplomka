@@ -47,8 +47,12 @@ Ideální je ale použít nějaký standardizovaný formát jako JSON API, HAL n
 Použití přirozených identifikátorů
 ----------------------------------
 
-Pokud to data umožňují, je vhodné k identifikaci zdroje použít přirozený identifikátor.
-Příkladem je zkratka sportu, kdy URI nemusí být `/sports/{id}` ale může být `/sports/{shortcut}`.
+Pokud to data umožňují, je vhodné k identifikaci zdroje použít přirozený identifikátor
+namísto syntetických databázových identifikátorů.
+Využití syntetických identifikátorů v RESTful API je tz. *leaky abstraction*[^leakyab] [@leakyab].
+Příkladem přirozeného identifikátoru je zkratka sportu, kdy URI nemusí být `/sports/{id}` ale může být `/sports/{shortcut}`.
+
+[^leakyab]: Bohužel jsem nenašel vhodný překlad tohoto termínu do češtiny.
 
 Provedl jsem analýzu poskytnutých dat a tabulka sportů je jediná, která obsahuje přirozený identifikátor,
 ostatní tabulky buď přirozený identifikátor nemají vůbec nebo není unikátní --
