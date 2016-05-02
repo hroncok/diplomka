@@ -27,11 +27,10 @@ class Destinations(sandman2.model.db.Model):
 
 app = sandman2.get_app(url, user_models=[Destinations], read_only=True)
 ```
-Namapování dat z pohledů na zdroje v sandmanu je:
-
- * možné,
- * systematické,
- * jednoduché, ale ne plně automatické, jak by se z popisu sandmanu mohlo zdát.
+Namapování dat z pohledů na zdroje v sandmanu je
+možné,
+systematické
+a jednoduché, ale ne plně automatické, jak by se z popisu sandmanu mohlo zdát.
 
 Přejmenování položek
 --------------------
@@ -70,11 +69,10 @@ class Teachers(CustomizingMixin, db.Model):
     url = db.Column(db.String)
 ```
 
-Přejmenování položek v sandmanu je:
-
- * možné,
- * do určité míry systematické[^key],
- * triviální.
+Přejmenování položek v sandmanu je
+možné,
+do určité míry systematické[^key]
+a triviální.
 
 [^key]: Má výhrada zde směřuje k nutnosti opakování názvu atributu. Nutnost předefinovat metodu je patrně nezamýšlená.
 
@@ -112,11 +110,10 @@ class CustomizingMixin(Model):
         return result_dict
 ```
 
-Prolinkování zdrojů ve stylu HATEOAS v sandmanu je:
-
- * možné,
- * velmi nesystematické,
- * poměrně jednoduché.
+Prolinkování zdrojů ve stylu HATEOAS v sandmanu je
+možné,
+velmi nesystematické,
+ale poměrně jednoduché.
 
 Navigační odkazy se automaticky nevytvářejí a úprava tohoto chování není možná.
 
@@ -153,11 +150,10 @@ class CustomizingMixin(Model):
         return result_dict
 ```
 
-Úprava zobrazených dat v sandmanu je:
-
- * možná,
- * nepříliš systematická,
- * jednoduchá.
+Úprava zobrazených dat v sandmanu je
+možná,
+nepříliš systematická,
+ale jednoduchá.
 
 Zobrazení dat ve standardizované podobě
 ---------------------------------------
@@ -221,11 +217,10 @@ Příklad výstupu pro HAL můžete vidět [v ukázkce](#code:sandman2:hal).
 }
 ```
 
-Zobrazení dat ve standardizované podobě v sandmanu je:
-
- * částečně možné,
- * nepříliš systematické,
- * jednoduché v závislosti na zvolené standardu.
+Zobrazení dat ve standardizované podobě v sandmanu je
+částečně možné,
+nepříliš systematické
+a jednoduché v závislosti na zvolené standardu.
 
 
 Použití přirozených identifikátorů
@@ -257,11 +252,10 @@ class Sports(mixins.CustomizingMixin, db.Model):
     # ...
 ```
 
-Použití přirozených identifikátorů v sandmanu je:
-
- * možné,
- * systematické,
- * jednoduché.
+Použití přirozených identifikátorů v sandmanu je
+možné,
+systematické
+a jednoduché.
 
 Přístupová práva
 ----------------

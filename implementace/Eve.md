@@ -63,11 +63,10 @@ SETTINGS = {
 app = Eve(settings=SETTINGS)
 ```
 
-Namapování dat z pohledů na zdroje v Eve je:
-
- * možné,
- * systematické,
- * jednoduché.
+Namapování dat z pohledů na zdroje v Eve je
+možné,
+systematické
+a jednoduché.
 
 Přejmenování položek
 --------------------
@@ -90,11 +89,10 @@ class Teacher(Base):
     url = Column(String)
 ```
 
-Přejmenování položek v Eve je:
-
- * možné,
- * systematické,
- * triviální.
+Přejmenování položek v Eve je
+možné,
+systematické
+a triviální.
 
 Prolinkování zdrojů ve stylu HATEOAS
 ------------------------------------
@@ -146,11 +144,10 @@ def make_links(response, *args):
 make_links(response, 'hall', 'sport', 'teacher')
 ```
 
-Prolinkování zdrojů ve stylu HATEOAS v Eve je:
-
- * možné,
- * nesystematické,
- * jednoduché, v tomto konkrétním případě.
+Prolinkování zdrojů ve stylu HATEOAS v Eve je
+možné,
+nesystematické
+a v tomto konkrétním případě jednoduché.
 
 Navigační odkazy se vytvářejí automaticky.
 
@@ -219,11 +216,10 @@ app.on_fetched_item += on_fetched_item
 app.on_fetched_resource += on_fetched_resource
 ```
 
-Úprava zobrazených dat v Eve je:
-
- * možná,
- * systematická,
- * jednoduchá.
+Úprava zobrazených dat v Eve je
+možná,
+systematická
+a jednoduchá.
 
 Zobrazení dat ve standardizované podobě
 ---------------------------------------
@@ -281,11 +277,10 @@ Případná úprava je možná stejným způsobem jako při úpravě zobrazovan�
 }
 ```
 
-Zobrazení dat ve standardizované podobě v Eve je:
-
- * možné a částečně automatické,
- * případná úprava je však nesystematická,
- * složitá.
+Zobrazení dat ve standardizované podobě v Eve je
+možné a částečně automatické,
+případná úprava je však nesystematická
+a složitá.
 
 Použití přirozených identifikátorů
 ----------------------------------
@@ -302,11 +297,10 @@ domain['sports']['additional_lookup'] = {'url': 'regex("[\w]+")',
 
 Poté je možné přistupovat k nějakému sportu pomocí `/sports/{id}` i pomocí `/sports/{shortcut}`.
 
-Použití přirozených identifikátorů v Eve je:
-
- * možné pouze současně s číselným identifikátorem,
- * systematické,
- * triviální.
+Použití přirozených identifikátorů v Eve je
+možné pouze současně s číselným identifikátorem,
+ale systematické
+a triviální.
 
 Přístupová práva
 ----------------
@@ -372,11 +366,10 @@ app = Eve(auth=BearerAuth, ...)
 
 ```
 
-Přístupová práva v Eve jsou:
-
- * možná,
- * systematická,
- * velmi jednoduchá.
+Přístupová práva v Eve jsou
+možná,
+systematická
+a velmi jednoduchá.
 
 Generování dokumentace
 ----------------------
@@ -423,11 +416,10 @@ app.register_blueprint(eve_docs, url_prefix='/docs')
 
 ![Eve: Vygenerovaná HTML dokumentace {#pic:eve-docs}](images/eve-docs)
 
-Generování dokumentace v Eve je:
-
- * možné s dalším modulem,
- * systematické,
- * triviální.
+Generování dokumentace v Eve je
+možné s dalším modulem,
+systematické
+a triviální.
 
 Funkce služby
 -------------

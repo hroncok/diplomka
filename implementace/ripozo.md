@@ -77,11 +77,10 @@ v případě, že se primární klíč nejmenuje *id*, je potřeba nastavit jeho
 Nutnost vytvořit tři třídy pro každý zdroj se může jevit přehnaná, umožňuje to ale velkou míru přizpůsobení,
 například pokud by každý zdroj byl namapován na jinou databázi apod.
 
-Namapování dat z pohledů na zdroje v ripozu je:
-
- * možné,
- * systematické,
- * pro jednoduché aplikace příliš komplexní, ale ne příliš složité.
+Namapování dat z pohledů na zdroje v ripozu je
+možné,
+systematické
+a pro jednoduché aplikace příliš komplexní, ale ne příliš složité.
 
 Přejmenování položek
 --------------------
@@ -104,11 +103,10 @@ class Teacher(db.Model):
     url = db.Column(db.String)
 ```
 
-Přejmenování položek v ripozu je:
-
- * možné,
- * systematické,
- * triviální.
+Přejmenování položek v ripozu je
+možné,
+systematické
+a triviální.
 
 Prolinkování zdrojů ve stylu HATEOAS
 ------------------------------------
@@ -163,11 +161,10 @@ class Course(db.Model):
                            db.ForeignKey('v_lectors.id_lector'))
 ```
 
-Prolinkování zdrojů ve stylu HATEOAS v ripozu je:
-
- * možné,
- * systematické,
- * zbytečně komplexní.
+Prolinkování zdrojů ve stylu HATEOAS v ripozu je
+možné,
+systematické,
+ale zbytečně komplexní.
 
 Navigační odkazy se vytvářejí podle druhu výstupu automaticky.
 
@@ -226,11 +223,10 @@ class Enrollment(db.Model):
     __postprocessors__ = (_post_kos_code_null,)
 ```
 
-Úprava zobrazených dat v ripozu je:
-
- * možná,
- * systematická,
- * jednoduchá.
+Úprava zobrazených dat v ripozu je
+možná,
+systematická
+a jednoduchá.
 
 Zobrazení dat ve standardizované podobě
 ---------------------------------------
@@ -275,11 +271,10 @@ Příklad výstupu pro HAL můžete vidět [v ukázkce](#code:ripozo:hal).
 }
 ```
 
-Zobrazení dat ve standardizované podobě v ripozu je:
-
- * možné,
- * systematické,
- * automatické.
+Zobrazení dat ve standardizované podobě v ripozu je
+možné,
+systematické
+a automatické.
 
 Použití přirozených identifikátorů
 ----------------------------------
@@ -300,11 +295,10 @@ class Sport(db.Model):
 
 Bohužel pak přestanou fungovat odkazy, jelikož Ripzo v momentě konstrukce odkazu zná pouze sloupec, na který je odkaz vázán (což je zde *id* a ne *shortcut*).
 
-Použití přirozených identifikátorů v ripozu je:
-
- * možné, ale rozbije to jinou část,
- * systematické,
- * triviální.
+Použití přirozených identifikátorů v ripozu je sice
+možné,
+systematické
+a triviální, ale rozbije to jinou část.
 
 Přístupová práva
 ----------------
@@ -402,11 +396,10 @@ class Enrollment(db.Model):
         raise exceptions.ForbiddenException('Permission denied.')
 ```
 
-Přístupová práva v ripozu jsou:
-
- * možná,
- * částečně systematická,
- * pro složitější logiku mohou být příliš komplikovaná.
+Přístupová práva v ripozu jsou
+možná,
+částečně systematická,
+ale pro složitější logiku mohou být příliš komplikovaná.
 
 Generování dokumentace
 ----------------------
