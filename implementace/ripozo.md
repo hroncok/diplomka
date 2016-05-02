@@ -74,7 +74,7 @@ dispatcher.register_resources(*resources.values())
 Při použití dekorátoru `@register` tak stačí vytvořit pouze třídu pro model,
 v případě, že se primární klíč nejmenuje *id*, je potřeba nastavit jeho názve do třídního atributu `__pks__`.
 
-Nutnost vytvořit tři třídy pro každý zdroj se může jevit přehnaná, umožňuje to ale velkou míru customizace,
+Nutnost vytvořit tři třídy pro každý zdroj se může jevit přehnaná, umožňuje to ale velkou míru přizpůsobení,
 například pokud by každý zdroj byl namapován na jinou databázi apod.
 
 Namapování dat z pohledů na zdroje v ripozu je:
