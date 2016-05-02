@@ -41,8 +41,8 @@ Příkladem je přetypování řetězců na čísla nebo zobrazení zkratky pře
 Zobrazení dat ve standardizované podobě
 ---------------------------------------
 
-Některé frameworky data zobrazují, jak to programátor zrovna vymyslel.
-Ideální je ale použít nějaký standardizovaný formát jako JSON API, HAL nebo Siren.
+Některé frameworky zavádí vlastní formát dat v datových reprezentacích zdrojů.
+V některých případech je ale vhodnější použít nějaký standardizovaný formát jako JSON API, HAL nebo Siren.
 
 Použití přirozených identifikátorů
 ----------------------------------
