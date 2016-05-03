@@ -161,6 +161,7 @@ Rozcestníkem je zde myšlen kořenový zdroj, kde jsou odkazy na jednotlivé zd
 Budu se zabývat tím, jestli dané funkce existují a jak ji lze použít.
 Pokud některá služba bude nabízet další funkce pro uživatele, zmíním je samozřejmě také.
 
+\input{implementace/DRF}
 \input{implementace/Eve}
 \input{implementace/ripozo}
 \input{implementace/sandman2}
