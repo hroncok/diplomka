@@ -161,7 +161,7 @@ Zobrazení dat ve standardizované podobě
 Úprava způsobu zobrazení jedné entity je možná v metodě `to_dict()`.
 Úprava způsobu zobrazení seznamu entit není možná.
 
-[V ukázce](#sandman2:sandman2:standard) je vidět úprava ve stylu HAL.
+[V ukázce](#code:sandman2:standard) je vidět úprava ve stylu HAL.
 
 ```{caption="{#code:sandman2:standard}sandman2: Zobrazení dat ve standardizované podobě" .python}
 class CustomizingMixin(Model):
@@ -191,7 +191,7 @@ class CustomizingMixin(Model):
 
 Příklad výstupu pro HAL můžete vidět [v ukázkce](#code:sandman2:hal).
 
-```{caption="{#sandman2:sandman2:hal}sandman2: Příklad výstupu pro HAL" .python}
+```{caption="{#code:sandman2:hal}sandman2: Příklad výstupu pro HAL" .python}
 {
     "_links": {
         "hall": {
