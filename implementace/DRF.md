@@ -235,12 +235,107 @@ ale zbytečně pracné.
 Přístupová práva
 ----------------
 
+Pro přístupová práva se v Django REST frameworku používají třídy dvojího typu:
+autentizační a autorizační.
+
+Pro autentizaci lze použít již poskytnutou třídu `TokenAuthentication` a přepsat
+metodu zodpovědnou za validaci tokenu, která vrací informace o uživateli a autorizaci.
+Vzhledem k tomu, že uživatelem je zde myšlen model `User` frameworku Django
+a zde tento model nepoužívám, protože aplikace přistupuje k databázi v režimu jen pro čtení,
+vracím informace o klientu v druhé z návratových hodnot.
+Toto můžete vidět [v ukázce](#code:drf:auth).
 
 
+```{caption="{#code:drf:auth}DRF: Autorizační třída a její použití" .python}
+class CtuTokenAuthentication(TokenAuthentication):
+    '''
+    Simple token based authentication using utvsapitoken.
 
-```{caption="{#code:drf:auth}DRF: Autorizační třídy" .python}
+    Clients should authenticate by passing the token
+    key in the 'Authorization' HTTP header,
+    prepended with the string 'Token '.  For example:
+
+        Authorization: Token 956e252a-513c-48c5-92dd-bfddc364e812
+    '''
+
+    def authenticate_credentials(self, key):
+        c = TokenClient()
+        try:
+            info = c.token_to_info(key)
+        except:
+            raise exceptions.AuthenticationFailed(
+                _('Invalid token.'))
+        return (None, info)
+
+# settings.py
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'api.authentication.CtuTokenAuthentication',
+    ),
+    # ...
+}
+```
+
+Zde si dovolím malou odbočku.
+Třída `TokenAuthentication` z Django REST frameworku očekává v autorizační hlavičce slovo *Token*,
+ale RFC 6750 říká, že by to mělo být v případě OAuthu~2 *Bearer* [@rfc6750].
+Pokud bych v současnosti chtěl toto změnit, musel bych celý kód třídy zkopírovat a změnit zde právě toto jedno slovo.
+Navrhl jsem tedy autorům frameworku úpravu, která umožní příslušné slovo změnit jednodušeji,
+tato úprava byla přijata a bude dostupná v další vydané verzi frameworku.
+
+Pro autorizaci a samotná přístupová práva jsem napsal dvě třídy,
+jednu obecně pro všechny zdroje, druhou pouze pro zdroj `/enrollments/`,
+můžete je vidět [v ukázce](#code:drf:permissions).
+
+```{caption="{#code:drf:permissions}DRF: Třídy pro přístupová práva" .python}
+class HasGeneralReadScopeOrIsApiRoot(BasePermission):
+    def has_permission(self, request, view):
+        if view.get_view_name() == 'Api Root':
+            return True
+        return (
+            request.auth and
+            'cvut:utvs:general:read' in request.auth['scope']
+        )
 
 
+class HasEnrollmentsAcces(BasePermission):
+    def has_permission(self, request, view):
+        if not request.auth:
+            return False
+
+        if 'cvut:utvs:enrollments:all' in request.auth['scope']:
+            return True
+
+        if ('cvut:utvs:enrollments:by-role' in request.auth['scope']
+                and 'B-00000-ZAMESTNANEC' in request.auth['roles']):
+            return True
+
+        if ('cvut:utvs:enrollments:personal' in request.auth['scope']
+                and 'personal_number' in request.auth):
+            # we should check for this in has_object_permission()
+            # but it doesn't apply for list queries
+            # so filter the queryset instead
+            view.queryset = view.queryset.filter(
+                personal_number=request.auth['personal_number'])
+            return True
+
+        return False
+
+
+# settings.py
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'api.permissions.HasGeneralReadScopeOrIsApiRoot',
+    ),
+    # ...
+}
+
+
+# views.py
+class EnrollmentViewSet(*base):
+    # ...
+    permission_classes = (permissions.HasGeneralReadScopeOrIsApiRoot,
+                          permissions.HasEnrollmentsAcces)
 ```
 
 Přístupová práva v Django REST frameworku jsou
