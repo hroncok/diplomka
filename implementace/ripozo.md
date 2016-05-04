@@ -195,7 +195,7 @@ def register(cls):
 
 def onemany(func):
     '''
-    A decorator for postprocessors in order to run a given function
+    Decorator for postprocessors in order to run a given function
     an all resources
     '''
     def processor(cls, function_name, request, resource):
