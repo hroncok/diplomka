@@ -501,5 +501,6 @@ Kompletní implementace
 ----------------------
 
 Kompletní implementaci REST API pro rozvrhová data ÚTVS ČVUT ve frameworku Eve
-najdete na přiloženém médiu a na adrese
+najdete na přiloženém médiu a na adrese:
+
 \url{https://github.com/hroncok/utvsapi-eve}.

@@ -299,5 +299,6 @@ Kompletní implementace
 ----------------------
 
 Kompletní implementaci REST API pro rozvrhová data ÚTVS ČVUT v Django REST frameworku
-najdete na přiloženém médiu a na adrese
+najdete na přiloženém médiu a na adrese:
+
 \url{https://github.com/hroncok/utvsapi-django}.
