@@ -164,11 +164,6 @@ def serializer(model_):
     class _Serializer(HalModelSerializer):
         # ...
     return _Serializer
-
-
-# views.py
-class EnrollmentViewSet(HalCreateModelMixin, ReadOnlyModelViewSet):
-    # ...
 ```
 
 ```{caption="{#code:drf:hal}DRF: Příklad výstupu pro HAL" .python}
@@ -346,16 +341,17 @@ a jednoduchá.
 Generování dokumentace
 ----------------------
 
+Django REST framework nabízí webově procházetelná API.
+Z dokumentačního hlediska to znamená, že je možné ke každému pohledu napsat dokumentační řetězec,
+který bude uživateli u jednotlivých zdrojů zobrazen, jak můžete vidět [na obrázku](#pic:djangorestbrowsableutvs).
+Pokud je nainstalován modul `markdown`, lze v dokumentačním řetězci použít jazyk Markdown, který je v procházetelném API nahrazen za patřičné HTML značky.
 
+![DRF: Webově procházetelné API{#pic:djangorestbrowsableutvs}](images/django-rest-framework-browsable-utvs)
 
-
-```{caption="{#code:drf:docs}DRF: Generování dokumentace" .python}
-
-```
-
+Existují také moduly třetích stran, které slouží ke generování dokumentace API [@drfdocstools].
 
 Generování dokumentace v Django REST frameworku je
-možné a automatické,
+možné, automatické,
 systematické
 a triviální.
 
