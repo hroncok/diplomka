@@ -41,7 +41,7 @@ class CourseSerializer(HyperlinkedModelSerializer):
             if not f.name.startswith('_'))
 
 # views.py
-class CourseViewSet(*base):
+class CourseViewSet(ReadOnlyModelViewSet):
     '''
     API endpoint that allows courses to be viewed.
     '''
@@ -107,39 +107,125 @@ Navigační odkazy se vytvářejí rovněž automaticky.
 Úprava zobrazených dat
 ----------------------
 
-
+Jednou z variant, jak upravit zobrazená data, je vytvořit přímo v modelu metody,
+které budou data měnit a místo původních dat serializovat výsledky těchto metod.
+Příklad pro kód předmětu v KOSu můžete vidět [v ukázce](#code:drf:modify).
 
 ```{caption="{#code:drf:modify}DRF: Úprava zobrazených dat" .python}
+class Enrollment(models.Model):
+    # ...
+    _kos_course_code = ShortStringField(db_column='kos_kod')
+    _kos_code_flag = models.BooleanField(db_column='kos_code')
 
+    @property
+    def kos_course_code(self):
+        return self._kos_course_code if self._kos_code_flag else None
+
+
+class EnrollmentSerializer(HyperlinkedModelSerializer):
+    class Meta:
+        model = Enrollment
+        fields = ('kos_course_code', ...) # no _kos_course_code
 ```
 
 Úprava zobrazených dat v Django REST frameworku je
 možná,
 systematická
-a jednoduchá.
+a triviální.
 
 Zobrazení dat ve standardizované podobě
 ---------------------------------------
 
+Django REST framework data zobrazuje ve velmi jednoduché podobě.
+Pokud toto chceme změnit, je třeba vytvořit vlastní třídy zodpovědné za stránkování a prezentaci dat.
 
-```{caption="{#code:drf:standard}DRF: HAL" .python}
+Naštěstí již existuje modul `drf-hal-json`, ve kterém existují dané třídy pro HAL sterilizaci,
+jeho použití najdete [v ukázce](#code:drf:standard) a výstup [v ukázce](#code:drf:hal).
+Existují i knihovny pro jiné serializace, např. `djangorestframework-jsonapi` pro JSON API.
 
+```{caption="{#code:drf:standard}DRF: Použití modulu drf-hal-json pro HAL" .python}
+# settings.py
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS':
+        'drf_hal_json.pagination.HalPageNumberPagination',
+    'DEFAULT_PARSER_CLASSES': ('drf_hal_json.parsers.JsonHalParser',),
+    'DEFAULT_RENDERER_CLASSES': (
+        'drf_hal_json.renderers.JsonHalRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ),
+    'URL_FIELD_NAME': 'self',
+    # ...
+}
+
+
+# serializers.py
+def serializer(model_):
+    '''Get a default Serializer class for a model'''
+    class _Serializer(HalModelSerializer):
+        # ...
+    return _Serializer
+
+
+# views.py
+class EnrollmentViewSet(HalCreateModelMixin, ReadOnlyModelViewSet):
+    # ...
+```
+
+```{caption="{#code:drf:hal}DRF: Příklad výstupu pro HAL" .python}
+{
+    "_links": {
+        "self": "http://127.0.0.1:8000/courses/1/",
+        "sport": "http://127.0.0.1:8000/sports/3/",
+        "hall": "http://127.0.0.1:8000/halls/1/",
+        "teacher": "http://127.0.0.1:8000/teachers/6/"
+    },
+    "id": 1,
+    "shortcut": "BAS01",
+    "day": 1,
+    "starts_at": "13:30",
+    "ends_at": "15:00",
+    "notice": null,
+    "semester": 1
+}
 ```
 
 Zobrazení dat ve standardizované podobě v Django REST frameworku je
 možné,
 systematické,
-ale pracné, naštěstí existují knihovny, které mohou pomoct.
+ale pracné, naštěstí existují knihovny, které lze rovnou použít.
 
 Použití přirozených identifikátorů
 ----------------------------------
 
-
+Pro použití přirozených identifikátorů stačí v pohledu nastavit hodnotu proměnné `lookup_field`
+a změnit odkazy vedoucí na daný zdroj, což můžete vidět [v ukázce](#code:drf:ids).
+Změna odkazů vyžaduje poměrně mnoho argumentů, které považuji za zbytečné.
 
 ```{caption="{#code:drf:ids}DRF: Použití přirozených identifikátorů" .python}
+# serializers.py:
+class SportSerializer(HyperlinkedModelSerializer):
+    self = HyperlinkedIdentityField(
+        read_only=True,
+        view_name='sport-detail',
+        lookup_field='shortcut')
+    # ...
 
+class CourseSerializer(HyperlinkedModelSerializer):
+    sport = HyperlinkedRelatedField(
+        read_only=True,
+        view_name='sport-detail',
+        lookup_field='shortcut')
+    # ...
+
+# views.py:
+class SportViewSet(ReadOnlyModelViewSet):
+    # ...
+    lookup_field = 'shortcut'
 ```
 
+Bohužel knihovna `drf-hal-json` v kombinaci s přirozenými identifikátory vede k chybě,
+kterou jsem autorům nahlásil. Pokud knihovna `drf-hal-json` není použita, přirozené identifikátory
+fungují dle očekávání.
 
 Použití přirozených identifikátorů v Django REST frameworku je
 možné,
