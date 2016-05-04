@@ -8,8 +8,7 @@ Ve výchozím stavu počítá Eve s daty v NoSQL databázi MongoDB.
 Je možné si napsat vlastní správce dat, ale jednodušší je použít již existující modul `eve-sqlalchemy`.
 Pro namapování dat je třeba pospat jednotlivé zdroje pomocí SQLAlchemy modelů a poté je zaregistrovat.
 
-[V ukázce](#code:eve:mapping) můžete vidět příklad modelu pro kurzy i vlastní dekorátor k registraci;
-implementační detaily, jako importy, jsou vynechány pro lepší čitelnost.
+[V ukázce](#code:eve:mapping) můžete vidět příklad modelu pro kurzy i vlastní dekorátor k registraci.
 Funkce `registerSchema()` z `eve-sqlalchemy` vygeneruje pro každý model schéma,
 které je následně možné upravit.
 
