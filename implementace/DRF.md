@@ -128,6 +128,8 @@ class EnrollmentSerializer(HyperlinkedModelSerializer):
         fields = ('kos_course_code', ...) # no _kos_course_code
 ```
 
+Pokud má model nadefinované některé položky jako číselné, zobrazují se v odpovědích API číselně, takže není nutné je nijak upravovat.
+
 Úprava zobrazených dat v Django REST frameworku je
 možná,
 systematická
@@ -361,19 +363,74 @@ Funkce služby
 
 ### Stránkování
 
+Stránkování funguje automaticky.
+Lze použít parametry `page` a `page_size`.
 
+`GET /courses/?page=2&page_size=10`
 
 ### Filtrování
 
+Filtrování nefunguje automaticky a jeho zprovoznění není triviální.
+Je potřeba nainstalovat `django-filter`, nastavit výchozí filtrovací backend a na úrovni pohledů specifikovat položky, podle kterých se dá filtrovat.
+Což umožňuje velkou kontrolu nad tím, co uživatel smí dělat, ale neumožňuje globálně říct, že se dá všude filtrovat všechno.
+Pro filtrovaní všech položek ve všech modelech jsem proto vytvořil mixin, který můžete vidět [v ukázce](#code:drf:filter).
 
+```{caption="{#code:drf:filter}DRF: Mixin pro filtrování podle všech položek" .python}
+class FilterAllFieldsMixin:
+    @classproperty
+    def filter_fields(cls):
+        model = cls.serializer_class.Meta.model
+        return serializers.fields(model)
+
+
+base = (ReadOnlyModelViewSet, FilterAllFieldsMixin)
+
+
+class DestinationViewSet(*base):
+    # ...
+
+
+# settings.py
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': (
+        'rest_framework.filters.DjangoFilterBackend',
+    ),
+    # ...
+}
+```
+
+Poté jde filtrovat pomocí parametrů v URL.
+
+`GET /courses/?starts_at=07:30`
 
 ### Řazení
 
+Řazení není povoleno automaticky, ale jde o jednoduchou úpravu nastavení, kterou můžete vidět [v ukázce](#code:drf:sort).
 
+```{caption="{#code:drf:sort}DRF: Povolení řazení podle URL" .python}
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': (
+        'rest_framework.filters.OrderingFilter',
+        # ...
+    ),
+    # ...
+}
+```
+
+Poté jde položky řadit pomocí parametru `ordering` (název parametru jde v nastavení také změnit).
+Je možné řadit vzestupně i sestupně, i podle více klíčů.
+Pro seřazení kurzů podle jejich začátku v týdnu, ale od konce, lze použít například:
+
+`GET /courses/?ordering=-day,-starts_at`
 
 ### Vyjednávání o obsahu
 
+Django REST framework volí patřičný zobrazovací třídu podle hlavičky `Accept`.
+Pokud není použita knihovna `drf-hal-json` je možné nastavovat hlavičkou i způsob odsazování apod.
 
+`GET /courses/1         Accept: application/json; indent=2`
+
+Podobně jde volit serializace do YAMLu nebo XML. Příslušné zobrazovací třídy musí být povoleny v konfiguraci.
 
 ### Rozcestník
 
@@ -383,7 +440,9 @@ Django REST framework automaticky vytváří rozcestník.
 Další poznámky
 --------------
 
-
+Hlavním problémem Django REST frameworku je zobrazení dat ve standardizované podobě.
+Knihovny, které toto umožňují, blokují jinak fungující funkce. Vlastní implementace je příliš obtížná.
+Pokud si vystačíte s podobou dat, kterou framework nabízí implicitně, nenarazíte na velký problém.
 
 
 Kompletní implementace
