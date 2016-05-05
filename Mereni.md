@@ -1,15 +1,106 @@
 % Měření odezvy {#mereni}
 
-![Rychlost: Jedna položka{#pic:item_chart}](pdfs/item_chart)
+TODO jak měření probíhalo
 
-![Rychlost: Seznam položek{#pic:list_chart}](pdfs/list_chart)
+TODO disclaimer
 
-![Rychlost: Filtrovaný seznam položek{#pic:filter_chart}](pdfs/filter_chart)
+TODO uvedené requesty
 
-![Rychlost: Jedna položka s jednoduchou autorizací{#pic:simple_auth_item_chart}](pdfs/simple_auth_item_chart)
+TODO auth vs sandman
 
-![Rychlost: Jedna položka s komplexní autorizací{#pic:god_teacher_student_auth_item_chart}](pdfs/god_teacher_student_auth_item_chart)
 
-![Rychlost: Seznam položek s komplexní autorizací (nestudent){#pic:god_teacher_auth_list_chart}](pdfs/god_teacher_auth_list_chart)
+Zobrazení jedné položky
+=======================
 
-![Rychlost: Seznam položek s komplexní autorizací (student){#pic:student_auth_list_chart}](pdfs/student_auth_list_chart)
+Při tomto měření byl testován požadavek na jednu položku:
+
+`GET /enrollments/25563/`
+
+Jak můžete vidět [z grafu](#pic:item:chart), nejrychlejší je zde implementace v ripozu
+a nejpomalejší v Django REST frameworku.
+
+![Rychlost: Jedna položka{#pic:item:chart}](pdfs/item_chart)
+
+
+Zobrazení seznamu položek
+=========================
+
+Při tomto měření byl testován požadavek na jednu stránku seznamu položek o délce dvacet:
+
+`GET /enrollments/?page_size=20`
+
+Je třeba poznamenat, že ripozo v seznamu uvádí jen odkazy na jednotlivé položky a ostatní
+frameworky serializují všech dvacet objektů.
+Bohužel to ripozo jinak neumí a tento test má tedy méně vypovídající hodnotu.
+Proto je v grafu u ripoza hvězdička.
+
+Jak můžete vidět [z grafu](#pic:list:chart), nejrychlejší je zde nepřekvapivě právě implementace v ripozu,
+nejpomalejší je implementace v sandmanu.
+
+![Rychlost: Seznam položek{#pic:list:chart}](pdfs/list_chart)
+
+
+Filtrování seznamu položek
+==========================
+
+Při tomto měření byl testován požadavek na seznam kurzů, které probíhají v pátek,
+velikost byla opět omezena na dvacet:
+
+`GET /courses/?page_size=20&day=5`
+
+Platí stejná poznámka, jako u minulého měření, ripozo je ve výhodě, proto má v grafu hvězdičku.
+
+Jak můžete vidět [z grafu](#pic:filter:chart), nejrychlejší je opět implementace v ripozu,
+ale již nemá takový náskok, nejpomalejší je opět implementace v sandmanu.
+
+![Rychlost: Filtrovaný seznam položek{#pic:filter:chart}](pdfs/filter_chart)
+
+
+Jednoduchá autorizace
+=====================
+
+Při tomto měření byl testován požadavek na jednu položku z jiného zdroje než `/enrollments/`,
+tedy u zdroje, kde je autorizační logika jednodušší:
+
+`GET /courses/1/                    Authorization: Bearer ...`
+
+Jak můžete vidět [z grafu](#pic:simple:auth:item:chart), nejrychlejší je opět implementace v ripozu,
+které zde není ve výhodě, nejpomalejší je implementace v Django REST frameworku.
+
+![Rychlost: Jedna položka s jednoduchou autorizací{#pic:simple:auth:item:chart}](pdfs/simple_auth_item_chart)
+
+
+
+Komplexní autorizace
+====================
+
+Při tomto měření byl testován požadavek na jednu položku ze zdroje,
+kde je autorizační logika komplexní:
+
+`GET /enrollments/25563/            Authorization: Bearer ...`
+
+Byly provedeny tři měření, pokaždé s jiným druhem tokenu (studentský, zaměstnanecký a všemocný),
+vhledem k tomu, že se jednotlivé výsledky lišily jen o malou aditivní konstantu,
+prezentuji zde průměr z těchto tří měření.
+
+Jak můžete vidět [z grafu](#pic:god:teacher:student:auth:item:chart),
+nejrychlejší je opět implementace v ripozu,
+nejpomalejší je implementace v Django REST frameworku.
+
+![Rychlost: Jedna položka s komplexní autorizací{#pic:god:teacher:student:auth:item:chart}](pdfs/god_teacher_student_auth_item_chart)
+
+Provedl jsem i měření pro seznam položek s komplexní autorizací:
+
+`GET /enrollments/?page_size=20     Authorization: Bearer ...`
+
+Zde se výsledky lišily podle toho, jestli se jednalo o studentský token či nikoliv.
+[V grafu](#pic:god:teacher:auth:list:chart) je zobrazen průměr pro zaměstnanecký a všemocný token;
+nejrychlejší je implementace v ripozu, která je zde opět ve velké výhodě, protože se jedná o seznam položek.
+Implementace v Django REST frameworku je mírně pomalejší než implementace v Eve.
+
+![Rychlost: Seznam položek s komplexní autorizací (nestudent){#pic:god:teacher:auth:list:chart}](pdfs/god_teacher_auth_list_chart)
+
+[V grafu](#pic:student:auth:list:chart) jsou vidět výsledky pro studentský token.
+Zde je ripozo pořád ve výhodě, ale přesto zaostává za nejrychlejším Django REST frameworkem i druhým Eve.
+
+![Rychlost: Seznam položek s komplexní autorizací (student){#pic:student:auth:list:chart}](pdfs/student_auth_list_chart)
