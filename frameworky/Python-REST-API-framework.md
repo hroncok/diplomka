@@ -19,7 +19,7 @@ PRAF obsahuje několik součástí, které je potřeba využít k tvorbě API [@
  * **datastore** je třída, která nějakým způsobem obstarává data, implicitně může využít buďto SQLite nebo reprezentaci v paměti, pro cokoli jiného musíte implementovat vlastní třídu podle daného rozhraní;
  * **modely** slouží k popsání jednotlivých typ dat v *datastore*;
  * **controller** obsluhuje jeden resource, ve kterém se přistupuje k datům z jednoho modelu v *datastore*;
- * **views** pak definují, jakým způsobem budou data prezentována.
+ * **pohledy** pak definují, jakým způsobem budou data prezentována.
 
 Konkrétní příklad můžete vidět [v ukázce](#code:praf).
 Dokumentace obsahuje také komplexnější příklad včetně obsáhlého tutoriálu, jak jej vytvořit [@praftuto].

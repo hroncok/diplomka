@@ -33,7 +33,7 @@ def collection_default(self, request):
     }
 ```
 
-Přístupová práva umí Morepath nastavovat na úrovni modelů či *views* a autentizace uživatele může proběhnout na základě session [@morepathauth].
+Přístupová práva umí Morepath nastavovat na úrovni modelů či pohledů a autentizace uživatele může proběhnout na základě session [@morepathauth].
 O žádných speciálních metodách autentizace v případě API se dokumentace nezmiňuje.
 
 Hodnotím Morepath jako zajímavý webový mikroframewrok, pokud uživatel touží po modelech, ale nechce použít „velký“ MVC framework jako Django.

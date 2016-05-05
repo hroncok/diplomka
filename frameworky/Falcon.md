@@ -1,8 +1,6 @@
 Falcon
 ======
 
-![Logo Falconu [@falconpic]{#pic:falcon}](images/falcon)
-
 Falcon je neuvěřitelně rychlý, minimalistický Python webový framework pro tvorbu cloudových API a aplikačních backendů [@falcon].
 Mezi hlavní přednosti podle webové stránky [@falcon] patří:
 
@@ -12,6 +10,8 @@ Mezi hlavní přednosti podle webové stránky [@falcon] patří:
  * výkonnost,
  * svoboda volby detailů,
  * spolehlivost.
+
+![Logo Falconu [@falconpic]{#pic:falcon}](images/falcon)
 
 Falcon je bezesporu minimalistický, společně s závislostmi zabírá pouze 0,9~MiB místa.
 Je šířen pod permisivní Apache licencí [@apache] a nevyžaduje žádný webový framework.

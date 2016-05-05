@@ -70,7 +70,6 @@ HATEOAS
 -------
 
 Hug bohužel zatím nepodporuje žádné automatické způsoby pro prolinkování jednotlivých zdrojů.
-Existuje již ale snaha o použití součásti JSON-Schema [@hugbug].
 
 Přístupová práva
 ----------------
