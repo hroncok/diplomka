@@ -232,7 +232,7 @@ Zobrazení dat ve standardizované podobě
 ---------------------------------------
 
 Jednou z hlavních výhod Ripoza je integrovaná podpora pro HAL, Siren i JSON API.
-Jednotlivé formáty lze použít dokonce zároveň, zvolen takový, o který si klient řekne,
+Jednotlivé formáty lze použít dokonce zároveň, zvolen je takový, o který si klient zažádá,
 případně první v pořadí registrace ([ukázka](#code:ripozo:standard)).
 
 ```{caption="{#code:ripozo:standard}ripozo: Zobrazení dat ve standardizované podobě" .python}
