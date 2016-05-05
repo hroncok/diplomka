@@ -105,9 +105,7 @@ Předmětem je zde myšlena konkrétní instance vyučovaného sportu, v daný d
 Pokud bychom chtěli najít paralelu se systémem KOS, tak tato entita představuje sloučenou instanci předmětu a její paralelku.
 Struktura je znázorněna [v tabulce](#tab:subjects).
 
-Všimněte si, že některé číselné údaje jsou uloženy textově. TODO ověřit
-
-TODO vyzkoumat jak se to váže na destination, pokud to je kurz a jaké je pak datum kurzu apod.
+Všimněte si, že některé číselné údaje jsou uloženy textově.
 
 Table: Struktura pohledu v_subjects {#tab:subjects}
 
@@ -136,7 +134,7 @@ API zdroje
 ==========
 
 V této části navrhnu jednotlivé API zdroje (*resources*) a režim přístupu k nim.
-Nebudu se snažit o striktní návrh, kde bych definoval přesnou podobu odpovědí; to mi umožní nechat přesnou podobu na použitém frameworku.
+Nebudu se snažit o striktní návrh, ve kterém bych definoval přesnou podobu odpovědí; to mi umožní nechat přesnou podobu na použitém frameworku.
 Jednotlivé zdroje budou odpovídat poskytnutým databázovým pohledům.
 
 /destinations
@@ -191,11 +189,10 @@ Data budou přístupná pro všechny autentizované klienty.
 -----------
 
 Poskytne přístup k datům z pohledu `v_students`. Jednotlivě pomocí primárního klíče (`/enrollments/{id}`) nebo hromadně.
-V odpovědi budou zahrnuta všechna data [z tabulky](#tab:students).
+V odpovědi budou zahrnuta všechna data [z tabulky](#tab:students) kromě položky `kos_code`.
 
  * Položka `id_student` bude přejmenována na `id`.
  * Položka `kos_kod` bude přejmenována na `kos_course_code` a bude nastavena na *null*, pokud je `kos_code` 0.
- * Položka `kos_code` nebude prezentována.
  * Položka `utvs` bude přejmenována na `course` a bude obsahovat odkaz na daný zdroj.
  * Položka `tour` bude reprezentována jako boolean.
 
