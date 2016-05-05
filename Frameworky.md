@@ -79,10 +79,11 @@ HATEOAS je ale pouze princip, konkrétních implementací je několik. Mezi ty n
  * HAL [@hal],
  * JSON-LD [@jsonld],
  * Hydra [@hydra] (rozšíření JSON-LD),
- * JSON Schema [@jsonschema],
+ * JSON Schema [@jsonschema], TODO JSON API
  * Collection+JSON [@collectionjson].
 
-TODO Uvidím, co budou podporovat jednotlivé frameworky, a podle toho zkusím stanovit nějaká kritéria. IMHO by šlo počítat, kolik toho podporují, ale pochybuji, že budou podporovat více než jedno.
+Škála není jasně stanovená, ale na základě vlastního textového hodnocení
+ohodnotím každý framework nula až třemi body.
 
 Podpora Pythonu 3
 -----------------
@@ -101,6 +102,9 @@ Přístupová práva
 ----------------
 
 TODO
+
+Škála není jasně stanovená, ale na základě vlastního textového hodnocení
+ohodnotím každý framework nula až třemi body.
 
 Použitelnost
 ------------
