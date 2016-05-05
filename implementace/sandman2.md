@@ -180,7 +180,7 @@ class CustomizingMixin(Model):
                     result_dict['_links'][name] = \
                         {'href': instance.resource_uri()}
                     del result_dict[name]
-            # ... elifs
+            # ...
             elif isinstance(value, datetime.datetime):
                 # Display datetimes in ISO format
                 result_dict[name] = value.isoformat()
