@@ -17,7 +17,7 @@ Falcon je bezesporu minimalistický, společně s závislostmi zabírá pouze 0,
 Je šířen pod permisivní Apache licencí [@apache] a nevyžaduje žádný webový framework.
 
 Příklad použití můžete vidět [v ukázce](#code:falcon).
-Jak je vidět, pomocí Falconu jsou vytvářet REST API, ale jedná se o velmi nízkoúrovňový framework,
+Jak je vidět, pomocí Falconu jdou vytvářet REST API, ale jedná se o velmi nízkoúrovňový framework,
 který spíše zastává vrstvu mezi HTTP a aplikací, než velkého pomocníka při tvorbě API.
 
 ```{caption="{#code:falcon}Příklad použití z webu Falconu \autocite{falcon}" .python}
@@ -42,8 +42,8 @@ api.add_route('/quote', QuoteResource())
 
 Projekt vytváří firma Rackspace pod vedením Kurta Griffithse.
 Do projektu přispívají i jednotlivci mimo Rackspace.
-Vznikl v roce 2012 a od té doby vyšlo celkem 27 vydání.
+Vznikl v roce 2012 a od té doby vyšlo celkem 27 verzí.
 Dva týdny před psaním tohoto textu vyšla verze 1.0.0rc1, brzy se tedy můžeme těšit na verzi 1.0.0.
-Jedná se o aktivní projekt který se může chlubit úplným pokrytím testy [@falconcoverage].
+Jedná se o aktivní projekt, který se může chlubit úplným pokrytím testy [@falconcoverage].
 
 Vzhledem k nízkoúrovnosti frameworku neexistují žádné automatické mechanismy pro správu přístupových práv či HATEOAS.
