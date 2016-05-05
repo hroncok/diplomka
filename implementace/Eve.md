@@ -380,8 +380,8 @@ Tento modul generuje HTML a JSON dokumentaci pouze na základě schématu,
 nepřidává možnost k jednotlivým zdrojům, metodám a položkám přidávat žádnou textovou informaci.
 Existuje však zatím nepřijatý návrh na úpravu, který umožňuje i toto [@evedocspr].
 
-Vzhledem ke stáří tohoto návrhu, nulové reakce od autora `eve-docs` a dalších faktorů lze usuzovat,
-že `eve-docs` je mrtvý projekt, stále je možné upravenou variantu použít, případně
+Vzhledem ke stáří tohoto návrhu, nulové reakci od autora `eve-docs` a dalším faktorů lze usuzovat,
+že `eve-docs` je mrtvý projekt, stále je však možné upravenou variantu použít, případně
 si dopsat úpravy vlastní, například možnost psát popisy v jazyce Markdown apod.
 
 Pro zapnutí generování dokumentace stačí modul naimportovat a registrovat,
@@ -487,7 +487,7 @@ Eve automaticky vytváří rozcestník.
 Eve umožňuje zobrazit odkazované položky vnořeně, pomocí JSON parametru `embedded`.
 Toto je potřeba povolit ve schématu ([ukázka](#code:eve:links1@)).
 
-`GET /enrollments/28477/?embedded={"course":true}`
+`GET /enrollments/28477/?embedded={"course": true}`
 
 
 Další poznámky
