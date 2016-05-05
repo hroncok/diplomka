@@ -90,12 +90,12 @@ filter_itemizes() {
 filter_hotfix_1() {
 	if [[ "$1" = Frameworky* ]]; then
 		$SED -Ei \
-			-e "/^\\\begin\{longtable\}/,/\\\label\{tab:srovnani\}/ {\
-				s/^(\\\begin\{longtable\}.*$)/\\\begin\{landscape\}\n\1\n\\\pagebreak/; }" \
+			-e "s/^(\\\begin\{longtable\}.*$)/\\\begin\{landscape\}\n\1\n/g" \
 			-e 's/\\end\{longtable\}/\\end\{longtable\}\n\\end\{landscape\}/g' \
 			-e 's/@\{\}llllllllll@\{\}/@\{\}lllrrrrrrr@\{\}/' \
 			-e 's/@\{\}llll@\{\}/@\{\}lllr@\{\}/' \
 			"$1" || echo "filter hotfix_realizace failed" >&2
+		$SED -i $(grep -n landscape "$1" | cut -f1 -d: | head -2 | tr '\n' ';' | sed 's/;/d;/g') "$1"
 	fi
 }
 

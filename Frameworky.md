@@ -160,12 +160,35 @@ Frameworky jdou zároveň stáhnout z *Python Package Indexu*, kde lze vidět po
 Srovnání
 ========
 
-[V tabulce](#tab:srovnani@) najdete srovnání měřitelných kritérií. Jednotlivé sloupce mají zjednodušené názvy, ale jejich funkce odpovídá popisu [v části](#kriteria@).
+[V tabulce](#tab:body) najdete udělené body za odporu HATEOASu a přístupových práv.
+
+| Framework             | HATEOAS                               | přístupová práva                      |
+|-----------------------+---------------------------------------+---------------------------------------|
+| Cornice               |                                       | \textbullet                           |
+| Django REST fr.       | \textbullet \textbullet \textbullet   | \textbullet \textbullet \textbullet   |
+| Eve                   | \textbullet \textbullet \textbullet   | \textbullet \textbullet \textbullet   |
+| Falcon                |                                       | \textbullet \textbullet               |
+| hug                   |                                       |                                       |
+| Flask API             |                                       |                                       |
+| Flask-RESTful         |                                       |                                       |
+| Morepath              | \textbullet \textbullet               | \textbullet                           |
+| Nefertari             |                                       | \textbullet \textbullet               |
+| Ramses                |                                       | \textbullet \textbullet               |
+| Piston                |                                       | \textbullet \textbullet \textbullet   |
+| Pycnic                |                                       |                                       |
+| Python REST API fr.   | \textbullet                           | \textbullet                           |
+| RESTArt               | \textbullet                           | \textbullet                           |
+| restless              |                                       |                                       |
+| ripozo                | \textbullet \textbullet \textbullet   | \textbullet \textbullet               |
+| sandman2              | \textbullet \textbullet               |                                       |
+| Tastypie              | \textbullet \textbullet \textbullet   | \textbullet \textbullet \textbullet   |
+
+Table: Bodové ohodnocení {#tab:body}
+
+[V tabulce](#tab:srovnani) najdete srovnání měřitelných kritérií. Jednotlivé sloupce mají zjednodušené názvy, ale jejich funkce odpovídá popisu [v části](#kriteria@).
 Tučně jsou označeny hodnoty, které dominují v daném sloupci.
 
-TODO pospat sloupce s více hodnotami; napsat co znamená, když GitHub chybí
-
-[V tabulce](#tab:informace@) pak najdete informační přehled o zkoumaných frameworcích: webový framework, URL domovské stránky a číslo zkoumané verze.
+[V tabulce](#tab:informace) pak najdete informační přehled o zkoumaných frameworcích: webový framework, URL domovské stránky a číslo zkoumané verze.
 
 | Framework             | druh licence  | webový fr.        |           MiB |     řádky |     ř. včetně |   závisl.     |   Py  |    GitHub |          PyPI |
 |-----------------------+---------------+-------------------+---------------+-----------+---------------+---------------+-------+-----------+---------------|
@@ -189,6 +212,9 @@ TODO pospat sloupce s více hodnotami; napsat co znamená, když GitHub chybí
 | Tastypie              | **permisivní**| MVC               |            41 |     3 292 |        80 139 |           3/4 |**3+2**|     2 940 |        28 966 |
 
 Table: Srovnání měřitelných kritérií {#tab:srovnani}
+
+
+
 
 | Framework             | webový fr.    | webová stránka                                        | zk. verze |
 |-----------------------+---------------+-------------------------------------------------------+-----------|
