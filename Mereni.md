@@ -1,12 +1,31 @@
 % Měření odezvy {#mereni}
 
-TODO jak měření probíhalo
+Pro měření jsem použil nástroj ab, určený pro měření odezvy HTTP serverů [@ab].
+K běhu testovaných služeb jsem použil Gunicorn, HTTP server napsaný v Pythonu [@gunicorn].
 
-TODO disclaimer
+U měření zaměřených na autentizaci a autorizaci jsem neměřil implementaci v sandmanu,
+jelikož ta příslušné části neobsahuje. Autentizaci jsem prováděl proti falešnému OOAS
+z vlastního modulu `utvsapitoken`, který běžel na stejném počítači jako testované služby.
+U ostatních měření jsem autentizaci i autorizaci vypnul, aby neovlivňovala měření.
 
-TODO uvedené requesty
+Dala byla při měřená dostupná v MariaDB databázi běžící na stejném počítači jako testované služby.
 
-TODO auth vs sandman
+HTTP server byl spuštěn s dvěma vlákny.
+Měřící nástroj ab službu testoval pěti tisíci požadavky, v dávkách po jednom stu, kde jedna dávka vždy probíhala současně.
+
+Pozor, zde prezentované měření rychlosti odezvy bylo prováděno na konkrétních implementacích
+popsaných v kapitolách *\nameref{implementace}*,
+vzhledem k tomu, že jednotlivé měřené implementace jsou netriviální,
+nelze zde prezentované výsledky v žádném případě generalizovat na celý použitý framework.
+
+U jednotlivých měření uvádím příklad požadavku.
+Pro jednotlivé implementace se tyto požadavky mohou mírně lišit, ale pro přehlednost uvádím pouze jeden.
+
+Záznamy z měření s kompletními požadavky, výstupy a naměřenými rychlostmi jsou dostupné na přiloženém médiu.
+Testovací skripty jsou také dostupné na přiloženém médiu a na adrese:
+
+\url{https://github.com/hroncok/utvsapi-benchamrk}.
+
 
 
 Zobrazení jedné položky
