@@ -123,3 +123,5 @@ Implementace v Django REST frameworku je mírně pomalejší než implementace v
 Zde je ripozo pořád ve výhodě, ale přesto zaostává za nejrychlejším Django REST frameworkem i druhým Eve.
 
 ![Rychlost: Seznam položek s komplexní autorizací (student){#pic:student:auth:list:chart}](pdfs/student_auth_list_chart)
+
+Vzhledem k rozdílným výsledkům pro různé druhy požadavků se zdráhám z měření vyvozovat nějaké závěry.
