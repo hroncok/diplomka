@@ -289,7 +289,7 @@ Je možné použít parametr `limit` ale ne v kombinaci s parametrem `page`.
 
 ### Filtrování
 
-Filtrovat výsledky se dá pouze velmi omezeným způsobem,
+Filtrovat výsledky se dá pouze jednoduchým způsobem,
 například takto se dá zobrazit seznam kurzů probírajících v pátek:
 
 `GET /courses?day=5`
