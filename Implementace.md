@@ -140,7 +140,7 @@ Generování dokumentace
 ----------------------
 
 Jednou z funkcí, kterou některé frameworky nabízejí, je generování dokumentace přímo z kódu.
-Příkladem je, že u definice nějakého zdroje použiji Python *docstring* (dokumentační text),
+Příkladem je, že u definice nějakého zdroje použiji Python *docstring* (dokumentační řetězec),
 a uživatel API bude moci takto definovaný popis vidět.
 
 Zkoumané funkce služby
