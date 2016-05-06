@@ -14,6 +14,7 @@ příklad z dokumentace můžete vidět [v ukázce](#code:restart).
 Je možné vytvářet tz. middleware třídy, které mohou předzpracovávat požadavky a ovlivňovat obsah odpovědí.
 Tímto způsobem lze naimplementovat i autentizaci a autorizaci, RESTArt samotný žádné možnosti v této oblasti nepřináší.
 Pomocí middleware třídy by mělo jít i nějak automaticky prolinkovat jednotlivé zdroje, dokumentace se o této možnosti ale nijak nezmiňuje.
+Dávám tedy u obou kritérií jeden bod.
 
 ```{caption="{#code:restart}Příklad použití z dokumentace RESTArtu \autocite{restartqs}" .python}
 from restart.api import RESTArt

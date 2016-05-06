@@ -87,3 +87,6 @@ Do budoucna je plánováno [@flaskapi][@flaskapigh]:
  * dokumentace o prolinkovávání.
 
 Je však otázka, kdy a jestli se tohoto dočkáme.
+
+Zatím neexistují žádné automatické mechanismy pro správu přístupových práv či HATEOAS.
+Flask API tedy za oba aspekty získává nula bodů.

@@ -92,11 +92,13 @@ V části *Vize* [@nefertarivision] dokonce přímo říká:
 > Pro nás znamená „REST API“ něco jako „HTTP metody namapované na CRUD[^crud] operace nad zdroji popsanými v JSONu“.
 > Nesnažíme se úplný HATEOAS a o naplnění akademického ideálu o RESTu.
 
+Nedostává tedy žádné body.
+
 [^crud]: *Create*, *Retrieve*, *Update*, *Delete*
 
 Přístupová práva
 ----------------
 
-Nefertari používá model autentizace z frameworku Pyramid, pomocí cookies [@nefertariauth], což u REST API nepovažuji za ideální. Přístupová práva jdou oproti tomu nastavit velice variabilně na úrovni jednotlivých operací a zdrojů [@nefertariauth].
+Nefertari používá model autentizace z frameworku Pyramid, pomocí cookies [@nefertariauth], což u REST API nepovažuji za ideální. Přístupová práva jdou oproti tomu nastavit velice variabilně na úrovni jednotlivých operací a zdrojů [@nefertariauth]. Dostává tedy dva body.
 
 Nefertari způsobuje, že se vývojář o některé věc vůbec nemusí starat. Jak přesně jsou data uložena v databázi. Jak se mapují zdroje na URL. To může být velkou výhodou, ale i nevýhodou. Podle dokumentace se zdá, že jednotlivé výchozí chování nelze příliš ovlivnit. Nefertari jistě ušetří mnoho práce, za cenu svobody volby. Absence HATEOAS a autentizace pomocí cookies můj pohled na Nefertari příliš nezlepší. Existují jistě situace, kde se Nefertari bude vyjímat, ale není dostatečně flexibilní pro širokou škálu případů.

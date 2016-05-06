@@ -47,3 +47,4 @@ Dva týdny před psaním tohoto textu vyšla verze 1.0.0rc1, brzy se tedy může
 Jedná se o aktivní projekt, který se může chlubit úplným pokrytím testy [@falconcoverage].
 
 Vzhledem k nízkoúrovnosti frameworku neexistují žádné automatické mechanismy pro správu přístupových práv či HATEOAS.
+Falcon tedy za oba aspekty získává nula bodů.

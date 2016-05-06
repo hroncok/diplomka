@@ -72,5 +72,5 @@ if __name__ == '__main__':
 ```
 
 Flask-RESTful je nízkoúrovňový framework, který zjednodušuje tvorbu REST API oproti použití čistého Flasku,
-ale nepřináší žádné pokročilé funkce jako podporu autentizace a autorizace, či prolinkování a HATEOAS.
+ale nepřináší žádné pokročilé funkce jako podporu autentizace a autorizace, či prolinkování a HATEOAS (nedostává tedy žádné body).
 Ze zajímavých funkcí Flask-RESTful mohu jmenovat vyjednávání o obsahu či podporu *blueprintů* (koncept z Flasku [@blueprint]).

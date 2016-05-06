@@ -94,6 +94,7 @@ Dokumentace v tutoriálu uvádí postup, jak prolinkovat jednotlivé zdroje mezi
 Framework sám tuto funkci neobsahuje, ale ukazuje příklad formátovače, který je znovupoužitelný v celém projektu
 a zajistí, aby všechny cizí klíče byly reprezentovány pomocí odkazu.
 Můžete jej vidět [v ukázce](#code:praflink).
+Za možnost nějak zdroje prolinkovat dostává Python REST API framework jeden bod.
 
 ```{caption="{#code:praflink}PRAF: Formátovač pro prolinkování dat \autocite{praflink2}" .python}
 def format_foreign_key(response, obj):
@@ -111,7 +112,7 @@ Přístupová práva
 ----------------
 
 Tutoriál opět uvádí postup [@prafauth], jak implementovat autentizaci, v tomto konkrétním případě API klíčem předaným pomocí GET parametru zakódovaným v URL.
-Pokud chcete, můžete si samozřejmě implementovat způsob vlastní. V případě autorizace nabízí PRAF pouze možnost zpřístupnit daný zdroj všem autentizovaným požadavkům [@prafauth], implementace komplexnějších přístupových práv je opět možná.
+Pokud chcete, můžete si samozřejmě implementovat způsob vlastní. V případě autorizace nabízí PRAF pouze možnost zpřístupnit daný zdroj všem autentizovaným požadavkům [@prafauth], implementace komplexnějších přístupových práv je opět možná. Proto dávám dva body.
 
 Python REST API framework nabízí určitou strukturu, jak REST API v Pythonu budovat, nenabízí ale velký výběr stavebních kamenů.
 Předpokládá se, že programátor si je dobuduje sám, což nepovažuji nutně za špatnou věc. Je však třeba vytknout v současnosti zpomalený vývoj projektu a především absenci podpory pro Python 3. Nízká oblíbenost projektu může být důsledkem těchto problémů.

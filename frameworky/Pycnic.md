@@ -20,6 +20,8 @@ kde najdete příklad použití z dokumentace.
 Přestože Pycnic neobsahuje přímou podporu autentizace, v dokumentaci je také komplexní příklad,
 který ukazuje, jak autentizaci implementovat [@pycnicauth], kvůli jeho obsáhlosti jej zde neuvádím.
 
+Vzhledem k nízkoúrovnosti frameworku nedostává Pycnic v žádné z bodovaných kritériích body.
+
 ```{caption="{#code:pycnic}Příklad použití z dokumentace Pycnicu \autocite{pycnicpost}" .python}
 from pycnic.core import Handler, WSGI
 from pycnic.errors import HTTP_400

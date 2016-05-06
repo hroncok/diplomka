@@ -18,6 +18,8 @@ obsahuje však mnoho zajímavých funkcí [@morepathsp].
 
 V případě RESTu jde hlavně o jednoduché prolinkování v duchu HATEOAS, které můžete vidět [v ukázce](#code:morepath).
 Komplexnější příklad bohužel dokumentace neobsahuje.
+Morepath dostává za HATEOAS dva body.
+
 Za účelem vytvoření webové služby je potřeba použít modely;
 ty mohou být v Morepathu reprezentovány objekty v paměti, abstrakcí databázové tabulky pomocí ORM, či uloženy v NoSQL databázi.
 
@@ -34,7 +36,7 @@ def collection_default(self, request):
 ```
 
 Přístupová práva umí Morepath nastavovat na úrovni modelů či pohledů a autentizace uživatele může proběhnout na základě session [@morepathauth].
-O žádných speciálních metodách autentizace v případě API se dokumentace nezmiňuje.
+O žádných speciálních metodách autentizace v případě API se dokumentace nezmiňuje, dostává tedy jeden bod.
 
 Hodnotím Morepath jako zajímavý webový mikroframewrok, pokud uživatel touží po modelech, ale nechce použít „velký“ MVC framework jako Django.
 Poskytnutím mechanismů pro tvorbu RESTful API přímo v základu frameworku se řadí mezi ojedinělé Python webové frameworky.

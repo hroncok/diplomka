@@ -47,9 +47,19 @@ def set_value(request):
     return True
 ```
 
-Cornice nenabízí žádné zabudované možnosti, jak řešit přístupová práva. Ve výchozím stavu je celé API přístupné všem, můžete však napsat vlastní funkci v Pythonu, která práva bude řešit. Toto na jednu stranu nabízí téměř nemezné možnosti, na stranu druhou to není příliš pohodlné.
+HATEOAS
+-------
 
-Pokud chcete použít JSON Schema, HAL či další obdobné standardy, budete je muset dodržet a naimplementovat sami.
+Cornice nenabízí předem připravené mechanismy k prolinkování zdrojů.
+Pokud chcete použít JSON API, HAL či další obdobné standardy, budete je muset dodržet a naimplementovat sami.
+Cornice nezískává žádný bod.
+
+
+Přístupová práva
+----------------
+
+Cornice nenabízí žádné zabudované možnosti, jak řešit přístupová práva. Ve výchozím stavu je celé API přístupné všem, můžete však napsat vlastní funkci v Pythonu, která práva bude řešit. Toto na jednu stranu nabízí téměř nemezné možnosti, na stranu druhou to není příliš pohodlné. Cornice získává jeden bod.
+
 
 Cornice působí jako solidní nízkoúrovňový REST framework: Pokud víte, co děláte, můžete pomocí něj neimplementovat REST službu, ale neudělá příliš věcí za vás. Speciální funkcí je pak podpora SPORE[^spore] [@cornicespore].
 

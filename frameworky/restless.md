@@ -15,6 +15,7 @@ Hlavní myšlenkou restlessu je udělat věci jednoduše a příliš je nekompli
  * flexibilita.
 
 Restless v dokumentaci rovnou uvádí, že nebude podporovat automatickou integraci ORM, XML, autorizaci ani HATEOAS [@restless][@restlessp].
+Dostává tedy u obou bodovaných kritérií nula bodů.
 
 Za projektem stojí jednotlivec Daniel Lindsley, který je mj. autorem frameworku Tastypie, o kterém budu mluvit [v části](#tastypie@).
 Dokumentace restlessu projekt Tastypie často zmiňuje a zdůrazňuje, že restless vznikl poučením se z chyb při tvorbě Tastypie.

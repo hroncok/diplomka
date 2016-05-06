@@ -29,6 +29,7 @@ HATEOAS
 
 Příklad použití můžete vidět [v ukázkách](#code:tastypie) [a](#code:tastypie2).
 Přímo v tomto příkladu vznikne prolinkování mezi zdroji pomocí URL.
+Tastypie dostává tři body.
 
 ```{caption="{#code:tastypie}Příklad použití z dokumentace Tastypie (api.py) \autocite{tastypiedoc}" .python}
 from django.contrib.auth.models import User
@@ -73,6 +74,7 @@ Přístupová práva
 Tastypie umožňuje autentizaci přes HTTP jméno a heslo, pomocí API klíče, session a OAuth 1; lze si také dopsat vlastní způsob [@tastypieauth].
 Existují moduly třetích stran přidávající podporu OAuth 2 [@tastypieoath].
 Na úrovni zdrojů lze pak nastavit, jaký autorizační model se použije, k dispozici je buďto varianta povolit všechno, nebo povolit jen číst, případně lze použít propracovanější systém Djanga, který mapuje práva uživatele na konkrétní objekty; implementace vlastní logiky je také možná [@tastypieauto].
+I zde tedy Tastypie získává tři body.
 
 Tastypie se jeví jako velmi použitelný framework pro Django. Důstojně konkuruje Django REST Frameworku, o kterém jsem psal [v části](#django-rest-framework).
 Případná volba mezi těmito dvěma frameworky hodně závisí na konkrétních potřebách a preferencích uživatele.

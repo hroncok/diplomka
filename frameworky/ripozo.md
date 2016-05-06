@@ -65,7 +65,9 @@ HATEOAS
 -------
 
 Již v úvodu jsem zmínil, že ripozo umožňuje jednoduše vytvářet linky mezi zdroji ve stylu HATEOAS,
-a také že ripozo podporuje Siren [@siren] a HAL [@hal]. Představu o vytváření odkazů získáte nejlépe [z ukázky](#code:ripozolink).
+a také že ripozo podporuje Siren [@siren] a HAL [@hal].
+Získává tedy tři body.
+Představu o vytváření odkazů získáte nejlépe [z ukázky](#code:ripozolink).
 
 ```{caption="{#code:ripozolink}Příklad použití z dokumentace ripoza (linkování) \autocite{ripozo}" .python}
 from ripozo import restmixins, Relationship
@@ -87,6 +89,7 @@ Přístupová práva
 Ripozo nenabízí přímo žádnou funkcionalitu pro autentizaci či autorizaci.
 Obsahuje však možnost předpracovávat požadavky pomocí funkcí.
 V dokumentaci se říká, že tímto způsobem můžete například zpřístupnit zdroj pouze autentizovaným uživatelům [@ripozoprepost].
+Ripozo zde tedy dostává dva body.
 
 Ripozo je framework, který umožňuje vytvářet RESTful HETEOS API pomocí Siren a HAL, prakticky bez práce. Možnost výběru vlastního frameworku i databáze je velké plus. Nevýhodou může v některých případech být copyleftová licence[^vyhoda].
 

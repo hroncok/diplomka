@@ -182,8 +182,8 @@ Srovnání
 | Cornice               |                                       | \textbullet                           |
 | Django REST fr.       | \textbullet \textbullet \textbullet   | \textbullet \textbullet \textbullet   |
 | Eve                   | \textbullet \textbullet \textbullet   | \textbullet \textbullet \textbullet   |
-| Falcon                |                                       | \textbullet \textbullet               |
-| hug                   |                                       |                                       |
+| Falcon                |                                       |                                       |
+| hug                   |                                       | \textbullet \textbullet               |
 | Flask API             |                                       |                                       |
 | Flask-RESTful         |                                       |                                       |
 | Morepath              | \textbullet \textbullet               | \textbullet                           |
@@ -191,7 +191,7 @@ Srovnání
 | Ramses                |                                       | \textbullet \textbullet               |
 | Piston                |                                       | \textbullet \textbullet \textbullet   |
 | Pycnic                |                                       |                                       |
-| Python REST API fr.   | \textbullet                           | \textbullet                           |
+| Python REST API fr.   | \textbullet                           | \textbullet \textbullet               |
 | RESTArt               | \textbullet                           | \textbullet                           |
 | restless              |                                       |                                       |
 | ripozo                | \textbullet \textbullet \textbullet   | \textbullet \textbullet               |

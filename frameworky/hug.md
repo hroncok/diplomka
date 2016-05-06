@@ -69,7 +69,8 @@ Hug je zveřejněn pod MIT licencí [@MIT], přímo závisí na Falconu a knihov
 HATEOAS
 -------
 
-Hug bohužel zatím nepodporuje žádné automatické způsoby pro prolinkování jednotlivých zdrojů.
+Hug bohužel zatím nepodporuje žádné automatické způsoby pro prolinkování jednotlivých zdrojů,
+nedostává tedy žádný bod.
 
 Přístupová práva
 ----------------
@@ -81,7 +82,7 @@ Z pohledu do kódu [@hugauth] je patrné, že je možné se autentizovat pomocí
  * API klíče v HTTP hlavičce,
  * tokenu v HTTP hlavičce.
 
-O autorizaci jsem však bohužel v kódu nic nenašel.
+O autorizaci jsem však bohužel v kódu nic nenašel, proto dávám hugu pouze dva body.
 
 Hug je moderní framework pro vytváření různých API v Pythonu.
 Jeho filozofie je rozhodně zajímavá, ale v současnosti jej hodnotím jako příliš mladý a zatím stále se rozvíjející projekt.

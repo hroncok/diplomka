@@ -110,7 +110,7 @@ Přestože o sobě Piston říká, že komunikuje pomocí HATEOAS principu [@pis
 v celé dokumentaci není nikde zmínka o tom, jak z jednoho zdroje linkovat zdroj jiný.
 Veškeré příklady místo linkování zobrazují další zdroj vnořeně, poměrně komplikovaným způsobem lze uvést alespoň ID [@pistonid].
 I když by bylo možné si pro každý druh odkazu nadefinovat vlastní metodu, považuji to za zbytečně komplikované.
-Myslím, že použití zkraty HATEOAS je tedy v popisu tohoto frameworku poměrně neoprávněné.
+Myslím, že použití zkraty HATEOAS je tedy v popisu tohoto frameworku poměrně neoprávněné, a dávám nula bodů.
 
 Přístupová práva
 ----------------
@@ -118,6 +118,7 @@ Přístupová práva
 Piston nabízí dva druhy autentizace: základní HTTP autentizaci jménem a heslem a OAuth 1, Další způsoby je možné doimplementovat [@pistonauth].
 Pro autorizaci lze použít zabudovaný mechanismus, který umožňuje část API otevřít anonymním uživatelům a část pouze přihlášeným [@pistonanon].
 Pro komplikovanější použití je nutné manuálně kontrolovat, který uživatel je přihlášen, a podle toho nějakou akci provést či neprovést.
+Piston dostává za přístupová práva tři body.
 
 Piston je v dnešní době již nepoužitelný framework, jehož vývoj je úplně zastaven, vzhledem k tomu jej nemohu doporučit.
 Příliš komplikovaný způsob linkování mezi zdroji (je-li vůbec nějaký) se k tvorbě RESTful API také příliš nehodí.

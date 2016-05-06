@@ -63,6 +63,7 @@ HATEOAS
 
 Sandman automaticky prezentuje SQL sloupce typu cizí klíč jako odkazy [@sandman1gh].
 Předpokládám, že sandman2 to dělá stejně, ale tuto informaci jsme nikde nenašel potvrzenou.
+Dávám zde tedy dva body na základě vlastnosti z první verze sandmanu.
 
 Přístupová práva
 ----------------
@@ -71,7 +72,8 @@ Dokumentace k původnímu sandmanu uvádí, že je možné použít HTTP autenti
 a na základě ní zpřístupnit celé API pouze přihlášeným uživatelům [@sandmanauth].
 Jiné zabudované možnosti podporovány zatím nejsou. Je ale možné napsat speciální funkci, která předzpracovává všechny požadavky a v této implementovat jiný způsob autentizace a autorizace.
 
-Sandman2 informace o přístupových právech v dokumentaci bohužel neobsahuje, tato funkcionalita zde ještě není.
+Sandman2 informace o přístupových právech v dokumentaci bohužel neobsahuje, tato funkcionalita zde ještě není;
+dostává tedy nula bodů.
 
 Sandman2 je nástroj, který mapuje REST rozhraní k SQL databázi a dělá to dobře.
 Na škodu je přerod projektu sandman do projektu sandman2, za který zatím platí hlavně dokumentace, což se doufám časem zlepší.

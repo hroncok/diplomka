@@ -94,8 +94,10 @@ Dokumentace obsahuje kapitolu o HATEOAS [@djangoresthateoas], která uvádí:
 > Co ale (Django) REST framework neumí, je vytváření strojově čitelných formátů hypermédií jako HAL, Collection+JSON, JSON API či HTML mikroformátů ve výchozí konfiguraci, či automagické generování plně HATEOAS API s hypermediálním popisem formulářů a sémanticky označeným hyperlinky.
 > To by vyžadovalo provedení takových rozhodnutí o designu API, které by ve skutečnosti měly zůstat vně pole působnosti tohoto frameworku.
 
-Hodnotím kladně, že se o principu HATEOAS v dokumentaci alespoň hovoří, naplnění konkrétních implementací však zůstává v režii architekta či programátora;
-Django REST framework k tomu poskytuje dostatečné možnosti.
+Hodnotím kladně, že se o principu HATEOAS v dokumentaci hovoří.
+Prolinkování zdrojů ve stylu HATEOAS je v Django REST frameworku jednoduché.
+Naplnění konkrétních implementací však zůstává v režii architekta či programátora;
+Django REST framework k tomu poskytuje dostatečné možnosti, dostává tři body.
 
 Přístupová práva
 ----------------
@@ -109,5 +111,7 @@ Django REST framework umožňuje jak různé způsoby autentizace [@djangorestau
 Zároveň je možné vytvořit si způsob vlastní. Existují další Python moduly, které tuto možnost využívají a přidávají tak do Django REST frameworku další možnosti autentizace, mezi ty nejdůležitější patří moduly pro OAuth~1 i OAuth~2. Například Django REST framework OAuth je modul, který byl dříve součástí Django REST frameworku, ale nyní je spravován samostatně.
 
 Přístupová práva jdou řešit na úrovni objektů, modelů či konkrétních pohledů, tedy vlastně na základě URL, pro první dvě kategorie se používají zabudované mechanismy přímo z Djanga. Jsou rozlišeny práva pro čtení a pro zápis. Stejně jako u autentizace i zde je možné napsat si vlastní způsob rozhodování přístupových práv a i zde vzniklo několik modulů třetích stran.
+
+Možností je mnoho, Django REST framework dostává i zde tři body.
 
 Celkově Django REST framework působí jako obsáhlý nástroj poskytující mnoho možností a funkcí. Jeho jedinou zjevnou slabinou je vázanost na Django.

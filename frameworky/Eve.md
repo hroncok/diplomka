@@ -87,7 +87,11 @@ Eve závisí celkem na desíti modulech (včetně Flasku a Werkzeugu), tyto modu
 HATEOAS
 -------
 
-Eve automaticky prolinkovává jednotlivé zdroje a drží se konceptu HATEOAS [@evehateoas]. Tuto funkci není potřeba speciálně nastavovat ani implementovat, je zapnutá sama od sebe. Každá odpověď na metodu GET obsahuje položku `_links` s odkazy na rodiče, subsekce, předchozí a další stránky apod. Příklad můžete vidět [v ukázce](#code:evehateoas). Autoři pracují na přímé podpoře pro JSON-LD/HAL/Siren [@eveslides].
+Eve automaticky prolinkovává jednotlivé zdroje a drží se konceptu HATEOAS [@evehateoas]. Tuto funkci není potřeba speciálně nastavovat ani implementovat, je zapnutá sama od sebe. Každá odpověď na metodu GET obsahuje položku `_links` s odkazy na rodiče, subsekce, předchozí a další stránky apod. Příklad můžete vidět [v ukázce](#code:evehateoas).
+
+Autoři pracují na přímé podpoře pro JSON-LD/HAL/Siren [@eveslides].
+
+Hodnotím v této oblasti Eve třemi body.
 
 ```{caption="{#code:evehateoas}Příklad HATEOAS principu z Eve \autocite{evehateoas}" .python}
 {
@@ -121,5 +125,7 @@ Pomocí externích knihoven je snadné použít OAuth 2 [@eveoauth].
 [^hmac]: Hash Message Authentication Code [@hmac]
 
 Eve umožňuje nastavovat přístupová práva podle rolí pro celé API, nebo jen pro některé zdroje, stejně tak pro konkrétní HTTP metody [@eveauth].
+
+Dávám tedy i zde Eve tři body.
 
 Celkově se Eve jeví jako framework s velkým množstvím funkcí, který dokáže ušetřit velké množství práce. Vytknul bych snad jen přílišnou vázanost na MongoDB, která je často cítit především z dokumentace.
