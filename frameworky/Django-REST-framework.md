@@ -1,8 +1,6 @@
 Django REST framework
 =====================
 
-![Logo Django REST frameworku [@djangorest]{#pic:djangorest}](images/django-rest-framework)
-
 Django REST framework je nadstavbou k webovému frameworku Django. Na svém webu [@djangorest] uvádí tyto předností:
 
  * webově procházetelné API (můžete jej vidět [na obrázku](#pic:djangorestbrowsable)),
@@ -13,6 +11,8 @@ Django REST framework je nadstavbou k webovému frameworku Django. Na svém webu
  * je použit důvěryhodnými a velkými společnostmi jako Mozilla a Eventbrite.
 
 [^orm]: Object-relational mapping neboli Objektově relační zobrazení [@ormbook]
+
+![Logo Django REST frameworku [@djangorest]{#pic:djangorest}](images/django-rest-framework)
 
 ![Django REST framework: Webově procházetelné API [@djangorest]{#pic:djangorestbrowsable}](images/django-rest-framework-browsable)
 
