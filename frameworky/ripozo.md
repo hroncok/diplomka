@@ -5,7 +5,7 @@ ripozo
 
 Ripozo je nástroj pro vytváření RESTful/HATEOAS API.
 Poskytuje silné, jednoduché, plně kvalifikované odkazy mezi zdroji; podporuje více protokolů (Siren a HAL).
-Ripozo je velmi flexibilní, může ho použít s libovolným webovým frameworkem v Pythonu a libovolnou databází.
+Ripozo je velmi flexibilní, dá se použít s libovolným webovým frameworkem v Pythonu a libovolnou databází.
 [@ripozo]
 
 Základní příklad použití typu *hello world* můžete vidět [v ukázce](#code:ripozo).
@@ -87,7 +87,7 @@ Přístupová práva
 ----------------
 
 Ripozo nenabízí přímo žádnou funkcionalitu pro autentizaci či autorizaci.
-Obsahuje však možnost předpracovávat požadavky pomocí funkcí.
+Obsahuje však možnost předzpracovávat požadavky pomocí funkcí.
 V dokumentaci se říká, že tímto způsobem můžete například zpřístupnit zdroj pouze autentizovaným uživatelům [@ripozoprepost].
 Ripozo zde tedy dostává dva body.
 

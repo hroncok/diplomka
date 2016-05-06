@@ -68,7 +68,7 @@ Příkladem je, že student může vidět jen své vlastní zápisy kurzů.
 
 Pro autentizaci a autorizaci použiji OAuth 2.0 autorizační server (OAAS) FIT ČVUT [@oaas],
 který mi umožní na základě tokenu poskytnutého klientem určit, jestli je klient autentizován a jaká má práva.
-Pokud je token svázán z konkrétním uživatelem, z Usermap API [@uapi] zjistím jeho osobní číslo,
+Pokud je token svázán s konkrétním uživatelem, z Usermap API [@uapi] zjistím jeho osobní číslo,
 abych toto mohl porovnávat s osobními čísly učitelů a studentů v databázi ÚTVS.
 
 Vzhledem k tomu, že komunikace s OAAS i Usermap API je na zvoleném frameworku nezávislá,
@@ -158,7 +158,7 @@ Mezi tyto funkce patří:
 
 Rozcestníkem je zde myšlen kořenový zdroj, kde jsou odkazy na jednotlivé zdroje.
 
-Budu se zabývat tím, jestli dané funkce existují a jak ji lze použít.
+Budu se zabývat tím, jestli dané funkce existují a jak je lze použít.
 Pokud některá služba bude nabízet další funkce pro uživatele, zmíním je samozřejmě také.
 
 \input{implementace/DRF}

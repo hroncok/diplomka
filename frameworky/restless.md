@@ -24,12 +24,12 @@ restless jde tedy opačnou cestou a většinu rozhodnutí nechává na uživatel
 
 Restless na rozdíl od Tastypie není vázán přímo na Django, ale webový framework si můžete zvolit.
 Přímo v kódu existují třídy pro frameworky Django, Flask, Pyramid, Tornado a Itty, od kterých stačí dědit.
-Pro jiný framework si takovou třídu můžete samozřejmě dospat sami.
+Pro jiný framework si takovou třídu můžete samozřejmě dopsat sami.
 V případě změny frameworku by mělo stačit třídu vyměnit.
 Příklad z dokumente s použitím třídy pro Django můžete vidět [v ukázce](#code:restless).
 
 Restless závisí pouze na knihovně six, kvůli zpětné kompatibilitě s Pythonem~2.
-Instalace tak zabírá pouze čtvrt mebibajtu a obsahuje 1~140, ale tato informace je zavádějící, protože restless ještě vyžaduje nějaký webový framework,
+Instalace tak zabírá pouze čtvrt mebibajtu a obsahuje 1~140 řádek kódu, ale tato informace je zavádějící, protože restless ještě vyžaduje nějaký webový framework,
 samostatně nefunguje.
 
 ```{caption="{#code:restless}Příklad použití s Djangem z dokumentace restlessu \autocite{restlessgh}" .python}

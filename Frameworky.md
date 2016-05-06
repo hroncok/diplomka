@@ -310,7 +310,7 @@ Tyto informace se velice těžce dají srovnávat pomocí škály, proto se poku
 Srovnání
 ========
 
-[V tabulce](#tab:body) najdete udělené body za odporu HATEOASu a přístupových práv.
+[V tabulce](#tab:body) najdete udělené body za podporu HATEOASu a řízení přístupových práv.
 
 | Framework             | HATEOAS                               | přístupová práva                      |
 |-----------------------+---------------------------------------+---------------------------------------|

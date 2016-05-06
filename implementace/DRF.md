@@ -141,7 +141,7 @@ Zobrazení dat ve standardizované podobě
 Django REST framework data zobrazuje ve velmi jednoduché podobě.
 Pokud toto chceme změnit, je třeba vytvořit vlastní třídy zodpovědné za stránkování a prezentaci dat.
 
-Naštěstí již existuje modul `drf-hal-json`, ve kterém existují dané třídy pro HAL sterilizaci,
+Naštěstí již existuje modul `drf-hal-json`, ve kterém existují dané třídy pro HAL serializaci,
 jeho použití najdete [v ukázce](#code:drf:standard) a výstup [v ukázce](#code:drf:hal).
 Existují i knihovny pro jiné serializace, např. `djangorestframework-jsonapi` pro JSON API.
 

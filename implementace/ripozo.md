@@ -72,7 +72,7 @@ dispatcher.register_resources(*resources.values())
 ```
 
 Při použití dekorátoru `@register` tak stačí vytvořit pouze třídu pro model,
-v případě, že se primární klíč nejmenuje *id*, je potřeba nastavit jeho názve do třídního atributu `__pks__`.
+v případě, že se primární klíč nejmenuje *id*, je potřeba nastavit jeho název do třídního atributu `__pks__`.
 
 Nutnost vytvořit tři třídy pro každý zdroj se může jevit přehnaná, umožňuje to ale velkou míru přizpůsobení,
 například pokud by každý zdroj byl namapován na jinou databázi apod.
@@ -293,7 +293,7 @@ class Sport(db.Model):
     description = db.Column(db.String)
 ```
 
-Bohužel pak přestanou fungovat odkazy, jelikož Ripzo v momentě konstrukce odkazu zná pouze sloupec, na který je odkaz vázán (což je zde *id* a ne *shortcut*).
+Bohužel pak přestanou fungovat odkazy, jelikož ripozo v momentě konstrukce odkazu zná pouze sloupec, na který je odkaz vázán (což je zde *id* a ne *shortcut*).
 
 Použití přirozených identifikátorů v ripozu je sice
 možné,

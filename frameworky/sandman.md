@@ -55,7 +55,7 @@ Sandman2 ale nemá tak obsáhlou dokumentaci jako sandman.
 Původní sandman vznikl v roce 2013 a vyšlo celkem 45 verzí, sandman2 je zde od roku 2014, verzí vyšlo sedm,
 poslední v lednu 2016.
 Za sandmenem stojí jednotlivec Jeff Knupp, do projektu přispělo několik jednotek dalších přispěvatelů.
-Na GitHubu má sandman2 128 hvězd, ale sandman jich má přes dva tisíce.
+Na GitHubu má sandman2 pouze 128 hvězd, ale sandman jich má přes dva tisíce.
 
 HATEOAS
 -------
@@ -75,6 +75,6 @@ Sandman2 informace o přístupových právech v dokumentaci bohužel neobsahuje,
 dostává tedy nula bodů.
 
 Sandman2 je nástroj, který mapuje REST rozhraní k SQL databázi a dělá to dobře.
-Na škodu je přerod projektu sandman do projektu sandman2, za který zatím platí hlavně dokumentace, což se doufám časem zlepší.
+Nepříjemný je přerod projektu sandman do projektu sandman2, za který zatím platí hlavně dokumentace, což se doufám časem zlepší.
 
 
