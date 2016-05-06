@@ -253,3 +253,12 @@ Table: Srovnání měřitelných kritérií {#tab:srovnani}
 | Tastypie              | Django        | \url{http://tastypieapi.org/}                         | 0.13.3    |
 
 Table: Informace o frameworcích {#tab:informace}
+
+Pro implementaci si vybírám frameworky Eve a ripozo, na základě vysokého hodnocení v oblasti HATEOAS i přístupových práv.
+
+Vysoké hodnocení získaly i Django REST framework a Tastypie, ale jelikož jsou oba frameworky pro Django a implementace by byla příliš podobná,
+vybírám si k implementaci pouze Django REST framework, který je podle indikátorů nejoblíbenějším zkoumaným frameworkem.
+
+Navíc si vybírám sandman2, který nemá tak dobré hodnocení,
+ale slibuje automatické vytvoření API.
+Rád bych ze stejného důvodu zkoumal i Ramses, ale ten není možné použít s daty v MySQL databázi.
