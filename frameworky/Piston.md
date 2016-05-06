@@ -20,7 +20,7 @@ Pisotn podle své dokumentace nabízí následující funkce [@piston]:
 Projekt vnikl již v roce 2008, tedy tři roky po zveřejnění Djanga samotného, pod záštitou Bitbucketu.
 V roce 2010 jej však původní autor Jesper Nøhr přestal vyvíjet.
 Vývoje se následující rok ujal Joshua Ginsberg,
-který ale vydal jen dvě nové verze a vývoj v na začátku roku 2012 taktéž opustil.
+který ale vydal jen dvě nové verze a vývoj na začátku roku 2012 taktéž opustil.
 Poslední vydaná verze 0.2.3 přidává podporu pro Django 1.4, nejvyšší podporovaná verze je tedy snad 1.5[^verze].
 S Djangem 1.6 nebo vyšším Piston nefunguje [@piston16].
 Kód rovněž obsahuje syntaxi nekompatibilní s Pythonem 3.
@@ -115,7 +115,7 @@ Myslím, že použití zkraty HATEOAS je tedy v popisu tohoto frameworku poměrn
 Přístupová práva
 ----------------
 
-Piston nabízí dva druhy autentizace: základní HTTP autentizaci jménem a heslem a OAuth 1, Další způsoby je možné doimplementovat [@pistonauth].
+Piston nabízí dva druhy autentizace: základní HTTP autentizaci jménem a heslem a OAuth 1. Další způsoby je možné doimplementovat [@pistonauth].
 Pro autorizaci lze použít zabudovaný mechanismus, který umožňuje část API otevřít anonymním uživatelům a část pouze přihlášeným [@pistonanon].
 Pro komplikovanější použití je nutné manuálně kontrolovat, který uživatel je přihlášen, a podle toho nějakou akci provést či neprovést.
 Piston dostává za přístupová práva tři body.

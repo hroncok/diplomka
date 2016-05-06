@@ -81,7 +81,7 @@ Instalace obsahuje celkem 54~339 řádků kódu. Podporován je Python 2 i 3. Pr
 První commit v projektu se datuje na březen 2015, jedná se tedy v době psaní tohoto textu zhruba o jeden rok starý projekt.
 Od té doby vyšlo téměř patnáct verzí, poslední v listopadu 2015. Za projektem stojí startup Brandicted[^brandicted], kromě nich do projektu příliš mnoho lidí nepřispívá.
 
-[^brandicted]: Hlavní služba startupu Brandicted.com je v době psaní tohoto textu nedostupná. Je otázkou, zda-li jde o náhodu, nebo má Nefertari nejistou budoucnost. Repozitář na GitHubu (který má 37 hvězd) se přesunul do organizace *ramses-tech*, která ale obsahuje stejné vývojáře jako původní organizace *brandicted*, troufám si tvrdit, že se jedná o další startup, po tom, co Brandicted selhal, ale je to pouze má domněnka.
+[^brandicted]: Hlavní služba startupu Brandicted.com je v době psaní tohoto textu nedostupná. Je otázkou, zdali jde o náhodu, nebo má Nefertari nejistou budoucnost. Repozitář na GitHubu (který má 37 hvězd) se přesunul do organizace *ramses-tech*, která ale obsahuje stejné vývojáře jako původní organizace *brandicted*. Troufám si tvrdit, že se jedná o další startup, po tom, co Brandicted selhal, ale je to pouze má domněnka.
 
 HATEOAS
 -------
@@ -90,7 +90,7 @@ Dokumentace Nefertari se nezmiňuje o způsobu, jak jednotlivé zdroje prolinkov
 V části *Vize* [@nefertarivision] dokonce přímo říká:
 
 > Pro nás znamená „REST API“ něco jako „HTTP metody namapované na CRUD[^crud] operace nad zdroji popsanými v JSONu“.
-> Nesnažíme se úplný HATEOAS a o naplnění akademického ideálu o RESTu.
+> Nesnažíme se o úplný HATEOAS, ani o naplnění akademického ideálu o RESTu.
 
 Nedostává tedy žádné body.
 
@@ -101,4 +101,4 @@ Přístupová práva
 
 Nefertari používá model autentizace z frameworku Pyramid, pomocí cookies [@nefertariauth], což u REST API nepovažuji za ideální. Přístupová práva jdou oproti tomu nastavit velice variabilně na úrovni jednotlivých operací a zdrojů [@nefertariauth]. Dostává tedy dva body.
 
-Nefertari způsobuje, že se vývojář o některé věc vůbec nemusí starat. Jak přesně jsou data uložena v databázi. Jak se mapují zdroje na URL. To může být velkou výhodou, ale i nevýhodou. Podle dokumentace se zdá, že jednotlivé výchozí chování nelze příliš ovlivnit. Nefertari jistě ušetří mnoho práce, za cenu svobody volby. Absence HATEOAS a autentizace pomocí cookies můj pohled na Nefertari příliš nezlepší. Existují jistě situace, kde se Nefertari bude vyjímat, ale není dostatečně flexibilní pro širokou škálu případů.
+Nefertari způsobuje, že se vývojář o některé věci vůbec nemusí starat. Jak přesně jsou data uložena v databázi. Jak se mapují zdroje na URL. To může být velkou výhodou, ale i nevýhodou. Podle dokumentace se zdá, že jednotlivé výchozí chování nelze příliš ovlivnit. Nefertari jistě ušetří mnoho práce, za cenu svobody volby. Absence HATEOAS a autentizace pomocí cookies můj pohled na Nefertari příliš nezlepší. Existují jistě situace, kde se Nefertari bude vyjímat, ale není dostatečně flexibilní pro širokou škálu případů.

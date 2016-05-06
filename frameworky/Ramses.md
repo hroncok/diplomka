@@ -14,8 +14,8 @@ Místo kódu v Pythonu se však používá deskriptivní jazyk RAML.
 Ramses přímo závisí na sedmi modulech, nepřímo pak na téměř třiceti, instalace má celkem 68~594 řádků kódu.
 V počtu závislostí je tak v negativním slova smyslu vítězem.
 
-Projekt vytváří stejní autoři, jako Nefertari a všechny informace o aktivitě jsou prakticky stejné,
-projekt vnikl na přelomu února března 2015, poslední z dvanácti verzí vyšla v listopadu téhož roku.
+Projekt vytváří stejní autoři jako Nefertari a všechny informace o aktivitě jsou prakticky stejné,
+projekt vznikl na přelomu února března 2015, poslední z dvanácti verzí vyšla v listopadu téhož roku.
 Kód je distribuován pod permisivní Apache licencí [@apache], stejně jako Nefertari.
 Na rozdíl od Nefertari má na GitHubu více než dvě stovky hvězd.
 

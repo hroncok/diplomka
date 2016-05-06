@@ -20,7 +20,7 @@ kde najdete příklad použití z dokumentace.
 Přestože Pycnic neobsahuje přímou podporu autentizace, v dokumentaci je také komplexní příklad,
 který ukazuje, jak autentizaci implementovat [@pycnicauth], kvůli jeho obsáhlosti jej zde neuvádím.
 
-Vzhledem k nízkoúrovnosti frameworku nedostává Pycnic v žádné z bodovaných kritériích body.
+Vzhledem k nízkoúrovnosti frameworku nedostává Pycnic v žádném z bodovaných kritérií body.
 
 ```{caption="{#code:pycnic}Příklad použití z dokumentace Pycnicu \autocite{pycnicpost}" .python}
 from pycnic.core import Handler, WSGI
@@ -50,9 +50,9 @@ class app(WSGI):
 Benchmark
 ---------
 
-Součástí repozitáře na GitHubu i jednoduchý benchamrak, který měří, kolik požadavků za sekundu jednotlivé webové frameworky zvládnou.
+Součástí repozitáře na GitHubu je i jednoduchý benchmark, který měří, kolik požadavků za sekundu jednotlivé webové frameworky zvládnou.
 Je měřená jednoduchá aplikace, která vrací na adrese `/json` zprávu zakódovanou v JSONu [@pycnicbench].
-Přestože se tato diplomová práce nezbývá webovými frameworky obecně, rozhodl jsem se měření provést.
+Přestože se tato diplomová práce nezabývá webovými frameworky obecně, rozhodl jsem se měření provést.
 Ve výsledcích je kromě Pycnicu i Falcon a hug, které jsem zkoumal [v části](#falcon), [respektive](#hug).
 Výsledky můžete vidět v grafu [na obrázku](#pic:pycnicbench).
 

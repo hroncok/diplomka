@@ -80,7 +80,7 @@ if __name__ == '__main__':
 Python REST API framework je distribuován pod MIT licencí [@MIT].
 Za projektem stojí jednotlivec Yohann Gabory, s minimálním přispěním od dalších vývojářů.
 PRAF vznikl v roce 2013 a od té doby vyšly pouze čtyři verze. Vývoj není příliš aktivní,
-v posledních dvou letech přibilo jen několik jednotek commitů.
+v posledních dvou letech přibylo jen několik jednotek commitů.
 
 Instalace přímo závisí na dvou knihovnách včetně Werkzeugu, celkem pak nepřímo na třech.
 Včetně závislostí má 15~988 řádků kódu. Na GitHubu má projekt pouze čtyři hvězdy a z PyPI byl za poslední měsíc stažen jen o něco málo více než dvousetkrát.
