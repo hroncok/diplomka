@@ -8,7 +8,7 @@ Hodnotící kritéria {#kriteria}
 ==================
 
 Než začnu zkoumání a hodnocení jednotlivých frameworků, je třeba si stanovit hodnotící kritéria,
-která mi umožní frameworky objektivně porovnávat a vybrat kandidáty pro kapitolu TODO.
+která mi umožní frameworky objektivně porovnávat a vybrat kandidáty pro kapitolu *\nameref{implementace}*.
 Pokud to bude alespoň trochu možné, tak pro kritérium stanovím stupnici, na základě které bude možné frameworky mezi sebou porovnat.
 
 Licence
