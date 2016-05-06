@@ -4,7 +4,7 @@ Pro měření jsem použil nástroj ab, určený pro měření odezvy HTTP serve
 K běhu testovaných služeb jsem použil Gunicorn, HTTP server napsaný v Pythonu [@gunicorn].
 
 U měření zaměřených na autentizaci a autorizaci jsem neměřil implementaci v sandmanu,
-jelikož ta příslušné části neobsahuje. Autentizaci jsem prováděl proti falešnému OOAS
+jelikož ta příslušné části neobsahuje. Autentizaci jsem prováděl proti falešnému OAAS
 z vlastního modulu `utvsapitoken`, který běžel na stejném počítači jako testované služby.
 U ostatních měření jsem autentizaci i autorizaci vypnul, aby neovlivňovala měření.
 
