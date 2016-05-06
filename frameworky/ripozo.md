@@ -17,7 +17,7 @@ Pokud chcete nabízet jen některé akce, můžete použít mixiny[^mixin].
 
 [^crud]: *Create*, *Retrieve*, *Update*, *Delete* a *List* [@crud]
 
-[^mixin]: Mixin je třída, kterou v Pythonu použijete jako rodiče, abyste rozšířili funkcionalitu. V tomto konkrétním případě tak například můžete použít mixiny *restmixins.Create* a *restmixins.List* pro poskytnutí akcí pouze pro čtení. [@mixin]
+[^mixin]: Mixin je třída, kterou v Pythonu použijete jako rodiče nebo jednoho z rodičů, abyste rozšířili funkcionalitu. Ničím se neliší od jiné třídy, termín mixin se používá pouze na odlišení významu. V tomto konkrétním případě tak například můžete použít mixiny *restmixins.Create* a *restmixins.List* pro poskytnutí akcí pouze pro čtení. [@mixin]
 
 
 ```{caption="{#code:ripozo}Příklad použití z dokumentace ripoza \autocite{ripozo}" .python}
