@@ -597,10 +597,10 @@ of works or by adapting the Work (including translation), and at the same time m
 	\fi
 
 	\if@abstractendefined
-		%\cleardoublepage
-		%\thispagestyle{empty}
-		%~
-		%\vfill
+		\cleardoublepage
+		\thispagestyle{empty}
+		~
+		\vfill
 		\chapterstyletitle{Abstract}\theabstracten
 	\else
 		\ClassError{FITthesis}{Abstract in English unspecified}{Specify abstract in English using the \abstractEN command.}
