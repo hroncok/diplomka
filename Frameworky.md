@@ -96,17 +96,152 @@ Díky principu HATEOAS nemusí REST klient o poskytovaném API vědět příliš
 
 [^hateoas]: Hypermedia jako základ aplikačního stavu
 
-TODO napsat jak souvisí HAL apod. s HATEOAS
-
 HATEOAS je ale pouze princip, konkrétních implementací je několik. Mezi ty nejznámější patří:
 
- * HAL [@hal],
- * JSON-LD [@jsonld],
- * Hydra [@hydra] (rozšíření JSON-LD),
- * JSON Schema [@jsonschema], TODO JSON API
- * Collection+JSON [@collectionjson].
+### HAL
 
-TODO příklady
+HAL je jednoduchý formát, který nabízí konzistentní způsob prolinkování zdrojů v API [@hal].
+Obsahuje položky `_links` a `_embedded` pro odkazy a vnořené zdroje, ostatní položky mají vlastní jména.
+Schéma můžete vidět [na obrázku](#pic:hal).
+
+![Schéma zdroje ve formátu HAL [@hal]{#pic:hal}](images/hal)
+
+### JSON-LD
+
+JSON-LD je formát pro serializaci prolinkovaných dat [@jsonld].
+Používá se mj. pro sémantický web a RDF data [@jsonldrdf], ale lze použít i pro REST API.
+Příklad můžete vidět [v ukázce](#code:jsonld).
+
+```{caption="{#code:jsonld}Příklad formátu JSON-LD \autocite{jsonld}" .python}
+{
+  "@context": "http://json-ld.org/contexts/person.jsonld",
+  "@id": "http://dbpedia.org/resource/John_Lennon",
+  "name": "John Lennon",
+  "born": "1940-10-09",
+  "spouse": "http://dbpedia.org/resource/Cynthia_Lennon"
+}
+```
+
+### Hydra (rozšíření JSON-LD)
+
+Hydra je rozšíření pro JSON-LD, které využívá speciální slovník vhodný pro webová API [@hydra].
+
+
+### JSON API
+
+JSON API je specifikace pro webová API používající JSON [@jsonapi].
+Jedná se velmi komplexní formát, který u každého zdroje rozlišuje, data, metadata, odkazy, vztahy a další prvky.
+
+
+### Collection+JSON
+
+Collection+JSON je komplexní serializační formát postavený na JSONu určený pro kolekce dat [@collectionjson].
+Příklad můžete vidět [v ukázce](#code:collectionjson).
+
+```{caption="{#code:collectionjson}Příklad formátu Collection+JSON \autocite{collectionjson}" .python}
+{ "collection" :
+  {
+    "version" : "1.0",
+    "href" : "http://example.org/friends/",
+    
+    "links" : [
+      {"rel" : "feed", "href" : "http://example.org/friends/rss"}
+    ],
+
+    "items" : [
+      {
+        "href" : "http://example.org/friends/jdoe",
+        "data" : [
+          {"name" : "full-name", "value" : "J. Doe",
+           "prompt" : "Full Name"},
+          {"name" : "email", "value" : "jdoe@example.org",
+           "prompt" : "Email"}
+        ],
+        "links" : [
+          {"rel" : "blog", "href" : "http://examples.org/blogs/jdoe",
+          "prompt" : "Blog"},
+          {"rel" : "avatar",
+           "href" : "http://examples.org/images/jdoe",
+           "prompt" : "Avatar", "render" : "image"}
+        ]
+      }
+    ],
+
+    "queries" : [
+      {"rel" : "search", "href" : "http://example.org/friends/search",
+       "prompt" : "Search",
+        "data" : [
+          {"name" : "search", "value" : ""}
+        ]
+      }
+    ],
+
+    "template" : {
+      "data" : [
+        {"name" : "full-name", "value" : "", "prompt" : "Full Name"},
+        {"name" : "email", "value" : "", "prompt" : "Email"},
+        {"name" : "blog", "value" : "", "prompt" : "Blog"},
+        {"name" : "avatar", "value" : "", "prompt" : "Avatar"}
+      ]
+    }
+  }
+}
+```
+
+### Siren
+
+Siren je specifikace pro reprezentaci entit pomocí hypermédií [@siren].
+Příklad můžete vidět [v ukázce](#code:siren).
+
+```{caption="{#code:siren}Příklad formátu Siren \autocite{siren}" .python}
+{
+  "class": [ "order" ],
+  "properties": {
+      "orderNumber": 42,
+      "itemCount": 3,
+      "status": "pending"
+  },
+  "entities": [
+    {
+      "class": [ "items", "collection" ],
+      "rel": [ "http://x.io/rels/order-items" ],
+      "href": "http://api.x.io/orders/42/items"
+    },
+    {
+      "class": [ "info", "customer" ],
+      "rel": [ "http://x.io/rels/customer" ],
+      "properties": {
+        "customerId": "pj123",
+        "name": "Peter Joseph"
+      },
+      "links": [
+        { "rel": [ "self" ],
+          "href": "http://api.x.io/customers/pj123" }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "add-item",
+      "title": "Add Item",
+      "method": "POST",
+      "href": "http://api.x.io/orders/42/items",
+      "type": "application/x-www-form-urlencoded",
+      "fields": [
+        { "name": "orderNumber", "type": "hidden", "value": "42" },
+        { "name": "productCode", "type": "text" },
+        { "name": "quantity", "type": "number" }
+      ]
+    }
+  ],
+  "links": [
+    { "rel": [ "self" ], "href": "http://api.x.io/orders/42" },
+    { "rel": [ "previous" ], "href": "http://api.x.io/orders/41" },
+    { "rel": [ "next" ], "href": "http://api.x.io/orders/43" }
+  ]
+}
+```
+
 
 Vzhledem ke komplexitě možných případů nestanovují škálu pevně,
 ale na základě vlastního textového hodnocení ohodnotím každý framework nula až třemi body.
