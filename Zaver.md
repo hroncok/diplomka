@@ -19,5 +19,5 @@ Některé zkoumané frameworky trpěly nedostatky, které je v budoucnu možné
 ve spolupráci s autory těchto frameworků opravit.
 
 Zkoumaný framework ripozo umožňuje napojení na různé webové frameworky,
-bylo by zajímavé naprogramovat napojení na nějaký nyní nepodporovaný rychlý webový framework,
+bylo by zajímavé naprogramovat napojení na nějaký zatím nepodporovaný rychlý webový framework,
 jako například Falcon.
