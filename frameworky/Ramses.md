@@ -11,7 +11,7 @@ Používá Pyramid a Nefertari [@ramsesdoc].
 Ramses přináší stejné funkce jako Nefertari, o kterém jsme psal [v části](#nefertari).
 Místo kódu v Pythonu se však používá deskriptivní jazyk RAML.
 
-Ramses přímo závisí na sedmi modulech, nepřímo pak na téměř třiceti, instalace zabírá 19~MiB.
+Ramses přímo závisí na sedmi modulech, nepřímo pak na téměř třiceti, instalace má celkem 68~594 řádků kódu.
 V počtu závislostí je tak v negativním slova smyslu vítězem.
 
 Projekt vytváří stejní autoři, jako Nefertari a všechny informace o aktivitě jsou prakticky stejné,

@@ -64,7 +64,7 @@ Na to doplácí především dokumentace, která zdaleka neobsahuje všechny mo�
 postrádá například kapitolu o autentizaci, přestože v kódu je tato funkcionalita obsažena.
 Za projektem stojí jednotlivec Timothy Edmund Crosley, ale přispěla již třicítka vývojářů.
 
-Hug je zveřejněn pod MIT licencí [@MIT], přímo závisí na Falconu a knihovně Requests, nepřímo tak má 4 závislosti a zabírá 4~MiB.
+Hug je zveřejněn pod MIT licencí [@MIT], přímo závisí na Falconu a knihovně Requests, nepřímo tak má 4 závislosti a má s nimi 16~545 řádků kódu.
 
 HATEOAS
 -------

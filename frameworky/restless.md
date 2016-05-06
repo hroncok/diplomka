@@ -29,7 +29,7 @@ V případě změny frameworku by mělo stačit třídu vyměnit.
 Příklad z dokumente s použitím třídy pro Django můžete vidět [v ukázce](#code:restless).
 
 Restless závisí pouze na knihovně six, kvůli zpětné kompatibilitě s Pythonem~2.
-Instalace tak zabírá pouze čtvrt mebibajtu, ale tato informace je zavádějící, protože restless ještě vyžaduje nějaký webový framework,
+Instalace tak zabírá pouze čtvrt mebibajtu a obsahuje 1~140, ale tato informace je zavádějící, protože restless ještě vyžaduje nějaký webový framework,
 samostatně nefunguje.
 
 ```{caption="{#code:restless}Příklad použití s Djangem z dokumentace restlessu \autocite{restlessgh}" .python}

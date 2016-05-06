@@ -57,7 +57,7 @@ Projekt vznikl v roce 2014, od té doby vyšlo více než třicet verzí, nejnov
 Za projektem stojí firma Vertical Knowledge, vyvíjí jej hlavně Tim Martin, ale přispěli i jednotlivci nesouvisející s touto firmou.
 Ripozo je distribuováno pod copyleftovou licencí GNU General Public License verze 2 [@GPLv2] nebo vyšší, čímž se odlišuje od naprosté většiny ostatních zde diskutovaných frameworků.
 
-Instalace závisí jen na knihovně six, kvůli kompatibilitě s oběma verzemi Pythonu, a zabírá pouze půl mebibajtu.
+Instalace závisí jen na knihovně six, kvůli kompatibilitě s oběma verzemi Pythonu, zabírá pouze půl mebibajtu a obsahuje 2~130 řádků kódu.
 Vzhledem k tomu, že instalace samotného ripoza je nepoužitelná, jelikož je potřeba použít nějaký webový framework, je tato informace zavádějící.
 Například po instalaci modulů na spolupráci s Flaskem a SQLAlchemy je již závislostí sedm (nepočítaje tři vlastní moduly `ripozo`, `flask-ripozo` a `ripozo-sqlalchemy`) a instalace zabírá 14 MiB.
 

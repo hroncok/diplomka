@@ -78,7 +78,7 @@ urlpatterns = [
 
 První verze vyšla již v roce 2011 a od té doby jich vyšlo celkem osmdesát, poslední vyšla cca tři týdny před psaním tohoto textu.
 Vývoj je velmi aktivní a dokumentace velmi obsáhlá. Instalace závisí pouze na Djangu,
-které nemá žádné další závislosti, a společně s ním zabírá 43~MiB. Podporovány jsou obě verze Pythonu.
+které nemá žádné další závislosti, a společně s ním má 79~854 řádků kódu. Podporovány jsou obě verze Pythonu.
 Na GitHubu má více než pět a půl tisíce hvězd a za poslední měsíc byl více než třistatisíckrát stažen z PyPI.
 
 HATEOAS

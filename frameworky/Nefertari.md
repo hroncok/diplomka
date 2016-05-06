@@ -76,7 +76,7 @@ class StoriesView(BaseView):
 ```
 
 Nefertari závisí na devíti, nepřímo na osmnácti modulech, což je oproti jiným zkoumaným frameworkům opravdu hodně.
-Instalace celkově zabírá 16~MiB. Podporován je Python 2 i 3. Projekt je distribuován pod permisivní Apache licencí [@apache].
+Instalace obsahuje celkem 54~339 řádků kódu. Podporován je Python 2 i 3. Projekt je distribuován pod permisivní Apache licencí [@apache].
 
 První commit v projektu se datuje na březen 2015, jedná se tedy v době psaní tohoto textu zhruba o jeden rok starý projekt.
 Od té doby vyšlo téměř patnáct verzí, poslední v listopadu 2015. Za projektem stojí startup Brandicted[^brandicted], kromě nich do projektu příliš mnoho lidí nepřispívá.

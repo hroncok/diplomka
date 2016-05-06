@@ -83,7 +83,7 @@ PRAF vznikl v roce 2013 a od té doby vyšly pouze čtyři verze. Vývoj není p
 v posledních dvou letech přibilo jen několik jednotek commitů.
 
 Instalace přímo závisí na dvou knihovnách včetně Werkzeugu, celkem pak nepřímo na třech.
-Zabírá necelé 3 MiB. Na GitHubu má projekt pouze čtyři hvězdy a z PyPI byl za poslední měsíc stažen jen o něco málo více než dvousetkrát.
+Včetně závislostí má 15~988 řádků kódu. Na GitHubu má projekt pouze čtyři hvězdy a z PyPI byl za poslední měsíc stažen jen o něco málo více než dvousetkrát.
 Projekt neobsahuje informaci o tom, jestli podporuje Python 3, ale obsahuje minimálně jeden řádek kódu napsaný v nekompatibilní syntaxi,
 z čehož soudím, že Python 3 nepodporuje.
 

@@ -26,7 +26,7 @@ S Djangem 1.6 nebo vyšším Piston nefunguje [@piston16].
 Kód rovněž obsahuje syntaxi nekompatibilní s Pythonem 3.
 Piston je tedy jednoznačně mrtvý projekt.
 
-Piston byl distribuován pod BSD licencí (není však jasné jestli jde o třípoložkovou [@BSD3] nebo dvoupoložkovou [@BSD2] variantu, projekt neuvádí celý text licence). Závisí pouze na Djangu a společně s Djangem 1.5 zabírá 49~MiB.
+Piston byl distribuován pod BSD licencí (není však jasné jestli jde o třípoložkovou [@BSD3] nebo dvoupoložkovou [@BSD2] variantu, projekt neuvádí celý text licence). Závisí pouze na Djangu a společně s Djangem 1.5 má 75~311 řádků kódu.
 
 [^verze]: Django vždy nejprve označí funkcionalitu k odebrání, v následující verzi ji označí jako zastaralou (*deprecated*) a v další verzi ji odstraní [@djangorelease]. Současné podporované verze jsou 1.8 a 1.9.
 

@@ -13,7 +13,7 @@ Mezi hlavní přednosti podle webové stránky [@falcon] patří:
 
 ![Logo Falconu [@falconpic]{#pic:falcon}](images/falcon)
 
-Falcon je bezesporu minimalistický, společně s závislostmi zabírá pouze 0,9~MiB místa.
+Falcon je bezesporu minimalistický, společně s závislostmi má pouze 3~034 řádků kódu.
 Je šířen pod permisivní Apache licencí [@apache] a nevyžaduje žádný webový framework.
 
 Příklad použití můžete vidět [v ukázce](#code:falcon).

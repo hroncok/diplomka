@@ -40,9 +40,8 @@ class Style(Model):
 
 Sandman2 používá Flask a SQLAlchemy, takže podporuje širokou škálu SQL databází včetně MySQL,
 PostgreSQL, Oracle, Microsoft SQL Serveru a SQLite [@sandmangh].
-Závisí přímo na čtyřech a nepřímo na dvanácti modulech, instalace zabírá 23~MiB
-a tím -- v negativním slova smyslu -- předčí všechny ostatní frameworky, které nezávisí na Djangu;
-v počtu řádků kódu v Pythonu (včetně závislostí) předčí i je.
+Závisí přímo na čtyřech a nepřímo na dvanácti modulech, instalace má celkem 82~207 řádků kódu
+a tím -- v negativním slova smyslu -- předčí všechny ostatní frameworky.
 
 Kromě samotného REST API vytvoří sandman2 i webové rozhraní, kde je možné s daty manipulovat.
 Můžete jej vidět [na obrázku](#pic:sandman).

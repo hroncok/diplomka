@@ -3,7 +3,7 @@ RESTArt
 
 RESTArt je knihovna pro tvorbu REST API. Je inspirovaná Flaskem, ale nezávisí na něm [@restartgh].
 Závisí na knihovně Werkzeug a dalších třech modulech, nepřímo tak celkem na pěti.
-Instalace zabírá 3 MiB místa.
+Instalace má 20~105 řádků kódu.
 
 Projekt vznikl v květnu 2015 a od té doby vyšlo šest verzí. Je stále aktivně vyvíjen,
 avšak pouze autorem, jednotlivcem Luem Pengem. Je distribuován pod MIT licencí [@MIT].
