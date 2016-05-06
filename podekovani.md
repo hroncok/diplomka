@@ -1,5 +1,12 @@
-TODO Jakub Jirůtka
+Na tomto místě bych rád poděkoval a vyslovil uznání všem lidem, kteří mi
+pomáhali při vzniku této práce. V prvé řadě Jakubovi Jirůtkovi, vedoucímu
+mé diplomové práce, za cenné podněty k textové části i implementacím,
+ale také za poskytnutí řešení k psaní textové části této práce v jazyce Markdown.
 
-TODO Jiří Mlejnek
+Dále také Slávkovi Kabrdovi, vedoucímu mé bakalářské práce,
+za to, že mě naučil, jak závěrečné práce psát.
 
-TODO autoři frameworků
+Děkuji i Jiřímu Mlejnkovi za návrh, jak psát kapitolu *\nameref{implementace}*.
+
+V neposlední řadě také děkuji desítkám autorů zkoumaných frameworků,
+bez jejich úsilí by tato práce neměla důvod vzniknout.
