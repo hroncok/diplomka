@@ -13,7 +13,7 @@ Data byla při měřená dostupná v MariaDB databázi běžící na stejném po
 HTTP server byl spuštěn s dvěma vlákny.
 Měřící nástroj ab službu testoval pěti tisíci požadavky, v dávkách po jednom stu, kde jedna dávka vždy probíhala současně.
 
-Pozor, zde prezentované měření rychlosti odezvy bylo prováděno na konkrétních implementacích
+Zde prezentované měření rychlosti odezvy bylo prováděno na konkrétních implementacích
 popsaných v kapitolách *\nameref{implementace}*,
 vzhledem k tomu, že jednotlivé měřené implementace jsou netriviální,
 nelze zde prezentované výsledky v žádném případě generalizovat na celý použitý framework.
