@@ -284,7 +284,7 @@ a složitá.
 Použití přirozených identifikátorů
 ----------------------------------
 
-Již v úvodu jsme zmínil, že Eve předpokládá, že se všechny primární klíče jmenují stejně.
+Již v úvodu jsem zmínil, že Eve předpokládá, že se všechny primární klíče jmenují stejně.
 Není tedy možné použít různé přirozené identifikátory.
 Je ale možné přidání sekundárního identifikátoru,
 což prezentuji [v ukázce](#code:eve:ids).

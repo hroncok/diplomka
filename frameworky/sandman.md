@@ -61,7 +61,7 @@ HATEOAS
 -------
 
 Sandman automaticky prezentuje SQL sloupce typu cizí klíč jako odkazy [@sandman1gh].
-Předpokládám, že sandman2 to dělá stejně, ale tuto informaci jsme nikde nenašel potvrzenou.
+Předpokládám, že sandman2 to dělá stejně, ale tuto informaci jsem nikde nenašel potvrzenou.
 Dávám zde tedy dva body na základě vlastnosti z první verze sandmanu.
 
 Přístupová práva
