@@ -1,6 +1,6 @@
 Open-source knihoven a frameworků pro Python, které umožňují vytvářet RESTful API, je opravdu mnoho.
 V této práci jsem prozkoumal osmnáct takových frameworků v kapitole *\nameref{frameworky}*.
-Zkoumal jsem především úroveň podpory HATEOAS a přístupových práv.
+Zkoumal jsem především úroveň podpory HATEOAS a řízení přístupových práv.
 
 Na základě stanovených kritérií jsem vybral čtyři frameworky, ve kterých jsem implementoval ukázkovou službu,
 pro účely podrobnějšího zkoumání.
