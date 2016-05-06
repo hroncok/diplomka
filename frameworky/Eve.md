@@ -82,7 +82,7 @@ Projekt vznikl v roce 2012, od té doby vyšlo 20 verzí, poslední cca tři tý
 Za projektem stojí jednotlivec Nicola Iarocci, přispělo však celkem více než 100 dalších přispěvatelů [@evecontributors].
 Eve je vydáno pod BSD licencí [@BSD3].
 
-Eve závisí celkem na desíti modulech (včetně Flasku a Werkzeugu), tyto moduly již nemají žádné další závislosti. Celkem se závislostmi má 35~009 řádků kódu. Závislost na Python modulech pro MongoDB není bohužel volitelná.
+Eve závisí celkem na deseti modulech (včetně Flasku a Werkzeugu), tyto moduly již nemají žádné další závislosti. Celkem se závislostmi má 35~009 řádků kódu. Závislost na Python modulech pro MongoDB není bohužel volitelná.
 
 HATEOAS
 -------
@@ -128,4 +128,4 @@ Eve umožňuje nastavovat přístupová práva podle rolí pro celé API, nebo j
 
 Dávám tedy i zde Eve tři body.
 
-Celkově se Eve jeví jako framework s velkým množstvím funkcí, který dokáže ušetřit velké množství práce. Vytknul bych snad jen přílišnou vázanost na MongoDB, která je často cítit především z dokumentace.
+Celkově se Eve jeví jako framework s mnoho funkcemi, který dokáže ušetřit velké množství práce. Vytknul bych snad jen přílišnou vázanost na MongoDB, která je často cítit především z dokumentace.

@@ -1,7 +1,7 @@
 Django REST framework
 =====================
 
-Django REST framework je nadstavbou k webovému frameworku Django. Na svém webu [@djangorest] uvádí tyto předností:
+Django REST framework je nadstavbou k webovému frameworku Django. Na svém webu [@djangorest] uvádí tyto přednosti:
 
  * webově procházetelné API (můžete jej vidět [na obrázku](#pic:djangorestbrowsable)),
  * autentizační pravidla včetně možnosti použití OAuth 1 či OAuth 2,
@@ -91,7 +91,7 @@ Dokumentace obsahuje kapitolu o HATEOAS [@djangoresthateoas], která uvádí:
 >
 > (Django) REST framework také obsahuje serializační, parsovací a renderovací komponenty usnadňující vytváření patřičných mediálních typů, hyperlinkovaných vazeb pro konstrukci vysoce propojených systémů, a dobrou podporu pro vyjednávání obsahu.
 >
-> Co ale (Django) REST framework neumí, je vytváření strojově čitelných formátů hypermédií jako HAL, Collection+JSON, JSON API či HTML mikroformátů ve výchozí konfiguraci, či automagické generování plně HATEOAS API s hypermediálním popisem formulářů a sémanticky označeným hyperlinky.
+> Co ale (Django) REST framework neumí, je vytváření strojově čitelných formátů hypermédií jako HAL, Collection+JSON, JSON API či HTML mikroformátů ve výchozí konfiguraci, či automagické generování plně HATEOAS API s hypermediálním popisem formulářů a sémanticky označenými hyperlinky.
 > To by vyžadovalo provedení takových rozhodnutí o designu API, které by ve skutečnosti měly zůstat vně pole působnosti tohoto frameworku.
 
 Hodnotím kladně, že se o principu HATEOAS v dokumentaci hovoří.

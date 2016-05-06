@@ -58,9 +58,9 @@ Cornice nezískává žádný bod.
 Přístupová práva
 ----------------
 
-Cornice nenabízí žádné zabudované možnosti, jak řešit přístupová práva. Ve výchozím stavu je celé API přístupné všem, můžete však napsat vlastní funkci v Pythonu, která práva bude řešit. Toto na jednu stranu nabízí téměř nemezné možnosti, na stranu druhou to není příliš pohodlné. Cornice získává jeden bod.
+Cornice nenabízí žádné zabudované možnosti, jak řešit přístupová práva. Ve výchozím stavu je celé API přístupné všem, můžete však napsat vlastní funkci v Pythonu, která práva bude řešit. Toto na jednu stranu nabízí téměř neomezené možnosti, na stranu druhou to není příliš pohodlné. Cornice získává jeden bod.
 
 
-Cornice působí jako solidní nízkoúrovňový REST framework: Pokud víte, co děláte, můžete pomocí něj neimplementovat REST službu, ale neudělá příliš věcí za vás. Speciální funkcí je pak podpora SPORE[^spore] [@cornicespore].
+Cornice působí jako solidní nízkoúrovňový REST framework: Pokud víte, co děláte, můžete pomocí něj naimplementovat REST službu, ale neudělá příliš věcí za vás. Speciální funkcí je pak podpora SPORE[^spore] [@cornicespore].
 
 [^spore]: Specification to a POrtable Rest Environment [@spore]
