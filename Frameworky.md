@@ -100,7 +100,7 @@ HATEOAS je ale pouze princip, konkrétních implementací je několik. Mezi ty n
 
 ### HAL
 
-HAL je jednoduchý formát, který nabízí konzistentní způsob prolinkování zdrojů v API [@hal].
+HAL (Hypertext Application Language) je jednoduchý formát, který nabízí konzistentní způsob prolinkování zdrojů v API [@hal].
 Obsahuje položky `_links` a `_embedded` pro odkazy a vnořené zdroje, ostatní položky mají vlastní jména.
 Schéma můžete vidět [na obrázku](#pic:hal).
 

@@ -91,6 +91,6 @@ Obsahuje však možnost předpracovávat požadavky pomocí funkcí.
 V dokumentaci se říká, že tímto způsobem můžete například zpřístupnit zdroj pouze autentizovaným uživatelům [@ripozoprepost].
 Ripozo zde tedy dostává dva body.
 
-Ripozo je framework, který umožňuje vytvářet RESTful HETEOS API pomocí Siren a HAL, prakticky bez práce. Možnost výběru vlastního frameworku i databáze je velké plus. Nevýhodou může v některých případech být copyleftová licence[^vyhoda].
+Ripozo je framework, který umožňuje vytvářet RESTful HATEOS API pomocí Siren a HAL, prakticky bez práce. Možnost výběru vlastního frameworku i databáze je velké plus. Nevýhodou může v některých případech být copyleftová licence[^vyhoda].
 
 [^vyhoda]: Richard M. Stallman by určitě namítal, že to je výhodou.
