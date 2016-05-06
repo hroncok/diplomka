@@ -9,5 +9,5 @@ použitelnosti, množství nabízených funkcí, podpory standardů, množství 
 Abych mohl frameworky zkoumat více do hloubky a porovnat je i z hlediska rychlosti, navrhnu ukázkovou službu poskytující RESTful API
 pro přístup k rozvrhovým datům Ústavu tělesné výchovy a sportu, ČVUT v Praze. Návrhem se budu zabývat v kapitole *\nameref{navrh}*.
 
-Tuto službu pak implementuji ve třech vybraných frameworcích na základě předchozího zkoumání a hodnocení;
+Tuto službu pak implementuji ve čtyřech vybraných frameworcích na základě předchozího zkoumání a hodnocení;
 o tom prozradí více kapitola *\nameref{implementace}*. Hotová řešení pak podrobím testování doby odezvy v kapitole *\nameref{mereni}*.
