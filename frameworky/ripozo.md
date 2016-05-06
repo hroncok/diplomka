@@ -15,9 +15,9 @@ Můžete využít existujících knihoven pro napojení na Django a Flask,
 Příklad, který přes REST API nabízí kompletní CRUD+L[^crud], pak můžete vidět [v ukázce](#code:ripozocrudl).
 Pokud chcete nabízet jen některé akce, můžete použít mixiny[^mixin].
 
-[^crud]: *Create*, *Retrieve*, *Update*, *Delete* a *List* (TODO citovat nějakou chytrou knihu)
+[^crud]: *Create*, *Retrieve*, *Update*, *Delete* a *List* [@crud]
 
-[^mixin]: Mixin je třída, kterou v Pythonu použijete jako rodiče, abyste rozšířili funkcionalitu. V tomto konkrétním případě tak například můžete použít mixiny *restmixins.Create* a *restmixins.List* pro poskytnutí akcí pouze pro čtení. (TODO citovat nějakou chytrou knihu)
+[^mixin]: Mixin je třída, kterou v Pythonu použijete jako rodiče, abyste rozšířili funkcionalitu. V tomto konkrétním případě tak například můžete použít mixiny *restmixins.Create* a *restmixins.List* pro poskytnutí akcí pouze pro čtení. [@mixin]
 
 
 ```{caption="{#code:ripozo}Příklad použití z dokumentace ripoza \autocite{ripozo}" .python}

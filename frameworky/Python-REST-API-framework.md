@@ -9,7 +9,7 @@ Mezi hlavní funkce patří [@praf]:
  * autentizace,
  * autorizace,
  * filtry,
- * částečné odpovědi (TODO Partials Response?),
+ * částečné odpovědi,
  * řízení chyb,
  * validátory dat,
  * formátovače dat.
