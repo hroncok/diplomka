@@ -8,7 +8,7 @@ jelikož ta příslušné části neobsahuje. Autentizaci jsem prováděl proti 
 z vlastního modulu `utvsapitoken`, který běžel na stejném počítači jako testované služby.
 U ostatních měření jsem autentizaci i autorizaci vypnul, aby neovlivňovala měření.
 
-Dala byla při měřená dostupná v MariaDB databázi běžící na stejném počítači jako testované služby.
+Data byla při měřená dostupná v MariaDB databázi běžící na stejném počítači jako testované služby.
 
 HTTP server byl spuštěn s dvěma vlákny.
 Měřící nástroj ab službu testoval pěti tisíci požadavky, v dávkách po jednom stu, kde jedna dávka vždy probíhala současně.
