@@ -436,6 +436,7 @@ Navigační odkazy na další stránky neobsahují použitý filtr, což jsem na
 ### Řazení
 
 Nepřišel jsem na způsob, jak seznam řadit jinak než implicitně.
+Zde je třeba zdůraznit, že se jedná o nedostatek modulu `ripozo-sqlalchemy`.
 
 ### Vyjednávání o obsahu
 
@@ -445,6 +446,11 @@ Posle hlavičky `Accept` volí ripozo vhodný *adaptér* (HAL, Siren atd.).
 
 Rozcestník je automaticky vytvořen, odpovídá ale pouze na metodu *OPTIONS*.
 
+### Seznam položek
+
+Zásadním nedostatkem služby je nemožnost zobrazení seznamu položek jinak, než formou odkazů.
+To vede k nutnosti zaslání $N+1$ dotazů, pokud potřebujme získat informace o $N$ položkách,
+u jiných implementací k tomu stačí jeden dotaz.
 
 Další poznámky
 --------------
@@ -454,8 +460,6 @@ ale v současné době je k dispozici pouze navázání na Flask a Django.
 
 Vzhledem k výsledkům benchmarku [v části](#benchmark@) by bylo z hlediska rychlosti zajímavé implementovat napojení na webový framework Falcon.
 Jelikož se tato práce ale obecně rozdíly mezi webovými frameworky nezabývá, nechávám tuto možnost otevřenou.
-
-Implementovaná služba zaostávala hlavně v možnostech řazení a filtrování, zde je třeba zdůraznit, že se jedná o nedostatky modulu `ripozo-sqlalchemy`.
 
 
 Kompletní implementace
