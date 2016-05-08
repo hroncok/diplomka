@@ -79,8 +79,8 @@ například pokud by každý zdroj byl namapován na jinou databázi apod.
 
 Namapování dat z pohledů na zdroje v ripozu je
 možné,
-systematické
-a pro jednoduché aplikace příliš komplexní, ale ne příliš složité.
+systematické,
+pro jednoduché aplikace příliš komplexní, ale ne příliš složité.
 
 Přejmenování položek
 --------------------

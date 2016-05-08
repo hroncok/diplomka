@@ -11,7 +11,7 @@
 			.2 utvsapi-django\DTcomment{implementace ukázkové služby v DRF}.
 			.2 utvsapi-eve\DTcomment{implementace ukázkové služby v Eve}.
 			.2 utvsapi-ripozo\DTcomment{implementace ukázkové služby v ripozu}.
-			.2 utvsapi-sandman\DTcomment{implementace ukázkové služby v sandmanu}.
+			.2 utvsapi-sandman\DTcomment{implementace ukázkové služby v sandmanu2}.
 			.2 utvsapitoken\DTcomment{společný modul pro práci s tokenem}.
 			.2 diplomka\DTcomment{zdrojová forma práce ve formátu Markdown a \XeLaTeX{}}.
 		.1 DP\_Hroncok\_Miroslav\_2016.pdf\DTcomment{text práce ve formátu PDF}.

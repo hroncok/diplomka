@@ -298,7 +298,7 @@ Poté je možné přistupovat k nějakému sportu pomocí `/sports/{id}` i pomoc
 
 Použití přirozených identifikátorů v Eve je
 možné pouze současně s číselným identifikátorem,
-ale systematické
+ale je systematické
 a triviální.
 
 Přístupová práva
@@ -443,7 +443,7 @@ Nelze kombinovat více filtrů.
 ### Řazení
 
 Řadit se dá parametrem `sort` podle různých položek a to včetně určení směru řazení a použití více řadících podmínek.
-Následující příklad seřadí kurzy podle dnu v týdnu od největšího a následně v případě shody podle čísla haly.
+Následující příklad seřadí kurzy podle dnu v týdnu od nejpozdějšího a následně v případě shody podle čísla haly.
 
 `GET /courses/?sort=-day,hall`
 

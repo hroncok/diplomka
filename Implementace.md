@@ -171,6 +171,6 @@ Souhrn
 ======
 
 Žádná ze čtyř implementací se neobešla bez komplikací, neexistuje tedy žádný pomyslný vítěz.
-U Django REST frameworku, Eve a ripoza se jednalo o nedostatky, které by se pravděpodobně daly s rozumným množstvím úsilí vyřešit
+U Django REST frameworku, Eve a ripoza se jednalo o nedostatky, které by se pravděpodobně daly, s rozumným množstvím úsilí, vyřešit
 přispěním do samotných frameworků či dalších použitých knihoven.
 Framework sandamn2 zaostával natolik, že jej nemohu doporučit.

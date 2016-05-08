@@ -159,7 +159,7 @@ Zobrazení dat ve standardizované podobě
 ---------------------------------------
 
 Úprava způsobu zobrazení jedné entity je možná v metodě `to_dict()`.
-Úprava způsobu zobrazení seznamu entit není možná.
+Úprava způsobu zobrazení seznamu entit možná není.
 
 [V ukázce](#code:sandman2:standard) je vidět úprava ve stylu HAL.
 
@@ -220,7 +220,7 @@ Příklad výstupu pro HAL můžete vidět [v ukázkce](#code:sandman2:hal).
 Zobrazení dat ve standardizované podobě v sandmanu2 je
 částečně možné,
 nepříliš systematické
-a jednoduché v závislosti na zvolené standardu.
+a jednoduché v závislosti na zvoleném standardu.
 
 
 Použití přirozených identifikátorů
@@ -295,7 +295,7 @@ například takto se dá zobrazit seznam kurzů probíhajících v pátek:
 `GET /courses?day=5`
 
 Nelze ale filtrovat na základě cizích klíčů, ani nastavit podmínku (větší než apod.).
-Při špatně provedeném dotazu může výsledek skončit chybou sandmanu2, což jsem nahlásil jako chybu.
+Při špatně provedeném dotazu může výsledek skončit chybou sandmanu2, což jsem nahlásil autorovi.
 
 ### Řazení
 
