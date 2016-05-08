@@ -419,7 +419,7 @@ REST_FRAMEWORK = {
 
 Poté jde položky řadit pomocí parametru `ordering` (název parametru jde v nastavení také změnit).
 Je možné řadit vzestupně i sestupně, i podle více klíčů.
-Pro seřazení kurzů podle jejich začátku v týdnu, ale od konce, lze použít například:
+Pro seřazení kurzů podle jejich začátku v týdnu od nejpozdějšího lze použít například:
 
 `GET /courses/?ordering=-day,-starts_at`
 
