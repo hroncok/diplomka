@@ -327,4 +327,4 @@ Kompletní implementace
 Kompletní implementaci REST API pro rozvrhová data ÚTVS ČVUT ve frameworku sandman2
 najdete na přiloženém médiu a na adrese:
 
-\url{https://github.com/hroncok/utvsapi-sandman}.
+\url{https://github.com/hroncok/utvsapi-sandman}

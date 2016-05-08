@@ -130,8 +130,9 @@ class TokenClient:
 
 ```
 
-Kompletní implementaci tohoto modulu najdete na přiloženém médiu a na adrese
-\url{https://github.com/hroncok/utvsapitoken}.
+Kompletní implementaci tohoto modulu najdete na přiloženém médiu a na adrese:
+
+\url{https://github.com/hroncok/utvsapitoken}
 
 
 

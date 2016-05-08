@@ -24,7 +24,7 @@ Pro jednotlivé implementace se tyto požadavky mohou mírně lišit, ale pro p�
 Záznamy z měření s kompletními požadavky, výstupy a naměřenými rychlostmi jsou dostupné na přiloženém médiu.
 Testovací skripty jsou také dostupné na přiloženém médiu a na adrese:
 
-\url{https://github.com/hroncok/utvsapi-benchamrk}.
+\url{https://github.com/hroncok/utvsapi-benchamrk}
 
 
 
