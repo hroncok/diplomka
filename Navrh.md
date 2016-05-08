@@ -3,7 +3,7 @@
 Poskytnuté databázové pohledy
 =============================
 
-V MySQL databázi Ústavu tělesné výchovy a sportu ČVUT existují pohledy obsahující data pro sestavení rozvrhů.
+V MySQL databázi Ústavu tělesné výchovy a sportu ČVUT v Praze existují pohledy obsahující data pro sestavení rozvrhů.
 Tyto pohledy mám k dispozici a nad nimi budu navrhovat RESTful službu.
 V této části nejprve seznámím čtenáře se strukturou dat.
 Informace čerpám z wiki FIT ČVUT v Praze provozované Oddělením pro rozvoj [@rozvojwiki].
@@ -40,7 +40,7 @@ Table: Struktura pohledu v_hall {#tab:hall}
 Vyučující
 ---------
 
-Vyučují jednotlivých kurzů ÚTVS.
+Vyučující jednotlivých kurzů ÚTVS.
 Struktura je znázorněna [v tabulce](#tab:lectors).
 
 Table: Struktura pohledu v_lectors {#tab:lectors}

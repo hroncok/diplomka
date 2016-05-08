@@ -22,11 +22,11 @@ Dokumentace restlessu projekt Tastypie často zmiňuje a zdůrazňuje, že restl
 Hlavní chybou bylo pokoušet se o vytvoření příliš „všemocného“ frameworku,
 restless jde tedy opačnou cestou a většinu rozhodnutí nechává na uživateli [@restlessp].
 
-Restless na rozdíl od Tastypie není vázán přímo na Django, ale webový framework si můžete zvolit.
+Restless, na rozdíl od Tastypie, není vázán přímo na Django, ale webový framework si můžete zvolit.
 Přímo v kódu existují třídy pro frameworky Django, Flask, Pyramid, Tornado a Itty, od kterých stačí dědit.
 Pro jiný framework si takovou třídu můžete samozřejmě dopsat sami.
 V případě změny frameworku by mělo stačit třídu vyměnit.
-Příklad z dokumente s použitím třídy pro Django můžete vidět [v ukázce](#code:restless).
+Příklad z dokumentace s použitím třídy pro Django můžete vidět [v ukázce](#code:restless).
 
 Restless závisí pouze na knihovně six, kvůli zpětné kompatibilitě s Pythonem~2.
 Instalace tak zabírá pouze čtvrt mebibajtu a obsahuje 1~140 řádek kódu, ale tato informace je zavádějící, protože restless ještě vyžaduje nějaký webový framework,
@@ -85,7 +85,7 @@ class PostResource(DjangoResource):
         Post.objects.get(id=pk).delete()
 ```
 
-Projekt vznikl v lednu 2014, autor jej aktivně vyvíjel do srpna, od té doby prakticky pouze přijímá cizí příspěvky,
+Projekt vznikl v lednu 2014, autor jej aktivně vyvíjel do srpna toho roku, od té doby prakticky pouze přijímá cizí příspěvky,
 kterých však není příliš mnoho, poslední byl přijat v létě 2015. Od té doby se kupí další a další, čekající na schválení, které možná nikdy nepřijde.
 Zatím poslední verze, v pořadí sedmá, vyšla v srpnu 2014.
 Daniel Lindsley se restlessu zjevně nevěnuje. Uživatelé však nadále hlásí chyby a snaží se přispět svým kódem.

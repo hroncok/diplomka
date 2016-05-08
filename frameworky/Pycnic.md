@@ -6,7 +6,7 @@ Pycnic
 Pycnic je malý, rychlý a jednoduchý framework na tvorbu JSON API.
 Umí routovat, komunikovat v JSONu a pracovat s cookies [@pycnic].
 Pycnic neobsahuje žádné pokročilé funkce, ale ani je obsahovat nechce,
-jedná se opravdu minimalistickou knihovnu.
+jedná se opravdu o minimalistickou knihovnu.
 
 Pycnic je poměrně mladý projekt, který vnikl v listopadu 2015.
 Jeho autorem je jednotlivec Aaron M., do kódu kromě něj nikdo nepřispěl[^benchmark].
@@ -14,7 +14,7 @@ Několik málo desítek hvězd na GitHubu také nasvědčuje tomu, že se zatím
 
 [^benchmark]: Pár jednotlivců přispělo do benchmarku, o kterém bude řeč dále, nikoliv však do samotného kódu Pycnicu.
 
-Pycnic závisí pouze na standardní knihovně Pythonu, instalace zabírá pouze 76 kB, kód obsahuje pouze 226 řádek, což je pro představu zhruba desetkrát více, než kód [v ukázce](#code:pycnic),
+Pycnic závisí pouze na standardní knihovně Pythonu, instalace zabírá pouze 76 KiB, kód obsahuje pouze 226 řádek, což je pro představu jen zhruba desetkrát více, než kód [v ukázce](#code:pycnic),
 kde najdete příklad použití z dokumentace.
 
 Přestože Pycnic neobsahuje přímou podporu autentizace, v dokumentaci je také komplexní příklad,

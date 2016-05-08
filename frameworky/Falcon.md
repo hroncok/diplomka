@@ -13,10 +13,10 @@ Mezi hlavní přednosti podle webové stránky [@falcon] patří:
 
 ![Logo Falconu [@falconpic]{#pic:falcon}](images/falcon)
 
-Falcon je bezesporu minimalistický, společně s závislostmi má pouze 3~034 řádků kódu.
+Falcon je bezesporu minimalistický, společně se závislostmi má pouze 3~034 řádků kódu.
 Je šířen pod permisivní Apache licencí [@apache] a nevyžaduje žádný webový framework.
 
-Příklad použití můžete vidět [v ukázce](#code:falcon).
+Příklad použití můžete najdete [v ukázce](#code:falcon).
 Jak je vidět, pomocí Falconu jdou vytvářet REST API, ale jedná se o velmi nízkoúrovňový framework,
 který spíše zastává vrstvu mezi HTTP a aplikací, než velkého pomocníka při tvorbě API.
 

@@ -8,14 +8,14 @@ Používá Pyramid a Nefertari [@ramsesdoc].
 
 [^raml]: *RESTful API Modeling Language*, postavený na YAMLu [@raml]
 
-Ramses přináší stejné funkce jako Nefertari, o kterém jsem psal [v části](#nefertari).
+Ramses přináší stejné funkce jako Nefertari, o které jsem psal [v části](#nefertari).
 Místo kódu v Pythonu se však používá deskriptivní jazyk RAML.
 
 Ramses přímo závisí na sedmi modulech, nepřímo pak na téměř třiceti, instalace má celkem 68~594 řádků kódu.
 V počtu závislostí je tak v negativním slova smyslu vítězem.
 
 Projekt vytváří stejní autoři jako Nefertari a všechny informace o aktivitě jsou prakticky stejné,
-projekt vznikl na přelomu února března 2015, poslední z dvanácti verzí vyšla v listopadu téhož roku.
+projekt vznikl na přelomu února a března 2015, poslední z dvanácti verzí vyšla v listopadu téhož roku.
 Kód je distribuován pod permisivní Apache licencí [@apache], stejně jako Nefertari.
 Na rozdíl od Nefertari má na GitHubu více než dvě stovky hvězd.
 

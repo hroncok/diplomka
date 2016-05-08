@@ -220,7 +220,7 @@ class SportViewSet(ReadOnlyModelViewSet):
     lookup_field = 'shortcut'
 ```
 
-Bohužel knihovna `drf-hal-json` v kombinaci s přirozenými identifikátory vede k chybě,
+Použití knihovny `drf-hal-json` v kombinaci s přirozenými identifikátory vede k chybě,
 kterou jsem autorům nahlásil. Pokud knihovna `drf-hal-json` není použita, přirozené identifikátory
 fungují dle očekávání.
 
@@ -425,7 +425,7 @@ Pro seřazení kurzů podle jejich začátku v týdnu, ale od konce, lze použí
 
 ### Vyjednávání o obsahu
 
-Django REST framework volí patřičný zobrazovací třídu podle hlavičky `Accept`.
+Django REST framework volí patřičnou zobrazovací třídu podle hlavičky `Accept`.
 Pokud není použita knihovna `drf-hal-json` je možné nastavovat hlavičkou i způsob odsazování apod.
 
 `GET /courses/1         Accept: application/json; indent=2`

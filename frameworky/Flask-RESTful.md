@@ -16,7 +16,7 @@ Projekt vznikl v roce 2012, od té doby vyšlo 27 verzí, poslední v prosinci r
 
 Příklad použití můžete vidět [v ukázce](#code:flaskresful)[^zhusteno].
 
-[^zhusteno]: Příklad byl mírně zhuštěn za účelem lepší prezentace na straně A4.
+[^zhusteno]: Příklad byl mírně zhuštěn za účelem lepší prezentace na straně formátu A4.
 
 ```{caption="{#code:flaskresful}Příklad použití z dokumentace Flask-RESTful \autocite{flaskrestfuldoc}" .python}
 from flask import Flask
@@ -72,5 +72,5 @@ if __name__ == '__main__':
 ```
 
 Flask-RESTful je nízkoúrovňový framework, který zjednodušuje tvorbu REST API oproti použití čistého Flasku,
-ale nepřináší žádné pokročilé funkce jako podporu autentizace a autorizace, či prolinkování a HATEOAS (nedostává tedy žádné body).
+ale nepřináší žádné pokročilé funkce jako podporu autentizace a autorizace, či prolinkování a HATEOAS. Nedostává tedy žádné body.
 Ze zajímavých funkcí Flask-RESTful mohu jmenovat vyjednávání o obsahu či podporu *blueprintů* (koncept z Flasku [@blueprint]).

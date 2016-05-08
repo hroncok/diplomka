@@ -11,7 +11,7 @@ Deset hvězd na GitHubu a žádné zapojení jiných vývojářů dává tušit,
 
 RESTArt umožňuje vytvářet pro jednotlivé zdroje třídy s metodami korespondujícími s HTTP metodami pro REST API,
 příklad z dokumentace můžete vidět [v ukázce](#code:restart).
-Je možné vytvářet tz. middleware třídy, které mohou předzpracovávat požadavky a ovlivňovat obsah odpovědí.
+Je možné vytvářet tzv. middleware třídy, které mohou předzpracovávat požadavky a ovlivňovat obsah odpovědí.
 Tímto způsobem lze naimplementovat i autentizaci a autorizaci, RESTArt samotný žádné možnosti v této oblasti nepřináší.
 Pomocí middleware třídy by mělo jít i nějak automaticky prolinkovat jednotlivé zdroje, dokumentace se o této možnosti ale nijak nezmiňuje.
 Dávám tedy u obou kritérií jeden bod.

@@ -10,14 +10,14 @@ Kromě ORM dat je možné použít i jiné zdroje. [@tastypie]
 
 Mezi hlavní funkce patří [@tastypie]:
 
- * podpora HTTP metod GET, POST, PUT, DELETE a PATCH;
- * rozumné chování ve výchozím stavu;
- * rozšířitelnost;
- * podpora různých serializačních formátů (JSON/XML/YAML/bplist);
- * HATEOAS;
+ * podpora HTTP metod GET, POST, PUT, DELETE a PATCH,
+ * rozumné chování ve výchozím stavu,
+ * rozšířitelnost,
+ * podpora různých serializačních formátů (JSON/XML/YAML/bplist),
+ * HATEOAS,
  * dobré testy a dokumentace.
 
-Projekt vznikl již v roce 2010, od té doby vyšlo více než dvacet verzí, poslední o něco málo než měsíc před psaním tohoto textu.
+Projekt vznikl již v roce 2010, od té doby vyšlo více než dvacet verzí, poslední necelý měsíc před psaním tohoto textu.
 Autorem projektu je jednotlivec Daniel Lindsley, který se projektu již příliš nevěnuje, v současnosti se o něj stará Seán Hayes,
 přispělo celkem více než 150 přispěvatelů. Projekt je distribuován pod permisivní BSD licencí [@BSD3].
 
@@ -76,5 +76,5 @@ Existují moduly třetích stran přidávající podporu OAuth 2 [@tastypieoath]
 Na úrovni zdrojů lze pak nastavit, jaký autorizační model se použije, k dispozici je buďto varianta povolit všechno, nebo povolit jen číst, případně lze použít propracovanější systém Djanga, který mapuje práva uživatele na konkrétní objekty; implementace vlastní logiky je také možná [@tastypieauto].
 I zde tedy Tastypie získává tři body.
 
-Tastypie se jeví jako velmi použitelný framework pro Django. Důstojně konkuruje Django REST Frameworku, o kterém jsem psal [v části](#django-rest-framework).
+Tastypie se jeví jako velmi použitelný framework pro Django. Důstojně konkuruje Django REST frameworku, o kterém jsem psal [v části](#drf:fra@).
 Případná volba mezi těmito dvěma frameworky hodně závisí na konkrétních potřebách a preferencích uživatele.

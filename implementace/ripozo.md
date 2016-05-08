@@ -231,7 +231,7 @@ a jednoduchá.
 Zobrazení dat ve standardizované podobě
 ---------------------------------------
 
-Jednou z hlavních výhod Ripoza je integrovaná podpora pro HAL, Siren i JSON API.
+Jednou z hlavních výhod ripoza je integrovaná podpora pro HAL, Siren i JSON API.
 Jednotlivé formáty lze použít dokonce zároveň, zvolen je takový, o který si klient zažádá,
 případně první v pořadí registrace ([ukázka](#code:ripozo:standard)).
 
@@ -351,7 +351,7 @@ def preprocessor(cls, function_name, request):
 ```
 
 Pro komplikovanější logiku je třeba přidat pre-/postprocesor na úrovni zdroje.
-U zdroje `/enrollments` musíme zajistit, že data uvidí jen speciálně autorizovné klienty.
+U zdroje `/enrollments` musíme zajistit, že data uvidí jen speciálně autorizované klienty.
 Pro výpis zápisů je třeba použít preprocesor, pro konkrétní zápis je třeba použít postprocesor,
 abychom mohli přistupovat ke zdroji a zjistit, jakému studentovi náleží apod.
 
@@ -422,11 +422,11 @@ Stránkovat se dá standardně pomocí parametrů `count` a `page`.
 ### Filtrování
 
 Filtrovat výsledky se dá pouze jednoduchým způsobem,
-například takto se dá zobrazit seznam kurzů probírajících v pátek:
+například takto se dá zobrazit seznam kurzů probíhajících v pátek:
 
 `GET /courses/?day=5`
 
-Neleze ale filtrovat na základě cizích klíčů, ani nastavit podmínku (větší než apod.).
+Nelze ale filtrovat na základě cizích klíčů, ani nastavit podmínku (větší než apod.).
 Při špatně provedeném dotazu může výsledek skončit chybou ripoza, což jsem nahlásil jako chybu,
 na jejíž opravě již autor `ripozo-sqlalchemy` pracuje.
 
@@ -440,7 +440,7 @@ Zde je třeba zdůraznit, že se jedná o nedostatek modulu `ripozo-sqlalchemy`.
 
 ### Vyjednávání o obsahu
 
-Posle hlavičky `Accept` volí ripozo vhodný *adaptér* (HAL, Siren atd.).
+Podle hlavičky `Accept` volí ripozo vhodný *adaptér* (HAL, Siren atd.).
 
 ### Rozcestník
 

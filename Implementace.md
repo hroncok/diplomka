@@ -52,11 +52,11 @@ namísto syntetických databázových identifikátorů.
 Využití syntetických identifikátorů v RESTful API je tz. *leaky abstraction*[^leakyab] [@leakyab].
 Příkladem přirozeného identifikátoru je zkratka sportu, kdy URI nemusí být `/sports/{id}` ale může být `/sports/{shortcut}`.
 
-[^leakyab]: Bohužel jsem nenašel vhodný překlad tohoto termínu do češtiny.
+[^leakyab]: Nenašel jsem vhodný překlad tohoto termínu do češtiny.
 
 Provedl jsem analýzu poskytnutých dat a tabulka sportů je jediná, která obsahuje přirozený identifikátor,
 ostatní tabulky buď přirozený identifikátor nemají vůbec nebo není unikátní --
-jednotlivé předměty v různé časy sdílejí stejnou zkratku, ne všichni učitelé mají v datech osobní číslo apod.
+jednotlivé předměty v různých časech sdílejí stejnou zkratku, ne všichni učitelé mají v datech osobní číslo apod.
 
 
 Přístupová práva
@@ -76,7 +76,7 @@ vytvořil jsem malý modul do Pythonu, který budu využívat ve všech implemen
 jeho nejpodstatnější součást můžete vidět [v ukázce](#code:utvsapitoken).
 Součástí modulu je i jednoduchý server, který OAAS a Usermap API simuluje, pro účely testování.
 
-```{caption="{#code:utvsapitoken}utvsapitoken: Zíkání informací o tokenu" .python}
+```{caption="{#code:utvsapitoken}utvsapitoken: Získání informací o tokenu" .python}
 class TokenClient:
     '''Class for making requests for tokens'''
 
@@ -172,4 +172,4 @@ Souhrn
 Žádná ze čtyř implementací se neobešla bez komplikací, neexistuje tedy žádný pomyslný vítěz.
 U Django REST frameworku, Eve a ripoza se jednalo o nedostatky, které by se pravděpodobně daly s rozumným množstvím úsilí vyřešit
 přispěním do samotných frameworků či dalších použitých knihoven.
-Framework sandamn2 bohužel zaostával natolik, že jej nemohu doporučit.
+Framework sandamn2 zaostával natolik, že jej nemohu doporučit.

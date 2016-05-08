@@ -2,19 +2,19 @@ Flask API
 =========
 
 Flask API je implementace stejných webově procházetelných API,
-které poskytuje Django REST framework [@flaskapi] (o něm jsem psal [v části](#django-rest-framework@)),
+které poskytuje Django REST framework [@flaskapi] (o něm jsem psal [v části](#drf:fra@)),
 ale bez závislosti na Djangu.
 
 Za projektem stojí autor Django REST frameworku, Tom Christie.
-Zatím se ale bohužel jedná o rozdělanou práci [@flaskapi] a zdaleka nejde o hotový projekt.
+Zatím se ale naneštěstí jedná o rozdělanou práci [@flaskapi] a zdaleka nejde o hotový projekt.
 Práce na Flask API je zároveň pozastavená, kvůli závazkům z crowdfundingové kapaně ohledně Django REST frameworku [@flaskapigh].
 Tom Christie se od roku 2014 (kdy projekt i vznikl) na projektu aktivně nepodílí, existují však další jednotlivci,
 kteří projekt udržují a rozvíjí.
 
 Pomocí Flask API je nyní možné webově procházet API, jak můžete vidět [na obrázku](#pic:flaskapibrowsable),
-ale tvorba API zatím není příliš automatizovaná, [vizte příklad](#code:flaskapi)[^zhusteno].
+ale tvorba API zatím není příliš automatizovaná, [viz příklad](#code:flaskapi)[^zhusteno].
 
-[^zhusteno]: Příklad byl mírně zhuštěn za účelem lepší prezentace na straně A4.
+[^zhusteno]: Příklad byl mírně zhuštěn za účelem lepší prezentace na straně formátu A4.
 
 ![Flask API: Webově procházetelné API [@flaskapi]{#pic:flaskapibrowsable}](images/flask-api-browsable)
 
@@ -75,18 +75,18 @@ Je distribuován pod BSD licencí [@BSD2] a podporuje obě verze Pythonu.
 
 Do budoucna je plánováno [@flaskapi][@flaskapigh]:
 
- * autentizace, mj. pomocí session, tokenu i jménem a heslem;
- * přístupová práva;
- * zaškrcování přístupu;
- * API zdroje pomocí tříd;
- * vylepšení procházetelných API, například přidání drobečkové navigace;
- * možnost vlastního zpracování výjimek;
- * CSRF ochrana;
- * přihlašování a odhlašování přes prohlížeč v případě procházetelných API;
- * dokumentace o validaci požadavků;
+ * autentizace, mj. pomocí session, tokenu i jménem a heslem,
+ * přístupová práva,
+ * zaškrcování přístupu,
+ * API zdroje pomocí tříd,
+ * vylepšení procházetelných API, například přidání drobečkové navigace,
+ * možnost vlastního zpracování výjimek,
+ * CSRF ochrana,
+ * přihlašování a odhlašování přes prohlížeč v případě procházetelných API,
+ * dokumentace o validaci požadavků,
  * dokumentace o prolinkovávání.
 
-Je však otázka, kdy a jestli se tohoto dočkáme.
+Je však otázka, kdy a jestli se toho dočkáme.
 
 Zatím neexistují žádné automatické mechanismy pro správu přístupových práv či HATEOAS.
 Flask API tedy za oba aspekty získává nula bodů.

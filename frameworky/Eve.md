@@ -3,7 +3,7 @@ Eve
 
 ![Logo Eve [@evepic]{#pic:eve}](images/eve)
 
-Eve je open-source Python REST API framework navržený pro lidi.
+Eve je open-source Python REST API framework navržený „pro lidi“.
 Umožňuje snadno vytvořit a nasadit vysoce upravitelné, plně funkční RESTful webové služby.
 Eve stojí nad nástroji Flask, Redis, Cerberus, Events a podporuje MongoDB i SQL backendy. [@eve]
 
@@ -78,11 +78,11 @@ DOMAIN = {'people': {}}
 }
 ```
 
-Projekt vznikl v roce 2012, od té doby vyšlo 20 verzí, poslední cca tři týdny před psaním tohoto textu. Jedná se tedy o aktivní projekt.
-Za projektem stojí jednotlivec Nicola Iarocci, přispělo však celkem více než 100 dalších přispěvatelů [@evecontributors].
+Projekt vznikl v roce 2012, od té doby vyšlo dvacet verzí, poslední cca tři týdny před psaním tohoto textu. Jedná se tedy o aktivní projekt.
+Za projektem stojí jednotlivec Nicola Iarocci, přispělo však celkem více než sto dalších přispěvatelů [@evecontributors].
 Eve je vydáno pod BSD licencí [@BSD3].
 
-Eve závisí celkem na deseti modulech (včetně Flasku a Werkzeugu), tyto moduly již nemají žádné další závislosti. Celkem se závislostmi má 35~009 řádků kódu. Závislost na Python modulech pro MongoDB není bohužel volitelná.
+Eve závisí celkem na deseti modulech (včetně Flasku a Werkzeugu), tyto moduly již nemají žádné další závislosti. Celkem se závislostmi má Eve 35~009 řádků kódu. Závislost na Python modulech pro MongoDB není, bohužel, volitelná.
 
 HATEOAS
 -------
@@ -128,4 +128,4 @@ Eve umožňuje nastavovat přístupová práva podle rolí pro celé API, nebo j
 
 Dávám tedy i zde Eve tři body.
 
-Celkově se Eve jeví jako framework s mnoho funkcemi, který dokáže ušetřit velké množství práce. Vytknul bych snad jen přílišnou vázanost na MongoDB, která je často cítit především z dokumentace.
+Celkově se Eve jeví jako framework s mnoha funkcemi, který dokáže ušetřit velké množství práce. Vytknul bych snad jen přílišnou vázanost na MongoDB, která je často patrná především z dokumentace.

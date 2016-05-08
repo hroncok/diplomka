@@ -17,7 +17,7 @@ Mezi hlavní funkce patří [@praf]:
 PRAF obsahuje několik součástí, které je potřeba využít k tvorbě API [@prafarch]:
 
  * **datastore** je třída, která nějakým způsobem obstarává data, implicitně může využít buďto SQLite nebo reprezentaci v paměti, pro cokoli jiného musíte implementovat vlastní třídu podle daného rozhraní;
- * **modely** slouží k popsání jednotlivých typ dat v *datastore*;
+ * **modely** slouží k popsání jednotlivých typů dat v *datastore*;
  * **controller** obsluhuje jeden resource, ve kterém se přistupuje k datům z jednoho modelu v *datastore*;
  * **pohledy** pak definují, jakým způsobem budou data prezentována.
 
@@ -94,7 +94,7 @@ Dokumentace v tutoriálu uvádí postup, jak prolinkovat jednotlivé zdroje mezi
 Framework sám tuto funkci neobsahuje, ale ukazuje příklad formátovače, který je znovupoužitelný v celém projektu
 a zajistí, aby všechny cizí klíče byly reprezentovány pomocí odkazu.
 Můžete jej vidět [v ukázce](#code:praflink).
-Za možnost nějak zdroje prolinkovat dostává Python REST API framework jeden bod.
+Za možnost nějak prolinkovat zdroje dostává Python REST API framework jeden bod.
 
 ```{caption="{#code:praflink}PRAF: Formátovač pro prolinkování dat \autocite{praflink2}" .python}
 def format_foreign_key(response, obj):

@@ -5,17 +5,17 @@ Piston
 
 Piston je, respektive spíše byl, mini-framework pro Django určený pro vytváření RESTful API [@piston].
 
-Pisotn podle své dokumentace nabízí následující funkce [@piston]:
+Piston podle své dokumentace nabízí následující funkce [@piston]:
 
- * Piston je interně svázán s Djangem;
- * podporuje OAuth bez nutnosti použití další knihovny;
- * nevyžaduje vazbu na modely, umožňuje vytvářet nezávislé zdroje;
- * komunikuje pomocí JSONu, YAMLu, Python picklu a XML (a také pomocí HATEOAS);
- * jde o Python knihovnu, kterou lze snadno použít;
- * respektuje a nabádá ke správnému využití HTTP protokolu (návratové kódy apod.);
- * má zabudovanou (volitelnou) validaci vstupů (pomocí Djanga), zaškrcování přístupu apod.;
- * podporuje streamování s malým využitím paměti;
- * neplete se do cesty.
+ * Piston je interně svázán s Djangem,
+ * podporuje OAuth bez nutnosti použití další knihovny,
+ * nevyžaduje vazbu na modely, umožňuje vytvářet nezávislé zdroje,
+ * komunikuje pomocí JSONu, YAMLu, Python picklu a XML (a také pomocí HATEOAS),
+ * jde o Python knihovnu, kterou lze snadno použít,
+ * respektuje a nabádá ke správnému využití HTTP protokolu (návratové kódy apod.),
+ * má zabudovanou (volitelnou) validaci vstupů (pomocí Djanga), zaškrcování přístupu apod.,
+ * podporuje streamování s malým využitím paměti,
+ * „neplete se do cesty“.
 
 Projekt vnikl již v roce 2008, tedy tři roky po zveřejnění Djanga samotného, pod záštitou Bitbucketu.
 V roce 2010 jej však původní autor Jesper Nøhr přestal vyvíjet.
@@ -26,7 +26,7 @@ S Djangem 1.6 nebo vyšším Piston nefunguje [@piston16].
 Kód rovněž obsahuje syntaxi nekompatibilní s Pythonem 3.
 Piston je tedy jednoznačně mrtvý projekt.
 
-Piston byl distribuován pod BSD licencí (není však jasné jestli jde o třípoložkovou [@BSD3] nebo dvoupoložkovou [@BSD2] variantu, projekt neuvádí celý text licence). Závisí pouze na Djangu a společně s Djangem 1.5 má 75~311 řádků kódu.
+Piston byl distribuován pod BSD licencí (není však jasné, jestli jde o třípoložkovou [@BSD3] nebo dvoupoložkovou [@BSD2] variantu, projekt neuvádí celý text licence). Závisí pouze na Djangu a společně s Djangem 1.5 má 75~311 řádků kódu.
 
 [^verze]: Django vždy nejprve označí funkcionalitu k odebrání, v následující verzi ji označí jako zastaralou (*deprecated*) a v další verzi ji odstraní [@djangorelease]. Současné podporované verze jsou 1.8 a 1.9.
 

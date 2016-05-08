@@ -6,7 +6,7 @@ Namapování dat z pohledů na zdroje
 
 Ve výchozím stavu počítá Eve s daty v NoSQL databázi MongoDB.
 Je možné si napsat vlastní správce dat, ale jednodušší je použít již existující modul `eve-sqlalchemy`.
-Pro namapování dat je třeba pospat jednotlivé zdroje pomocí SQLAlchemy modelů a poté je zaregistrovat.
+Pro namapování dat je třeba popsat jednotlivé zdroje pomocí SQLAlchemy modelů a poté je zaregistrovat.
 
 [V ukázce](#code:eve:mapping) můžete vidět příklad modelu pro kurzy i vlastní dekorátor k registraci.
 Funkce `registerSchema()` z `eve-sqlalchemy` vygeneruje pro každý model schéma,
@@ -119,7 +119,7 @@ def register(cls):
     return cls
 ```
 
-Bohužel toto v Eve nestačí k vytvoření odkazů, ale pouze umožní odkazované objekty zobrazit vnořeně.
+Toto v Eve nestačí k vytvoření odkazů, ale pouze umožní odkazované objekty zobrazit vnořeně.
 Odkazy jde do odpovědi manuálně dostat, ale nejde o koncepční řešení.
 Eve nabízí možnost úpravy zobrazených dat, o které se více rozepíšu v další části,
 nyní jen ukážu manuální vkládání odkazů [v ukázce](#code:eve:links2).
@@ -159,7 +159,7 @@ V této funkci pak lze na základě jména zdroje upravit odpověď před serial
 [V ukázce](#code:eve:modify) můžete vidět, jak jsem této možnosti využil k úpravě dat.
 
 Eve vkládá do všech objektů datum a čas vytvoření a změny, pokud ho nemůže zjistit
-(například pokud v databázi není sloupec s tímto údajem), bohužel tam vloží 1. leden 1970 (počátek unixového času).
+(například pokud v databázi není sloupec s tímto údajem), použije 1. leden 1970 (počátek unixového času).
 Tuto chybnou informaci jsem tedy rovnou v procesu úpravy zobrazených dat odstranil.
 
 ```{caption="{#code:eve:modify}Eve: Úprava zobrazených dat" .python}
@@ -378,9 +378,9 @@ který tuto funkcionalitu přidává [@evedocs].
 
 Tento modul generuje HTML a JSON dokumentaci pouze na základě schématu,
 nepřidává možnost k jednotlivým zdrojům, metodám a položkám přidávat žádnou textovou informaci.
-Existuje však zatím nepřijatý návrh na úpravu, který umožňuje i toto [@evedocspr].
+Existuje však zatím nepřijatý návrh na úpravu, která umožňuje i toto [@evedocspr].
 
-Vzhledem ke stáří tohoto návrhu, nulové reakci od autora `eve-docs` a dalším faktorů lze usuzovat,
+Vzhledem ke stáří tohoto návrhu, nulové reakci od autora `eve-docs` a dalším faktorům lze usuzovat,
 že `eve-docs` je mrtvý projekt, stále je však možné upravenou variantu použít, případně
 si dopsat úpravy vlastní, například možnost psát popisy v jazyce Markdown apod.
 

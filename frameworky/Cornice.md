@@ -10,10 +10,10 @@ Podporuje obě verze Pythonu. Na GitHubu má 270 hvězd a za poslední měsíc b
 
 Projekt vznikl v roce 2011 a od té doby vyšla již více než dvacítka verzí.
 V době zkoumání byla nejnovější verze pouze několik týdnů stará, proto vývoj hodnotím jako aktivní.
-Na vývoji se podílelo celkem více než šest desítek vývojářů, většina z nich formou drobné úpravy, která bývá rychle přijata i od lidí mimo projekt a mimo Mozilla Services.
+Na vývoji se podílelo více než šest desítek vývojářů, většina z nich formou drobné úpravy, která bývá rychle přijata i od lidí mimo projekt a mimo Mozilla Services.
 
 [V ukázce kódu](#code:cornice) najdete příklad použití Cornice.
-V ukázce je definována služba, která umožňuje použít GET a POST na nějakou hondnotu `/values/{value}`, kde `value` reprezentuje ASCII název té hodnoty.
+V ukázce je definována služba, která umožňuje použít GET a POST na nějakou hodnotu `/values/{value}`, kde `value` reprezentuje ASCII název té hodnoty.
 
 ```{caption="{#code:cornice}Příklad použití z dokumentace Cornice \autocite{cornicedoc}" .python}
 from cornice import Service

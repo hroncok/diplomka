@@ -64,7 +64,7 @@ Například po instalaci modulů na spolupráci s Flaskem a SQLAlchemy je již z
 HATEOAS
 -------
 
-Již v úvodu jsem zmínil, že ripozo umožňuje jednoduše vytvářet linky mezi zdroji ve stylu HATEOAS,
+Již v úvodu jsem zmínil, že ripozo umožňuje jednoduše vytvářet linky mezi zdroji ve stylu HATEOAS
 a také že ripozo podporuje Siren [@siren] a HAL [@hal].
 Získává tedy tři body.
 Představu o vytváření odkazů získáte nejlépe [z ukázky](#code:ripozolink).

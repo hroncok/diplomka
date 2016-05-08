@@ -4,12 +4,12 @@ Morepath
 ![Koncept loga Morepathu [@morepathpic]{#pic:morepath}](images/morepath)
 
 Morepath je webový mikroframework podobně jako Flask nebo Bottle [@morepath].
-Nepatří tak tedy úplně mezi frameworky na vytváření RESTových API, zařadil jsem jej proto,
+Nepatří tak úplně mezi frameworky na vytváření RESTových API, zařadil jsem jej proto,
 že přímo v sobě obsahuje součásti pro jejich tvorbu [@morepathrest].
 Na rozdíl od jiných mikroframeworků je modelově orientovaný [@morepath].
 
 Projekt vznikl v roce 2013, ale jeho historie sahá dále do minulosti [@morepathhistory].
-Od té doby vyšlo téměř dvacet verzí, poslední tři dny před psaním tohoto textu.
+Od roku 2013 vyšlo téměř dvacet verzí, poslední tři dny před psaním tohoto textu.
 Morepath přímo závisí na čtyřech a nepřímo na pěti modulech a má s nimi 9~156 řádků kódu.
 Je distribuován pod BSD licencí [@BSD3].
 Autorem projektu je Martijn Faassen z firmy CONTACT Software, přispělo celkem 14 vývojářů.
@@ -17,11 +17,11 @@ Autorem projektu je Martijn Faassen z firmy CONTACT Software, přispělo celkem 
 obsahuje však mnoho zajímavých funkcí [@morepathsp].
 
 V případě RESTu jde hlavně o jednoduché prolinkování v duchu HATEOAS, které můžete vidět [v ukázce](#code:morepath).
-Komplexnější příklad bohužel dokumentace neobsahuje.
+Komplexnější příklad dokumentace neobsahuje.
 Morepath dostává za HATEOAS dva body.
 
 Za účelem vytvoření webové služby je potřeba použít modely;
-ty mohou být v Morepathu reprezentovány objekty v paměti, abstrakcí databázové tabulky pomocí ORM, či uloženy v NoSQL databázi.
+to mohou být v Morepathu objekty v paměti, abstrakce databázových tabulek pomocí ORM, či data uložená v NoSQL databázi.
 
 
 ```{caption="{#code:morepath}Příklad použití z dokumentace Morepathu \autocite{morepathrest}" .python}

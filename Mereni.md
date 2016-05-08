@@ -3,7 +3,7 @@
 Pro měření jsem použil nástroj ab, určený pro měření odezvy HTTP serverů [@ab].
 K běhu testovaných služeb jsem použil Gunicorn, HTTP server napsaný v Pythonu [@gunicorn].
 
-U měření zaměřených na autentizaci a autorizaci jsem neměřil implementaci v sandmanu,
+U měření zaměřených na autentizaci a autorizaci jsem neměřil implementaci v sandmanu2,
 jelikož ta příslušné části neobsahuje. Autentizaci jsem prováděl proti falešnému OAAS
 z vlastního modulu `utvsapitoken`, který běžel na stejném počítači jako testované služby.
 U ostatních měření jsem autentizaci i autorizaci vypnul, aby neovlivňovala měření.
@@ -14,7 +14,7 @@ HTTP server byl spuštěn s dvěma vlákny.
 Měřící nástroj ab službu testoval pěti tisíci požadavky, v dávkách po jednom stu, kde jedna dávka vždy probíhala současně.
 
 Zde prezentované měření rychlosti odezvy bylo prováděno na konkrétních implementacích
-popsaných v kapitolách *\nameref{implementace}*,
+popsaných v kapitole *\nameref{implementace}*,
 vzhledem k tomu, že jednotlivé měřené implementace jsou netriviální,
 nelze zde prezentované výsledky v žádném případě generalizovat na celý použitý framework.
 
@@ -54,7 +54,7 @@ Bohužel to ripozo jinak neumí a tento test má tedy méně vypovídající hod
 Proto je v grafu u ripoza hvězdička.
 
 Jak můžete vidět [z grafu](#pic:list:chart), nejrychlejší je zde nepřekvapivě právě implementace v ripozu,
-nejpomalejší je implementace v sandmanu.
+nejpomalejší je implementace v sandmanu2.
 
 ![Rychlost: Seznam položek{#pic:list:chart}](pdfs/list_chart)
 
@@ -70,7 +70,7 @@ velikost byla opět omezena na dvacet:
 Platí stejná poznámka, jako u minulého měření, ripozo je ve výhodě, proto má v grafu hvězdičku.
 
 Jak můžete vidět [z grafu](#pic:filter:chart), nejrychlejší je opět implementace v ripozu,
-ale již nemá takový náskok, nejpomalejší je opět implementace v sandmanu.
+ale již nemá takový náskok, nejpomalejší je opět implementace v sandmanu2.
 
 ![Rychlost: Filtrovaný seznam položek{#pic:filter:chart}](pdfs/filter_chart)
 

@@ -6,17 +6,17 @@ Pomocí hugu lze vytvářet API nejen pro HTTP, ale i pro další média, např�
 
 ![Logo hugu [@hugpic]{#pic:hug}](images/hug)
 
-Mezi hlavní cíle hugu patří:
+Mezi hlavní cíle hugu patří [@huggithub]:
 
- * umožnit tvorbu Python API tak stručně, jako by šlo o psanou definici;
- * framework by měl podporovat psaní srozumitelného kódu;
- * mělo by to jít rychle; vývojář by neměl mít potřebu se kvůli výkonu poohlížet jinam;
- * psaní testů pro API napsaná v hugu by mělo být jednoduché a intuitivní;
- * magie by se měla odehrávat jen jednou, ve frameworku, což je lepší, než delegovat tento problém na uživatele;
+ * umožnit tvorbu Python API tak stručně, jako by šlo o psanou definici,
+ * framework by měl podporovat psaní srozumitelného kódu,
+ * mělo by to jít rychle; vývojář by neměl mít potřebu se kvůli výkonu poohlížet jinam,
+ * psaní testů pro API napsaná v hugu by mělo být jednoduché a intuitivní,
+ * magie by se měla odehrávat jen jednou, ve frameworku, což je lepší, než delegovat tento problém na uživatele,
  * být základním kamenem API nové generace, díky nejnovějším technologiím.
 
 Kvůli poslednímu bodu je hug kompatibilní pouze s Pythonem 3
-a pro webová API staví na frameworku Falcon, o kterém jsem psal [v části](#falcon). [@huggithub]
+a pro webová API staví na frameworku Falcon, o kterém jsem psal [v části](#falcon) [@huggithub].
 
 Příklad použití s využitím typové anotace dostupné od Pythonu 3.5 můžete vidět [v ukázce](#code:hug).
 
@@ -59,7 +59,7 @@ def happy_birthday(name: hug.types.text, age: hug.types.number,
 Hug je mladý projekt, vznikl teprve v červenci roku 2015.
 Více než tři tisíce hvězd na GitHubu za tak krátkou dobu ale napovídá, že půjde o projekt oblíbený;
 z PyPI byl stažen za poslední měsíc více než sedmtisíckrát.
-Vývoj probíhá docela rapidně, již vyšlo více než  40 verzí, průměrně tedy vychází jedna častěji než za týden.
+Vývoj probíhá docela rapidně, již vyšlo více než  čtyřicet verzí, průměrně tedy vychází rychleji než jednou týdně.
 Na to doplácí především dokumentace, která zdaleka neobsahuje všechny možnosti hugu,
 postrádá například kapitolu o autentizaci, přestože v kódu je tato funkcionalita obsažena.
 Za projektem stojí jednotlivec Timothy Edmund Crosley, ale přispěla již třicítka vývojářů.
@@ -69,20 +69,20 @@ Hug je zveřejněn pod MIT licencí [@MIT], přímo závisí na Falconu a knihov
 HATEOAS
 -------
 
-Hug bohužel zatím nepodporuje žádné automatické způsoby pro prolinkování jednotlivých zdrojů,
+Hug, bohužel, zatím nepodporuje žádné automatické způsoby pro prolinkování jednotlivých zdrojů,
 nedostává tedy žádný bod.
 
 Přístupová práva
 ----------------
 
-Jak již bylo zmíněno výše, o přístupových právech dokumentace bohužel mlčí.
+Jak již bylo zmíněno výše, o přístupových právech dokumentace mlčí.
 Z pohledu do kódu [@hugauth] je patrné, že je možné se autentizovat pomocí:
 
  * HTTP autentizace (jménem a heslem),
  * API klíče v HTTP hlavičce,
  * tokenu v HTTP hlavičce.
 
-O autorizaci jsem však bohužel v kódu nic nenašel, proto dávám hugu pouze dva body.
+O autorizaci jsem však, bohužel, v kódu nic nenašel, proto dávám hugu pouze dva body.
 
 Hug je moderní framework pro vytváření různých API v Pythonu.
 Jeho filozofie je rozhodně zajímavá, ale v současnosti jej hodnotím jako příliš mladý a zatím stále se rozvíjející projekt.

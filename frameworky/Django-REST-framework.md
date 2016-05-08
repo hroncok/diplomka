@@ -1,4 +1,4 @@
-Django REST framework
+Django REST framework {#drf:fra}
 =====================
 
 Django REST framework je nadstavbou k webovému frameworku Django. Na svém webu [@djangorest] uvádí tyto přednosti:
@@ -76,7 +76,7 @@ urlpatterns = [
 ]
 ```
 
-První verze vyšla již v roce 2011 a od té doby jich vyšlo celkem osmdesát, poslední vyšla cca tři týdny před psaním tohoto textu.
+První verze byla vydána již v roce 2011 a od té doby jich vyšlo celkem osmdesát, poslední vyšla cca tři týdny před psaním tohoto textu.
 Vývoj je velmi aktivní a dokumentace velmi obsáhlá. Instalace závisí pouze na Djangu,
 které nemá žádné další závislosti, a společně s ním má 79~854 řádků kódu. Podporovány jsou obě verze Pythonu.
 Na GitHubu má více než pět a půl tisíce hvězd a za poslední měsíc byl více než třistatisíckrát stažen z PyPI.
@@ -92,7 +92,7 @@ Dokumentace obsahuje kapitolu o HATEOAS [@djangoresthateoas], která uvádí:
 > (Django) REST framework také obsahuje serializační, parsovací a renderovací komponenty usnadňující vytváření patřičných mediálních typů, hyperlinkovaných vazeb pro konstrukci vysoce propojených systémů, a dobrou podporu pro vyjednávání obsahu.
 >
 > Co ale (Django) REST framework neumí, je vytváření strojově čitelných formátů hypermédií jako HAL, Collection+JSON, JSON API či HTML mikroformátů ve výchozí konfiguraci, či automagické generování plně HATEOAS API s hypermediálním popisem formulářů a sémanticky označenými hyperlinky.
-> To by vyžadovalo provedení takových rozhodnutí o designu API, které by ve skutečnosti měly zůstat vně pole působnosti tohoto frameworku.
+> To by vyžadovalo provedení takových rozhodnutí o designu API, která by ve skutečnosti měla zůstat vně pole působnosti tohoto frameworku.
 
 Hodnotím kladně, že se o principu HATEOAS v dokumentaci hovoří.
 Prolinkování zdrojů ve stylu HATEOAS je v Django REST frameworku jednoduché.
@@ -110,7 +110,7 @@ Django REST framework umožňuje jak různé způsoby autentizace [@djangorestau
 
 Zároveň je možné vytvořit si způsob vlastní. Existují další Python moduly, které tuto možnost využívají a přidávají tak do Django REST frameworku další možnosti autentizace, mezi ty nejdůležitější patří moduly pro OAuth~1 i OAuth~2. Například Django REST framework OAuth je modul, který byl dříve součástí Django REST frameworku, ale nyní je spravován samostatně.
 
-Přístupová práva jdou řešit na úrovni objektů, modelů či konkrétních pohledů, tedy vlastně na základě URL, pro první dvě kategorie se používají zabudované mechanismy přímo z Djanga. Jsou rozlišeny práva pro čtení a pro zápis. Stejně jako u autentizace i zde je možné napsat si vlastní způsob rozhodování přístupových práv a i zde vzniklo několik modulů třetích stran.
+Přístupová práva jdou řešit na úrovni objektů, modelů či konkrétních pohledů, tedy vlastně na základě URL, pro první dvě kategorie se používají zabudované mechanismy přímo z Djanga. Jsou rozlišena práva pro čtení a pro zápis. Stejně jako u autentizace i zde je možné napsat si vlastní způsob rozhodování přístupových práv a i zde vzniklo několik modulů třetích stran.
 
 Možností je mnoho, Django REST framework dostává i zde tři body.
 

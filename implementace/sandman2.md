@@ -5,7 +5,7 @@ sandman2
 Namapování dat z pohledů na zdroje
 ----------------------------------
 
-Podle dokumentace sandmanu [@sandman] by mělo stačit spustit příkaz [z ukázky](#code:sandman2:command) a API by se mělo „samo vytvořit“.
+Podle dokumentace sandmanu2 [@sandman] by mělo stačit spustit příkaz [z ukázky](#code:sandman2:command) a API by se mělo „samo vytvořit“.
 
 ```{caption="{#code:sandman2:command}sandman2: Automatické vytvoření REST API"}
 $ sandman2ctl 'mysql://uzivatel:heslo@server/databaze'
@@ -27,10 +27,10 @@ class Destinations(sandman2.model.db.Model):
 
 app = sandman2.get_app(url, user_models=[Destinations], read_only=True)
 ```
-Namapování dat z pohledů na zdroje v sandmanu je
+Namapování dat z pohledů na zdroje v sandmanu2 je
 možné,
 systematické
-a jednoduché, ale ne plně automatické, jak by se z popisu sandmanu mohlo zdát.
+a jednoduché, ale ne plně automatické, jak by se z popisu sandmanu2 mohlo zdát.
 
 Přejmenování položek
 --------------------
@@ -41,7 +41,7 @@ stačí přejmenovat třídní atributy a poskytnout konstruktoru `Column` náze
 a název atributu jako argument `key`.
 
 Bohužel sandman2 s tím nepočítá a je potřeba předefinovat metodu,
-která vrací v sandmanu název sloupce v tabulce a ne nový název.
+která vrací v sandmanu2 název sloupce v tabulce a ne nový název.
 Dle mého názoru se jedná o chybu a její opravu jsem navrhl autorovi na GitHubu, zatím bez odezvy.
 Vytvořil jsem tedy mixin, který použitým modelům tuto metodu předefinuje (vrchní část [ukázky](#code:sandman2:rename)).
 
@@ -69,7 +69,7 @@ class Teachers(CustomizingMixin, db.Model):
     url = db.Column(db.String)
 ```
 
-Přejmenování položek v sandmanu je
+Přejmenování položek v sandmanu2 je
 možné,
 do určité míry systematické[^key]
 a triviální.
@@ -79,14 +79,14 @@ a triviální.
 Prolinkování zdrojů ve stylu HATEOAS
 ------------------------------------
 
-Sanman2 odkazy nevytváří automaticky, je ale poměrně jednoduché je vytvořit ručně.
+Sandman2 odkazy nevytváří automaticky, je ale poměrně jednoduché je vytvořit ručně.
 Stačí na modelu předefinovat metodu `to_dict()` a zde linky sestrojit z cizích klíčů.
 Přidal jsem tedy upravenou variantu této metody do již vytvořeného mixinu ([ukázka](#code:sandman2:links)).
 
 Narazil jsem na problém, že z cizího klíče sice poznám tabulku, ale ne model.
 Vyřešil jsem to tak, že před přidáním modelů do aplikace je registruji do reverzního seznamu podle tabulek
 (pomocí dekorátoru),
-ale tento způsob se mi příliš nelíbí, sendman2 bohužel žádný vlastní způsob nenabízí.
+ale tento způsob se mi příliš nelíbí, sandman2 však žádný vlastní způsob nenabízí.
 
 ```{caption="{#code:sandman2:links}sandman2: Prolinkování zdrojů ve stylu HATEOAS" .python}
 class CustomizingMixin(Model):
@@ -110,7 +110,7 @@ class CustomizingMixin(Model):
         return result_dict
 ```
 
-Prolinkování zdrojů ve stylu HATEOAS v sandmanu je
+Prolinkování zdrojů ve stylu HATEOAS v sandmanu2 je
 možné,
 velmi nesystematické,
 ale poměrně jednoduché.
@@ -150,7 +150,7 @@ class CustomizingMixin(Model):
         return result_dict
 ```
 
-Úprava zobrazených dat v sandmanu je
+Úprava zobrazených dat v sandmanu2 je
 možná,
 nepříliš systematická,
 ale jednoduchá.
@@ -217,7 +217,7 @@ Příklad výstupu pro HAL můžete vidět [v ukázkce](#code:sandman2:hal).
 }
 ```
 
-Zobrazení dat ve standardizované podobě v sandmanu je
+Zobrazení dat ve standardizované podobě v sandmanu2 je
 částečně možné,
 nepříliš systematické
 a jednoduché v závislosti na zvolené standardu.
@@ -252,7 +252,7 @@ class Sports(mixins.CustomizingMixin, db.Model):
     # ...
 ```
 
-Použití přirozených identifikátorů v sandmanu je
+Použití přirozených identifikátorů v sandmanu2 je
 možné,
 systematické
 a jednoduché.
@@ -260,7 +260,7 @@ a jednoduché.
 Přístupová práva
 ----------------
 
-Implementace přístupových práv bez velkého zásahu do kódu sandmanu není možná.
+Implementace přístupových práv bez velkého zásahu do kódu sandmanu2 není možná.
 
 Generování dokumentace
 ----------------------
@@ -270,7 +270,7 @@ Sandman2 toto neumožňuje.
 Funkce služby
 -------------
 
-Dokumentace sandmanu o těchto možnostech mlčí.
+Dokumentace sandmanu2 o těchto možnostech mlčí.
 Existuje iniciativa za dokumentování těchto funkcí [@sandmanquery].
 
 Zde je také potřeba zmínit, že URI zdrojů fungují jen bez koncového lomítka.
@@ -290,12 +290,12 @@ Je možné použít parametr `limit` ale ne v kombinaci s parametrem `page`.
 ### Filtrování
 
 Filtrovat výsledky se dá pouze jednoduchým způsobem,
-například takto se dá zobrazit seznam kurzů probírajících v pátek:
+například takto se dá zobrazit seznam kurzů probíhajících v pátek:
 
 `GET /courses?day=5`
 
-Neleze ale filtrovat na základě cizích klíčů, ani nastavit podmínku (větší než apod.).
-Při špatně provedeném dotazu může výsledek skončit chybou sandmanu, což jsem nahlásil jako chybu.
+Nelze ale filtrovat na základě cizích klíčů, ani nastavit podmínku (větší než apod.).
+Při špatně provedeném dotazu může výsledek skončit chybou sandmanu2, což jsem nahlásil jako chybu.
 
 ### Řazení
 
@@ -307,11 +307,11 @@ Není možné zvolit směr řazení.
 
 ### Vyjednávání o obsahu
 
-Není v sandmanu podporováno.
+Není v sandmanu2 podporováno.
 
 ### Rozcestník
 
-Není v sandmanu podporován.
+Není v sandmanu2 podporován.
 
 Další poznámky
 --------------
