@@ -72,7 +72,7 @@ Přejmenování položek
 
 Pro přejmenování položek stačí provést jednoduchou úpravu modelu.
 Jak můžete vidět [v ukázce](#code:eve:rename),
-stačí přejmenovat třídní atributy a poskytnout konstruktoru `Column` název slupce jako první argument.
+stačí přejmenovat třídní atributy a poskytnout konstruktoru `Column` název sloupce jako první argument.
 
 ```{caption="{#code:eve:rename}Eve: Přejmenování položek" .python}
 @register

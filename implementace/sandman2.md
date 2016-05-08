@@ -37,7 +37,7 @@ Přejmenování položek
 
 Pro přejmenování položek stačí provést jednoduchou úpravu modelu.
 Jak můžete vidět [v ukázce](#code:sandman2:rename),
-stačí přejmenovat třídní atributy a poskytnout konstruktoru `Column` název slupce jako první argument
+stačí přejmenovat třídní atributy a poskytnout konstruktoru `Column` název sloupce jako první argument
 a název atributu jako argument `key`.
 
 Bohužel sandman2 s tím nepočítá a je potřeba předefinovat metodu,
