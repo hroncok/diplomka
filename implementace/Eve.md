@@ -8,13 +8,13 @@ Ve výchozím stavu Eve předpokládá uložení dat v NoSQL databázi MongoDB.
 Je možné si napsat vlastní správce dat, ale jednodušší je použít již existující modul `eve-sqlalchemy`.
 Pro namapování dat je třeba popsat jednotlivé zdroje pomocí SQLAlchemy modelů a poté je zaregistrovat.
 
-[V ukázce](#code:eve:mapping) můžete vidět příklad modelu pro kurzy i vlastní dekorátor k registraci.
+[V ukázce](#code:eve:mapping) můžete vidět příklad modelu pro kurzy i vlastní dekorátor pro jeho registraci.
 Funkce `registerSchema()` z `eve-sqlalchemy` vygeneruje pro každý model schéma,
 které je následně možné upravit.
 
-Je třeba zdůraznit, že Eve očekává primární klíče pojmenované ve tvaru *\_id*, což je možné změnit, ale pouze globálně
+Je třeba zdůraznit, že Eve očekává primární klíče pojmenované ve tvaru *\_id*, což sice umožňuje změnit, ale pouze globálně
 (například zde v ukázce na *id*);
-proto je již položka *id_subjects* přejmenována na *id*, ačkoli o přejmenování položek bude řeč až dále.
+proto již je položka *id_subjects* přejmenována na *id*, ačkoli o přejmenování položek bude řeč až dále.
 
 ```{caption="{#code:eve:mapping}Eve: Namapování dat z pohledů na zdroje" .python}
 domain = {}
@@ -70,9 +70,7 @@ a jednoduché.
 Přejmenování položek
 --------------------
 
-Pro přejmenování položek stačí provést jednoduchou úpravu modelu.
-Jak můžete vidět [v ukázce](#code:eve:rename),
-stačí přejmenovat třídní atributy a poskytnout konstruktoru `Column` název sloupce jako první argument.
+Jak můžete vidět [v ukázce](#code:eve:rename), pro přejmenování položek stačí provést jednoduchou úpravu modelu -- přejmenovat třídní atributy a poskytnout konstruktoru `Column` název sloupce jako první argument.
 
 ```{caption="{#code:eve:rename}Eve: Přejmenování položek" .python}
 @register
@@ -98,7 +96,7 @@ Prolinkování zdrojů ve stylu HATEOAS
 
 Eve se dozví o relacích mezi objekty ze schématu.
 Protože automaticky vytvořené schéma není dostatečné, je třeba jej mírně upravit.
-Jak jsem toho docílil v dekorátoru `@register` je vidět [v ukázce](#code:eve:links1).
+Toho jsem docílil úpravou v dekorátoru `@register`, kterou můžete vidět [v ukázce](#code:eve:links1).
 
 ```{caption="{#code:eve:links1}Eve: Úprava schématu" .python}
 def register(cls):

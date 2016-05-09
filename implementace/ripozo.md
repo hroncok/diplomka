@@ -5,7 +5,7 @@ Namapování dat z pohledů na zdroje
 ----------------------------------
 
 Pro namapování SQL dat na zdroje je možné použít modul `ripozo-sqlalchemy`.
-Je třeba pro každou entitu vytvořit třídy pro model, správce a zdroj.
+Ke každé entitě je potřeba vytvořit třídy pro model, správce a zdroj.
 Příklad pro zdroj `/enrollments` můžete vidět [v ukázce](#code:ripozo:mapping).
 
 ```{caption="{#code:ripozo:mapping}ripozo: Namapování dat z pohledů na zdroje" .python}
@@ -71,8 +71,8 @@ def register(cls):
 dispatcher.register_resources(*resources.values())
 ```
 
-Při použití dekorátoru `@register` tak stačí vytvořit pouze třídu pro model,
-v případě, že se primární klíč nejmenuje *id*, je potřeba nastavit jeho název do třídního atributu `__pks__`.
+Při použití dekorátoru `@register` tak stačí vytvořit pouze třídu pro model.
+V případě, kdy se primární klíč nejmenuje *id*, je potřeba ještě nastavit jeho název do třídního atributu `__pks__`.
 
 Nutnost vytvořit tři třídy pro každý zdroj se může jevit přehnaná, umožňuje to ale velkou míru přizpůsobení,
 například pokud by každý zdroj byl namapován na jinou databázi apod.
@@ -116,7 +116,7 @@ Pro prolinkování zdrojů je potřeba:
  1. Přidat do modelu další atribut reprezentující vztah/odkaz.
  2. Přidat vztah do atributu `_relationships` třídy zdroje.
 
-Což jde také udělat automaticky, pokud data dodržují nějakou jmennou konvenci.
+Toto lze také udělat automaticky, pokud data dodržují nějakou jmennou konvenci.
 Automatický způsob, který předpokládá, že cizí klíče jsou pojmenované jako `{model}_id`,
 můžete vidět [v ukázce](#code:ripozo:links).
 
@@ -172,7 +172,7 @@ Navigační odkazy se vytvářejí podle druhu výstupu automaticky.
 ----------------------
 
 Ripozo nabízí *preprocesory* a *postprocesory*,
-které jdou použít pro úpravu zobrazených dat.
+které lze použít i pro úpravu zobrazených dat.
 
 Postprocesor v našem případě musíme aplikovat pro požadavek na jeden zdroj i pro požadavek na seznam zdrojů.
 Bohužel se oba takové postprocesory musí chovat trochu jinak, naštěstí to jde také automatizovat.
