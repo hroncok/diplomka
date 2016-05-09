@@ -16,8 +16,6 @@ ale tvorba API zatím není příliš automatizovaná, [viz příklad](#code:fla
 
 [^zhusteno]: Příklad byl mírně zhuštěn za účelem lepší prezentace na straně formátu A4.
 
-TODO: Má tady ten obrázek smysl? Není na něm vidět prakticky nic jiného než u DRF, ale je v lepší kvalitě. Možná by bylo lepší ten z DRF odstranit a nechat tento…?
-
 ![Flask API: Webově procházetelné API [@flaskapi]{#pic:flaskapibrowsable}](images/flask-api-browsable)
 
 ```{caption="{#code:flaskapi}Příklad použití z dokumentace Flask API \autocite{flaskapigh}" .python}
