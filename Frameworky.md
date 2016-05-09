@@ -46,7 +46,7 @@ Přestože dnes diskový prostor není tolik kritický jako dříve, čím víc 
 závislosti obsahují, tím více věcí se může zkomplikovat. Některé frameworky se označují za „lightweight“
 a právě velikost kódové základny je jedním z faktorů, který vnímaní frameworku jako „lightweight“ může ovlivnit [@lightweight].
 
-Měření budu provádět tak, že daný framework nainstaluji do prázdného _virtualenv_[^virtualenv] a pak se podívám na jeho celkovou velikost (od té odečtu velikost „prázdného“ virtualenv) -- ta bude určovat pořadí na stupnici.
+Měření budu provádět tak, že daný framework nainstaluji do prázdného _virtualenv_[^virtualenv], a pak se podívám na jeho celkovou velikost (od té odečtu velikost „prázdného“ virtualenv) -- ta bude určovat pořadí na stupnici.
 
 [^virtualenv]: Virtualenv je virtuální prostředí pro jazyk Python umožňující instalovat závislosti různých projektů do oddělených míst. [@virtualenv]
 
@@ -82,7 +82,7 @@ Oblíbenost
 ----------
 
 Čím více lidí a projektů daný framework využívá, tím větší je šance, že v případě problému najdeme
-hotové řešení. Oblíbenost je subjektivní pojem a tak se špatně měří, využiji ale dva prvky, které o oblíbenosti mohou něco prozradit.
+hotové řešení. Oblíbenost je subjektivní pojem, a tak se špatně měří, využiji ale dva prvky, které o oblíbenosti mohou něco prozradit.
 
 Většina zkoumaných frameworků má svůj kód zveřejněn na GitHubu, kde uživatelé mohou jednotlivé projekty zařadit mezi své oblíbené tím, že jím dají hvězdu (*star*) [@ghstars].
 Počet těchto hvězd pak může poskytnout určitou vypovídající hodnotu.
