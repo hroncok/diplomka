@@ -631,6 +631,7 @@ of works or by adapting the Work (including translation), and at the same time m
 	\abstractpage
 
 	\cleardoublepage
+	\pagestyle{plain}
 	\tableofcontents*
 
 	\cleardoublepage
