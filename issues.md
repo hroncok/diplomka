@@ -1,4 +1,4 @@
-% Seznam nahlášených chyb a navržených úprav
+% Seznam nahlášených chyb a navržených úprav {#issues}
 
 ### Django REST framework
 
