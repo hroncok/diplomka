@@ -314,6 +314,22 @@ Srovnání
 
 [V tabulce](#tab:body) najdete udělené body za podporu HATEOASu a řízení přístupových práv.
 
+
+[V tabulce](#tab:srovnani) najdete srovnání měřitelných kritérií. Jednotlivé sloupce mají zjednodušené názvy, ale jejich funkce odpovídá popisu [v části](#kriteria@).
+Tučně jsou označeny hodnoty, které v daném sloupci dominují.
+
+[V tabulce](#tab:informace) pak najdete informační přehled o zkoumaných frameworcích: webový framework, URL domovské stránky a číslo zkoumané verze.
+
+Pro implementaci si vybírám frameworky Eve a ripozo, na základě vysokého hodnocení v oblasti HATEOAS i přístupových práv.
+
+Vysoké hodnocení získaly i Django REST framework a Tastypie. Jelikož oba tyto frameworky rozšiřují Django, implementace v nich by byla velmi podobná.
+Vybírám si proto pouze Django REST framework, který je podle indikátorů ze všech zkoumaných frameworků nejoblíbenější.
+
+Navíc si vybírám sandman2, který nemá tak dobré hodnocení,
+ale slibuje automatické vytvoření API.
+Rád bych ze stejného důvodu zkoumal i Ramses, ale ten není možné použít s daty v MySQL databázi.
+
+
 | Framework             | HATEOAS                               | Přístupová práva                      |
 |-----------------------+---------------------------------------+---------------------------------------|
 | Cornice               |                                       | \textbullet                           |
@@ -337,12 +353,9 @@ Srovnání
 
 Table: Bodové ohodnocení {#tab:body}
 
-[V tabulce](#tab:srovnani) najdete srovnání měřitelných kritérií. Jednotlivé sloupce mají zjednodušené názvy, ale jejich funkce odpovídá popisu [v části](#kriteria@).
-Tučně jsou označeny hodnoty, které v daném sloupci dominují.
 
-[V tabulce](#tab:informace) pak najdete informační přehled o zkoumaných frameworcích: webový framework, URL domovské stránky a číslo zkoumané verze.
 
-| Framework             | druh licence  | webový fr.        |           MiB |     řádky |     ř. včetně |   závisl.     |   Py  |    GitHub |          PyPI |
+| Framework             | Druh licence  | Webový fr.        |           MiB |     Řádky |     Ř. včetně |   Závisl.     |   Py  |    GitHub |          PyPI |
 |-----------------------+---------------+-------------------+---------------+-----------+---------------+---------------+-------+-----------+---------------|
 | Cornice               | LGPL          | lightweight       |            12 |     1 198 |        24 625 |           2/9 |**3+2**|       270 |        10 903 |
 | Django REST fr.       | **permisivní**| MVC               |            43 |     7 057 |        79 854 |           1/1 |**3+2**| **5 606** |   **316 772** |
@@ -368,7 +381,7 @@ Table: Srovnání měřitelných kritérií {#tab:srovnani}
 
 
 
-| Framework             | webový fr.    | webová stránka                                        | zk. verze |
+| Framework             | Webový fr.    | Webová stránka                                        | Zk. verze |
 |-----------------------+---------------+-------------------------------------------------------+-----------|
 | Cornice               | Pyramid       | \url{https://cornice.readthedocs.org/}                | 1.2.1     |
 | Django REST fr.       | Django        | \url{http://www.django-rest-framework.org/}           | 3.3.3     |
@@ -390,12 +403,3 @@ Table: Srovnání měřitelných kritérií {#tab:srovnani}
 | Tastypie              | Django        | \url{http://tastypieapi.org/}                         | 0.13.3    |
 
 Table: Informace o frameworcích {#tab:informace}
-
-Pro implementaci si vybírám frameworky Eve a ripozo, na základě vysokého hodnocení v oblasti HATEOAS i přístupových práv.
-
-Vysoké hodnocení získaly i Django REST framework a Tastypie. Jelikož oba tyto frameworky rozšiřují Django, implementace v nich by byla velmi podobná.
-Vybírám si proto pouze Django REST framework, který je podle indikátorů ze všech zkoumaných frameworků nejoblíbenější.
-
-Navíc si vybírám sandman2, který nemá tak dobré hodnocení,
-ale slibuje automatické vytvoření API.
-Rád bych ze stejného důvodu zkoumal i Ramses, ale ten není možné použít s daty v MySQL databázi.

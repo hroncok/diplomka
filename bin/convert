@@ -94,6 +94,7 @@ filter_hotfix_1() {
 			-e 's/\\end\{longtable\}/\\end\{longtable\}\n\\end\{landscape\}/g' \
 			-e 's/@\{\}llllllllll@\{\}/@\{\}lllrrrrrrr@\{\}/' \
 			-e 's/@\{\}llll@\{\}/@\{\}lllr@\{\}/' \
+			-e 's/@\{\}lll@\{\}/@\{\}lcc@\{\}/' \
 			"$1" || echo "filter hotfix_realizace failed" >&2
 		$SED -i $(grep -n landscape "$1" | cut -f1 -d: | head -2 | tr '\n' ';' | sed 's/;/d;/g') "$1"
 	fi
