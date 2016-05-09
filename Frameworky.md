@@ -325,7 +325,7 @@ Srovnání
 | Flask-RESTful         |                                       |                                       |
 | Morepath              | \textbullet \textbullet               | \textbullet                           |
 | Nefertari             |                                       | \textbullet                           |
-| Ramses                |                                       | \textbullet \textbullet               |
+| Ramses                |                                       | \textbullet                           |
 | Piston                |                                       | \textbullet \textbullet \textbullet   |
 | Pycnic                |                                       |                                       |
 | Python REST API fr.   | \textbullet                           | \textbullet \textbullet               |
