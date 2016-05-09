@@ -64,7 +64,7 @@
 \RequirePackage {fontspec}		% font selection for XeLaTeX
 \RequirePackage {xltxtra}		% extras for XeTeX
 \RequirePackage {polyglossia}	% replacement for babel
-\RequirePackage {hyperref}		% hyperlinks support
+\RequirePackage [pdfusetitle] {hyperref}		% hyperlinks support
 \RequirePackage {minted}		% source code highlighting via Pygments
 \RequirePackage {etoolbox}
 \RequirePackage {nameref}
