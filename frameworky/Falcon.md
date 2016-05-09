@@ -1,24 +1,25 @@
 Falcon
 ======
 
-Falcon je neuvěřitelně rychlý, minimalistický Python webový framework pro tvorbu cloudových API a aplikačních backendů [@falcon].
+Falcon je neuvěřitelně rychlý, minimalistický Python webový framework pro tvorbu „cloudových API“ a aplikačních backendů [@falcon].
 Mezi hlavní přednosti podle webové stránky [@falcon] patří:
 
  * závislost pouze na modulech `six` a `mimeparse`,
  * rychlejší zpracování požadavků než u jiných populárních frameworků,
  * podpora WSGI, CPythonu 2.6, 2.7, 3.3 a 3.4 i PyPy,
- * výkonnost,
  * svoboda volby detailů,
  * spolehlivost.
 
+TODO: Zmenšit margin okolo loga, zabírá zbytečně moc místa.
+
 ![Logo Falconu [@falconpic]{#pic:falcon}](images/falcon)
 
-Falcon je bezesporu minimalistický, společně se závislostmi má pouze 3~034 řádků kódu.
+Falcon je bezesporu minimalistický -- společně se závislostmi má pouze 3~034 řádků kódu.
 Je šířen pod permisivní Apache licencí [@apache] a nevyžaduje žádný webový framework.
 
-Příklad použití můžete najdete [v ukázce](#code:falcon).
+Příklad použití můžete najít [v ukázce](#code:falcon).
 Jak je vidět, pomocí Falconu jdou vytvářet REST API, ale jedná se o velmi nízkoúrovňový framework,
-který spíše zastává vrstvu mezi HTTP a aplikací, než velkého pomocníka při tvorbě API.
+který spíše zastává vrstvu mezi HTTP a aplikací než velkého pomocníka při tvorbě API.
 
 ```{caption="{#code:falcon}Příklad použití z webu Falconu \autocite{falcon}" .python}
 # sample.py
@@ -44,7 +45,7 @@ Projekt vytváří firma Rackspace pod vedením Kurta Griffithse.
 Do projektu přispívají i jednotlivci mimo Rackspace.
 Vznikl v roce 2012 a od té doby vyšlo celkem 27 verzí.
 Dva týdny před psaním tohoto textu vyšla verze 1.0.0rc1, brzy se tedy můžeme těšit na verzi 1.0.0.
-Jedná se o aktivní projekt, který se může chlubit úplným pokrytím testy [@falconcoverage].
+Jedná se o aktivní projekt, který se může chlubit stoprocentním pokrytím testy [@falconcoverage].
 
 Vzhledem k nízkoúrovnosti frameworku neexistují žádné automatické mechanismy pro správu přístupových práv či HATEOAS.
 Falcon tedy za oba aspekty získává nula bodů.

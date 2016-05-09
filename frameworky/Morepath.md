@@ -10,9 +10,9 @@ Na rozdíl od jiných mikroframeworků je modelově orientovaný [@morepath].
 
 Projekt vznikl v roce 2013, ale jeho historie sahá dále do minulosti [@morepathhistory].
 Od roku 2013 vyšlo téměř dvacet verzí, poslední tři dny před psaním tohoto textu.
-Morepath přímo závisí na čtyřech a nepřímo na pěti modulech a má s nimi 9~156 řádků kódu.
+Morepath přímo závisí na čtyřech a nepřímo na pěti modulech, společně s nimi má 9~156 řádků kódu.
 Je distribuován pod BSD licencí [@BSD3].
-Autorem projektu je Martijn Faassen z firmy CONTACT Software, přispělo celkem 14 vývojářů.
+Autorem projektu je Martijn Faassen z firmy CONTACT Software a přispělo do něj celkem 14 vývojářů.
 226 hvězd na GitHubu a malý počet přispěvatelů dává tušit, že se nejedná o příliš slavný projekt,
 obsahuje však mnoho zajímavých funkcí [@morepathsp].
 

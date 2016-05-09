@@ -3,12 +3,12 @@ Django REST framework {#drf:fra}
 
 Django REST framework je nadstavbou k webovému frameworku Django. Na svém webu [@djangorest] uvádí tyto přednosti:
 
- * webově procházetelné API (můžete jej vidět [na obrázku](#pic:djangorestbrowsable)),
+ * webově procházetelné API (ukázku můžete vidět na [na obrázku](#pic:djangorestbrowsable)),
  * autentizační pravidla včetně možnosti použití OAuth 1 či OAuth 2,
  * serializace pro ORM[^orm] i jiná data,
  * upravitelné na míru,
  * rozsáhlá dokumentace a výborná komunitní podpora,
- * je použit důvěryhodnými a velkými společnostmi jako Mozilla a Eventbrite.
+ * používají ho i velké společnostmi jako Mozilla a Eventbrite.
 
 [^orm]: Object-relational mapping neboli Objektově relační zobrazení [@ormbook]
 
@@ -76,8 +76,8 @@ urlpatterns = [
 ]
 ```
 
-První verze byla vydána již v roce 2011 a od té doby jich vyšlo celkem osmdesát, poslední vyšla cca tři týdny před psaním tohoto textu.
-Vývoj je velmi aktivní a dokumentace velmi obsáhlá. Instalace závisí pouze na Djangu,
+První verze byla vydána již v roce 2011 a od té doby jich vyšlo celkem osmdesát; poslední cca tři týdny před psaním tohoto textu.
+Vývoj je velmi aktivní a dokumentace obsáhlá. Instalace závisí pouze na Djangu,
 které nemá žádné další závislosti, a společně s ním má 79~854 řádků kódu. Podporovány jsou obě verze Pythonu.
 Na GitHubu má více než pět a půl tisíce hvězd a za poslední měsíc byl více než třistatisíckrát stažen z PyPI.
 
@@ -97,21 +97,21 @@ Dokumentace obsahuje kapitolu o HATEOAS [@djangoresthateoas], která uvádí:
 Hodnotím kladně, že se o principu HATEOAS v dokumentaci hovoří.
 Prolinkování zdrojů ve stylu HATEOAS je v Django REST frameworku jednoduché.
 Naplnění konkrétních implementací však zůstává v režii architekta či programátora;
-Django REST framework k tomu poskytuje dostatečné možnosti, dostává tři body.
+Django REST framework k tomu poskytuje dostatečné možnosti, uděluji mu tedy tři body.
 
 Přístupová práva
 ----------------
 
-Django REST framework umožňuje jak různé způsoby autentizace [@djangorestauth] tak autorizace [@djangorestperm]. Pro autentizaci má zabudovány tři možnosti:
+Django REST framework umožňuje jak různé způsoby autentizace [@djangorestauth], tak i autorizace [@djangorestperm]. V základu poskytuje autentizaci:
 
  * uživatelským jménem a heslem,
  * tokenem,
  * pomocí session.
 
-Zároveň je možné vytvořit si způsob vlastní. Existují další Python moduly, které tuto možnost využívají a přidávají tak do Django REST frameworku další možnosti autentizace, mezi ty nejdůležitější patří moduly pro OAuth~1 i OAuth~2. Například Django REST framework OAuth je modul, který byl dříve součástí Django REST frameworku, ale nyní je spravován samostatně.
+Zároveň je možné implementovat vlastní způsoby. Existují další Python moduly, které tuto možnost využívají a přidávají tak do Django REST frameworku další možnosti autentizace, mezi ty nejdůležitější patří moduly pro OAuth~1 i OAuth~2. Například Django REST framework OAuth je modul, který byl dříve součástí Django REST frameworku, ale nyní je spravován samostatně.
 
-Přístupová práva jdou řešit na úrovni objektů, modelů či konkrétních pohledů, tedy vlastně na základě URL, pro první dvě kategorie se používají zabudované mechanismy přímo z Djanga. Jsou rozlišena práva pro čtení a pro zápis. Stejně jako u autentizace i zde je možné napsat si vlastní způsob rozhodování přístupových práv a i zde vzniklo několik modulů třetích stran.
+Přístupová práva je možné řešit na úrovni objektů, modelů či konkrétních pohledů, tedy vlastně na základě URL. Pro první dvě kategorie se používají zabudované mechanismy přímo z Djanga. Jsou rozlišena práva pro čtení a pro zápis. Stejně jako u autentizace, i zde je možné si napsat vlastní způsob rozhodování přístupových práv a i zde vzniklo několik modulů třetích stran.
 
-Možností je mnoho, Django REST framework dostává i zde tři body.
+Možností poskytuje mnoho, Django REST framework tedy dostává i zde tři body.
 
-Celkově Django REST framework působí jako obsáhlý nástroj poskytující mnoho možností a funkcí. Jeho jedinou zjevnou slabinou je vázanost na Django.
+Celkově Django REST framework působí jako obsáhlý nástroj poskytující mnoho možností a funkcí. Jeho jedinou zjevnou slabinou je těsná provázanost s Djangem.

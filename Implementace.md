@@ -8,7 +8,7 @@ Zkoumané aspekty implementací
 
 Pro každý aspekt zhodnotím, zda danou věc framework umožňuje, nakolik je to systematické řešení,
 nakolik jde o řešení pracné a nastíním ukázkou, jak k řešení dojít.
-Zde nejprve čtenáře krátce seznámím s jednotlivými aspekty:
+Zde nejprve čtenáře krátce seznámím s jednotlivými aspekty.
 
 Namapování dat z pohledů na zdroje
 ----------------------------------
@@ -27,7 +27,7 @@ Prolinkování zdrojů ve stylu HATEOAS
 ------------------------------------
 
 Data jsou v databázi prolinkována pomocí klíčů,
-v RESTful API ale chceme docílit toho, aby byly vztahy reprezentovány odkazem.
+v RESTful API je ale žádoucí docílit toho, aby vztahy byly reprezentovány odkazem.
 Příkladem je odkaz na učitele konkrétního kurzu.
 
 Kromě toho je třeba zobrazit navigační odkazy, například u stránkování na další a předchozí stránku apod.
@@ -36,7 +36,7 @@ Kromě toho je třeba zobrazit navigační odkazy, například u stránkování 
 ----------------------
 
 Některá data se musí zobrazit jinak, než jak jsou uložena v databázi.
-Příkladem je přetypování řetězců na čísla nebo zobrazení zkratky předmětu pouze, pokud je nastaven patřičný příznak.
+Příkladem je přetypování řetězců na čísla nebo zobrazení zkratky předmětu pouze v případě, kdy je nastaven patřičný příznak.
 
 Zobrazení dat ve standardizované podobě
 ---------------------------------------
@@ -49,32 +49,32 @@ Použití přirozených identifikátorů
 
 Pokud to data umožňují, je vhodné k identifikaci zdroje použít přirozený identifikátor
 namísto syntetických databázových identifikátorů.
-Využití syntetických identifikátorů v RESTful API je tz. *leaky abstraction*[^leakyab] [@leakyab].
-Příkladem přirozeného identifikátoru je zkratka sportu, kdy URI nemusí být `/sports/{id}` ale může být `/sports/{shortcut}`.
+Využití syntetických identifikátorů v RESTful API lze považovat za tzv. *leaky abstraction*[^leakyab] [@leakyab].
+Příkladem přirozeného identifikátoru je zkratka sportu, kdy URI nemusí být `/sports/{id}`, ale může být `/sports/{shortcut}`.
 
 [^leakyab]: Nenašel jsem vhodný překlad tohoto termínu do češtiny.
 
-Provedl jsem analýzu poskytnutých dat a tabulka sportů je jediná, která obsahuje přirozený identifikátor,
-ostatní tabulky buď přirozený identifikátor nemají vůbec nebo není unikátní --
-jednotlivé předměty v různých časech sdílejí stejnou zkratku, ne všichni učitelé mají v datech osobní číslo apod.
+Provedl jsem analýzu poskytnutých dat a tabulka sportů je bohužel jediná, která obsahuje použitelný přirozený identifikátor.
+Ostatní tabulky buď přirozený identifikátor nemají vůbec nebo není unikátní --
+jednotlivé předměty v různých časech sdílí stejnou zkratku, ne všichni učitelé mají v datech osobní číslo apod.
 
 
 Přístupová práva
 ----------------
 
-Důležitým aspektem jsou přístupová práva.
-Z hlediska autentizace i autorizace.
+Důležitým požadavkem jsou přístupová práva;
+z hlediska autentizace i autorizace.
 Příkladem je, že student může vidět jen své vlastní zápisy kurzů.
 
 Pro autentizaci a autorizaci použiji OAuth 2.0 autorizační server (OAAS) FIT ČVUT [@oaas],
-který mi umožní na základě tokenu poskytnutého klientem určit, jestli je klient autentizován a jaká má práva.
+který umožňuje na základě tokenu poskytnutého klientem určit, jestli je klient autentizován a jaká má práva.
 Pokud je token svázán s konkrétním uživatelem, z Usermap API [@uapi] zjistím jeho osobní číslo,
 abych toto mohl porovnávat s osobními čísly učitelů a studentů v databázi ÚTVS.
 
 Vzhledem k tomu, že komunikace s OAAS i Usermap API je na zvoleném frameworku nezávislá,
-vytvořil jsem malý modul do Pythonu, který budu využívat ve všech implementacích;
+vytvořil jsem malý Python modul, který budu využívat ve všech implementacích;
 jeho nejpodstatnější součást můžete vidět [v ukázce](#code:utvsapitoken).
-Součástí modulu je i jednoduchý server, který OAAS a Usermap API simuluje, pro účely testování.
+Součástí modulu je i jednoduchý server, který simuluje OAAS a Usermap API pro účely testování.
 
 ```{caption="{#code:utvsapitoken}utvsapitoken: Získání informací o tokenu" .python}
 class TokenClient:
@@ -147,9 +147,7 @@ a uživatel API bude moci takto definovaný popis vidět.
 Zkoumané funkce služby
 ======================
 
-Kromě aspektů ve smyslu „jak lze něčeho ve frameworku dosáhnout“ budu zkoumat i funkce implementovaných RESTful API.
-
-Mezi tyto funkce patří:
+Kromě aspektů ve smyslu „jak lze něčeho ve frameworku dosáhnout“ budu zkoumat i tyto funkce implementovaných RESTful API:
 
  * stránkování,
  * filtrování,
@@ -157,10 +155,10 @@ Mezi tyto funkce patří:
  * vyjednávání o obsahu,
  * rozcestník.
 
-Rozcestníkem je zde myšlen kořenový zdroj, kde jsou odkazy na jednotlivé zdroje.
+Rozcestníkem je zde myšlen kořenový zdroj, který poskytuje odkazy na jednotlivé zdroje.
 
 Budu se zabývat tím, jestli dané funkce existují a jak je lze použít.
-Pokud některá služba bude nabízet další funkce pro uživatele, zmíním je samozřejmě také.
+Pokud některá služba bude nabízet i další funkce, zde neuvedené, zmíním je samozřejmě také.
 
 \input{implementace/DRF}
 \input{implementace/Eve}

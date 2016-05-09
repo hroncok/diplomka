@@ -4,7 +4,7 @@ Eve
 Namapování dat z pohledů na zdroje
 ----------------------------------
 
-Ve výchozím stavu počítá Eve s daty v NoSQL databázi MongoDB.
+Ve výchozím stavu Eve předpokládá uložení dat v NoSQL databázi MongoDB.
 Je možné si napsat vlastní správce dat, ale jednodušší je použít již existující modul `eve-sqlalchemy`.
 Pro namapování dat je třeba popsat jednotlivé zdroje pomocí SQLAlchemy modelů a poté je zaregistrovat.
 
@@ -12,7 +12,7 @@ Pro namapování dat je třeba popsat jednotlivé zdroje pomocí SQLAlchemy mode
 Funkce `registerSchema()` z `eve-sqlalchemy` vygeneruje pro každý model schéma,
 které je následně možné upravit.
 
-Je třeba zdůraznit, že Eve očekává, že všechny primární klíče se budou jmenovat *\_id*, což jde změnit, ale pouze globálně
+Je třeba zdůraznit, že Eve očekává primární klíče pojmenované ve tvaru *\_id*, což je možné změnit, ale pouze globálně
 (například zde v ukázce na *id*);
 proto je již položka *id_subjects* přejmenována na *id*, ačkoli o přejmenování položek bude řeč až dále.
 
@@ -120,9 +120,9 @@ def register(cls):
 ```
 
 Toto v Eve nestačí k vytvoření odkazů, ale pouze umožní odkazované objekty zobrazit vnořeně.
-Odkazy jde do odpovědi manuálně dostat, ale nejde o koncepční řešení.
-Eve nabízí možnost úpravy zobrazených dat, o které se více rozepíšu v další části,
-nyní jen ukážu manuální vkládání odkazů [v ukázce](#code:eve:links2).
+Odkazy je sice možné do odpovědi manuálně vložit, ale nejde o koncepční řešení.
+Eve nabízí možnost úpravy zobrazených dat, kterou více popíši v další části,
+nyní jen demonstruji manuální vkládání odkazů [v ukázce](#code:eve:links2).
 Kód není příliš složitý, ale to jen proto, že jednoduše zkonstruuje odkaz z číselného identifikátoru a názvu položky,
 což je možné jen díky jednoduchosti této konkrétní ukázkové služby.
 
@@ -223,7 +223,7 @@ a jednoduchá.
 Zobrazení dat ve standardizované podobě
 ---------------------------------------
 
-Eve serializuje do formátu, který se podobá HALu, ale nikde se neříká, že to HAL je,
+Eve serializuje do formátu, který se podobá HALu, ale nikde se neříká, že to HAL je;
 příklad můžete vidět [v ukázce](#code:eve:out).
 Případná úprava je možná stejným způsobem jako při úpravě zobrazovaných dat.
 
@@ -284,9 +284,9 @@ a složitá.
 Použití přirozených identifikátorů
 ----------------------------------
 
-Již v úvodu jsem zmínil, že Eve předpokládá, že se všechny primární klíče jmenují stejně.
+Již v úvodu jsem zmínil, že Eve předpokládá primární klíče pojmenované konkrétním způsobem.
 Není tedy možné použít různé přirozené identifikátory.
-Je ale možné přidání sekundárního identifikátoru,
+Umožňuje však přidání sekundárního identifikátoru,
 což prezentuji [v ukázce](#code:eve:ids).
 
 ```{caption="{#code:eve:ids}Eve: Použití přirozených identifikátorů" .python}
@@ -381,8 +381,8 @@ nepřidává možnost k jednotlivým zdrojům, metodám a položkám přidávat 
 Existuje však zatím nepřijatý návrh na úpravu, která umožňuje i toto [@evedocspr].
 
 Vzhledem ke stáří tohoto návrhu, nulové reakci od autora `eve-docs` a dalším faktorům lze usuzovat,
-že `eve-docs` je mrtvý projekt, stále je však možné upravenou variantu použít, případně
-si dopsat úpravy vlastní, například možnost psát popisy v jazyce Markdown apod.
+že `eve-docs` je mrtvý projekt. Stále je však možné upravenou variantu použít, případně
+si dopsat úpravy vlastní; například možnost psát popisy v jazyce Markdown apod.
 
 Pro zapnutí generování dokumentace stačí modul naimportovat a registrovat,
 pro využití zmíněné úpravy je pak možné přidat do schématu další položky.
@@ -426,7 +426,7 @@ Funkce služby
 
 ### Stránkování
 
-Stránkování se děje automaticky samo, zobrazenou stránku lze ovlivnit parametrem `page`
+Stránkování se děje automaticky, zobrazenou stránku lze ovlivnit parametrem `page`
 a počet výsledků na stránce parametrem `max_results`.
 
 `GET /courses/?page=3&max_results=5`

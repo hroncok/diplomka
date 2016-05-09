@@ -1,9 +1,8 @@
 Open-source knihoven a frameworků pro Python, které umožňují vytvářet RESTful API, je opravdu mnoho.
-V této práci jsem prozkoumal osmnáct takových frameworků v kapitole *\nameref{frameworky}*.
+V této práci jsem prozkoumal osmnáct takových frameworků, v kapitole *\nameref{frameworky}*.
 Zkoumal jsem především úroveň podpory HATEOAS a řízení přístupových práv.
 
-Na základě stanovených kritérií jsem vybral čtyři frameworky, ve kterých jsem implementoval ukázkovou službu,
-pro účely podrobnějšího zkoumání.
+Na základě stanovených kritérií jsem vybral čtyři frameworky, ve kterých jsem implementoval ukázkovou službu pro účely podrobnějšího zkoumání.
 
 Návrhem ukázkové služby jsem se zabýval v kapitole *\nameref{navrh}*.
 
@@ -15,9 +14,9 @@ Z měření nevzešel jasný vítěz.
 
 ### Možnosti dalšího rozvoje
 
-Některé zkoumané frameworky trpěly nedostatky, které je v budoucnu možné
+Některé zkoumané frameworky trpěly nedostatky, které by v budoucnu bylo možné
 ve spolupráci s autory těchto frameworků opravit.
 
 Zkoumaný framework ripozo umožňuje napojení na různé webové frameworky,
-bylo by zajímavé naprogramovat napojení na nějaký zatím nepodporovaný rychlý webový framework,
+bylo by proto zajímavé naprogramovat napojení na nějaký zatím nepodporovaný rychlý webový framework,
 jako například Falcon.

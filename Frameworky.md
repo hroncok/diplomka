@@ -20,7 +20,7 @@ Typ licence ale může výrazně ovlivnit licenci díla, ve kterém framework po
 
 Licence tedy rozdělím do skupin podle typu, pořadí typu v seznamu určuje stupnici od nejvolnější po nejstriktnější.
 
- 1. **Public domain** obsahuje licence, které říkají, že si s frameworkem prakticky můžeme dělat, co chceme. Mezi takové řadím například Creative Commons CC0 [@CC0] nebo WTFPL [@WTFPL].
+ 1. **Public domain** zahrnuje licence, které říkají, že si s frameworkem prakticky můžeme dělat, co chceme. Mezi takové řadím například Creative Commons CC0 [@CC0] nebo WTFPL [@WTFPL].
  2. **Permisivní** licence jsou takové, které vyžadují například uvedení textu licence a jméno autora, ale neovlivňují licenci výsledného díla. Příkladem jsou licence MIT [@MIT], BSD [@BSD2][@BSD3], ale i licence Pythonu [@python-license].
  3. **LGPL** je kategorie, která obsahuje GNU Lesser General Public License [@LGPL] a další podobné licence (například Mozilla Public License [@mpl2]), které v případě vhodného použití knihovny neovlivňují licenci díla. Pro potřeby použití frameworku se příliš neliší od předchozí skupiny, ale je třeba si dát pozor, jak framework použijeme; pokud bychom například kód z frameworku zkopírovali přímo do kódu našeho díla, mohli bychom výslednou licenci ovlivnit.
  4. **Copyleft** licence jsou takové, které vyžadují, aby výsledné dílo v případě využití knihovny nebo frameworku převzalo jejich licenci [@copyleft]. Jako nejznámější exemplář jmenuji GNU General Public License [@GPLv3].
@@ -46,14 +46,14 @@ Přestože dnes diskový prostor není tolik kritický jako dříve, čím víc 
 závislosti obsahují, tím více věcí se může zkomplikovat. Některé frameworky se označují za „lightweight“
 a právě velikost kódové základny je jedním z faktorů, který vnímaní frameworku jako „lightweight“ může ovlivnit [@lightweight].
 
-Měření budu provádět tak, že daný framework nainstaluji do prázdného virtualenvu[^virtualenv] a pak se podívám na jeho celkovou velikost (od té odečtu velikost „prázdného“ virtualenvu) -- ta bude určovat pořadí na stupnici.
+Měření budu provádět tak, že daný framework nainstaluji do prázdného _virtualenv_[^virtualenv] a pak se podívám na jeho celkovou velikost (od té odečtu velikost „prázdného“ virtualenv) -- ta bude určovat pořadí na stupnici.
 
 [^virtualenv]: Virtualenv je virtuální prostředí pro jazyk Python umožňující instalovat závislosti různých projektů do oddělených míst. [@virtualenv]
 
 Počet řádků kódu
 ----------------
 
-Možná ještě důležitější než samotná velikost v MiB je počet řádek kódu --
+Ještě důležitější než samotná velikost v MiB je počet řádek kódu --
 k velkosti mohou přispívat i jiné faktory, jako soubory s překlady, obrázky, šablonami apod.
 K měření použiji nástroj cloc [@cloc], budu počítat pouze řádky v jazyce Python.
 Před měřením odstraním z modulů testy. Ve srovnávací tabulce budu uvádět jak počet řádků samotného frameworku, tak celého závislostního aparátu.
@@ -61,7 +61,7 @@ Před měřením odstraním z modulů testy. Ve srovnávací tabulce budu uvád�
 Počet závislostí
 ----------------
 
-Kromě samotné velikosti je třeba zkoumat, i kolik závislostí (přímých i nepřímých) daný framework má. Každá závislost představuje riziko i zranitelnost [@dependencies].
+Kromě samotné velikosti je třeba zkoumat i kolik závislostí (přímých i nepřímých) daný framework vyžaduje. Každá závislost představuje riziko i zranitelnost [@dependencies].
 Jelikož čtenáře může zajímat počet přímých i počet nepřímých závislostí, budu uvádět vždy obě čísla.
 
 
@@ -69,7 +69,7 @@ Podpora Pythonu 3
 -----------------
 
 Přestože Python 3 vyšel již v roce 2008 [@py3year], některé knihovny třetích stran jej stále ještě nepodporují [@py3ready].
-Je tedy třeba se, bohužel, zabývat i tím, jestli framework Python 3 podporuje. Stejně tak může být pro někoho důležité,
+Bohužel je tedy třeba se zabývat i tím, jestli framework podporuje Python 3. Stejně tak může být pro někoho důležité,
 jestli framework podporuje Python 2, například kvůli tomu, že některé knihovny, které používá, Python 3 nepodporují.
 
 Škálu jsem tedy stanovil takto:
@@ -81,29 +81,29 @@ jestli framework podporuje Python 2, například kvůli tomu, že některé knih
 Oblíbenost
 ----------
 
-Čím více lidí a projektů daný framework využívá, tím je větší šance, že v případě problému narazíme
-na hotové řešení. Oblíbenost je subjektivní pojem a tak se špatně měří, využiji ale dva prvky, které o oblíbenosti mohou něco prozradit.
+Čím více lidí a projektů daný framework využívá, tím větší je šance, že v případě problému najdeme
+hotové řešení. Oblíbenost je subjektivní pojem a tak se špatně měří, využiji ale dva prvky, které o oblíbenosti mohou něco prozradit.
 
 Většina zkoumaných frameworků má svůj kód zveřejněn na GitHubu, kde uživatelé mohou jednotlivé projekty zařadit mezi své oblíbené tím, že jím dají hvězdu (*star*) [@ghstars].
-Počet těchto hvězd pak může mít částečnou vypovídající hodnotu.
+Počet těchto hvězd pak může poskytnout určitou vypovídající hodnotu.
 
-Frameworky jdou zároveň stáhnout z *Python Package Indexu*, kde lze vidět počet stažení za poslední den, týden a měsíc [@pypi]. Tyto informace jsou však často zkreslené kvůli různým automatickým nástrojům, které stahují všechny balíčky [@pypibad]. Budu uvádět jen hodnotu stažení za poslední měsíc, v době psaní tohoto textu.
+Frameworky jsou zároveň distribuované přes *Python Package Index*, kde lze vidět počet stažení za poslední den, týden a měsíc [@pypi]. Tyto informace jsou však často zkreslené kvůli různým automatickým nástrojům, které stahují všechny balíčky [@pypibad]. Budu uvádět jen hodnotu stažení za poslední měsíc, v době psaní tohoto textu.
 
 
 Podpora HATEOAS
 ---------------
 
 HATEOAS, tedy *Hypermedia as the Engine of Application State*[^hateoas], je jedním ze základních stavebních kamenů REST architektury [@rest].
-Díky principu HATEOAS nemusí REST klient o poskytovaném API vědět příliš mnoho informací předem, prostě se dotáže serverové REST aplikace skrze URL a všechny následující proveditelné akce jsou obsaženy v odpovědi vrácené serverem.
+Díky principu HATEOAS nemusí REST klient o poskytovaném API vědět příliš mnoho informací předem. V ideálním případě mu stačí adresa kořenového zdroje a všechny další informace (adresy souvisejících zdrojů, proveditelných akcí…) zjistí dynamicky z odpovědí serveru -- obdobně jako uživatel při procházení HTML stránek.
 
 [^hateoas]: Hypermedia jako základ aplikačního stavu
 
-HATEOAS je ale pouze princip, konkrétních implementací je několik. Mezi ty nejznámější patří:
+HATEOAS je ale pouze princip, konkrétních implementací existuje hned několik. Mezi ty nejznámější patří následující.
 
 ### HAL
 
 HAL (Hypertext Application Language) je jednoduchý formát, který nabízí konzistentní způsob prolinkování zdrojů v API [@hal].
-Obsahuje položky `_links` a `_embedded` pro odkazy a vnořené zdroje, ostatní položky mají vlastní jména.
+Definuje atributy `_links` a `_embedded` pro odkazy a vnořené zdroje, šablony pro odkazy na navazující zdroje a konvenci pro odkazování dokumentace.
 Schéma můžete vidět [na obrázku](#pic:hal).
 
 ![Schéma zdroje ve formátu HAL [@hal]{#pic:hal}](images/hal)
@@ -111,7 +111,7 @@ Schéma můžete vidět [na obrázku](#pic:hal).
 ### JSON-LD
 
 JSON-LD je formát pro serializaci prolinkovaných dat [@jsonld].
-Používá se mj. pro sémantický web a RDF data [@jsonldrdf], ale lze použít i pro REST API.
+Používá se mj. pro sémantický web a RDF data [@jsonldrdf], ale lze jej použít i pro REST API.
 Příklad můžete vidět [v ukázce](#code:jsonld).
 
 ```{caption="{#code:jsonld}Příklad formátu JSON-LD \autocite{jsonld}" .python}
@@ -131,7 +131,7 @@ Hydra je rozšíření pro JSON-LD, které využívá speciální slovník vhodn
 
 ### JSON API
 
-JSON API je specifikace pro webová API používající JSON [@jsonapi].
+JSON API je specifikace pro webová API využívající JSON [@jsonapi].
 Jedná se o velmi komplexní formát, který u každého zdroje rozlišuje data, metadata, odkazy, vztahy a další prvky.
 
 
@@ -253,8 +253,8 @@ Přístupová práva
 
 Některé frameworky přístupová práva vůbec neřeší, jiné podporují jen autentizaci,
 ale ne různá práva pro různé klienty a různé zdroje,
-další obsahují mechanismy a postupy, jak autentizaci a autorizaci řešit,
-některé dokonce obsahují předpřipravená řešení pro nejčastější případy,
+další obsahují mechanismy a postupy, jak autentizaci a autorizaci řešit.
+Některé dokonce obsahují předpřipravená řešení pro nejčastější případy,
 jako je HTTP autentizace uživatelským jménem a heslem nebo OAuth.
 
 Vzhledem ke komplexitě možných případů nestanovuji škálu pevně,
@@ -269,26 +269,26 @@ jiný může považovat za příliš složité.
 
 Místo vynášení soudů o použitelnosti, založených čistě na mém osobním názoru,
 nabídnu u každého frameworku ukázku z dokumentace,
-aby čtenář sám mohl použitelnost posoudit.
+aby čtenář mohl použitelnost sám posoudit.
 
-Jednotlivé ukázky se liší délkou i účelem,
-ukázky z vybraných frameworků sloužící ke stejnému účelu najdete v kapitole *\nameref{implementace}*.
+Jednotlivé ukázky se liší délkou i účelem.
+Ukázky z vybraných frameworků sloužící ke stejnému účelu najdete v kapitole *\nameref{implementace}*.
 
 Stav projektu
 -------------
 
 Pokud se rozhodujeme, jestli využít nějaký framework, mohly by nás zajímat i informace o projektu, jako například:
 
- * Kdo projekt tvoří, jsou to jednotlivci, firma?
+ * Kdo projekt tvoří; jsou to jednotlivci, firma?
  * Je projekt aktivně vyvíjen?
  * Vycházejí nové verze?
- * Reaguje se na hlášení chyb?
+ * Reaguje někdo na hlášené chyby?
  * Jsou přijímány úpravy od lidí mimo projekt?
  * Jak dlouho již projekt existuje?
  * Jak často vycházejí nové verze?
  * Má projekt dokumentaci? Je aktuální?
 
-Tyto informace se velice těžce dají srovnávat pomocí škály, proto se pokusím na tyto otázky odpovědět alespoň v textu.
+Tyto informace se dají jen velice těžko srovnávat pomocí číselné škály, proto se pokusím na tyto otázky odpovědět alespoň textově.
 
 \input{frameworky/Cornice}
 \input{frameworky/Django-REST-framework}
@@ -324,7 +324,7 @@ Srovnání
 | Flask API             |                                       |                                       |
 | Flask-RESTful         |                                       |                                       |
 | Morepath              | \textbullet \textbullet               | \textbullet                           |
-| Nefertari             |                                       | \textbullet \textbullet               |
+| Nefertari             |                                       | \textbullet                           |
 | Ramses                |                                       | \textbullet \textbullet               |
 | Piston                |                                       | \textbullet \textbullet \textbullet   |
 | Pycnic                |                                       |                                       |
@@ -338,7 +338,7 @@ Srovnání
 Table: Bodové ohodnocení {#tab:body}
 
 [V tabulce](#tab:srovnani) najdete srovnání měřitelných kritérií. Jednotlivé sloupce mají zjednodušené názvy, ale jejich funkce odpovídá popisu [v části](#kriteria@).
-Tučně jsou označeny hodnoty, které dominují v daném sloupci.
+Tučně jsou označeny hodnoty, které v daném sloupci dominují.
 
 [V tabulce](#tab:informace) pak najdete informační přehled o zkoumaných frameworcích: webový framework, URL domovské stránky a číslo zkoumané verze.
 
@@ -394,7 +394,7 @@ Table: Informace o frameworcích {#tab:informace}
 Pro implementaci si vybírám frameworky Eve a ripozo, na základě vysokého hodnocení v oblasti HATEOAS i přístupových práv.
 
 Vysoké hodnocení získaly i Django REST framework a Tastypie, ale jelikož jsou oba frameworky pro Django a implementace by byla příliš podobná,
-vybírám si k implementaci pouze Django REST framework, který je podle indikátorů nejoblíbenějším zkoumaným frameworkem.
+vybírám si k implementaci pouze Django REST framework, který je podle indikátorů ze všech zkoumaných frameworků nejoblíbenější.
 
 Navíc si vybírám sandman2, který nemá tak dobré hodnocení,
 ale slibuje automatické vytvoření API.

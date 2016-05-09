@@ -3,9 +3,9 @@
 Poskytnuté databázové pohledy
 =============================
 
-V MySQL databázi Ústavu tělesné výchovy a sportu ČVUT v Praze existují pohledy obsahující data pro sestavení rozvrhů.
-Tyto pohledy mám k dispozici a nad nimi budu navrhovat RESTful službu.
-V této části nejprve seznámím čtenáře se strukturou dat.
+V MySQL databázi Ústavu tělesné výchovy a sportu ČVUT v Praze jsem dostal k dispozici sadu SQL pohledů, která zpřístupňují data vhodná pro sestavení rozvrhů.
+Nad těmito pohledy budu navrhovat RESTful službu.
+V této části nejprve čtenáře seznámím se strukturou dat.
 Informace čerpám z wiki FIT ČVUT v Praze provozované Oddělením pro rozvoj [@rozvojwiki].
 
 Destinace
@@ -67,7 +67,7 @@ Table: Struktura pohledu v_sports {#tab:sports}
 | Název sloupce		| Datový typ	| Popis 						|
 |-------------------|---------------|-------------------------------|
 | id_sport			| smallint(10)	| primární klíč					|
-| short				| varchar(50)	| kód (3znaková zkratka)		|
+| short				| varchar(50)	| kód (tříznaková zkratka)		|
 | sport 			| varchar(50)	| název 						|
 | description		| text			| popis 						|
 
@@ -79,7 +79,7 @@ V této tabulce, nepřesně nazvané jako studenti, se eviduje zápis studenta n
 V jednom semestru zde student může mít i více záznamů. Záznamy se po několika letech promazávají.
 Struktura je znázorněna [v tabulce](#tab:students).
 
-Semestr je ve formátu `YYYY/ZZ_S`, kde `YYYY/ZZ` značí akademický rok (např. `2012/13`) a `S` paritu semestru (1 -- zimní; 2 -- letní).
+Semestr je ve formátu `YYYY/ZZ_S`, kde `YYYY/ZZ` značí akademický rok (např. `2012/13`) a `S` období semestru (1 -- zimní; 2 -- letní).
 
 Table: Struktura pohledu v_students {#tab:students}
 
@@ -94,15 +94,15 @@ Table: Struktura pohledu v_students {#tab:students}
 | registration_date	| timestamp		| datum a čas zápisu				|
 | tour				| int(0)		| příznak udávající, zda je zapsaný	|
 | 					| 				| předmět kurz						|
-| kos_code			| int(0)		| příznak udávající, zda je kos_kod	|
-| 					| 				| opravdový							|
+| kos_code			| int(0)		| příznak udávající, zda kos_kod	|
+| 					| 				| obsahuje skutečný kód z KOS		|
 
 
 Předměty ÚTVS
 -------------
 
 Předmětem je zde myšlena konkrétní instance vyučovaného sportu, v daný den a hodinu.
-Pokud bychom chtěli najít paralelu se systémem KOS, tak tato entita představuje sloučenou instanci předmětu a její paralelku.
+Pokud bychom chtěli najít paralelu se systémem KOS, tak tato entita představuje sloučeninu instance předmětu, její paralelky a rozvrhového lístku.
 Struktura je znázorněna [v tabulce](#tab:subjects).
 
 Všimněte si, že některé číselné údaje jsou uloženy textově.
@@ -200,7 +200,7 @@ V odpovědi budou zahrnuta všechna data [z tabulky](#tab:students) kromě polo�
 
  * Autentizovaným uživatelům/studentům budou zpřístupněna data o jejich osobě (osobní číslo musí odpovídat osobnímu číslu přihlášeného uživatele).
  * Autentizovaným uživatelům/zaměstnancům budou zpřístupněna všechna data.
- * Speciálním autentizovaným klientům budou zpřístupněna všechna data, kvůli přístupu ze služeb jako Sirius.
+ * Speciálním autentizovaným klientům budou zpřístupněna všechna data, pro služby jako Sirius a podobné.
 
 /courses
 --------

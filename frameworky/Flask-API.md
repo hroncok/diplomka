@@ -7,7 +7,7 @@ ale bez závislosti na Djangu.
 
 Za projektem stojí autor Django REST frameworku, Tom Christie.
 Zatím se ale naneštěstí jedná o rozdělanou práci [@flaskapi] a zdaleka nejde o hotový projekt.
-Práce na Flask API je zároveň pozastavená, kvůli závazkům z crowdfundingové kapaně ohledně Django REST frameworku [@flaskapigh].
+Práce na Flask API je zároveň pozastavená, kvůli závazkům z crowdfundingové kapaně k Django REST frameworku [@flaskapigh].
 Tom Christie se od roku 2014 (kdy projekt i vznikl) na projektu aktivně nepodílí, existují však další jednotlivci,
 kteří projekt udržují a rozvíjí.
 
@@ -15,6 +15,8 @@ Pomocí Flask API je nyní možné webově procházet API, jak můžete vidět [
 ale tvorba API zatím není příliš automatizovaná, [viz příklad](#code:flaskapi)[^zhusteno].
 
 [^zhusteno]: Příklad byl mírně zhuštěn za účelem lepší prezentace na straně formátu A4.
+
+TODO: Má tady ten obrázek smysl? Není na něm vidět prakticky nic jiného než u DRF, ale je v lepší kvalitě. Možná by bylo lepší ten z DRF odstranit a nechat tento…?
 
 ![Flask API: Webově procházetelné API [@flaskapi]{#pic:flaskapibrowsable}](images/flask-api-browsable)
 
@@ -70,21 +72,20 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
-Projekt v současnosti přímo závisí jen na frameworku Flask a tím má nepřímo pět závislostí a má s nimi 20~938 řádků kódu.
+Projekt v současnosti přímo závisí jen na frameworku Flask, tím má nepřímo pět závislostí a s nimi 20~938 řádků kódu.
 Je distribuován pod BSD licencí [@BSD2] a podporuje obě verze Pythonu.
 
 Do budoucna je plánováno [@flaskapi][@flaskapigh]:
 
  * autentizace, mj. pomocí session, tokenu i jménem a heslem,
  * přístupová práva,
- * zaškrcování přístupu,
+ * limitování počtu požadavků v čase,
  * API zdroje pomocí tříd,
  * vylepšení procházetelných API, například přidání drobečkové navigace,
  * možnost vlastního zpracování výjimek,
- * CSRF ochrana,
+ * ochrana proti CSRF,
  * přihlašování a odhlašování přes prohlížeč v případě procházetelných API,
- * dokumentace o validaci požadavků,
- * dokumentace o prolinkovávání.
+ * zdokumentování validace požadavků a prolinkování.
 
 Je však otázka, kdy a jestli se toho dočkáme.
 

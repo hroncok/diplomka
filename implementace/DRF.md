@@ -5,12 +5,12 @@ Namapování dat z pohledů na zdroje
 ----------------------------------
 
 Pro namapování dat z pohledů na zdroje je jedním z řešení
-vytvořit Django modely, pro ty vytvořit serializační třídy a pohledy.
+vytvořit Django modely, a pro ty vytvořit serializační třídy a pohledy.
 Django REST framework umožňuje serializovat i data, která nepochází z modelů,
 ale to by v tomto případě bylo zbytečně složité.
 
 Jeden model, serializační třídu a pohled můžete vidět [v ukázce](#code:drf:mapping);
-implementační detaily, jako importy, jsou vynechány pro lepší čitelnost.
+implementační detaily, jako importy, jsou pro stručnost vynechány.
 Vzhledem k tomu, že je jednodušší rovnou některé položky přejmenovat,
 je v této ukázce již tak učiněno; detailnější vysvětlení najdete v další části.
 
@@ -55,7 +55,7 @@ router.register(r'courses', CourseViewSet)
 
 Některé kroky, například vytvoření serializační třídy, lze jednoduše automatizovat,
 jak je vidět [z ukázky](#code:drf:serializer).
-Podobným způsobem by šlo zautomatizovat i vytváření pohledů, ale vzhledem k tomu,
+Podobným způsobem by bylo možné zautomatizovat i vytváření pohledů. Ovšem vzhledem k tomu,
 že dokumentační řetězce u pohledů se zobrazují ve webově procházetelném API,
 je příhodnější nechat je definované jako jednotlivé třídy.
 
@@ -81,7 +81,7 @@ Přejmenování položek
 --------------------
 
 Pro přejmenování položek stačí jinak pojmenovat atribut a poskytnout konstruktoru argument `db_column` s názvem sloupce.
-Ten je potřeba poskytnout u cizích klíčů i v případě, že se atribut jmenuje stejně jako položka, protože Django jinak očekává,
+Ten je potřeba poskytnout u cizích klíčů i v případě, kdy se atribut jmenuje stejně jako položka, protože Django jinak očekává,
 že se sloupec bude jmenovat `{field}_id`.
 
 Konkrétní příklad přejmenování položek u kurzu můžete vidět [na začátku ukázky](#code:drf:mapping).
@@ -141,8 +141,7 @@ Zobrazení dat ve standardizované podobě
 Django REST framework data zobrazuje ve velmi jednoduché podobě.
 Pokud toto chceme změnit, je třeba vytvořit vlastní třídy zodpovědné za stránkování a prezentaci dat.
 
-Naštěstí již existuje modul `drf-hal-json`, ve kterém existují dané třídy pro HAL serializaci,
-jeho použití najdete [v ukázce](#code:drf:standard) a výstup [v ukázce](#code:drf:hal).
+Naštěstí již existuje modul `drf-hal-json`, který poskytuje třídy pro serializaci do HAL; jeho použití najdete [v ukázce](#code:drf:standard) a výstup [v ukázce](#code:drf:hal).
 Existují i knihovny pro jiné serializace, např. `djangorestframework-jsonapi` pro JSON API.
 
 ```{caption="{#code:drf:standard}DRF: Použití modulu drf-hal-json pro HAL" .python}
@@ -189,7 +188,7 @@ def serializer(model_):
 Zobrazení dat ve standardizované podobě v Django REST frameworku je
 možné,
 systematické,
-ale pracné, naštěstí existují knihovny, které lze rovnou použít.
+ale pracné, naštěstí však existují knihovny, které lze rovnou použít.
 
 Použití přirozených identifikátorů
 ----------------------------------
@@ -275,14 +274,14 @@ REST_FRAMEWORK = {
 
 Zde si dovolím malou odbočku.
 Třída `TokenAuthentication` z Django REST frameworku očekává v autorizační hlavičce slovo *Token*,
-ale RFC 6750 říká, že by to mělo být v případě OAuthu~2 *Bearer* [@rfc6750].
+ale RFC 6750 říká, že by to v případě OAuthu~2 mělo být *Bearer* [@rfc6750].
 Pokud bych v současnosti chtěl toto změnit, musel bych celý kód třídy zkopírovat a změnit zde právě toto jedno slovo.
-Navrhl jsem tedy autorům frameworku úpravu, která umožní příslušné slovo změnit jednodušeji,
-tato úprava byla přijata a bude dostupná v další vydané verzi frameworku.
+Navrhl jsem tedy autorům frameworku úpravu, která umožní příslušné slovo změnit jednodušeji.
+Tato úprava byla přijata a bude dostupná v další vydané verzi frameworku.
 
-Pro autorizaci a samotná přístupová práva jsem napsal dvě třídy,
-jednu obecně pro všechny zdroje, druhou pouze pro zdroj `/enrollments/`,
-můžete je vidět [v ukázce](#code:drf:permissions).
+Pro autorizaci a samotná přístupová práva jsem napsal dvě třídy;
+jednu obecně pro všechny zdroje, druhou pouze pro zdroj `/enrollments/`.
+Obě můžete vidět [v ukázce](#code:drf:permissions).
 
 ```{caption="{#code:drf:permissions}DRF: Třídy pro přístupová práva" .python}
 class HasGeneralReadScopeOrIsApiRoot(BasePermission):
@@ -335,10 +334,10 @@ class EnrollmentViewSet(*base):
                           permissions.HasEnrollmentsAcces)
 ```
 
-Přístupová práva v Django REST frameworku jsou
+Řízení přístupových práv v Django REST frameworku je
 možná,
-systematická
-a jednoduchá.
+systematické
+a jednoduché.
 
 Generování dokumentace
 ----------------------
@@ -399,7 +398,7 @@ REST_FRAMEWORK = {
 }
 ```
 
-Poté jde filtrovat pomocí parametrů v URL.
+Poté je možné filtrovat pomocí parametrů v URL:
 
 `GET /courses/?starts_at=07:30`
 
@@ -417,8 +416,8 @@ REST_FRAMEWORK = {
 }
 ```
 
-Poté jde položky řadit pomocí parametru `ordering` (název parametru jde v nastavení také změnit).
-Je možné řadit vzestupně i sestupně, i podle více klíčů.
+Poté jde položky řadit pomocí parametru `ordering` (název parametru lze v nastavení také změnit).
+Je možné řadit vzestupně, sestupně i podle více klíčů.
 Pro seřazení kurzů podle jejich začátku v týdnu od nejpozdějšího lze použít například:
 
 `GET /courses/?ordering=-day,-starts_at`
@@ -426,11 +425,11 @@ Pro seřazení kurzů podle jejich začátku v týdnu od nejpozdějšího lze po
 ### Vyjednávání o obsahu
 
 Django REST framework volí patřičnou zobrazovací třídu podle hlavičky `Accept`.
-Pokud není použita knihovna `drf-hal-json` je možné nastavovat hlavičkou i způsob odsazování apod.
+Pokud _není_ použita knihovna `drf-hal-json`, je možné nastavovat hlavičkou i způsob odsazování apod.
 
 `GET /courses/1         Accept: application/json; indent=2`
 
-Podobně jde volit serializace do YAMLu nebo XML. Příslušné zobrazovací třídy musí být povoleny v konfiguraci.
+Podobně lze volit serializaci do YAMLu nebo XML. Příslušné zobrazovací třídy musí být povoleny v konfiguraci.
 
 ### Rozcestník
 

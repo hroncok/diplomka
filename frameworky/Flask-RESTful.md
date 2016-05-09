@@ -9,8 +9,8 @@ Flask-RESTful je navržen tak, aby ho uživatelé obeznámení s Flaskem co nejr
 
 Za vývojem Flask-RESTful stojí firma Twilio, ale přispělo do něj více než sto jednotlivců.
 Je zveřejněn pod BSD licencí [@BSD3].
-Závisí na Flasku a dalších třech modulech, celkově tak nepřímo závisí na modulech devíti a má s nimi 27~718 řádků kódu.
-Na GitHubu má necelé dva tisíce hvězdiček a za poslední měsíc byl stažen z PyPI více než stosedmdesáttisíckrát.
+Závisí na Flasku a dalších třech modulech. Celkově tak nepřímo závisí na modulech devíti a společně s nimi má 27~718 řádků kódu.
+Na GitHubu má necelé dva tisíce hvězd a na PyPI má za poslední měsíc více než 170 tisíc stažení.
 Podporuje obě verze Pythonu.
 Projekt vznikl v roce 2012, od té doby vyšlo 27 verzí, poslední v prosinci roku 2015.
 

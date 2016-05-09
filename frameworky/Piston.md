@@ -5,20 +5,19 @@ Piston
 
 Piston je, respektive spíše byl, mini-framework pro Django určený pro vytváření RESTful API [@piston].
 
-Piston podle své dokumentace nabízí následující funkce [@piston]:
+Piston je interně svázán s Djangem a podle své dokumentace nabízí následující funkce [@piston]:
 
- * Piston je interně svázán s Djangem,
  * podporuje OAuth bez nutnosti použití další knihovny,
  * nevyžaduje vazbu na modely, umožňuje vytvářet nezávislé zdroje,
  * komunikuje pomocí JSONu, YAMLu, Python picklu a XML (a také pomocí HATEOAS),
  * jde o Python knihovnu, kterou lze snadno použít,
  * respektuje a nabádá ke správnému využití HTTP protokolu (návratové kódy apod.),
- * má zabudovanou (volitelnou) validaci vstupů (pomocí Djanga), zaškrcování přístupu apod.,
+ * má zabudovanou (volitelnou) validaci vstupů (pomocí Djanga), omezování počtu požadavků v čase apod.,
  * podporuje streamování s malým využitím paměti,
  * „neplete se do cesty“.
 
 Projekt vnikl již v roce 2008, tedy tři roky po zveřejnění Djanga samotného, pod záštitou Bitbucketu.
-V roce 2010 jej však původní autor Jesper Nøhr přestal vyvíjet.
+V roce 2010 jej však původní autor, Jesper Nøhr, přestal vyvíjet.
 Vývoje se následující rok ujal Joshua Ginsberg,
 který ale vydal jen dvě nové verze a vývoj na začátku roku 2012 taktéž opustil.
 Poslední vydaná verze 0.2.3 přidává podporu pro Django 1.4, nejvyšší podporovaná verze je tedy snad 1.5[^verze].

@@ -14,8 +14,8 @@ Místo kódu v Pythonu se však používá deskriptivní jazyk RAML.
 Ramses přímo závisí na sedmi modulech, nepřímo pak na téměř třiceti, instalace má celkem 68~594 řádků kódu.
 V počtu závislostí je tak v negativním slova smyslu vítězem.
 
-Projekt vytváří stejní autoři jako Nefertari a všechny informace o aktivitě jsou prakticky stejné,
-projekt vznikl na přelomu února a března 2015, poslední z dvanácti verzí vyšla v listopadu téhož roku.
+Projekt vytváří stejní autoři jako Nefertari a všechny informace o aktivitě jsou prakticky stejné.
+Projekt vznikl na přelomu února a března 2015, poslední z dvanácti verzí vyšla v listopadu téhož roku.
 Kód je distribuován pod permisivní Apache licencí [@apache], stejně jako Nefertari.
 Na rozdíl od Nefertari má na GitHubu více než dvě stovky hvězd.
 
@@ -108,6 +108,6 @@ protocols: [HTTP]
 }
 ```
 
-Vzhledem k tomu, že Ramses je abstrakční vrstva nad Nefertari, nebudu zde opakovat sekce o HATEOAS a přístupových právech, jelikož by byly prakticky stejné.
+Vzhledem k tomu, že Ramses je vrstva abstrakce nad Nefertari, nebudu zde opakovat sekce o HATEOAS a přístupových právech, jelikož by byly prakticky stejné.
 Vytváření REST API pomocí RAML souborů je možná směr, kterým se v budoucnu lidstvo vydá, ale bojím se, že na Ramsesu je třeba ještě zapracovat.
-Otázkou je, jestli bude nebo nebude dále vyvíjen.
+Otázkou je, jestli bude dále vyvíjen.
