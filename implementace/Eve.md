@@ -157,7 +157,7 @@ V této funkci pak lze na základě jména zdroje upravit odpověď před serial
 [V ukázce](#code:eve:modify) můžete vidět, jak jsem této možnosti využil k úpravě dat.
 
 Eve vkládá do všech objektů datum a čas vytvoření a změny, pokud ho nemůže zjistit
-(například pokud v databázi není sloupec s tímto údajem), použije 1. leden 1970 (počátek unixového času).
+(například pokud v databázi není sloupec s tímto údajem), použije 1.~leden 1970 (počátek unixového času).
 Tuto chybnou informaci jsem tedy rovnou v procesu úpravy zobrazených dat odstranil.
 
 ```{caption="{#code:eve:modify}Eve: Úprava zobrazených dat" .python}
