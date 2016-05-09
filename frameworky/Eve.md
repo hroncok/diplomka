@@ -1,9 +1,7 @@
 Eve
 ===
 
-TODO: Trochu zmenšit logo, cca o 20-25 %.
-
-![Logo Eve [@evepic]{#pic:eve}](images/eve)
+![Logo Eve [@evepic]{#pic:eve}](pdfs/eve)
 
 Eve je open-source REST API framework navržený „pro lidi“.
 Umožňuje snadno vytvořit a nasadit vysoce upravitelné, plně funkční RESTful webové služby.
