@@ -67,7 +67,7 @@ HATEOAS
 Již v úvodu jsem zmínil, že ripozo umožňuje jednoduše vytvářet linky mezi zdroji ve stylu HATEOAS
 a také že ripozo podporuje Siren [@siren] a HAL [@hal].
 Získává tedy tři body.
-Představu o vytváření odkazů získáte nejlépe [z ukázky](#code:ripozolink).
+Představu o vytváření odkazů získáte nejlépe z [ukázky](#code:ripozolink).
 
 ```{caption="{#code:ripozolink}Příklad použití z dokumentace ripoza (linkování) \autocite{ripozo}" .python}
 from ripozo import restmixins, Relationship

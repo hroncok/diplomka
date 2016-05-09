@@ -112,7 +112,9 @@ Přístupová práva
 ----------------
 
 Tutoriál opět uvádí postup [@prafauth], jak implementovat autentizaci, v tomto konkrétním případě API klíčem předaným pomocí GET parametru zakódovaným v URL.
-Pokud chcete, můžete si samozřejmě implementovat způsob vlastní. V případě autorizace nabízí PRAF pouze možnost zpřístupnit daný zdroj všem autentizovaným požadavkům [@prafauth], implementace komplexnějších přístupových práv je opět možná. Proto dávám dva body.
+Pokud chcete, můžete si samozřejmě implementovat způsob vlastní.
+
+V případě autorizace nabízí PRAF pouze možnost zpřístupnit daný zdroj všem autentizovaným požadavkům [@prafauth], implementace komplexnějších přístupových práv je opět možná. Proto dávám dva body.
 
 Python REST API framework nabízí určitou strukturu, jak REST API v Pythonu budovat, nenabízí ale velký výběr stavebních kamenů.
 Předpokládá se, že programátor si je dobuduje sám, což nepovažuji nutně za špatnou věc. Je však třeba vytknout v současnosti zpomalený vývoj projektu a především absenci podpory pro Python 3. Nízká oblíbenost projektu může být důsledkem těchto problémů.
