@@ -8,7 +8,7 @@ za to, že mě naučil, jak závěrečné práce psát.
 
 Děkuji i Jiřímu Mlejnkovi za návrh, jak psát kapitolu *\nameref{implementace}*.
 
-Děkuji Katce Hrončokové, Báře Havelkové a Magdě Friedjungové za pomoc s hledáním chyb.
+Děkuji Magdě Friedjungové, Báře Havelkové, Báře Hrončokové a Katce Hrončokové za pomoc s hledáním chyb.
 
 V neposlední řadě také děkuji desítkám autorů zkoumaných frameworků,
 bez jejichž úsilí by tato práce neměla důvod vzniknout.
