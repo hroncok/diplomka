@@ -3,7 +3,7 @@ Flask-RESTful
 
 ![Logo Flask-RESTful [@flaskresfulpic]{#pic:flaskresful}](images/flask-restful)
 
-Flask-RESTful je rozšíření Flasku, které přidává podporu pro rychlé vyváření RESTových API.
+Flask-RESTful je rozšíření Flasku, které přidává podporu pro rychlé vytváření RESTových API.
 Jedná se o tenkou vrstvu abstrakce, která by měla fungovat s existujícím ORM a dalšími knihovnami.
 Flask-RESTful je navržen tak, aby ho uživatelé obeznámení s Flaskem co nejrychleji pochopili. [@flaskresful]
 

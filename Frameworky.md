@@ -264,7 +264,7 @@ Použitelnost
 ------------
 
 Jak je framework použitelný a přívětivý pro programátora se velice špatně stanovuje.
-Jedná se víceméně o subjektivní pojem; to, co jeden programátor považuje za přívětivé,
+Jedná se víceméně o subjektivní dojem; to, co jeden programátor považuje za přívětivé,
 jiný může považovat za příliš složité.
 
 Místo vynášení soudů o použitelnosti, založených čistě na mém osobním názoru,
