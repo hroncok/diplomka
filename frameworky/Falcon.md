@@ -10,8 +10,6 @@ Mezi hlavní přednosti podle webové stránky [@falcon] patří:
  * svoboda volby detailů,
  * spolehlivost.
 
-TODO: Zmenšit margin okolo loga, zabírá zbytečně moc místa.
-
 ![Logo Falconu [@falconpic]{#pic:falcon}](images/falcon)
 
 Falcon je bezesporu minimalistický -- společně se závislostmi má pouze 3~034 řádků kódu.
