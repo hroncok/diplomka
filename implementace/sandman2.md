@@ -12,7 +12,7 @@ $ sandman2ctl 'mysql://uzivatel:heslo@server/databaze'
  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
 ```
 
-Pokud ale nechceme použít data z tabulek, ale z pohledů, a potřebujeme ovlivnit názvy zdrojů,
+Pokud ale používáme databázové pohledy, nikoliv přímo tabulky, a potřebujeme ovlivnit názvy zdrojů,
 nezbývá nám, než nadefinovat modely ručně pomocí SQLAlchemy modelů.
 Model pro `/destinations` můžete vidět [v ukázce](#code:sandman2:mapping).
 
@@ -40,8 +40,8 @@ Jak můžete vidět [v ukázce](#code:sandman2:rename),
 stačí přejmenovat třídní atributy a poskytnout konstruktoru `Column` název sloupce jako první argument
 a název atributu jako argument `key`.
 
-Bohužel sandman2 s tím nepočítá a je potřeba předefinovat metodu,
-která vrací v sandmanu2 název sloupce v tabulce a ne nový název.
+Bohužel sandman2 s tím nepočítá a je potřeba předefinovat jednu metodu,
+která místo nového názvu vrací název sloupce v tabulce.
 Dle mého názoru se jedná o chybu a její opravu jsem navrhl autorovi na GitHubu, zatím bez odezvy.
 Vytvořil jsem tedy mixin, který použitým modelům tuto metodu předefinuje (vrchní část [ukázky](#code:sandman2:rename)).
 
@@ -80,13 +80,13 @@ Prolinkování zdrojů ve stylu HATEOAS
 ------------------------------------
 
 Sandman2 odkazy nevytváří automaticky, je ale poměrně jednoduché je vytvořit ručně.
-Stačí na modelu předefinovat metodu `to_dict()` a zde linky sestrojit z cizích klíčů.
+Stačí na modelu předefinovat metodu `to_dict()` a zde odkazy sestrojit z cizích klíčů.
 Přidal jsem tedy upravenou variantu této metody do již vytvořeného mixinu ([ukázka](#code:sandman2:links)).
 
 Narazil jsem na problém, že z cizího klíče sice poznám tabulku, ale ne model.
 Vyřešil jsem to tak, že před přidáním modelů do aplikace je registruji do reverzního seznamu podle tabulek
-(pomocí dekorátoru),
-ale tento způsob se mi příliš nelíbí, sandman2 však žádný vlastní způsob nenabízí.
+(pomocí dekorátoru).
+Tento způsob se mi příliš nelíbí, ale sandman2 žádný vlastní způsob nenabízí.
 
 ```{caption="{#code:sandman2:links}sandman2: Prolinkování zdrojů ve stylu HATEOAS" .python}
 class CustomizingMixin(Model):
@@ -121,7 +121,7 @@ Navigační odkazy se automaticky nevytvářejí a úprava tohoto chování nen�
 ----------------------
 
 Úpravu zobrazených dat lze provést v metodě `to_dict()`.
-Bylo by možné používat různé varianty této metody pro různé modely, ale v našem případě si vystačíme s metodou jednou.
+Bylo by možné používat různé varianty této metody pro různé modely, ale v našem případě si vystačíme s jedinou metodou.
 Úpravu pro číselné typy a kód kurzu z KOSu můžete vidět [v ukázce](#code:sandman2:modify).
 
 ```{caption="{#code:sandman2:modify}sandman2: Úprava zobrazených dat" .python}
@@ -158,8 +158,8 @@ ale jednoduchá.
 Zobrazení dat ve standardizované podobě
 ---------------------------------------
 
-Úprava způsobu zobrazení jedné entity je možná v metodě `to_dict()`.
-Úprava způsobu zobrazení seznamu entit možná není.
+Úpravu způsobu zobrazení jedné entity je možné provést v metodě `to_dict()`,
+úpravu pro seznamu entit však provést nejde.
 
 [V ukázce](#code:sandman2:standard) je vidět úprava ve stylu HAL.
 
@@ -226,8 +226,8 @@ a jednoduché v závislosti na zvoleném standardu.
 Použití přirozených identifikátorů
 ----------------------------------
 
-Pro použití přirozeného identifikátoru lze v modelu nastavit jiný primární klíč,
-následně je v našem případě potřeba v metodě `to_dict()` změnit řádku kódu, která najde patřičný objekt u cizího klíče.
+Pro použití přirozeného identifikátoru lze v modelu nastavit jiný primární klíč.
+Následně je v našem případě potřeba v metodě `to_dict()` změnit řádku kódu, která najde patřičný objekt podle cizího klíče.
 Obojí můžete vidět [v ukázce](#code:sandman2:ids).
 
 ```{caption="{#code:sandman2:ids}sandman2: Použití přirozených identifikátorů" .python}
@@ -270,27 +270,27 @@ Sandman2 toto neumožňuje.
 Funkce služby
 -------------
 
-Dokumentace sandmanu2 o těchto možnostech mlčí.
-Existuje iniciativa za dokumentování těchto funkcí [@sandmanquery].
+Dokumentace sandmanu2 o těchto možnostech mlčí,
+existuje však iniciativa za zdokumentování těchto funkcí [@sandmanquery].
 
 Zde je také potřeba zmínit, že URI zdrojů fungují jen bez koncového lomítka.
 
 ### Stránkování
 
-Je možné pouze zvolit číslo stránky pomocí parametru `page`.
-Velikost stránky nelze ovlivnit (je to vždy 20).
-Bez použití parametru `page` se implicitně zobrazí celý seznam, což může trvat poměrně dlouho.
+Je možné zvolit pouze číslo stránky pomocí parametru `page`.
+Velikost stránky nelze ovlivnit (je vždy 20).
+Bez použití parametru `page` se implicitně vrátí celý seznam, což v případě velkého počtu položek představuje problém.
 
 `GET /courses?page=5`
 
-Je možné použít parametr `limit` ale ne v kombinaci s parametrem `page`.
+Je možné použít parametr `limit`, ne však v kombinaci s parametrem `page`.
 
 `GET /courses?limit=5`
 
 ### Filtrování
 
 Filtrovat výsledky se dá pouze jednoduchým způsobem,
-například takto se dá zobrazit seznam kurzů probíhajících v pátek:
+například takto můžeme zobrazit seznam kurzů probíhajících v pátek:
 
 `GET /courses?day=5`
 
@@ -300,7 +300,7 @@ Při špatně provedeném dotazu může výsledek skončit chybou sandmanu2, co�
 ### Řazení
 
 Je možné použít parametr `sort` pro zvolení položky, podle které se budou výsledky řadit.
-Není možné zvolit směr řazení.
+Není však možné zvolit směr řazení.
 Řazení lze kombinovat se stránkováním, ale ne s parametrem `limit`.
 
 `GET /courses?page=1&sort=starts_at`
@@ -316,8 +316,8 @@ Není v sandmanu2 podporován.
 Další poznámky
 --------------
 
-Pokud máte kontrolu nad databází, nabízí sandman2 jednoduchý automatický způsob, jak vytvořit API alespoň částečně ve stylu REST.
-Pokud však potřebujete data prezentovat trochu jiným způsobem, začne sandman2 házet pomyslné klacky pod nohy a základní výhoda
+Pokud máme kontrolu nad databází, nabízí sandman2 jednoduchý automatický způsob, jak vytvořit API alespoň částečně ve stylu REST.
+Pokud však potřebujeme data prezentovat trochu jiným způsobem, začne nám sandman2 házet pomyslné klacky pod nohy a základní výhoda
 -- tedy automatické vytvoření API --
 přestane hrát velkou roli.
 

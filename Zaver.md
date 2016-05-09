@@ -7,7 +7,7 @@ Na základě stanovených kritérií jsem vybral čtyři frameworky, ve kterých
 Návrhem ukázkové služby jsem se zabýval v kapitole *\nameref{navrh}*.
 
 Různé aspekty implementace REST služby ve frameworcích Django REST framework, Eve, ripozo a sandman2
-jsem popsal v kapitole *\nameref{implementace}*.
+jsem popsal v kapitole *\nameref{implementace}*. Během implementace služeb jsem ve frameworcích narazil na různý chyby, které jsem autorům nahlásil a v některých případech i navrhl úpravy. Jejich seznam najdete v dodatku B.
 
 Implementované služby jsem podrobil testování rychlosti v kapitole *\nameref{mereni}*.
 Z měření nevzešel jasný vítěz.

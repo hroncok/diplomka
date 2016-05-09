@@ -393,8 +393,8 @@ Table: Informace o frameworcích {#tab:informace}
 
 Pro implementaci si vybírám frameworky Eve a ripozo, na základě vysokého hodnocení v oblasti HATEOAS i přístupových práv.
 
-Vysoké hodnocení získaly i Django REST framework a Tastypie, ale jelikož jsou oba frameworky pro Django a implementace by byla příliš podobná,
-vybírám si k implementaci pouze Django REST framework, který je podle indikátorů ze všech zkoumaných frameworků nejoblíbenější.
+Vysoké hodnocení získaly i Django REST framework a Tastypie. Jelikož oba tyto frameworky rozšiřují Django, implementace v nich by byla velmi podobná.
+Vybírám si proto pouze Django REST framework, který je podle indikátorů ze všech zkoumaných frameworků nejoblíbenější.
 
 Navíc si vybírám sandman2, který nemá tak dobré hodnocení,
 ale slibuje automatické vytvoření API.

@@ -174,8 +174,8 @@ Navigační odkazy se vytvářejí podle druhu výstupu automaticky.
 Ripozo nabízí *preprocesory* a *postprocesory*,
 které lze použít i pro úpravu zobrazených dat.
 
-Postprocesor v našem případě musíme aplikovat pro požadavek na jeden zdroj i pro požadavek na seznam zdrojů.
-Bohužel se oba takové postprocesory musí chovat trochu jinak, naštěstí to jde také automatizovat.
+Postprocesor v našem případě musíme aplikovat pro požadavek na jeden zdroj i na seznam zdrojů.
+Bohužel se oba takové postprocesory musí chovat trochu jinak, naštěstí to ale také můžeme zautomatizovat.
 [V ukázce](#code:ripozo:modify) je posprocesor pro kód kurzu z KOSu i dekorátor, který způsobí,
 že bude korektně aplikován v obou výše zmíněných případech.
 Pre- a postprocesory se nastavují ve třídě zdroje, proto je v ukázce i drobná úprava dekorátoru `@register`.
@@ -232,7 +232,7 @@ Zobrazení dat ve standardizované podobě
 ---------------------------------------
 
 Jednou z hlavních výhod ripoza je integrovaná podpora pro HAL, Siren i JSON API.
-Jednotlivé formáty lze použít dokonce zároveň, zvolen je takový, o který si klient zažádá,
+Jednotlivé formáty lze použít dokonce i zároveň; ripozo pak vrátí ten, o který si klient zažádá,
 případně první v pořadí registrace ([ukázka](#code:ripozo:standard)).
 
 ```{caption="{#code:ripozo:standard}ripozo: Zobrazení dat ve standardizované podobě" .python}
@@ -350,9 +350,9 @@ def preprocessor(cls, function_name, request):
     request.client_info = info
 ```
 
-Pro komplikovanější logiku je třeba přidat pre-/postprocesor na úrovni zdroje.
-U zdroje `/enrollments` musíme zajistit, že data uvidí jen speciálně autorizované klienty.
-Pro výpis zápisů je třeba použít preprocesor, pro konkrétní zápis je třeba použít postprocesor,
+Pro komplikovanější logiku je potřeba přidat pre-/postprocesor na úrovni zdroje.
+U zdroje `/enrollments` musíme zajistit, aby data byla dostupná pouze pro speciálně autorizované klienty.
+Pro výpis zápisů je potřeba použít preprocesor, pro konkrétní zápis pak postprocesor,
 abychom mohli přistupovat ke zdroji a zjistit, jakému studentovi náleží apod.
 
 V [ukázce](#code:ripozo:auth2) můžete vidět zjednodušenou variantu funkce,
@@ -415,14 +415,14 @@ který dokumentací spíše šetří, informace zde uvedené jsou tedy získány
 
 ### Stránkování
 
-Stránkovat se dá standardně pomocí parametrů `count` a `page`.
+Stránkovat je možné standardně pomocí parametrů `count` a `page`.
 
 `GET /courses/?page=5&count=5`
 
 ### Filtrování
 
 Filtrovat výsledky se dá pouze jednoduchým způsobem,
-například takto se dá zobrazit seznam kurzů probíhajících v pátek:
+například takto zobrazíme seznam kurzů probíhajících v pátek:
 
 `GET /courses/?day=5`
 
@@ -431,16 +431,16 @@ Při špatně provedeném dotazu může výsledek skončit chybou ripoza, což j
 na jejíž opravě již autor `ripozo-sqlalchemy` pracuje.
 
 Filtrování a stránkování se dá kombinovat, je možné použít více filtrů.
-Navigační odkazy na další stránky neobsahují použitý filtr, což jsem nahlásil jako chybu.
+Navigační odkazy na další stránky neobsahují použitý filtr, což jsem také nahlásil jako chybu autorovi.
 
 ### Řazení
 
 Nepřišel jsem na způsob, jak seznam řadit jinak než implicitně.
-Zde je třeba zdůraznit, že se jedná o nedostatek modulu `ripozo-sqlalchemy`.
+Zde je třeba zdůraznit, že se jedná o nedostatek modulu `ripozo-sqlalchemy`, nikoliv ripoza.
 
 ### Vyjednávání o obsahu
 
-Podle hlavičky `Accept` volí ripozo vhodný *adaptér* (HAL, Siren atd.).
+Na základě hlavičky `Accept` ripozo volí vhodný *adaptér* (HAL, Siren atd.).
 
 ### Rozcestník
 
@@ -448,9 +448,9 @@ Rozcestník je automaticky vytvořen, odpovídá ale pouze na metodu *OPTIONS*.
 
 ### Seznam položek
 
-Zásadním nedostatkem služby je nemožnost zobrazení seznamu položek jinak, než formou odkazů.
-To vede k nutnosti zaslání $N+1$ dotazů, pokud potřebujme získat informace o $N$ položkách,
-u jiných implementací k tomu stačí jeden dotaz.
+Zásadním nedostatkem služby je nemožnost zobrazení seznamu položek jinak než formou odkazů.
+To vede k nutnosti zaslání $N+1$ dotazů, potřebujme-li získat informace o $N$ položkách,
+přičemž u jiných implementací toho lze docílit jediným dotazem.
 
 Další poznámky
 --------------
@@ -459,7 +459,7 @@ Při implementaci byl použit *dispatcher* pro Flask. Ripozo umožňuje využit�
 ale v současné době je k dispozici pouze navázání na Flask a Django.
 
 Vzhledem k výsledkům benchmarku [v části](#benchmark@) by bylo z hlediska rychlosti zajímavé implementovat napojení na webový framework Falcon.
-Jelikož se tato práce ale obecně rozdíly mezi webovými frameworky nezabývá, nechávám tuto možnost otevřenou.
+Jelikož se ale tato práce obecně rozdíly mezi webovými frameworky nezabývá, nechávám tuto možnost otevřenou.
 
 
 Kompletní implementace
