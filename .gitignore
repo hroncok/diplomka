@@ -1,6 +1,6 @@
 *.tex
-DP_Hroncok_Miroslav_2016.*
-!DP_Hroncok_Miroslav_2016.tex
+BP_Hroncokova_Barbora_2016.*
+!BP_Hroncokova_Barbora_2016.tex
 .backup
 *_.bib
 images/*.pdf

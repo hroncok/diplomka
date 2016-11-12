@@ -7,7 +7,6 @@
 
 % arara: xelatex: { shell: yes }
 % arara: makeglossaries
-% arara: biber
 % arara: xelatex: { shell: yes }
 % arara: xelatex: { shell: yes }
 \documentclass[thesis=M,czech,hidelinks]{template/FITthesisXE}
@@ -41,10 +40,6 @@
 \input{Uvod.tex}
 \end{introduction}
 
-\input{Frameworky.tex}
-\input{Navrh.tex}
-\input{Implementace.tex}
-\input{Mereni.tex}
 %\input{xyz.tex}
 
 \begin{conclusion}
@@ -52,14 +47,11 @@
 \input{Zaver.tex}
 \end{conclusion}
 
-\printbibliography[title={Zdroje}]
-
 \appendix
 
 \chapter{Seznam použitých zkratek}
 \printglossary[type=\acronymtype,style=acronyms]
 
-\input{issues.tex}
 \input{medium.tex}
 
 \end{document}

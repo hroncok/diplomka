@@ -1,11 +1,11 @@
-mds = $(shell for F in *.md */*.md; do echo $${F%.md}; done | grep -v README)
+mds = $(shell for F in *.md; do echo $${F%.md}; done | grep -v README)
 ymls = $(shell for F in *.yml; do echo $${F%.yml}; done)
 pngs = $(shell for F in images/*.png; do echo $${F%.png}; done)
 
-all: DP_Hroncok_Miroslav_2016.pdf
+all: BP_Hroncokova_Barbora_2016.pdf
 
-DP_Hroncok_Miroslav_2016.pdf: library.bib DP_Hroncok_Miroslav_2016.tex $(addsuffix .tex,$(mds) $(ymls)) template $(addsuffix .pdf,$(pngs)) pdfs
-	arara DP_Hroncok_Miroslav_2016
+BP_Hroncokova_Barbora_2016.pdf: BP_Hroncokova_Barbora_2016.tex $(addsuffix .tex,$(mds) $(ymls)) template $(addsuffix .pdf,$(pngs)) pdfs
+	arara BP_Hroncokova_Barbora_2016
 
 meta.tex: meta.yml bin/convert
 	./bin/convert meta.yml

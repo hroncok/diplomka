@@ -1,4 +1,4 @@
-Jak říká Zen of Python [@PEP20], měl by být jeden -- a nejlépe pouze jeden -- zřejmý způsob, jak to udělat.
+Jak říká Zen of Python, měl by být jeden -- a nejlépe pouze jeden -- zřejmý způsob, jak to udělat.
 V případě webových RESTful API to ale v Pythonu neplatí, existuje celá řada open-source knihoven a frameworků,
 které umožňují RESTful API vytvářet. Některé fungují pouze společně s frameworky na tvorbu
 webových aplikací, jako například s Flaskem nebo Djangem, jiné fungují samostatně.

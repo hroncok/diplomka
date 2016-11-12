@@ -111,16 +111,11 @@
 		{\textquoteright}		% closing inner mark
 	\setquotestyle {czech}
 
-	\RequirePackage [backend=biber, style=iso-numeric, autolang=other,%
-					sorting=nyt, sortlocale=cs_CZ, spacecolon=false]{ biblatex }
-
 	\renewcommand*{\acronymname}{Seznam použitých zkratek}
 	\renewcommand*{\dirfigurename}{Adresářová struktura}
 	\newcommand{\listdirfigurename}{Seznam adresářových struktur}
 \else
 	\setdefaultlanguage [variant=british] {english}
-	\RequirePackage [backend=biber, style=iso-numeric, autolang=other,%
-					sorting=nyt, sortlocale=en_US, spacecolon=false]{ biblatex }
 	\renewcommand*{\dirfigurename}{Directory structure}
 	\newcommand{\listdirfigurename}{List of Directory structures}
 \fi
@@ -228,10 +223,6 @@
 \clubpenalty 10000 % prvni radek odstavce nebude sam na konci stranky 
 \widowpenalty 10000 % posl. radek odstavce nepujde na novou stranku
 \brokenpenalty 10000
-
-\setcounter{biburlnumpenalty}{600}
-\setcounter{biburlucpenalty}{900}
-\setcounter{biburllcpenalty}{600}
 
 % adjust settings for minted if used
 \AtBeginDocument {%
