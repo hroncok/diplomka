@@ -1,0 +1,434 @@
+\section{ripozo}\label{ripozo}
+
+\subsection{Namapování dat z~pohledů na zdroje}\label{namapovuxe1nuxed-dat-z-pohledux16f-na-zdroje}
+
+Pro namapování SQL dat na zdroje je možné použít modul \verb!ripozo-sqlalchemy!. Ke každé entitě je potřeba vytvořit třídy pro model, správce a zdroj. Příklad pro zdroj \verb!/enrollments! můžete vidět \protect\hyperlink{code:ripozo:mapping}{v~ukázce}.
+
+\begin{listing}[htbp]
+\caption{{\label{code:ripozo:mapping}ripozo: Namapování dat z~pohledů na zdroje}}
+\begin{minted}[bgcolor=codebg]{python}
+
+class Enrollment(db.Model):
+    __tablename__ = 'v_students'
+
+    id_student = db.Column(db.Integer, primary_key=True)
+    personal_number = db.Column(db.Integer)
+    kos_kod = db.Column(db.String)
+    utvs = db.Column(db.Integer,
+                     db.ForeignKey('v_subjects.id_subjects'))
+    semester = db.Column(db.String)
+    registration_date = db.Column(db.DateTime)
+    tour = db.Column(db.Boolean)
+    kos_code = db.Column(db.Boolean)
+
+
+class EnrollmentManager(AlchemyManager):
+    model = Enrollment
+    fields = ('id_student', 'personal_number', 'kos_kod', 'utvs',
+              'semester', 'registration_date', 'tour', 'kos_code')
+
+
+class PersonResource(restmixins.RetrieveRetrieveList):
+    manager = EnrollmentManager(session_handler)
+    pks = ('id_student',)
+    resource_name = 'enrollments'
+
+
+dispatcher.register_resources(PersonResource)
+\end{minted}
+\end{listing}
+
+\verb!ripozo-sqlalchemy! také nabízí funkci \verb!create_resource()!, která přijímá model a automaticky vytvoří třídy pro správce a zdroj. Nepřišla mi ale dostatečně flexibilní, tak jsem si podobnou napsal sám, ve formě dekorátoru, který můžete vidět \protect\hyperlink{code:ripozo:register}{v~ukázce}.
+
+\begin{listing}[htbp]
+\caption{{\label{code:ripozo:register}ripozo: Dekorátor pro registraci modelů}}
+\begin{minted}[bgcolor=codebg]{python}
+resources = {}
+
+def register(cls):
+    '''Create default Manager and Resource class for model
+    and register it'''
+    fields = tuple(
+        f for f in cls.__dict__.keys() if not f.startswith('_'))
+    pks = getattr(cls, '__pks__', ('id',))
+
+    manager_cls = type(cls.__name__ + 'Manager',
+                       (AlchemyManager,),
+                       {'fields': fields,
+                        'model': cls})
+
+    resource_cls = type(cls.__name__ + 'Resource',
+                        (restmixins.RetrieveRetrieveList,),
+                        {'manager': manager_cls(session_handler),
+                         'resource_name': cls.__name__.lower() + 's',
+                         'pks': pks})
+
+    resources[cls.__name__] = resource_cls
+    return cls
+
+# later:
+dispatcher.register_resources(*resources.values())
+\end{minted}
+\end{listing}
+
+Při použití dekorátoru \verb!@register! tak stačí vytvořit pouze třídu pro model. V~případě, kdy se primární klíč nejmenuje \emph{id}, je potřeba ještě nastavit jeho název do třídního atributu \verb!__pks__!.
+
+Nutnost vytvořit tři třídy pro každý zdroj se může jevit přehnaná, umožňuje to ale velkou míru přizpůsobení, například pokud by každý zdroj byl namapován na jinou databázi apod.
+
+Namapování dat z~pohledů na zdroje v~ripozu je možné, systematické, pro jednoduché aplikace příliš komplexní, ale ne příliš složité.
+
+\subsection{Přejmenování položek}\label{pux159ejmenovuxe1nuxed-poloux17eek}
+
+Pro přejmenování položek stačí provést jednoduchou úpravu modelu. Jak můžete vidět \protect\hyperlink{code:ripozo:rename}{v~ukázce}, stačí přejmenovat třídní atributy a poskytnout konstruktoru \verb!Column! název sloupce jako první argument.
+
+\begin{listing}[htbp]
+\caption{{\label{code:ripozo:rename}ripozo: Přejmenování položek}}
+\begin{minted}[bgcolor=codebg]{python}
+@register
+class Teacher(db.Model):
+    __tablename__ = 'v_lectors'
+
+    id = db.Column('id_lector', db.Integer, primary_key=True)
+    degrees_before = db.Column('title_before', db.String)
+    first_name = db.Column('name', db.String)
+    last_name = db.Column('surname', db.String)
+    degrees_after = db.Column('title_behind', db.String)
+    personal_number = db.Column('pers_number', db.Integer)
+    url = db.Column(db.String)
+\end{minted}
+\end{listing}
+
+Přejmenování položek v~ripozu je možné, systematické a triviální.
+
+\subsection{Prolinkování zdrojů ve stylu HATEOAS}\label{prolinkovuxe1nuxed-zdrojux16f-ve-stylu-hateoas}
+
+Pro prolinkování zdrojů je potřeba:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Přidat do modelu další atribut reprezentující vztah/odkaz.
+\item
+  Přidat vztah do atributu \verb!_relationships! třídy zdroje.
+\end{enumerate}
+
+Toto lze také udělat automaticky, pokud data dodržují nějakou jmennou konvenci. Automatický způsob, který předpokládá, že cizí klíče jsou pojmenované jako \verb!{model}_id!, můžete vidět \protect\hyperlink{code:ripozo:links}{v~ukázce}.
+
+\begin{listing}[htbp]
+\caption{{\label{code:ripozo:links}ripozo: Automatické vytvoření odkazů}}
+\begin{minted}[bgcolor=codebg]{python}
+def fk_magic(cls, fields):
+    '''Create links automagically'''
+    fks = tuple(field for field in fields if field.endswith('_id'))
+    rels = []
+    for fk in fks:
+        unfk = fk[:-3]  # foo_id -> foo
+        setattr(cls, unfk,
+                relationship(unfk.title(),
+                             foreign_keys=(getattr(cls, fk),)))
+        rels.append(Relationship(unfk,
+                                 property_map={fk: 'id'},
+                                 relation=unfk.title() + 'Resource'))
+    return tuple(rels)  # must be a tuple
+
+def register(cls):
+    # ...
+    rels = fk_magic(cls, fields)
+    
+    # ...
+    resource_cls = type(..., {'_relationships': rels, ...})
+    
+    # ...
+    return cls
+
+
+@register
+class Course(db.Model):
+    __tablename__ = 'v_subjects'
+
+    id = db.Column('id_subjects', db.Integer,
+                   primary_key=True)
+    # ...
+    sport_id = db.Column('sport', db.Integer,
+                         db.ForeignKey('v_sports.id_sport'))
+    hall_id = db.Column('hall', db.Integer,
+                        db.ForeignKey('v_hall.id_hall'))
+    teacher_id = db.Column('lector', db.Integer,
+                           db.ForeignKey('v_lectors.id_lector'))
+\end{minted}
+\end{listing}
+
+Prolinkování zdrojů ve stylu HATEOAS v~ripozu je možné, systematické, ale zbytečně komplexní.
+
+Navigační odkazy se vytvářejí podle druhu výstupu automaticky.
+
+\subsection{Úprava zobrazených dat}\label{uxfaprava-zobrazenuxfdch-dat}
+
+Ripozo nabízí \emph{preprocesory} a \emph{postprocesory}, které lze použít i pro úpravu zobrazených dat.
+
+Postprocesor v~našem případě musíme aplikovat pro požadavek na jeden zdroj i na seznam zdrojů. Bohužel se oba takové postprocesory musí chovat trochu jinak, naštěstí to ale také můžeme zautomatizovat. \protect\hyperlink{code:ripozo:modify}{V~ukázce} je posprocesor pro kód kurzu z~KOSu i dekorátor, který způsobí, že bude korektně aplikován v~obou výše zmíněných případech. Pre- a postprocesory se nastavují ve třídě zdroje, proto je v~ukázce i drobná úprava dekorátoru \verb!@register!.
+
+\begin{listing}[htbp]
+\caption{{\label{code:ripozo:modify}ripozo: Úprava zobrazených dat}}
+\begin{minted}[bgcolor=codebg]{python}
+def register(cls):
+    # ...
+    pres = getattr(cls, '__preprocessors__', tuple())
+    posts = getattr(cls, '__postprocessors__', tuple())
+
+    resource_cls = type(..., {'preprocessors': pres,
+                              'postprocessors': posts,
+                              ...})
+    # ...
+    return cls
+
+def onemany(func):
+    '''
+    Decorator for postprocessors in order to run a given function
+    an all resources
+    '''
+    def processor(cls, function_name, request, resource):
+        if function_name == 'retrieve':
+            return func(cls, function_name, request, resource)
+        if function_name == 'retrieve_list':
+            for one in resource.related_resources[0].resource:
+                func(cls, 'retrieve', request, one)
+    return processor
+
+
+@register
+class Enrollment(db.Model):
+    # ...
+    kos_course_code = db.Column('kos_kod', db.String)
+    kos_code_flag = db.Column('kos_code', db.Boolean)
+
+    @onemany
+    def _post_kos_code_null(cls, function_name, request, resource):
+        '''This will be called as a function, so no self!'''
+        if not resource.properties['kos_code_flag']:
+            resource.properties['kos_course_code'] = None
+        del resource.properties['kos_code_flag']
+
+    __postprocessors__ = (_post_kos_code_null,)
+\end{minted}
+\end{listing}
+
+Úprava zobrazených dat v~ripozu je možná, systematická a jednoduchá.
+
+\subsection{Zobrazení dat ve standardizované podobě}\label{zobrazenuxed-dat-ve-standardizovanuxe9-podobux11b}
+
+Jednou z~hlavních výhod ripoza je integrovaná podpora pro HAL, Siren i JSON API. Jednotlivé formáty lze použít dokonce i zároveň; ripozo pak vrátí ten, o~který si klient zažádá, případně první v~pořadí registrace (\protect\hyperlink{code:ripozo:standard}{ukázka}).
+
+\begin{listing}[htbp]
+\caption{{\label{code:ripozo:standard}ripozo: Zobrazení dat ve standardizované podobě}}
+\begin{minted}[bgcolor=codebg]{python}
+dispatcher.register_adapters(adapters.HalAdapter,
+                             adapters.SirenAdapter,
+                             adapters.JSONAPIAdapter,
+                             adapters.BasicJSONAdapter)
+\end{minted}
+\end{listing}
+
+Příklad výstupu pro HAL můžete vidět \protect\hyperlink{code:ripozo:hal}{v~ukázkce}.
+
+\begin{listing}[htbp]
+\caption{{\label{code:ripozo:hal}ripozo: Příklad výstupu pro HAL}}
+\begin{minted}[bgcolor=codebg]{python}
+{
+    "_embedded": {},
+    "_links": {
+        "hall": {
+            "href": "/halls/29"
+        },
+        "self": {
+            "href": "http://127.0.0.1:5000/courses/2158"
+        },
+        "sport": {
+            "href": "/sports/107"
+        },
+        "teacher": {
+            "href": "/teachers/42"
+        }
+    },
+    "day": 5,
+    "ends_at": "15:30",
+    "id": 2158,
+    "notice": "P\u0158KS /k\u00f3dy 17PBPTV2 a 17BPTV2/ - sebeobrana",
+    "semester": 2,
+    "shortcut": "FBM14",
+    "starts_at": "14:00"
+}
+\end{minted}
+\end{listing}
+
+Zobrazení dat ve standardizované podobě v~ripozu je možné, systematické a automatické.
+
+\subsection{Použití přirozených identifikátorů}\label{pouux17eituxed-pux159irozenuxfdch-identifikuxe1torux16f}
+
+Pro použití přirozených identifikátorů stačí změnit primární klíč, jak můžete vidět \protect\hyperlink{code:ripozo:ids}{v~ukázce}.
+
+\begin{listing}[htbp]
+\caption{{\label{code:ripozo:ids}ripozo: Použití přirozených identifikátorů}}
+\begin{minted}[bgcolor=codebg]{python}
+@register
+class Sport(db.Model):
+    __tablename__ = 'v_sports'
+    __pks__ = ('shortcut',)
+
+    id = db.Column('id_sport', db.Integer, primary_key=True)
+    shortcut = db.Column('short', db.String)
+    name = db.Column('sport', db.String)
+    description = db.Column(db.String)
+\end{minted}
+\end{listing}
+
+Bohužel pak přestanou fungovat odkazy, jelikož ripozo v~momentě konstrukce odkazu zná pouze sloupec, na který je odkaz vázán (což je zde \emph{id} a ne \emph{shortcut}).
+
+Použití přirozených identifikátorů v~ripozu je sice možné, systematické a triviální, ale rozbije to jinou část.
+
+\subsection{Přístupová práva}\label{pux159uxedstupovuxe1-pruxe1va}
+
+Ripozo nepřináší žádný zabudovaný mechanismus pro správu přístupových práv, podle dokumentace je na to vhodné použít pre- a postprocesory \autocite{ripozoprepost}.
+
+Vytvořil jsem tedy hlavní preprocesor, který v~dekorátoru \verb!@register! vkládám ke všem zdrojům. Tento preprocesor ověří token pomocí modulu \verb!utvsapitoken! a vyhodnotí, jestli má klient právo ke čtení. Preprocesor můžete vidět \protect\hyperlink{code:ripozo:auth}{v~ukázce}. Použité třídy výjimek jsem si musel vytvořit, ale kvůli trivialitě je zde neuvádím. Ripozo zařídí, že se výjimky správně projeví v~odpovědi serveru (stavovým kódem a zprávou o~chybě).
+
+\begin{listing}[htbp]
+\caption{{\label{code:ripozo:auth}ripozo: Autorizační preprocesor}}
+\begin{minted}[bgcolor=codebg]{python}
+def headers_to_token(headers, *, authorization='authorization',
+                     bearer='Bearer '):
+    '''
+    Get the auth token form the headers
+
+    Returns None if not found
+    '''
+    if authorization in headers:
+        header = headers[authorization]
+        if header.startswith(bearer):
+            return header[len(bearer):].strip()
+
+
+def preprocessor(cls, function_name, request):
+    token = headers_to_token(request.headers)
+    if not token:
+        raise exceptions.UnauthorizedException(
+            'Token not provided. Use the following header: '
+            'Authorization: Bearer {token}')
+    c = TokenClient()
+
+    try:
+        info = c.token_to_info(token)
+    except:
+        raise exceptions.UnauthorizedException(
+            'Token not valid. Please provide a valid token.')
+
+    # default behavior for all of our resources
+    if 'cvut:utvs:general:read' not in info['scope']:
+        raise exceptions.ForbiddenException(
+            'Permission denied. You need '
+            'cvut:utvs:general:read scope.')
+
+    # add the information to the request,
+    # for further pre/postprocessors
+    request.client_info = info
+\end{minted}
+\end{listing}
+
+Pro komplikovanější logiku je potřeba přidat pre-/postprocesor na úrovni zdroje. U~zdroje \verb!/enrollments! musíme zajistit, aby data byla dostupná pouze pro speciálně autorizované klienty. Pro výpis zápisů je potřeba použít preprocesor, pro konkrétní zápis pak postprocesor, abychom mohli přistupovat ke zdroji a zjistit, jakému studentovi náleží apod.
+
+V~\protect\hyperlink{code:ripozo:auth2}{ukázce} můžete vidět zjednodušenou variantu funkce, která slouží zároveň jako preprocesor i jako postprocesor. Kompletní kód včetně vysvětlujících komentářů je součástí implementace služby.
+
+\begin{listing}[htbp]
+\caption{{\label{code:ripozo:auth2}ripozo: Autorizační pre-/postprocesor zdroje Enrollment}}
+\begin{minted}[bgcolor=codebg]{python}
+class Enrollment(db.Model):
+    # ...
+
+    def _prepost_auth_logic(cls, message, request, resource=None):
+        scope = request.client_info['scope']
+
+        # can read anything
+        if 'cvut:utvs:enrollments:all' in scope:
+            return
+
+        if 'cvut:utvs:enrollments:by-role' in scope:
+            if 'B-00000-ZAMESTNANEC' in request.client_info['roles']:
+                return
+
+        if 'cvut:utvs:enrollments:personal' in scope:
+            pnum = request.client_info['personal_number']
+            if not pnum:
+                raise exceptions.ForbiddenException(
+                    'Permission denied.')
+
+            if resource:
+                # this is one resource
+                # you are the student of this resource
+                if pnum == resource.properties['personal_number']:
+                    return
+            else:
+                # this is a list of resources
+                # you are a person, but not a teacher
+                # we'll filter all the enrollments by personal_number
+                request.query_args.update({'personal_number': [pnum]})
+                return
+
+        # out of options
+        raise exceptions.ForbiddenException('Permission denied.')
+\end{minted}
+\end{listing}
+
+Přístupová práva v~ripozu jsou možná, částečně systematická, ale pro složitější logiku mohou být příliš komplikovaná.
+
+\subsection{Generování dokumentace}\label{generovuxe1nuxed-dokumentace}
+
+Ripozo toto neumožňuje.
+
+\subsection{Funkce služby}\label{funkce-sluux17eby}
+
+Dokumentace ripoza neuvádí nic o~možnostech stránkování, filtrování apod. Prohlídkou kódu jsem zjistil, že tyto možnosti obstarává \verb!ripozo-sqlalchemy!, který dokumentací spíše šetří, informace zde uvedené jsou tedy získány experimentálně.
+
+\subsubsection*{Stránkování}\label{struxe1nkovuxe1nuxed}
+
+Stránkovat je možné standardně pomocí parametrů \verb!count! a \verb!page!.
+
+\verb!GET /courses/?page=5&count=5!
+
+\subsubsection*{Filtrování}\label{filtrovuxe1nuxed}
+
+Filtrovat výsledky se dá pouze jednoduchým způsobem, například takto zobrazíme seznam kurzů probíhajících v~pátek:
+
+\verb!GET /courses/?day=5!
+
+Nelze ale filtrovat na základě cizích klíčů, ani nastavit podmínku (větší než apod.). Při špatně provedeném dotazu může výsledek skončit chybou ripoza, což jsem nahlásil jako chybu, na jejíž opravě již autor \verb!ripozo-sqlalchemy! pracuje.
+
+Filtrování a stránkování se dá kombinovat, je možné použít více filtrů. Navigační odkazy na další stránky neobsahují použitý filtr, což jsem také nahlásil jako chybu autorovi.
+
+\subsubsection*{Řazení}\label{ux159azenuxed}
+
+Nepřišel jsem na způsob, jak seznam řadit jinak než implicitně. Zde je třeba zdůraznit, že se jedná o~nedostatek modulu \verb!ripozo-sqlalchemy!, nikoliv ripoza.
+
+\subsubsection*{Vyjednávání o~obsahu}\label{vyjednuxe1vuxe1nuxed-o-obsahu}
+
+Na základě hlavičky \verb!Accept! ripozo volí vhodný \emph{adaptér} (HAL, Siren atd.).
+
+\subsubsection*{Rozcestník}\label{rozcestnuxedk}
+
+Rozcestník je automaticky vytvořen, odpovídá ale pouze na metodu \emph{OPTIONS}.
+
+\subsubsection*{Seznam položek}\label{seznam-poloux17eek}
+
+Zásadním nedostatkem služby je nemožnost zobrazení seznamu položek jinak než formou odkazů. To vede k~nutnosti zaslání \(N+1\) dotazů, potřebujme-li získat informace o~\(N\) položkách, přičemž u~jiných implementací toho lze docílit jediným dotazem.
+
+\subsection{Další poznámky}\label{dalux161uxed-poznuxe1mky}
+
+Při implementaci byl použit \emph{dispatcher} pro Flask. Ripozo umožňuje využití jiných frameworků, ale v~současné době je k~dispozici pouze navázání na Flask a Django.
+
+Vzhledem k~výsledkům benchmarku \protect\hyperlink{benchmark}{v~části} by bylo z~hlediska rychlosti zajímavé implementovat napojení na webový framework Falcon. Jelikož se ale tato práce obecně rozdíly mezi webovými frameworky nezabývá, nechávám tuto možnost otevřenou.
+
+\subsection{Kompletní implementace}\label{kompletnuxed-implementace}
+
+Kompletní implementaci REST API pro rozvrhová data ÚTVS ČVUT ve frameworku ripozo najdete na přiloženém médiu a na adrese:
+
+\url{https://github.com/hroncok/utvsapi-ripozo}

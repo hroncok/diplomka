@@ -1,0 +1,33 @@
+\section{Morepath}\label{morepath}
+
+\begin{figure}
+\centering
+\includegraphics{images/morepath}
+\caption{Koncept loga Morepathu \autocite{morepathpic}\label{pic:morepath}}
+\end{figure}
+
+Morepath je webový mikroframework podobně jako Flask nebo Bottle \autocite{morepath}. Nepatří tak úplně mezi frameworky na vytváření RESTových API, zařadil jsem jej proto, že přímo v~sobě obsahuje součásti pro jejich tvorbu \autocite{morepathrest}. Na rozdíl od jiných mikroframeworků je modelově orientovaný \autocite{morepath}.
+
+Projekt vznikl v~roce 2013, ale jeho historie sahá dále do minulosti \autocite{morepathhistory}. Od roku 2013 vyšlo téměř dvacet verzí, poslední tři dny před psaním tohoto textu. Morepath přímo závisí na čtyřech a nepřímo na pěti modulech, společně s~nimi má 9~156 řádků kódu. Je distribuován pod BSD licencí \autocite{BSD3}. Autorem projektu je Martijn Faassen z~firmy CONTACT Software a přispělo do něj celkem 14 vývojářů. 226 hvězd na GitHubu a malý počet přispěvatelů dává tušit, že se nejedná o~příliš slavný projekt, obsahuje však mnoho zajímavých funkcí \autocite{morepathsp}.
+
+V~případě RESTu jde hlavně o~jednoduché prolinkování v~duchu HATEOAS, které můžete vidět \protect\hyperlink{code:morepath}{v~ukázce}. Komplexnější příklad dokumentace neobsahuje. Morepath dostává za HATEOAS dva body.
+
+Za účelem vytvoření webové služby je potřeba použít modely; to mohou být v~Morepathu objekty v~paměti, abstrakce databázových tabulek pomocí ORM, či data uložená v~NoSQL databázi.
+
+\begin{listing}[htbp]
+\caption{{\label{code:morepath}Příklad použití z~dokumentace Morepathu \autocite{morepathrest}}}
+\begin{minted}[bgcolor=codebg]{python}
+@App.json(model=DocumentCollection)
+def collection_default(self, request):
+    return {
+       'type': 'document_collection',
+       'documents': [dict(id=doc.id, link=request.link(doc))
+                     for doc in self.documents],
+       'add': request.link(documents, 'add')
+    }
+\end{minted}
+\end{listing}
+
+Přístupová práva umí Morepath nastavovat na úrovni modelů či pohledů a autentizace uživatele může proběhnout na základě session \autocite{morepathauth}. O~žádných speciálních metodách autentizace v~případě API se dokumentace nezmiňuje, dostává tedy jeden bod.
+
+Hodnotím Morepath jako zajímavý webový mikroframewrok, pokud uživatel touží po modelech, ale nechce použít „velký“ MVC framework jako Django. Poskytnutím mechanismů pro tvorbu RESTful API přímo v~základu frameworku se řadí mezi ojedinělé Python webové frameworky.

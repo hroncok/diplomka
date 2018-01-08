@@ -1,0 +1,54 @@
+\section{Falcon}\label{falcon}
+
+Falcon je neuvěřitelně rychlý, minimalistický Python webový framework pro tvorbu „cloudových API“ a aplikačních backendů \autocite{falcon}. Mezi hlavní přednosti podle webové stránky \autocite{falcon} patří:
+
+\begin{itemize}
+\tightlist
+\item
+  závislost pouze na modulech \verb!six! a \verb!mimeparse!,
+\item
+  rychlejší zpracování požadavků než u~jiných populárních frameworků,
+\item
+  podpora WSGI, CPythonu 2.6, 2.7, 3.3 a 3.4 i PyPy,
+\item
+  svoboda volby detailů,
+\item
+  spolehlivost.
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics{images/falcon}
+\caption{Logo Falconu \autocite{falconpic}\label{pic:falcon}}
+\end{figure}
+
+Falcon je bezesporu minimalistický -- společně se závislostmi má pouze 3~034 řádků kódu. Je šířen pod permisivní Apache licencí \autocite{apache} a nevyžaduje žádný webový framework.
+
+Příklad použití můžete najít \protect\hyperlink{code:falcon}{v~ukázce}. Jak je vidět, pomocí Falconu jdou vytvářet REST API, ale jedná se o~velmi nízkoúrovňový framework, který spíše zastává vrstvu mezi HTTP a aplikací než velkého pomocníka při tvorbě API.
+
+\begin{listing}[htbp]
+\caption{{\label{code:falcon}Příklad použití z~webu Falconu \autocite{falcon}}}
+\begin{minted}[bgcolor=codebg]{python}
+# sample.py
+import falcon
+import json
+
+class QuoteResource:
+    def on_get(self, req, resp):
+        """Handles GET requests"""
+        quote = {
+            'quote': 'I\'ve always been more interested '
+                     'in the future than in the past.',
+            'author': 'Grace Hopper'
+        }
+
+        resp.body = json.dumps(quote)
+
+api = falcon.API()
+api.add_route('/quote', QuoteResource())
+\end{minted}
+\end{listing}
+
+Projekt vytváří firma Rackspace pod vedením Kurta Griffithse. Do projektu přispívají i jednotlivci mimo Rackspace. Vznikl v~roce 2012 a od té doby vyšlo celkem 27 verzí. Dva týdny před psaním tohoto textu vyšla verze 1.0.0rc1, brzy se tedy můžeme těšit na verzi 1.0.0. Jedná se o~aktivní projekt, který se může chlubit stoprocentním pokrytím testy \autocite{falconcoverage}.
+
+Vzhledem k~nízkoúrovnosti frameworku neexistují žádné automatické mechanismy pro správu přístupových práv či HATEOAS. Falcon tedy za oba aspekty získává nula bodů.

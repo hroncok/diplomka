@@ -1,0 +1,15 @@
+Open-source knihoven a frameworků pro Python, které umožňují vytvářet RESTful API, je opravdu mnoho. V~této práci jsem prozkoumal osmnáct takových frameworků, v~kapitole \emph{\nameref{frameworky}}. Zkoumal jsem především úroveň podpory HATEOAS a řízení přístupových práv.
+
+Na základě stanovených kritérií jsem vybral čtyři frameworky, ve kterých jsem implementoval ukázkovou službu pro účely podrobnějšího zkoumání.
+
+Návrhem ukázkové služby jsem se zabýval v~kapitole \emph{\nameref{navrh}}.
+
+Různé aspekty implementace REST služby ve frameworcích Django REST framework, Eve, ripozo a sandman2 jsem popsal v~kapitole \emph{\nameref{implementace}}. Během implementace služeb jsem ve frameworcích narazil na různý chyby, které jsem autorům nahlásil a v~některých případech i navrhl úpravy. Jejich seznam najdete \protect\hyperlink{issues}{v~dodatku}.
+
+Implementované služby jsem podrobil testování rychlosti v~kapitole \emph{\nameref{mereni}}. Z~měření nevzešel jasný vítěz.
+
+\subsubsection*{Možnosti dalšího rozvoje}\label{moux17enosti-dalux161uxedho-rozvoje}
+
+Některé zkoumané frameworky trpěly nedostatky, které by v~budoucnu bylo možné ve spolupráci s~autory těchto frameworků opravit.
+
+Zkoumaný framework ripozo umožňuje napojení na různé webové frameworky, bylo by proto zajímavé naprogramovat napojení na nějaký zatím nepodporovaný rychlý webový framework, jako například Falcon.

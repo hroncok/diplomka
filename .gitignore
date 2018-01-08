@@ -1,10 +1,9 @@
-*.tex
 DP_Hroncok_Miroslav_2016.*
 !DP_Hroncok_Miroslav_2016.tex
 .backup
 *_.bib
-images/*.pdf
 *~
 *bx
-label/label.png
-tmp
+/label/label.png
+/tmp
+_minted-*

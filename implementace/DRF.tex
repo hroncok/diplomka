@@ -1,0 +1,400 @@
+\section{Django REST framework}\label{django-rest-framework}
+
+\subsection{Namapování dat z~pohledů na zdroje}\label{namapovuxe1nuxed-dat-z-pohledux16f-na-zdroje}
+
+Pro namapování dat z~pohledů na zdroje je jedním z~řešení vytvořit Django modely, a pro ty vytvořit serializační třídy a pohledy. Django REST framework umožňuje serializovat i data, která nepochází z~modelů, ale to by v~tomto případě bylo zbytečně složité.
+
+Jeden model, serializační třídu a pohled můžete vidět \protect\hyperlink{code:drf:mapping}{v~ukázce}; implementační detaily, jako importy, jsou pro stručnost vynechány. Vzhledem k~tomu, že je jednodušší rovnou některé položky přejmenovat, je v~této ukázce již tak učiněno; detailnější vysvětlení najdete v~další části.
+
+\begin{listing}[htbp]
+\caption{{\label{code:drf:mapping}DRF: Namapování dat z~pohledů na zdroje}}
+\begin{minted}[bgcolor=codebg]{python}
+# models.py
+class Course(Model):
+    id = SmallIntegerField(primary_key=True,
+                           db_column='id_subjects')
+    shortcut = StringField()
+    day = SmallIntegerField()
+    starts_at = TinyStringField(db_column='begin')
+    ends_at = TinyStringField(db_column='end')
+    notice = TextField()
+    semester = SmallIntegerField()
+    sport = ForeignKey(Sport, db_column='sport')
+    hall = ForeignKey(Hall, db_column='hall')
+    teacher = ForeignKey(Teacher, db_column='lector')
+
+    class Meta:
+        db_table = 'v_subjects'
+
+# serializers.py
+class CourseSerializer(HyperlinkedModelSerializer):
+    class Meta:
+        model = Course
+        fields = tuple(
+            f.name for f in model._meta.fields \
+            if not f.name.startswith('_'))
+
+# views.py
+class CourseViewSet(ReadOnlyModelViewSet):
+    '''
+    API endpoint that allows courses to be viewed.
+    '''
+    queryset = Course.objects.all()
+    serializer_class = CourseSerializer
+
+# urls.py
+router = DefaultRouter()
+router.register(r'courses', CourseViewSet)
+\end{minted}
+\end{listing}
+
+Některé kroky, například vytvoření serializační třídy, lze jednoduše automatizovat, jak je vidět \protect\hyperlink{code:drf:serializer}{z ukázky}. Podobným způsobem by bylo možné zautomatizovat i vytváření pohledů. Ovšem vzhledem k~tomu, že dokumentační řetězce u~pohledů se zobrazují ve webově procházetelném API, je příhodnější nechat je definované jako jednotlivé třídy.
+
+\begin{listing}[htbp]
+\caption{{\label{code:drf:serializer}DRF: Automatizace vytvoření serializační třídy}}
+\begin{minted}[bgcolor=codebg]{python}
+def serializer(model_):
+    '''Get a default Serializer class for a model'''
+    class _Serializer(HyperlinkedModelSerializer):
+        class Meta:
+            model = model_
+            fields = # ...
+    return _Serializer
+
+
+CourseSerializer = serializer(Course)
+\end{minted}
+\end{listing}
+
+Namapování dat z~pohledů na zdroje v~Django REST frameworku je možné, systematické a jednoduché, ale pro tento jednoduchý příklad zbytečně komplexní.
+
+\subsection{Přejmenování položek}\label{pux159ejmenovuxe1nuxed-poloux17eek}
+
+Pro přejmenování položek stačí jinak pojmenovat atribut a poskytnout konstruktoru argument \verb!db_column! s~názvem sloupce. Ten je potřeba poskytnout u~cizích klíčů i v~případě, kdy se atribut jmenuje stejně jako položka, protože Django jinak očekává, že se sloupec bude jmenovat \verb!{field}_id!.
+
+Konkrétní příklad přejmenování položek u~kurzu můžete vidět \protect\hyperlink{code:drf:mapping}{na začátku ukázky}.
+
+Přejmenování položek v~Django REST frameworku je možné, systematické a triviální.
+
+\subsection{Prolinkování zdrojů ve stylu HATEOAS}\label{prolinkovuxe1nuxed-zdrojux16f-ve-stylu-hateoas}
+
+Django REST framework při použití \verb!HyperlinkedModelSerializer! automaticky serializuje cizí klíče jako odkazy.
+
+Prolinkování zdrojů ve stylu HATEOAS v~Django REST frameworku je možné, automatické, systematické a triviální.
+
+Navigační odkazy se vytvářejí rovněž automaticky.
+
+\subsection{Úprava zobrazených dat}\label{uxfaprava-zobrazenuxfdch-dat}
+
+Jednou z~variant, jak upravit zobrazená data, je vytvořit přímo v~modelu metody, které budou data měnit a místo původních dat serializovat výsledky těchto metod. Příklad pro kód předmětu v~KOSu můžete vidět \protect\hyperlink{code:drf:modify}{v~ukázce}.
+
+\begin{listing}[htbp]
+\caption{{\label{code:drf:modify}DRF: Úprava zobrazených dat}}
+\begin{minted}[bgcolor=codebg]{python}
+class Enrollment(models.Model):
+    # ...
+    _kos_course_code = ShortStringField(db_column='kos_kod')
+    _kos_code_flag = models.BooleanField(db_column='kos_code')
+
+    @property
+    def kos_course_code(self):
+        return self._kos_course_code if self._kos_code_flag else None
+
+
+class EnrollmentSerializer(HyperlinkedModelSerializer):
+    class Meta:
+        model = Enrollment
+        fields = ('kos_course_code', ...) # no _kos_course_code
+\end{minted}
+\end{listing}
+
+Pokud má model nadefinované některé položky jako číselné, zobrazují se v~odpovědích API číselně, takže není nutné je nijak upravovat.
+
+Úprava zobrazených dat v~Django REST frameworku je možná, systematická a triviální.
+
+\subsection{Zobrazení dat ve standardizované podobě}\label{zobrazenuxed-dat-ve-standardizovanuxe9-podobux11b}
+
+Django REST framework data zobrazuje ve velmi jednoduché podobě. Pokud toto chceme změnit, je třeba vytvořit vlastní třídy zodpovědné za stránkování a prezentaci dat.
+
+Naštěstí již existuje modul \verb!drf-hal-json!, který poskytuje třídy pro serializaci do HAL; jeho použití najdete \protect\hyperlink{code:drf:standard}{v~ukázce} a výstup \protect\hyperlink{code:drf:hal}{v~ukázce}. Existují i knihovny pro jiné serializace, např. \verb!djangorestframework-jsonapi! pro JSON API.
+
+\begin{listing}[htbp]
+\caption{{\label{code:drf:standard}DRF: Použití modulu drf-hal-json pro HAL}}
+\begin{minted}[bgcolor=codebg]{python}
+# settings.py
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS':
+        'drf_hal_json.pagination.HalPageNumberPagination',
+    'DEFAULT_PARSER_CLASSES': ('drf_hal_json.parsers.JsonHalParser',),
+    'DEFAULT_RENDERER_CLASSES': (
+        'drf_hal_json.renderers.JsonHalRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ),
+    'URL_FIELD_NAME': 'self',
+    # ...
+}
+
+
+# serializers.py
+def serializer(model_):
+    '''Get a default Serializer class for a model'''
+    class _Serializer(HalModelSerializer):
+        # ...
+    return _Serializer
+\end{minted}
+\end{listing}
+
+\begin{listing}[htbp]
+\caption{{\label{code:drf:hal}DRF: Příklad výstupu pro HAL}}
+\begin{minted}[bgcolor=codebg]{python}
+{
+    "_links": {
+        "self": "http://127.0.0.1:8000/courses/1/",
+        "sport": "http://127.0.0.1:8000/sports/3/",
+        "hall": "http://127.0.0.1:8000/halls/1/",
+        "teacher": "http://127.0.0.1:8000/teachers/6/"
+    },
+    "id": 1,
+    "shortcut": "BAS01",
+    "day": 1,
+    "starts_at": "13:30",
+    "ends_at": "15:00",
+    "notice": null,
+    "semester": 1
+}
+\end{minted}
+\end{listing}
+
+Zobrazení dat ve standardizované podobě v~Django REST frameworku je možné, systematické, ale pracné, naštěstí však existují knihovny, které lze rovnou použít.
+
+\subsection{Použití přirozených identifikátorů}\label{pouux17eituxed-pux159irozenuxfdch-identifikuxe1torux16f}
+
+Pro použití přirozených identifikátorů stačí v~pohledu nastavit hodnotu proměnné \verb!lookup_field! a změnit odkazy vedoucí na daný zdroj, což můžete vidět \protect\hyperlink{code:drf:ids}{v~ukázce}. Změna odkazů vyžaduje poměrně mnoho argumentů, které považuji za zbytečné.
+
+\begin{listing}[htbp]
+\caption{{\label{code:drf:ids}DRF: Použití přirozených identifikátorů}}
+\begin{minted}[bgcolor=codebg]{python}
+# serializers.py:
+class SportSerializer(HyperlinkedModelSerializer):
+    self = HyperlinkedIdentityField(
+        read_only=True,
+        view_name='sport-detail',
+        lookup_field='shortcut')
+    # ...
+
+class CourseSerializer(HyperlinkedModelSerializer):
+    sport = HyperlinkedRelatedField(
+        read_only=True,
+        view_name='sport-detail',
+        lookup_field='shortcut')
+    # ...
+
+# views.py:
+class SportViewSet(ReadOnlyModelViewSet):
+    # ...
+    lookup_field = 'shortcut'
+\end{minted}
+\end{listing}
+
+Použití knihovny \verb!drf-hal-json! v~kombinaci s~přirozenými identifikátory vede k~chybě, kterou jsem autorům nahlásil. Pokud knihovna \verb!drf-hal-json! není použita, přirozené identifikátory fungují dle očekávání.
+
+Použití přirozených identifikátorů v~Django REST frameworku je možné, systematické, ale zbytečně pracné.
+
+\subsection{Přístupová práva}\label{pux159uxedstupovuxe1-pruxe1va}
+
+Pro přístupová práva se v~Django REST frameworku používají třídy dvojího typu: autentizační a autorizační.
+
+Pro autentizaci lze použít již poskytnutou třídu \verb!TokenAuthentication! a přepsat metodu zodpovědnou za validaci tokenu, která vrací informace o~uživateli a autorizaci. Vzhledem k~tomu, že uživatelem je zde myšlen model \verb!User! frameworku Django a zde tento model nepoužívám, protože aplikace přistupuje k~databázi v~režimu jen pro čtení, vracím informace o~klientu v~druhé z~návratových hodnot. Toto můžete vidět \protect\hyperlink{code:drf:auth}{v~ukázce}.
+
+\begin{listing}[htbp]
+\caption{{\label{code:drf:auth}DRF: Autorizační třída a její použití}}
+\begin{minted}[bgcolor=codebg]{python}
+class CtuTokenAuthentication(TokenAuthentication):
+    '''
+    Simple token based authentication using utvsapitoken.
+
+    Clients should authenticate by passing the token
+    key in the 'Authorization' HTTP header,
+    prepended with the string 'Token '.  For example:
+
+        Authorization: Token 956e252a-513c-48c5-92dd-bfddc364e812
+    '''
+
+    def authenticate_credentials(self, key):
+        c = TokenClient()
+        try:
+            info = c.token_to_info(key)
+        except:
+            raise exceptions.AuthenticationFailed(
+                _('Invalid token.'))
+        return (None, info)
+
+# settings.py
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'api.authentication.CtuTokenAuthentication',
+    ),
+    # ...
+}
+\end{minted}
+\end{listing}
+
+Zde si dovolím malou odbočku. Třída \verb!TokenAuthentication! z~Django REST frameworku očekává v~autorizační hlavičce slovo \emph{Token}, ale RFC 6750 říká, že by to v~případě OAuthu~2 mělo být \emph{Bearer} \autocite{rfc6750}. Pokud bych v~současnosti chtěl toto změnit, musel bych celý kód třídy zkopírovat a změnit zde právě toto jedno slovo. Navrhl jsem tedy autorům frameworku úpravu, která umožní příslušné slovo změnit jednodušeji. Tato úprava byla přijata a bude dostupná v~další vydané verzi frameworku.
+
+Pro autorizaci a samotná přístupová práva jsem napsal dvě třídy; jednu obecně pro všechny zdroje, druhou pouze pro zdroj \verb!/enrollments/!. Obě můžete vidět \protect\hyperlink{code:drf:permissions}{v~ukázce}.
+
+\begin{listing}[htbp]
+\caption{{\label{code:drf:permissions}DRF: Třídy pro přístupová práva}}
+\begin{minted}[bgcolor=codebg]{python}
+class HasGeneralReadScopeOrIsApiRoot(BasePermission):
+    def has_permission(self, request, view):
+        if view.get_view_name() == 'Api Root':
+            return True
+        return (
+            request.auth and
+            'cvut:utvs:general:read' in request.auth['scope']
+        )
+
+
+class HasEnrollmentsAcces(BasePermission):
+    def has_permission(self, request, view):
+        if not request.auth:
+            return False
+
+        if 'cvut:utvs:enrollments:all' in request.auth['scope']:
+            return True
+
+        if ('cvut:utvs:enrollments:by-role' in request.auth['scope']
+                and 'B-00000-ZAMESTNANEC' in request.auth['roles']):
+            return True
+
+        if ('cvut:utvs:enrollments:personal' in request.auth['scope']
+                and 'personal_number' in request.auth):
+            # we should check for this in has_object_permission()
+            # but it doesn't apply for list queries
+            # so filter the queryset instead
+            view.queryset = view.queryset.filter(
+                personal_number=request.auth['personal_number'])
+            return True
+
+        return False
+
+
+# settings.py
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'api.permissions.HasGeneralReadScopeOrIsApiRoot',
+    ),
+    # ...
+}
+
+
+# views.py
+class EnrollmentViewSet(*base):
+    # ...
+    permission_classes = (permissions.HasGeneralReadScopeOrIsApiRoot,
+                          permissions.HasEnrollmentsAcces)
+\end{minted}
+\end{listing}
+
+Řízení přístupových práv v~Django REST frameworku je možná, systematické a jednoduché.
+
+\subsection{Generování dokumentace}\label{generovuxe1nuxed-dokumentace}
+
+Django REST framework nabízí webově procházetelná API. Z~dokumentačního hlediska to znamená, že je možné ke každému pohledu napsat dokumentační řetězec, který bude uživateli u~jednotlivých zdrojů zobrazen, jak můžete vidět \protect\hyperlink{pic:djangorestbrowsableutvs}{na obrázku}. Pokud je nainstalován modul \verb!markdown!, lze v~dokumentačním řetězci použít jazyk Markdown, který je v~procházetelném API nahrazen za patřičné HTML značky.
+
+\begin{figure}
+\centering
+\includegraphics{images/django-rest-framework-browsable-utvs}
+\caption{DRF: Webově procházetelné API\label{pic:djangorestbrowsableutvs}}
+\end{figure}
+
+Existují také moduly třetích stran, které slouží ke generování dokumentace API \autocite{drfdocstools}.
+
+Generování dokumentace v~Django REST frameworku je možné, automatické, systematické a triviální.
+
+\subsection{Funkce služby}\label{funkce-sluux17eby}
+
+\subsubsection*{Stránkování}\label{struxe1nkovuxe1nuxed}
+
+Stránkování funguje automaticky. Lze použít parametry \verb!page! a \verb!page_size!.
+
+\verb!GET /courses/?page=2&page_size=10!
+
+\subsubsection*{Filtrování}\label{filtrovuxe1nuxed}
+
+Filtrování nefunguje automaticky a jeho zprovoznění není triviální. Je potřeba nainstalovat \verb!django-filter!, nastavit výchozí filtrovací backend a na úrovni pohledů specifikovat položky, podle kterých se dá filtrovat. Což umožňuje velkou kontrolu nad tím, co uživatel smí dělat, ale neumožňuje globálně říct, že se dá všude filtrovat všechno. Pro filtrovaní všech položek ve všech modelech jsem proto vytvořil mixin, který můžete vidět \protect\hyperlink{code:drf:filter}{v~ukázce}.
+
+\begin{listing}[htbp]
+\caption{{\label{code:drf:filter}DRF: Mixin pro filtrování podle všech položek}}
+\begin{minted}[bgcolor=codebg]{python}
+class FilterAllFieldsMixin:
+    @classproperty
+    def filter_fields(cls):
+        model = cls.serializer_class.Meta.model
+        return serializers.fields(model)
+
+
+base = (ReadOnlyModelViewSet, FilterAllFieldsMixin)
+
+
+class DestinationViewSet(*base):
+    # ...
+
+
+# settings.py
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': (
+        'rest_framework.filters.DjangoFilterBackend',
+    ),
+    # ...
+}
+\end{minted}
+\end{listing}
+
+Poté je možné filtrovat pomocí parametrů v~URL:
+
+\verb!GET /courses/?starts_at=07:30!
+
+\subsubsection*{Řazení}\label{ux159azenuxed}
+
+Řazení není povoleno automaticky, ale jde o~jednoduchou úpravu nastavení, kterou můžete vidět \protect\hyperlink{code:drf:sort}{v~ukázce}.
+
+\begin{listing}[htbp]
+\caption{{\label{code:drf:sort}DRF: Povolení řazení podle URL}}
+\begin{minted}[bgcolor=codebg]{python}
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': (
+        'rest_framework.filters.OrderingFilter',
+        # ...
+    ),
+    # ...
+}
+\end{minted}
+\end{listing}
+
+Poté jde položky řadit pomocí parametru \verb!ordering! (název parametru lze v~nastavení také změnit). Je možné řadit vzestupně, sestupně i podle více klíčů. Pro seřazení kurzů podle jejich začátku v~týdnu od nejpozdějšího lze použít například:
+
+\verb!GET /courses/?ordering=-day,-starts_at!
+
+\subsubsection*{Vyjednávání o~obsahu}\label{vyjednuxe1vuxe1nuxed-o-obsahu}
+
+Django REST framework volí patřičnou zobrazovací třídu podle hlavičky \verb!Accept!. Pokud \emph{není} použita knihovna \verb!drf-hal-json!, je možné nastavovat hlavičkou i způsob odsazování apod.
+
+\verb!GET /courses/1         Accept: application/json; indent=2!
+
+Podobně lze volit serializaci do YAMLu nebo XML. Příslušné zobrazovací třídy musí být povoleny v~konfiguraci.
+
+\subsubsection*{Rozcestník}\label{rozcestnuxedk}
+
+Django REST framework automaticky vytváří rozcestník.
+
+\subsection{Další poznámky}\label{dalux161uxed-poznuxe1mky}
+
+Hlavním problémem Django REST frameworku je zobrazení dat ve standardizované podobě. Knihovny, které toto umožňují, blokují jinak fungující funkce. Vlastní implementace je příliš obtížná. Pokud si vystačíte s~podobou dat, kterou framework nabízí implicitně, nenarazíte na velký problém.
+
+\subsection{Kompletní implementace}\label{kompletnuxed-implementace}
+
+Kompletní implementaci REST API pro rozvrhová data ÚTVS ČVUT v~Django REST frameworku najdete na přiloženém médiu a na adrese:
+
+\url{https://github.com/hroncok/utvsapi-django}
